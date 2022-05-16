@@ -3,7 +3,10 @@
   display: flex;
   align-items: center;
   flex-direction:column;
+<<<<<<< HEAD
   padding: .4em;
+=======
+>>>>>>> 14be5849aecadf3750231bd6a579b1246b6da322
 }
 #user{
   filter: var(--svgblue);
@@ -127,3 +130,25 @@
   margin-right: .6em;
 }
 /* ********* */
+<<<<<<< HEAD
+=======
+
+
+/* Logged Users */
+.backPhoto{
+  min-height: 100px;
+  height: 100%;
+  background-color: #999;
+  width: 100vw;
+  max-width: 500px;
+}
+.userPhoto{
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  background-color: purple;
+  margin-top: -100px;
+  border: 5px solid white;
+}
+/****************/
+>>>>>>> 14be5849aecadf3750231bd6a579b1246b6da322

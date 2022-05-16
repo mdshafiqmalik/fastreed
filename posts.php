@@ -54,7 +54,11 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
           echo '
           <div class="posts cont500">
             <div class="postBody">
+<<<<<<< HEAD
               <div class="postPic"> <img src="/uploads/posts/'.$pPicLink['year'].'/'.$pPicLink['month'].'/'.$pPicLink['id'].'.'.$pPicLink['ext'].'" alt=""> </div>
+=======
+              <div class="postPic"> <img src="/uploads/'.$pPicLink['year'].'/'.$pPicLink['month'].'/'.$pPicLink['id'].'.'.$pPicLink['ext'].'" alt=""> </div>
+>>>>>>> 14be5849aecadf3750231bd6a579b1246b6da322
               <div class="postTitle"><a href="?posts='.$data['postOgLink'].'.html" id="postTitle" href=""> '.$data['postTitle'].'</a></div>
               <div class="extFoot">
                 <span class="meta"><a id="channelName"  href="">'.$channelName.'</a></span>
