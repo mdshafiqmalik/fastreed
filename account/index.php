@@ -10,10 +10,7 @@ session_start();
     <?php include '../components/randVersion.php' ?>
     <link rel="stylesheet" href="src/style.css?v=<?php echo($randVersion); ?>">
     <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
-<<<<<<< HEAD
     <link rel="stylesheet" href="src/logged.css?v=<?php echo($randVersion); ?>">
-=======
->>>>>>> 14be5849aecadf3750231bd6a579b1246b6da322
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
