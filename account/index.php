@@ -20,7 +20,6 @@ session_start();
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <div id="userDiv" class="cont">
-<<<<<<< HEAD
     <div class="content">
       <div class="userSection">
         <div class="userphoto">
