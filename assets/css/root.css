@@ -1,0 +1,132 @@
+:root {
+ --fontfam: 'Roboto', sans-serif;
+ --insCol: rgba(240,242,245,1.0);
+ --svgblue: invert(29%) sepia(67%) saturate(5911%) hue-rotate(205deg) brightness(94%) contrast(99%);
+ --svgred: invert(27%) sepia(95%) saturate(6682%) hue-rotate(355deg) brightness(95%) contrast(119%);
+ --svgblack:invert(0%) sepia(4%) saturate(13%) hue-rotate(107deg) brightness(96%) contrast(100%);
+ --color_666:invert(39%) sepia(16%) saturate(6%) hue-rotate(316deg) brightness(97%) contrast(94%);
+ --color_555: invert(34%) sepia(2%) saturate(15%) hue-rotate(7deg) brightness(93%) contrast(90%);
+ --colorWhite: invert(97%) sepia(12%) saturate(2%) hue-rotate(343deg) brightness(108%) contrast(101%);
+}
+body{
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:#bbb;
+  font-family: var(--fontfam);
+}
+.mainCont{
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#bbb;
+}
+.cont500{
+  max-width: 500px;
+  width: 100vw;
+}
+
+*{
+  margin:0;
+  padding: 0;
+}
+.ml_d4em{
+  margin-left: .4em;
+}
+.ml_d2em{
+  margin-left: .2em;
+}
+.b{
+  font-weight: bold;
+}
+.fontFam{
+  font-family: var(--fontfam);
+}
+.extSm{
+  font-size: .7em;
+}
+.sm{
+  font-size: .8em;
+}
+.md{
+  font-size: 1em;
+}
+.lg{
+  font-size: 2em;
+}
+.hd .header, .hd .subheader{
+  padding: .25em 0em;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+.header{
+  border-bottom: .5px solid;
+  display: flex;
+  justify-content: center;
+}
+.header div{
+  width: 50%;
+}
+.header .menuTop{
+  display: flex;
+  justify-content:flex-end;
+  flex-direction: row;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .menuTop .menu img{
+  width: 23px;
+  height: 23px;
+  font-weight: bolder;
+  padding: .2em;
+}
+
+.logo{
+  font-weight:bold;
+  font-size: 2.1em;
+  font-family:verdana;
+  color: #0165E1;
+  margin: 0em .7em 0em .5em;
+}
+.submenu{
+  width: 26px;
+  height: 26px;
+}
+#subscribe{
+  width: 35px;
+  height: 35px;
+}
+.subheader{
+  align-items: center;
+  justify-content: center;
+  padding:0em;
+  height: 45px;
+}
+.submenu:hover{
+  filter: var(--svgblue);
+}
+.subheader div{
+  display: flex;
+  width: 33%;
+  justify-content: center;
+  align-items: center;
+}
+.tagandSearch{
+  margin-top: .2em;
+  background-color: white;
+  width: 100%;
+}
