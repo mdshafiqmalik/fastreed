@@ -1,21 +1,20 @@
 /* Logged Users */
 .userSection{
+  padding: 0 .4em;
   height: 120px;
   width: 100%;
   max-width: 500px;
-  /* border: .01em solid; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .userphoto img{
-
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 15px;
   overflow: hidden;
 }
 .userDetails{
-  width: 60%;
   margin: 0 1em;
   display: flex;
   flex-direction: column;

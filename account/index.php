@@ -33,18 +33,6 @@ session_start();
       </div>
     </div>
   </div>
-
-=======
-    <!-- <a href="../logout.php?redirect=/account">Logout</a> -->
-    <div class="content">
-      <div class="backPhoto">
-      </div>
-      <div class="userPhoto">
-
-      </div>
-    </div>
-  </div>
->>>>>>> 14be5849aecadf3750231bd6a579b1246b6da322
 <!-- if (isset($_SESSION['userID'])) {
        include '../_.config/_s_db_.php';
        $userID = $_SESSION['userID'];
