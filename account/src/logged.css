@@ -26,6 +26,7 @@
 .authorPic{
   height: 100%;
   width: 40%;
+  background-color: #aaa;
 }
 .authorDetails{
   width: 60%;
