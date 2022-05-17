@@ -17,32 +17,66 @@
 .topDiv{
   border: 0;
   height: 65%;
-  background-color: #ccc;
+  /* background-color: #ccc; */
   display: flex;
   flex-direction:row;
 }
 .authorPic{
   height: 100%;
-  width: 40%;
+  width: 38%;
   /* padding: .5em; */
-  background-color: #aaa;
+  /* background-color: #aaa; */
   display: flex;
   /* justify-content: center; */
   align-items: center;
 }
 .authorPic img{
-  width: 6em;
-  height: 6em;
+  width: 6.5em;
+  height: 100%;
   border-radius: 1em;
 }
 .authorDetails{
-  width: 60%;
+  width: 65%;
   height: 100%;
-  background-color: #bbb;
+  /* background-color: #bbb; */
+  display: flex;
+  flex-direction: column;
+}
+.userNameWork{
+  font-family: var(--fontfam);
+  font-weight: bold;
+
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+#userType, #userFullName{
+  margin-top: .4em;
+}
+#userType{
+  font-variant: inherit;
+  font-size: .9em;
+  color: #777;
+}
+#userFullName{
+
+}
+.userParam{
+  border-radius: 1em;
+  background-color: #eee;
+  height: 50%;
+  display: flex;
+}
+
+.userParam div{
+  height: 100%;
+  width: 33.33%;
 }
 .bottomDiv{
   border: 0;
   height: 35%;
-  background-color: #bbb;
+  /* background-color: #bbb; */
 }
 /****************/

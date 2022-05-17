@@ -3,10 +3,6 @@
   display: flex;
   align-items: center;
   flex-direction:column;
-<<<<<<< HEAD
-  padding: .4em;
-=======
->>>>>>> 14be5849aecadf3750231bd6a579b1246b6da322
 }
 #user{
   filter: var(--svgblue);

@@ -23,7 +23,17 @@ session_start();
     <div class="authorProfile">
       <div class="topDiv">
         <div class="authorPic"> <img src="../uploads/users/2022/7/25316532.jpg" alt=""> </div>
-        <div class="authorDetails"></div>
+        <div class="authorDetails">
+          <div class="userNameWork">
+            <span id="userFullName">Mohd Shafiq</span>
+            <span id="userType">Author</span>
+          </div>
+          <div class="userParam">
+            <div class="userArticles"></div>
+            <div class="userFollowers"></div>
+            <div class="userRating"></div>
+          </div>
+        </div>
       </div>
       <div class="bottomDiv">
 
