@@ -25,18 +25,28 @@ session_start();
         <div class="authorPic"> <img src="../uploads/users/2022/7/25316532.jpg" alt=""> </div>
         <div class="authorDetails">
           <div class="userNameWork">
-            <span id="userFullName">Mohd Shafiq</span>
-            <span id="userType">Author</span>
+            <span id="userFullName">Shafiq Malik</span>
+            <span id="userType">Administator</span>
           </div>
           <div class="userParam">
-            <div class="userArticles"></div>
-            <div class="userFollowers"></div>
-            <div class="userRating"></div>
+            <div class="userArticles">
+              <span class="userParameters">Artilces</span>
+              <span class="values">239</span>
+            </div>
+            <div class="userFollowers">
+              <span class="userParameters">Follows</span>
+              <span class="values">12M</span>
+            </div>
+            <div class="userRating">
+              <span class="userParameters">Rating</span>
+              <span class="values">9.8</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="bottomDiv">
-
+        <div class="linkOne"> <span class="links">Channels</span> </div>
+        <div class="linkTwo"><span class="links">Follow</span></div>
       </div>
     </div>
     <div class="featuredArticle">
