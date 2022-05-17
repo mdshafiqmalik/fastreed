@@ -45,7 +45,7 @@ session_start();
         </div>
       </div>
       <div class="bottomDiv">
-        <div class="linkOne"> <span class="links">Channels</span> </div>
+        <div class="linkOne"> <span class="links">Create</span> </div>
         <div class="linkOne"> <span class="links">Edit</span> </div>
         <!-- <div class="linkTwo"><span class="links">Follow</span></div> -->
       </div>
