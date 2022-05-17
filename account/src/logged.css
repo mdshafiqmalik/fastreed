@@ -11,15 +11,13 @@
   border-radius: 15px;
   box-shadow: 0 0 11px 1px #ccc;
 }
-.authorProfile div{
+.authorProfile .topDiv, .authorProfile .bottomDiv{
   width: 100%;
 }
 .topDiv{
-  margin-bottom: 3%;
-  height: 62%;
+  border: 0;
+  height: 65%;
   background-color: #ccc;
-}
-.topDiv div{
   display: flex;
   flex-direction:row;
 }
@@ -27,12 +25,23 @@
   height: 100%;
   width: 40%;
   background-color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authorPic img{
+  width: 6em;
+  height: 6em;
+  border-radius: 1em;
 }
 .authorDetails{
   width: 60%;
+  height: 100%;
+  background-color: #bbb;
 }
 .bottomDiv{
-  height: 34%;
+  border: 0;
+  height: 35%;
   background-color: #bbb;
 }
 /****************/
