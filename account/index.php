@@ -22,7 +22,7 @@ session_start();
   <div id="userDiv" class="cont">
     <div class="authorProfile">
       <div class="topDiv">
-        <div class="authorPic"> <img src="" alt=""> </div>
+        <div class="authorPic"> <img src="../uploads/users/2022/7/25316532.jpg" alt=""> </div>
         <div class="authorDetails"></div>
       </div>
       <div class="bottomDiv">

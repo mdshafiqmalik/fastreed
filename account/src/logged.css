@@ -24,9 +24,10 @@
 .authorPic{
   height: 100%;
   width: 40%;
+  /* padding: .5em; */
   background-color: #aaa;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 .authorPic img{
