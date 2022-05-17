@@ -11,4 +11,27 @@
   border-radius: 15px;
   box-shadow: 0 0 11px 1px #ccc;
 }
+.authorProfile div{
+  width: 100%;
+}
+.topDiv{
+  margin-bottom: 3%;
+  height: 62%;
+  background-color: #ccc;
+}
+.topDiv div{
+  display: flex;
+  flex-direction:row;
+}
+.authorPic{
+  height: 100%;
+  width: 40%;
+}
+.authorDetails{
+  width: 60%;
+}
+.bottomDiv{
+  height: 34%;
+  background-color: #bbb;
+}
 /****************/

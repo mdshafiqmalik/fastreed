@@ -21,7 +21,14 @@ session_start();
   </div>
   <div id="userDiv" class="cont">
     <div class="authorProfile">
+      <div class="topDiv">
+        <div class="authorPic"></div>
+        <div class="authorDetails"></div>
+      </div>
 
+      <div class="bottomDiv">
+
+      </div>
     </div>
     <div class="featuredArticle">
 
