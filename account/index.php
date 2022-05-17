@@ -30,7 +30,7 @@ session_start();
           </div>
           <div class="userParam">
             <div class="userArticles">
-              <span class="userParameters">Artilces</span>
+              <span class="userParameters">Articles</span>
               <span class="values">239</span>
             </div>
             <div class="userFollowers">
@@ -46,7 +46,8 @@ session_start();
       </div>
       <div class="bottomDiv">
         <div class="linkOne"> <span class="links">Channels</span> </div>
-        <div class="linkTwo"><span class="links">Follow</span></div>
+        <div class="linkOne"> <span class="links">Edit</span> </div>
+        <!-- <div class="linkTwo"><span class="links">Follow</span></div> -->
       </div>
     </div>
     <div class="featuredArticle">

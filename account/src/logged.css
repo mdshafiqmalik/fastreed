@@ -93,7 +93,7 @@
   /* background-color: #bbb; */
 }
 .bottomDiv div{
-  padding-top: .2em;
+  padding-top: .3em;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -103,8 +103,9 @@
   padding: .7em 1.8em;
   width: 4.5em;
   border: 1px solid;
-  border-radius: 20px;
+  border-radius: 50px;
   text-align: center;
+  font-weight: bold;
 }
 .linkOne, .linkTwo{
   width: 50%;
