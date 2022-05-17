@@ -20,17 +20,8 @@ session_start();
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <div id="userDiv" class="cont">
-    <div class="content">
-      <div class="userSection">
-        <div class="userphoto">
-          <img src="../uploads/users/2022/7/25316532.jpg" alt="">
-        </div>
-        <div class="userDetails">
-          <span id="userFullName">Mohd Shafiq Malik</span>
-          <span id="userName">#MDSHAFIQ</span>
-          <span id="userWork">Software Developer at fastreed</span>
-        </div>
-      </div>
+    <div class="authorProfile">
+
     </div>
   </div>
 <!-- if (isset($_SESSION['userID'])) {
