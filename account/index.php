@@ -23,6 +23,9 @@ session_start();
     <div class="authorProfile">
 
     </div>
+    <div class="featuredArticle">
+
+    </div>
   </div>
 <!-- if (isset($_SESSION['userID'])) {
        include '../_.config/_s_db_.php';
