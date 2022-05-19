@@ -19,7 +19,9 @@ session_start();
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
-  <div id="userDiv" class="cont">
+
+<!-- Author Profile -->
+  <div id="" class="container">
     <div class="authorProfile">
       <div class="topDiv">
         <div class="authorPic"> <img src="../uploads/users/2022/7/25316532.jpg" alt=""> </div>
@@ -45,44 +47,17 @@ session_start();
         </div>
       </div>
       <div class="bottomDiv">
-        <div class="linkOne"> <span class="links">Create</span> </div>
-        <div class="linkOne"> <span class="links">Edit</span> </div>
+        <div id="linkOne"class="linkOne"> <span class="links">Create</span> </div>
+        <div id="linkTwo" class="linkOne"> <span class="links">Edit</span> </div>
         <!-- <div class="linkTwo"><span class="links">Follow</span></div> -->
       </div>
     </div>
-    <div class="featuredArticle">
+    <div class="featuredArticle content">
 
     </div>
   </div>
-<!-- if (isset($_SESSION['userID'])) {
-       include '../_.config/_s_db_.php';
-       $userID = $_SESSION['userID'];
-       $sql = "SELECT userProfile from user_data where userID = '$userID'";
-       $user_data = mysqli_query($db,$sql);
-       $row = $user_data->fetch_assoc();
-       $userPicArray = unserialize($row['userProfile']);
-      echo '<img height="30px" width="30px" src="/uploads/'.$userPicArray['year'].'/'.$userPicArray['month'].'/'.$userPicArray['id'].'.'.$userPicArray['ext'].'" alt="">';
-     }else {
-       include '../components/login.php';
-     }
- ?> -->
 
-    <!-- New Users -->
-<!-- <div class="content">
-  <span id="signUp" >Create An Account</span>
-  <br>
-  <form class="loginForm" action="" method="post">
-    <div class="loginFields">
-      <input id=""onkeyup="" type="email" name="" value="" placeholder="Full Name">
-    </div>
-    <div class="loginFields">
-      <input id=""onkeyup="" type="email" name="" value="" placeholder="Enter Email Or Phone">
-    </div>
-    <div class="loginSubmit">
-      <input type="submit" name="" value="SEND OTP">
-    </div>
-  </form>
-</div> -->
+</div>
   <script src="src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
   <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
   </body>

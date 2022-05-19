@@ -1,6 +1,7 @@
 <?php
 
 echo '
+<div id="userDiv" class="cont">
     <div class="content">
       <span id="login" >Login In</span>
       <br>
@@ -42,6 +43,7 @@ echo '
                       <span>Create An Account </span>
                       <img width="13px" width="13px"src="../assets/pics/svgs/plus.svg" alt="">
                     </button>
+                </div>
                 </div>
             ';
  ?>
