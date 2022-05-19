@@ -104,8 +104,7 @@
   /* background-color: #bbb; */
 }
 .bottomDiv div{
-  padding-top: .3em;
-
+  padding-top: .5em;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -121,7 +120,7 @@
   padding: .4em 0;
   width: 6em;
   border: 1px solid;
-  border-radius: 7px;
+  border-radius: 13px;
   text-align: center;
   font-weight: bold;
   font-size: 1.5em;
@@ -129,8 +128,15 @@
 .linkOne, .linkTwo{
   width: 50%;
 }
-
-.featuredArticle{
-
+.channels{
+  padding: 1em;
 }
+.channels .title{
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.popularArticle{
+  border: 1px solid;
+}
+
 /****************/
