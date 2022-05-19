@@ -118,12 +118,13 @@
     margin-left: .7em;
 }
 .links{
-  padding: .9em 1.8em;
+  padding: .4em 0;
   width: 6em;
   border: 1px solid;
   border-radius: 7px;
   text-align: center;
   font-weight: bold;
+  font-size: 1.5em;
 }
 .linkOne, .linkTwo{
   width: 50%;
