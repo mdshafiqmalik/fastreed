@@ -52,8 +52,32 @@ session_start();
         <!-- <div class="linkTwo"><span class="links">Follow</span></div> -->
       </div>
     </div>
-    <div class="channels">
+    <div class="channelsDiv">
       <span class="title">Channels</span>
+      <div class="channel">
+        <div class="channels">
+          <div class="channelImg">
+            <img src="../uploads/posts/2022/7/67895436.jpg" alt=" ">
+          </div>
+          <div class="channelDetail">
+            <span class="channelName">Dashing Blog</span>
+            <span class="articlesCount">1.6K Articles</span>
+            <div class="channelButtons"> <a href="#">Subscribe</a> </div> <!-- subscribe or create -->
+          </div>
+        </div>
+
+        <div class="channels">
+          <div class="channelImg">
+            <img src="../uploads/posts/2022/7/67529813.jpg" alt=" ">
+          </div>
+          <div class="channelDetail">
+            <span class="channelName">The Living Society</span>
+            <span class="articlesCount">160 Articles</span>
+            <div class="channelButtons"> <a href="#">Subscribe</a> </div>
+            <!-- subscribe or create  -->
+          </div>
+        </div>
+      </div>
 
     </div>
     <!-- <div class="popularArticle">

@@ -61,7 +61,7 @@
   /* align-items: center; */
 }
 #userType, #userFullName{
-  margin: .4em 0 0 .4em;
+  margin: .4em 0 0 .3em;
 }
 #userType{
   font-variant: inherit;
@@ -69,7 +69,7 @@
   color: #777;
 }
 #userFullName{
-
+  font-size: 1.3em;
 }
 .userParam{
   margin-top: .5em;
@@ -128,12 +128,66 @@
 .linkOne, .linkTwo{
   width: 50%;
 }
-.channels{
+.channelsDiv{
   padding: 1em;
 }
-.channels .title{
+.channelsDiv .title{
   font-weight: bold;
   font-size: 1.3em;
+}
+.channel{
+  margin-top: .6em;
+  padding: 1em;
+  border-radius: 15px;
+  box-shadow: 0 0 11px 1px #ccc;
+  display: flex;
+  flex-direction: column;
+}
+.channel .channels:not(:last-child){
+  border-bottom: 2px solid #777;
+}
+.channelImg{
+  width: 30%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.channelImg img{
+  width: 90px;
+  height: 90px;
+  border-radius: 200px;
+  background-color: #eee;
+}
+.channelDetail{
+  width: 70%;
+  padding: .7em;
+  font-weight: bold;
+  font-size: 1.15em;
+  display: flex;
+  flex-direction: column;
+}
+.articlesCount{
+  margin-top: .4em;
+  color: #555;
+  font-size: .8em;
+}
+.channelButtons{
+  display: flex;
+  align-items: center;
+  margin-top: .4em;
+}
+.channelButtons a{
+  border: 1px solid;
+  text-decoration: none;
+  padding: .2em .4em;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.channels{
+  display: flex;
+  flex-direction: row;
+  padding-top: .5em;
 }
 .popularArticle{
   border: 1px solid;
