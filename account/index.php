@@ -19,6 +19,12 @@ session_start();
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
+  <script type="text/javascript">
+var height = window.innerHeight;
+var width = window.innerWidth;
+document.write("height: "+height);
+document.write(" width: "+width);
+  </script>
 
 <!-- Author Profile -->
   <div id="" class="container">
