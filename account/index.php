@@ -62,10 +62,9 @@ session_start();
           <div class="channelDetail">
             <span class="channelName">Dashing Blog</span>
             <span class="articlesCount">1.6K Articles</span>
-            <div class="channelButtons"> <a href="#">Subscribe</a> </div> <!-- subscribe or create -->
+            <div class="channelButtons"> <a href="#">Subscribe</a> </div>
           </div>
         </div>
-
         <div class="channels">
           <div class="channelImg">
             <img src="../uploads/posts/2022/7/67529813.jpg" alt=" ">
@@ -74,15 +73,47 @@ session_start();
             <span class="channelName">The Living Society</span>
             <span class="articlesCount">160 Articles</span>
             <div class="channelButtons"> <a href="#">Subscribe</a> </div>
-            <!-- subscribe or create  -->
           </div>
         </div>
       </div>
-
     </div>
-    <!-- <div class="popularArticle">
 
-    </div> -->
+    <div class="popularArticles">
+      <span class="title">Populer Articles</span>
+      <div class="articlesDiv">
+        <div class="article">
+          <div class="image">
+            <img src="../uploads/posts/2022/7/67895436.jpg" alt="">
+          </div>
+          <div class="nameAndTime">
+          </div>
+          <div class="articleTitle">
+            <span>The Most  Places In the World</span>
+          </div>
+        </div>
+        <div class="article">
+          <div class="image">
+            <img src="" alt="">
+          </div>
+          <div class="nameAndTime">
+          </div>
+          <div class="articleTitle">
+            <span>The Most Beautiful Places In the World</span>
+          </div>
+        </div>
+        <div class="article">
+          <div class="image">
+            <img src="" alt="">
+          </div>
+          <div class="nameAndTime">
+          </div>
+          <div class="articleTitle">
+            <span>The Most Beautiful Places In the World</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
 </div>

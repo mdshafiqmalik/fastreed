@@ -128,10 +128,10 @@
 .linkOne, .linkTwo{
   width: 50%;
 }
-.channelsDiv{
+.channelsDiv, .popularArticles{
   padding: 1em;
 }
-.channelsDiv .title{
+.channelsDiv .title, .popularArticles .title{
   font-weight: bold;
   font-size: 1.3em;
 }
@@ -192,5 +192,51 @@
 .popularArticle{
   border: 1px solid;
 }
+.articlesDiv{
+  display: flex;
+  margin-top: .6em;
+  padding: 1em;
+  border-radius: 15px;
+  white-space: nowrap;
+  box-shadow: 0 0 11px 1px #ccc;
+  overflow: scroll;
 
+}
+.articlesDiv .article{
+  padding-bottom: .4em;
+  white-space: initial;
+  margin: .3em;
+  min-width: 160px;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 0 3px 2px #ccc;
+  justify-content: center;
+  align-items: center;
+}
+.article .image img{
+  min-height:150px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.article .nameAndTime{
+  height: 30px;
+}
+.articleTitle{
+  text-align: center;
+  font-weight: bold;
+  padding: 0em .3em;
+}
+.articleTitle span{
+  width: 70px;
+  text-align: center;
+}
+
+@media (max-width: 500px){
+.articlesDiv {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 /****************/
