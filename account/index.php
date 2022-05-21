@@ -29,6 +29,7 @@ session_start();
           <div class="userNameWork">
             <span id="userFullName">Jhon Doe</span>
             <span id="userType">Administator</span>
+            <span class="designation">Alaska, USA</span>
           </div>
           <div class="userParam">
             <div class="userArticles">

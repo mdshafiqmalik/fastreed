@@ -60,14 +60,15 @@
   /* justify-content: center; */
   /* align-items: center; */
 }
-#userType, #userFullName{
+#userType, #userFullName, .designation{
   margin: .4em 0 0 .3em;
 }
-#userType{
+#userType, .designation{
   font-variant: inherit;
   font-size: .9em;
   color: #777;
 }
+
 #userFullName{
   font-size: 1.3em;
 }
