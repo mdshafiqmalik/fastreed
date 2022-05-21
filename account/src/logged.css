@@ -197,6 +197,7 @@
   margin-right: .3em;
   outline: 0;
   border: 0;
+  color: purple;
 }
 .featuredArticle{
   margin: 1em;
@@ -223,7 +224,6 @@
   font-size: .8em;
   font-weight: bold;
   font-variant: small-caps;
-  background-color: none;
 }
 .featuredPost .post{
   font-size: 1em;
