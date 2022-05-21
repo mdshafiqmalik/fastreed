@@ -63,7 +63,9 @@ session_start();
         </div>
       </div>
     </div>
-
+    <br>
+    <hr>
+    <br>
     <div class="channelsDiv">
       <span class="title">Channels</span>
       <div class="channel">
@@ -90,7 +92,9 @@ session_start();
       </div>
     </div>
 
-
+    <br>
+    <hr>
+    <br>
     <div class="popularArticles">
       <div class="top">
         <select class="title select" name="filterOpt" id="filterOpt">
@@ -100,9 +104,9 @@ session_start();
         </select>
         <span class="title">Articles</span>
       </div>
+
       <div class="posts cont500">
         <div class="postBody">
-
           <div class="postPic"> <img src="/uploads/posts/2022/7/12095427.jpg" alt=""> </div>
           <div class="postTitle"><a href="" id="postTitle" href=""> How to get a full detail of your</a></div>
           <div class="extFoot">
