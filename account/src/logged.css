@@ -185,7 +185,6 @@
   padding: .25em .38em;
   font-size: .7em;
   border-radius: 5px;
-  text-transform: uppercase;
 }
 .channels{
   display: flex;
@@ -199,8 +198,8 @@
   margin-right: .3em;
   outline: 0;
   border: 0;
-  color: purple;
   background: white;
+  border-bottom: 1px solid #555;
 }
 .featuredArticle{
   margin: 1em;
