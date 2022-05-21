@@ -24,7 +24,7 @@ session_start();
   <div id="" class="container">
     <div class="authorProfile">
       <div class="topDiv">
-        <div class="authorPic"> <img src="../uploads/users/2022/7/25316533.jpg" alt=""> </div>
+        <div class="authorPic"> <img src="../uploads/users/2022/7/25316534.jpg" alt=""> </div>
         <div class="authorDetails">
           <div class="userNameWork">
             <span id="userFullName">Jhon Doe</span>
