@@ -47,8 +47,8 @@ session_start();
         </div>
       </div>
       <div class="bottomDiv">
-        <div id="linkOne"class="linkOne"> <span class="links">Create</span> </div>
-        <div id="linkTwo" class="linkOne"> <span class="links">Edit</span> </div>
+        <div id="linkOne"class="linkOne"> <span class="links">Follow</span> </div>
+        <div id="linkTwo" class="linkOne"> <span class="links">About</span> </div>
         <!-- <div class="linkTwo"><span class="links">Follow</span></div> -->
       </div>
     </div>
@@ -99,33 +99,6 @@ session_start();
           <option value="newlyAdded">Newest</option>
         </select>
         <span class="title">Articles</span>
-      </div>
-      <div class="posts cont500">
-        <div class="postBody">
-
-          <div class="postPic"> <img src="/uploads/posts/2022/7/12095427.jpg" alt=""> </div>
-          <div class="postTitle"><a href="" id="postTitle" href=""> How to get a full detail of your</a></div>
-          <div class="extFoot">
-            <span class="meta"><a id="channelName"  href="">Shafiq Hub</a></span>
-            <p class="dot">&#x2022;</p>
-            <span   class="meta"><a id="authorName" href="">Mohd Shafiq</a></span>
-            <p class="dot">&#x2022;</p>
-            <span id="pubTime" class="meta">1hr Ago</span>
-          </div>
-        </div>
-        <div class="postFooter">
-          <div class="footItems" id="react">
-            <div id="like" class="react"><img  class="footImages"  src="/assets/pics/svgs/thumbs-up.svg" alt=""></div>
-            <div id="likeCount" class="react rt footImages fontFam b sm ml_d4em">1</div>
-          </div>
-          <div class="footItems" >
-            <img id="comment"class="footImages"  src="/assets/pics/svgs/comment_notFilled_2.svg" alt="">
-            <div id="comentCount" class=" react rt footImages fontFam b sm ml_d4em">13</div>
-          </div>
-          <div class="footItems" id="share">
-            <img  class="footImages" src="/assets/pics/svgs/share_en.svg" alt="">
-          </div>
-        </div>
       </div>
       <div class="posts cont500">
         <div class="postBody">
