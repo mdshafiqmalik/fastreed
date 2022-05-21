@@ -90,6 +90,8 @@
 }
 .userParam .userParameters{
   color: #666;
+  font-size: .75em;
+  font-weight: bold;
 }
 .userParam .values{
   margin-top: .17em;
