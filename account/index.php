@@ -10,7 +10,7 @@ session_start();
     <?php include '../components/randVersion.php' ?>
     <link rel="stylesheet" href="src/style.css?v=<?php echo($randVersion); ?>">
     <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
-    <link rel="stylesheet" href="src/logged.css?v=<?php echo($randVersion); ?>">
+    <link rel="stylesheet" href="src/profile.css?v=<?php echo($randVersion); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
@@ -24,10 +24,10 @@ session_start();
   <div id="" class="container">
     <div class="authorProfile">
       <div class="topDiv">
-        <div class="authorPic"> <img src="../uploads/users/2022/7/25316532.jpg" alt=""> </div>
+        <div class="authorPic"> <img src="../uploads/users/2022/7/25316533.jpg" alt=""> </div>
         <div class="authorDetails">
           <div class="userNameWork">
-            <span id="userFullName">Shafiq Malik</span>
+            <span id="userFullName">Jhon Doe</span>
             <span id="userType">Administator</span>
           </div>
           <div class="userParam">
@@ -57,7 +57,7 @@ session_start();
       <div class="featuredPost">
         <span class="post">Hi Guys What are you doing I am here to make an egg</span>
         <div class="fpdetail">
-          <span class="channelName">Shafiq Hub</span>
+          <span class="channelName">Fast Hub</span>
           <span class="fpDot">&#x2022;</span>
           <span class="pubTime">1 hour Ago</span>
         </div>
@@ -74,7 +74,7 @@ session_start();
             <img src="../uploads/posts/2022/7/67895436.jpg" alt=" ">
           </div>
           <div class="channelDetail">
-            <span class="channelName">Dashing Blog</span>
+            <span class="channelName">Dream Hub</span>
             <span class="articlesCount">1.6K Articles</span>
             <div class="channelButtons"> <a href="#">Subscribe</a> </div>
           </div>
@@ -110,9 +110,9 @@ session_start();
           <div class="postPic"> <img src="/uploads/posts/2022/7/12095427.jpg" alt=""> </div>
           <div class="postTitle"><a href="" id="postTitle" href=""> How to get a full detail of your</a></div>
           <div class="extFoot">
-            <span class="meta"><a id="channelName"  href="">Shafiq Hub</a></span>
+            <span class="meta"><a id="channelName"  href="">Fast Hub</a></span>
             <p class="dot">&#x2022;</p>
-            <span   class="meta"><a id="authorName" href="">Mohd Shafiq</a></span>
+            <span   class="meta"><a id="authorName" href="">Jhon Doe</a></span>
             <p class="dot">&#x2022;</p>
             <span id="pubTime" class="meta">1hr Ago</span>
           </div>
