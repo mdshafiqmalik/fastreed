@@ -12,7 +12,7 @@
   /* width: 100%; */
   padding: 1em;
   border-radius: 15px;
-  box-shadow: 0 0 11px 1px #ccc;
+  box-shadow: 0 0 11px 1px #d2b2d5;
 }
 .content{
   margin: 1em;
@@ -31,13 +31,12 @@
 .authorPic{
   height: 100%;
   width: 38%;
-  /* padding: .5em; */
-  /* background-color: #aaa; */
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 }
 .authorPic img{
+  background-color: #eee;
+  min-height: 140px;
   width: 6.8em;
   max-height: 170px;
   border-radius: 1em;
@@ -123,11 +122,21 @@
   padding: .4em 0;
   width: 6em;
   border: 1px solid;
-  border-radius: 13px;
+  border-radius: 3px;
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;
 }
+.links a{
+  text-decoration: none;
+  color: #967e98;
+}
+.links:hover a, .links:hover{
+  color: white;
+  background-color: #3e7dcc;
+  cursor: pointer;
+}
+
 .linkOne, .linkTwo{
   width: 50%;
 }
@@ -207,15 +216,15 @@
   margin: 1em;
   padding: 1em;
   border-radius: 20px;
-  /* box-shadow: 0 0 11px 1px #ccc; */
-  background-color: purple;
+  box-shadow: 0 0 11px 1px #d2b2d5;
+  /* background-color: purple; */
 
 }
 .featuredArticle .title{
   font-size: .8em;
   color: white;
   font-weight: bold;
-  background-color: #9733a2;
+  background-color: #967e98;
   padding: .24em .4em;
   border-radius: 5px;
 }
@@ -224,7 +233,7 @@
 }
 .featuredPost .fpdetail{
   margin-top: .7em;
-  color: white;
+  /* color: white; */
   font-size: .8em;
   font-weight: bold;
   font-variant: small-caps;
@@ -232,7 +241,7 @@
 .featuredPost .post{
   font-size: 1em;
   font-weight: bold;
-  color: white;
+  /* color: white; */
 }
 .fpDot{
   margin: 0 .4em;
