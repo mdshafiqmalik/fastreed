@@ -233,7 +233,7 @@
 }
 .featuredPost .fpdetail{
   margin-top: .7em;
-  /* color: white; */
+  color: #444;
   font-size: .8em;
   font-weight: bold;
   font-variant: small-caps;
@@ -309,6 +309,7 @@
   font-family: var(--fontfam);
   font-size: .9em;
   font-weight: bold;
+  font-variant: small-caps;
   color: #666;
   text-transform: capitalize;
   /* width: 50%; */
