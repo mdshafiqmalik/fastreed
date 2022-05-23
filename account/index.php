@@ -21,7 +21,7 @@ session_start();
   </div>
 
 <!-- Author Profile Opened -->
-<!-- <div id="" class="container">
+<div id="" class="container">
   <div class="authorProfile">
     <div class="topDiv">
       <div class="authorPic"> <img src="../uploads/users/2022/7/25316534.jpg" alt=""> </div>
@@ -48,10 +48,10 @@ session_start();
       </div>
     </div>
     <div class="bottomDiv">
-      <div id="linkOne"class="linkOne"> <span class="links">Follow</span> </div>
-      <div id="linkTwo" class="linkOne"> <span class="links">Rate</span> </div>
+      <div id="linkOne"class="linkOne"> <span class="links"><a href="#">Follow</a> </span> </div>
+      <div id="linkTwo" class="linkOne"> <span class="links"> <a href="#">Rate</a> </span> </div>
     </div>
-  </div> -->
+  </div>
 <!-- Author Profile Closed -->
 <div id="" class="container">
   <div class="authorProfile">
@@ -62,6 +62,7 @@ session_start();
           <span id="userFullName">Jhon Doe</span>
           <span id="userType">Administator</span>
           <span class="designation">Alaska, USA</span>
+          <span class="designation">Joined 23-02-2022</span>
         </div>
         <div class="userParam">
           <div class="userArticles">

@@ -24,6 +24,7 @@
   padding: .3em 0em;
   display: flex;
   align-items: center;
+  border-bottom: .5px solid;
 }
 .navigation a span{
   font-size: .7em;

@@ -229,10 +229,10 @@
   border-radius: 5px;
 }
 .featuredPost{
-  padding: 1em .3em 0 .3em;
+  padding: 1.5em;
 }
 .featuredPost .fpdetail{
-  margin-top: .7em;
+  margin-top: 1em;
   color: #444;
   font-size: .8em;
   font-weight: bold;
@@ -241,6 +241,7 @@
 .featuredPost .post{
   font-size: 1em;
   font-weight: bold;
+
 }
 .fpDot{
   margin: 0 .4em;
