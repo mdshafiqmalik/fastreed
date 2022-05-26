@@ -9,7 +9,7 @@ echo '
   <input id=""onkeyup="" type="email" name="" value="" placeholder="Full Name">
 </div>
 <div class="loginFields">
-  <input id=""onkeyup="" type="email" name="" value="" placeholder="Enter Email Or Phone">
+  <input id=""onkeyup="" type="email" name="" value="" placeholder="Enter Email">
 </div>
 <div class="loginSubmit">
   <input type="submit" name="" value="SEND OTP">

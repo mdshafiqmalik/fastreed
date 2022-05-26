@@ -1,6 +1,10 @@
 <?php
-echo '
-<div id="" class="container">
+$containerStart = '<div id="" class="container">';
+$divStop = '</div>';
+$breakline = '<br />';
+$horizontalLine = '<hr>';
+$selfProfile = '
+<!-- Self Profile Opened -->
   <div class="authorProfile">
     <div class="topDiv">
       <div class="authorPic"> <img src="../uploads/users/2022/7/25316534.jpg" alt=""> </div>
@@ -9,6 +13,7 @@ echo '
           <span id="userFullName">Jhon Doe</span>
           <span id="userType">Administator</span>
           <span class="designation">Alaska, USA</span>
+          <span class="designation">Joined 23-02-2022</span>
         </div>
         <div class="userParam">
           <div class="userArticles">
@@ -27,11 +32,47 @@ echo '
       </div>
     </div>
     <div class="bottomDiv">
-      <div id="linkOne"class="linkOne"> <span class="links">Follow</span> </div>
-      <div id="linkTwo" class="linkOne"> <span class="links">Rate</span> </div>
-      <!-- <div class="linkTwo"><span class="links">Follow</span></div> -->
+      <div id="linkOne"class="linkOne"> <span class="links"> <a href="#">Create</a></span> </div>
+      <div id="linkTwo" class="linkOne"> <span class="links"> <a href="#">Settings</a> </span> </div>
     </div>
   </div>
+<!-- Self Profile Closed -->';
+
+$authorProfile = '<!-- Author Profile Opened -->
+  <div class="authorProfile">
+    <div class="topDiv">
+      <div class="authorPic"> <img src="../uploads/users/2022/7/25316534.jpg" alt=""> </div>
+      <div class="authorDetails">
+        <div class="userNameWork">
+          <span id="userFullName">Jhon Doe</span>
+          <span id="userType">Administator</span>
+          <span class="designation">Alaska, USA</span>
+          <span class="designation">Joined 23-02-2022</span>
+        </div>
+        <div class="userParam">
+          <div class="userArticles">
+            <span class="userParameters">Articles</span>
+            <span class="values">239</span>
+          </div>
+          <div class="userFollowers">
+            <span class="userParameters">Follows</span>
+            <span class="values">12M</span>
+          </div>
+          <div class="userRating">
+            <span class="userParameters">Rating</span>
+            <span class="values">9.8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottomDiv">
+      <div id="linkOne"class="linkOne"> <span class="links"><a href="#">Follow</a> </span> </div>
+      <div id="linkTwo" class="linkOne"> <span class="links"> <a href="#">Rate</a> </span> </div>
+    </div>
+  </div>
+<!-- Author Profile Closed -->';
+
+$featuredArticle = '<!-- Featured Article Opened -->
   <div class="featuredArticle">
     <span class="title">Featured Article</span>
     <div class="featuredPost">
@@ -43,9 +84,9 @@ echo '
       </div>
     </div>
   </div>
-  <br>
-  <hr>
-  <br>
+<!-- Featured Article Closed -->';
+
+$channels = '<!-- Channels Open -->
   <div class="channelsDiv">
     <span class="title">Channels</span>
     <div class="channel">
@@ -71,10 +112,9 @@ echo '
       </div>
     </div>
   </div>
+<!-- Channels Close -->';
 
-  <br>
-  <hr>
-  <br>
+$articles = '<!-- Popular Articles Open -->
   <div class="popularArticles">
     <div class="top">
       <select class="title select" name="filterOpt" id="filterOpt">
@@ -112,6 +152,6 @@ echo '
       </div>
     </div>
   </div>
-</div>
-';
+<!-- Popular Articles Close -->';
+
  ?>

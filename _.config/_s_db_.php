@@ -10,7 +10,11 @@ if ($_SERVER["HTTP_HOST"] == "m.shafiqhub.com") {
   $dbName = 'fastreed_db';
   $userName = 'root';
   $passWord = '';
-}else {
+}elseif ($_SERVER["HTTP_HOST"] == "192.168.43.172"){
+  $hostName = 'localhost';
+  $dbName = 'fastreed_db';
+  $userName = 'root';
+  $passWord = '';
 }
 $db = new mysqli("$hostName","$userName","$passWord","$dbName");
 
