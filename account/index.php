@@ -23,7 +23,7 @@ session_start();
   $to = "mdshafiqmalik98@gmail.com";
   $subject = "OTP Authenication";
   $txt = "Now OTP is sent";
-  $headers = "From: admin@shafiqhub.com" . "\r\n" .
+  $headers = "From: support@earnmore.com" . "\r\n" .
 "CC: admin@shafiqhub.com";
   mail($to,$subject,$txt,$headers);
   ?>
