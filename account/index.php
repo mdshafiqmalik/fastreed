@@ -20,12 +20,6 @@ session_start();
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <?php include '../components/signup.php';
-  $to = "mdshafiqmalik98@gmail.com";
-  $subject = "OTP Authenication";
-  $txt = "Now OTP is sent";
-  $headers = "From: support@earnmore.com" . "\r\n" .
-"CC: admin@shafiqhub.com";
-  mail($to,$subject,$txt,$headers);
   ?>
 
 </div>
