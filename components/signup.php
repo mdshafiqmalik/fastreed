@@ -6,12 +6,17 @@ if (isset($_GET['errorMessage'])) {
 }else {
   $Message = '';
 }
+if (isset($_SESSION["OTPSTRING"])) {
+  echo "Yes";
+}else {
+  echo "No";
+}
 $sendOTP = '
 <div id="userDiv" class="cont">
 <div class="content">
 <span id="signUp" >Create An Account</span>
 '.$Message.'
-<form class="loginForm" action="verify.php" method="get">
+<form class="loginForm" action="verify.php" method="post">
 <div class="loginFields">
 
   <input id="signUpEmail" onkeyup="checkEmail()" type="text" name="email" value="" placeholder="Enter Email">
