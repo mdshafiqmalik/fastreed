@@ -17,8 +17,10 @@ function checkEmail(){
   var isMail = re.test(enteredEmail);
   if (isMail) {
     document.getElementById('estatus').innerHTML = "&#10004";
+    document.getElementById('estatus').style.color = "green";
   }else {
     document.getElementById('estatus').innerHTML = "&#10060";
+    document.getElementById('estatus').style.color = "red";
 
   }
 }
