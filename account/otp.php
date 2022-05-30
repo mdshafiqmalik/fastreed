@@ -12,8 +12,6 @@ if (isset($_POST['email'])) {
   }else {
     header("Location: /account?errorMessage=$errorMessage");
   }
-}else {
-  header("Location: /account?errorMessage=$errorMessage");
 }
 
 function createOTP($keyLen){
