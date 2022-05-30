@@ -11,6 +11,17 @@ function change(){
     document.getElementById('password').type = "password";
   }
 }
+function checkEmail(){
+  var enteredEmail = document.getElementById('signUpEmail').value;
+  var re = /\S+@\S+\.\S+/;
+  var isMail = re.test(enteredEmail);
+  if (isMail) {
+    document.getElementById('estatus').innerHTML = "&#10004";
+  }else {
+    document.getElementById('estatus').innerHTML = "&#10060";
+
+  }
+}
 
 function changeField() {
   var EPField = document.getElementById('emailOrPassword');

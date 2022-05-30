@@ -15,7 +15,6 @@ session_start();
     <title></title>
   </head>
   <body>
-
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>

@@ -126,10 +126,13 @@
 .createAccount span{
   margin-right: .6em;
 }
-/* ********* */
-<<<<<<< HEAD
-=======
 
+/* Sign Up */
+
+#errorMessage{
+  width: 100%;
+  max-width: 250px;
+}
 
 /* Logged Users */
 .backPhoto{
@@ -148,4 +151,3 @@
   border: 5px solid white;
 }
 /****************/
->>>>>>> 14be5849aecadf3750231bd6a579b1246b6da322
