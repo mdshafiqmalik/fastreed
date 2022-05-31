@@ -1,5 +1,12 @@
 <?php
 session_start();
+$sessionTimeout = 30;
+$sessionEXP = $sessionTimeout + $_SESSION['SENTTIME'];
+if (time() > $sessionEXP) {
+   unset($_SESSION["OTPSTRING"]);
+   unset($_SESSION["SENTTIME"]);
+}
+
     if (isset($_SESSION["OTPSTRING"])) {
       $otpSent = '
       <div id="userDiv" class="cont">

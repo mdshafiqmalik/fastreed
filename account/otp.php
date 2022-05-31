@@ -5,7 +5,9 @@ if (isset($_POST['email'])) {
   if (filter_var("$email", FILTER_VALIDATE_EMAIL)) {
     $randString = createOTP(6);
     session_start();
-    $_SESSION["OTPSTRING"] = $randString;header("Location: /account/verify.php");
+    $_SESSION["OTPSTRING"] = $randString;
+    $_SESSION["SENTTIME"] = time();
+    header("Location: /account/verify.php");
     }else {
       header("Location: /account?errorMessage= Try Again");
     }

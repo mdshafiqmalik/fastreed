@@ -18,7 +18,12 @@ function checkEmail(){
   if (isMail) {
     document.getElementById('estatus').innerHTML = "&#10004";
     document.getElementById('estatus').style.color = "green";
+  document.getElementById("submitButton").removeAttribute("disabled");
+    document.getElementById("submitButton").style.background = "#000";
   }else {
+    const att = document.createAttribute("disabled");
+    document.getElementById("submitButton").setAttributeNode(att);
+    document.getElementById("submitButton").style.background = "#aaa";
     document.getElementById('estatus').innerHTML = "&#10060";
     document.getElementById('estatus').style.color = "red";
 

@@ -22,7 +22,7 @@ if (isset($_SESSION["OTPSTRING"])) {
     <span id="estatus"></span>
   </div>
   <div class="loginSubmit">
-    <input type="submit" name="" value="SEND OTP">
+    <input id="submitButton" type="submit" name="" value="SEND OTP">
   </div>
   </form>
   </div>
