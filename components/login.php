@@ -17,11 +17,11 @@ echo '
           echo '</span>
         </div>
         <div class="loginFields" id="emailField">
-          <select name="countryCode" id="countryCode" style="display:none;">';
-            include '../components/countryCodes.php';
+          <!-- <select name="countryCode" id="countryCode" style="display:none;"> -->';
+            // include '../components/countryCodes.php';
             echo '
             </select>
-                      <input id="emailOrPassword" type="text" onkeyup="changeField()"name="username" value="" placeholder="Username or Phone">
+                      <input id="emailOrPassword" type="text" onkeyup="changeField()"name="usernameOrEMail" value="" placeholder="Email or Username">
                     </div>
                     <div class="loginFields">
                       <input id="password" type="password" name="password" value="" placeholder="Password">
@@ -30,6 +30,7 @@ echo '
                         <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
                       </span>
                     </div>
+                    <div class="rememberMe"><input id="rememberMe" type="checkbox" name="rememberMe" value="true"> Remember Me</div>
                     <div class="loginSubmit">
                       <input type="submit" name="" value="LOGIN">
                       <a href="#">Forgotten Password?</a>

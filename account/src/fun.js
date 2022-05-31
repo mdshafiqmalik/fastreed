@@ -30,20 +30,20 @@ function checkEmail(){
   }
 }
 
-function changeField() {
-  var EPField = document.getElementById('emailOrPassword');
-  var countryCode = document.getElementById('countryCode');
-  var x = EPField.value;
-  var regex=/^[0-9]+$/;
-  if (x.match(regex)) {
-    EPField.type = "number";
-    EPField.name = "phone";
-    countryCode.style.display ="flex";
-    EPField.style.justifyContent = "center";
-  }else {
-    EPField.type = "text";
-    EPField.name = "username";
-    countryCode.style.display ="none";
-    EPField.style.justifyContent = "flex-start";
-  }
-}
+// function changeField() {
+//   var EPField = document.getElementById('emailOrPassword');
+//   var countryCode = document.getElementById('countryCode');
+//   var x = EPField.value;
+//   var regex=/^[0-9]+$/;
+//   if (x.match(regex)) {
+//     EPField.type = "number";
+//     EPField.name = "phone";
+//     countryCode.style.display ="flex";
+//     EPField.style.justifyContent = "center";
+//   }else {
+//     EPField.type = "text";
+//     EPField.name = "username";
+//     countryCode.style.display ="none";
+//     EPField.style.justifyContent = "flex-start";
+//   }
+// }

@@ -1,6 +1,3 @@
-<?php
-session_start();
- ?>
 <!DOCTYPE html>
 
 
@@ -18,7 +15,24 @@ session_start();
   <div class="navigation">
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
-  <?php include '../components/signup.php';
+  <?php
+  // if (isset($_COOKIE[""])) {
+  //   Get Cookie Data
+  //   if (cookieNotExpires) {
+  //     if (ifHaveSession) {
+  //       Get Session variable
+  //     }else {
+  //       set Session variable and Login
+  //     }
+  //   }else {
+  //     include '../components/signup.php';
+  //   }
+  // }else {
+  //   include '../components/signup.php';
+  // }
+
+  include '../components/login.php';
+
   ?>
 
 </div>

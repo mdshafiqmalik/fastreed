@@ -1,4 +1,6 @@
 <?php
+session_start();
+include 'uniSession.php';
 
 if (isset($_GET['errorMessage'])) {
   $Message ='<br><div id="errorMessage">
@@ -7,6 +9,7 @@ if (isset($_GET['errorMessage'])) {
 }else {
   $Message = '';
 }
+
 if (isset($_SESSION["OTPSTRING"])) {
   header("Location: /account/verify.php");
 }else {
