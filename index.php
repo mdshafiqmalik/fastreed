@@ -1,5 +1,4 @@
 <?php
-include 'account/session.php';
 include 'components/randVersion.php';
  ?>
 <!DOCTYPE html>

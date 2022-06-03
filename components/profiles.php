@@ -1,8 +1,10 @@
 <?php
 $containerStart = '<div id="" class="container">';
 $divStop = '</div>';
+
 $breakline = '<br />';
 $horizontalLine = '<hr>';
+
 $selfProfile = '
 <!-- Self Profile Opened -->
   <div class="authorProfile">

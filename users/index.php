@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php include '../components/uniSession.php'; ?>
 
 <html lang="en" dir="ltr">
   <head>
@@ -13,26 +13,16 @@
   </head>
   <body>
   <div class="navigation">
-    <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
+    <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
   </div>
   <?php
-  // if (isset($_COOKIE[""])) {
-  //   Get Cookie Data
-  //   if (cookieNotExpires) {
-  //     if (ifHaveSession) {
-  //       Get Session variable
-  //     }else {
-  //       set Session variable and Login
-  //     }
-  //   }else {
-  //     include '../components/signup.php';
-  //   }
+  // if (isset($_COOKIE['userID'])) {
+  //   $UID = $_COOKIE['userID'];
+  //   $cookietime = $_COOKIE['cookieTime'];
+  //   $userEmail = $_COOKIE['userEmail'];
   // }else {
-  //   include '../components/signup.php';
+    include '../components/signup.php';
   // }
-
-  include '../components/login.php';
-
   ?>
 
 </div>

@@ -6,16 +6,15 @@ echo '
       <span id="login" >Login In</span>
       <br>
       <form class="loginForm" action="auth.php" method="post">
-        <div id="message"class="">
+        ';
 
-          <span id="">';
+          if (isset($_GET['errorMessage'])) {
+            $message = $_GET['errorMessage'];
+             echo '<div id="errorMessage"class="">
 
-          if (isset($_GET['message'])) {
-            $message = $_GET['message'];
-             echo "$message";
+               <span id="">'.$message.'</span></div>';
           }
-          echo '</span>
-        </div>
+          echo '
         <div class="loginFields" id="emailField">
           <!-- <select name="countryCode" id="countryCode" style="display:none;"> -->';
             // include '../components/countryCodes.php';

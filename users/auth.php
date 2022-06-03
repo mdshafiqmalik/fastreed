@@ -1,6 +1,6 @@
 <?php
-include '../_.config/_s_db_.php';
 session_start();
+include '../_.config/_s_db_.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST['password'];
     $UsernameOrEMail = $_POST['usernameOrEMail'];
@@ -31,15 +31,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'userJoiningDate' => $row['userJoiningDate'],
             'userType' => $row['userType'],
            );
-           $hashedUserID  = password_hash($userDetail['userID'], PASSWORD_DEFAULT);
-           if ($_POST['rememberMe']) {
-             $_SESSION['userDetail'] = $userDetail['userID'];
-             // header("Location: /account/profile.php");
-             if (!isset($_COOKIE)) {
-               $_SESSION['userDetail'] = $userDetail['userID'];
-                setcookie('userID', $hashedUserID, time() + (100), "/");
-                // header("Location: /account/profile.php");
+           if (isset($_POST['rememberMe'])) {
+             if ($_POST['rememberMe']) {
+               header("Location: /account/profile.php");
+               if (isset($_COOKIE['userID'])) {
+                 $_SESSION['userID'] = $_COOKIE['userID'];
+                 $_SESSION['userEmail'] = $_COOKIE['userEmail'];
+               }else {
+                 include '../_.config/sjdhfjsadkeys.php';
+                 $encUID = openssl_encrypt($userDetail['userID'], $ciphering,
+                 $encryption_key, $options, $encryption_iv);
+                 $encEmail = openssl_encrypt($userDetail['userEmail'], $ciphering,
+                 $encryption_key, $options, $encryption_iv);
+                 setcookie('userID', $encUID, time() + (86400 * 30), "/");
+                 setcookie('userEmail', $encEmail, time() + (86400 * 30), "/");
+                 $_SESSION['userID'] = $COOKIE['userID'];
+                 $_SESSION['userID'] = $COOKIE['userEmail'];
+                  header("Location: /account/profile.php");
+               }
+             }else {
+               $_SESSION['userID'] = $userDetail['userID'];
+               $_SESSION['userEmail'] = $userDetail['userEmail'];
+               header("Location: /account/profile.php");
              }
+
+           }else {
+             $_SESSION['userID'] = $userDetail['userID'];
+             $_SESSION['userEmail'] = $userDetail['userEmail'];
+             header("Location: /account/profile.php");
            }
 
           }else {
