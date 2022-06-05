@@ -21,11 +21,10 @@
   //   $cookietime = $_COOKIE['cookieTime'];
   //   $userEmail = $_COOKIE['userEmail'];
   // }else {
-    include '../components/signup.php';
+    header("Location: register.php");
   // }
   ?>
 
-</div>
   <script src="src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
   <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
   </body>

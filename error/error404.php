@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php include '../components/rand.php'; ?>
+    <?php include '../components/randVersion.php'; ?>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -9,6 +9,7 @@
 }
 #login, #signUp{
   margin-top: 1em;
+  margin-bottom: .7em;
   font-weight: bold;
   font-size: 1.3em;
 }
@@ -45,11 +46,15 @@
   color: black;
 }
 #tc{
-  font-size: .8em;
+  font-size: .9em;
   font-weight:bold;
+  margin-left: .3em;
+  max-width: 300px;
 }
 .tc{
   margin: .4em 1.5em .2em .6em;
+  display: flex;
+  align-items: center;
 }
 #passwordField{
   margin-bottom: 1em;
@@ -179,7 +184,7 @@ margin-right: .7em;
   font-weight: bold;
   color: green;
 }
-#submitButton, #verifyOTP{
+#verifyOTP{
   background-color: rgb(170,170,170);
 }
 /* Logged Users */

@@ -155,5 +155,7 @@ $articles = '<!-- Popular Articles Open -->
     </div>
   </div>
 <!-- Popular Articles Close -->';
-
+echo "$containerStart";
+echo "$authorProfile";
+echo "$divStop";
  ?>

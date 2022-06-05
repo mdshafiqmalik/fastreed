@@ -11,8 +11,10 @@ function change(){
     document.getElementById('password').type = "password";
   }
 }
+
 let userExist;
 function checkUsername(){
+
   var userName = document.getElementById('username').value;
   var userStatus = document.getElementById('UNS');
   var haveSpace = hasWhiteSpace(userName);
@@ -28,7 +30,7 @@ function checkUsername(){
         }else {
           userExist = true; //user not exist
           // userStatus.style.display = "none";
-          userStatus.innerHTML = "Username Accepted";
+          userStatus.innerHTML = "Username Available";
           userStatus.style.color =  "#20e120";
         }
       });
@@ -76,19 +78,30 @@ function checkEmail(){
   return isEmail;
 }
 
-function  checkPassword() {
+function checkPassword() {
+  let i;
   let password =   document.getElementById('password');
   let pStat = document.getElementById('PMS');
   if (password.value.length > 8) {
     pStat.innerHTML = "Password Accepted";
     pStat.style.color =  "#20e120";
-    let i = true;
+    i = true;
   }else {
     pStat.innerHTML = "Min 8 Letters"
     pStat.style.color= "red";
     i = false;
   }
   return i;
+}
+function isChecked(){
+  let j;
+  let checkBox = document.getElementById("checkBox");
+  if (checkBox.checked == 1) {
+   j = true;
+  }else {
+    j = false;
+  }
+  return j;
 }
 
 function checkOTP(){
@@ -121,3 +134,11 @@ function checkOTP(){
 //     EPField.style.justifyContent = "flex-start";
 //   }
 // }
+
+function checkButton(){
+  if (checkUsername() && checkEmail() && checkPassword() && checkBox()) {
+    var verifyButton = document.getElementById('verifyOTP');
+    verifyButton.style.background = "#000";
+    verifyButton.removeAttribute("disabled");
+  }
+}
