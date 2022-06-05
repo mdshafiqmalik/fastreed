@@ -5,10 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST['password'];
     $UsernameOrEMail = $_POST['usernameOrEMail'];
     if (empty($UsernameOrEMail)||ctype_space($UsernameOrEMail)) {
-        header("Location: /account/?message=Enter Username Or Email"); // Check if Username is empty
+        header("Location: login.php?message=Enter Username Or Email"); // Check if Username is empty
     }else {
       if (empty($password)||ctype_space($password)) { // Check if password is  empty
-        header("Location: /account/?message=Enter Password");
+        header("Location: login.php?message=Enter Password");
       }else {
         $sanPassword = sanitizeData($password);
         $sanitizeUsername = sanitizeData($UsernameOrEMail);
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            );
            if (isset($_POST['rememberMe'])) {
              if ($_POST['rememberMe']) {
-               header("Location: /account/profile.php");
+               header("Location: profile.php");
                if (isset($_COOKIE['userID'])) {
                  $_SESSION['userID'] = $_COOKIE['userID'];
                  $_SESSION['userEmail'] = $_COOKIE['userEmail'];
@@ -47,30 +47,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                  setcookie('userEmail', $encEmail, time() + (86400 * 30), "/");
                  $_SESSION['userID'] = $COOKIE['userID'];
                  $_SESSION['userID'] = $COOKIE['userEmail'];
-                  header("Location: /account/profile.php");
+                  header("Location: profile.php");
                }
              }else {
                $_SESSION['userID'] = $userDetail['userID'];
                $_SESSION['userEmail'] = $userDetail['userEmail'];
-               header("Location: /account/profile.php");
+               header("Location: profile.php");
              }
 
            }else {
              $_SESSION['userID'] = $userDetail['userID'];
              $_SESSION['userEmail'] = $userDetail['userEmail'];
-             header("Location: /account/profile.php");
+             header("Location: profile.php");
            }
 
           }else {
-            header("Location: /account/?message=Incorrect Password");
+            header("Location: login.php?message=Incorrect Password");
           }
         }else {
-          header("Location: /account/?message=Incorrect Username or Email"); // Check if email and username exist
+          header("Location: login.php?message=Incorrect Username or Email"); // Check if email and username exist
         }
        }
     }
   }else {
-    header("Location: /account/"); // Check if form is not submitted
+    header("Location: login.php"); // Check if form is not submitted
   }
 
 // }

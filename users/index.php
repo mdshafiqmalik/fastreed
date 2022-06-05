@@ -21,7 +21,7 @@
   //   $cookietime = $_COOKIE['cookieTime'];
   //   $userEmail = $_COOKIE['userEmail'];
   // }else {
-    header("Location: register.php");
+    header("Location: login.php");
   // }
   ?>
 

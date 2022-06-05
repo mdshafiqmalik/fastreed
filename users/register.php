@@ -34,14 +34,14 @@
     <span id="UNS" class="stat"></span>
     <div class="loginFields">
 
-      <input id="username" onkeyup="checkUsername()" type="text" name="username" value="" placeholder="Username" required>
-      <span id="usernameStatus"class="status"></span>
+      <input width="100%" id="username" onkeyup="checkUsername()" type="text" name="username" value="" placeholder="Username" required>
+      <!-- <span id="usernameStatus"class="status"></span> -->
     </div>
 
     <span id="EMS" class="stat"></span>
     <div class="loginFields">
       <input id="signUpEmail" onkeyup="checkEmail()" type="text" name="email" value="" placeholder="E-mail" required>
-      <span id="estatus"></span>
+      <!-- <span id="estatus"></span> -->
     </div>
 
     <span id="PMS" class="stat"></span>
@@ -59,7 +59,14 @@
     <div class="loginSubmit">
       <input id="submitButton" type="submit" name="" value="SEND OTP">
     </div>
+    <br>
+    <div class="or">
+      <span class="">Or</span>
+    </div>
     </form>
+    <a href="login"><button class="createAccount">
+      <span>Log In</span>
+    </button></a>
     </div>
   </body>
   <script src="src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
