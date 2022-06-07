@@ -18,11 +18,17 @@
   </div>
   <?php
   if (isset($_SESSION["userID"])) {
-    header("Location: ../profile");
+    echo '<script type="text/javascript">
+      document.location = "../profile";
+    </script>';
   }elseif(isset($_COOKIE["userID"])) {
-    header("Location: ../profile");
+    echo '<script type="text/javascript">
+      document.location = "../profile";
+    </script>';
   }else {
-    header("Location: login");
+    echo '<script type="text/javascript">
+      document.location = "login";
+    </script>';
   }
   ?>
 
