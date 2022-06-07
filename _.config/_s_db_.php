@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Kolkata');
 if ($_SERVER["HTTP_HOST"] == "m.shafiqhub.com") {
   $hostName = 'db5007199941.hosting-data.io';
   $dbName = 'dbs5934513';

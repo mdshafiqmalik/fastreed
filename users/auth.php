@@ -5,10 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $UsernameOrEMail = $_POST['usernameOrEMail'];
     if (empty($UsernameOrEMail)||ctype_space($UsernameOrEMail)) {
-        header("Location: ../login?message=Enter Username Or Email"); // Check if Username is empty
+        header("Location: ../login/?message=Enter Username Or Email"); // Check if Username is empty
     }else {
       if (empty($password)||ctype_space($password)) { // Check if password is  empty
-        header("Location: ../login.php?message=Enter Password");
+        header("Location: ../login/?message=Enter Password");
       }else {
         $sanPassword = sanitizeData($password);
         $sanitizeUsername = sanitizeData($UsernameOrEMail);
@@ -40,15 +40,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            }
 
           }else {
-            header("Location: ../login?message=Incorrect Password");
+            header("Location: ../login/?message=Incorrect Password");
           }
         }else {
-          header("Location: ../login?message=Incorrect Username or Email"); // Check if email and username exist
+          header("Location: ../login/?message=Incorrect Username or Email"); // Check if email and username exist
         }
        }
     }
   }else {
-    header("Location: ../login"); // Check if form is not submitted
+    header("Location: ../login/"); // Check if form is not submitted
   }
 
 // }

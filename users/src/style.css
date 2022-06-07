@@ -69,7 +69,7 @@
   max-width: 350px;
   margin: .2em .5em;
   width: 90%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #777;
 }
 .loginSubmit{
   border:0;
@@ -114,6 +114,9 @@
   background-color: #06544e;
   font-weight: bold;
   border: 1px solid;
+}
+.butLink{
+  text-decoration: none;
 }
 #countryCode{
   width: 25%;

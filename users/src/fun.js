@@ -11,6 +11,39 @@ function change(){
     document.getElementById('password').type = "password";
   }
 }
+// window.onload = function(){
+//     let errorMessage = document.getElementById('errorMessage');
+//   if (!errorMessage) {
+//   }else {
+//     setTimeout(function(){
+//       errorMessage.style.display = "none";
+//     },3000);
+//   }
+// }
+function checkFullName(){
+  var fullName = document.getElementById('fullName').value;
+  var userStatus = document.getElementById('FNS');
+  var hasDigit = hasNumber(fullName);
+  var hasSpecialChar = hasSpecialChars(fullName);
+  var hasTwoWords = hasTwoWord(fullName);
+  if (hasDigit) {
+    userStatus.innerHTML = "Number Not Allowed";
+    userStatus.style.color =  "red";
+  }else {
+    if (hasSpecialChar) {
+      userStatus.innerHTML = "Special Chars Not Allowed";
+      userStatus.style.color =  "red";
+    }else {
+      if (hasTwoWords) {
+        userStatus.innerHTML = "Name Accepted";
+        userStatus.style.color =  "#20e120";
+      }else {
+        userStatus.innerHTML = "Two Words Required";
+        userStatus.style.color =  "red";
+      }
+    }
+  }
+}
 
 let userExist;
 function checkUsername(){
@@ -81,20 +114,31 @@ function checkEmail(){
 }
 
 function checkPassword() {
-  let i;
-  let password =   document.getElementById('password');
+  let Password =   document.getElementById('password');
   let pStat = document.getElementById('PMS');
-  if (password.value.length > 8) {
-    pStat.innerHTML = "Password Accepted";
-    pStat.style.color =  "#20e120";
-    i = true;
-  }else {
-    pStat.innerHTML = "Min 8 Letters"
-    pStat.style.color= "red";
-    i = false;
-  }
-  return i;
+  var hasDigit = hasNumber(Password);
+  var hasSpecialChar = hasSpecialChars(Password);
+  console.log(hasDigit);
+  console.log(hasSpecialChar);
+    if (hasDigit) {
+      if (hasSpecialChar) {
+        if (password.length > 8) {
+          pStat.innerHTML = "Strong Password"
+          pStat.style.color= "20e120";
+        }else {
+          pStat.innerHTML = "Min length is 8"
+          pStat.style.color= "red";
+        }
+      }else {
+        pStat.innerHTML = "Atleast One Special Char"
+        pStat.style.color= "red";
+      }
+    }else {
+      pStat.innerHTML = "Atleast One Number"
+      pStat.style.color= "red";
+    }
 }
+
 function isChecked(){
   let j;
   let checkBox = document.getElementById("checkBox");
@@ -138,6 +182,28 @@ function checkOTP(){
 // }
 function hasWhiteSpace(data){
   return data.includes(' ');
+}
+function hasNumber(string){
+  return /\d/.test(string);
+}
+
+function hasSpecialChars(str) {
+  const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  return specialChars.test(str);
+}
+function hasUpperandLowerCase(str){
+  const upandlow = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$/;
+  return upandlow.test(str);
+}
+function hasTwoWord(name) {
+    var matches = name.match(/\b[^\d\s]+\b/g);
+    if (matches && matches.length >= 2) {
+        //two or more words
+        return true;
+    } else {
+        //not enough words
+        return false;
+    }
 }
 function checkButton(){
   if (checkUsername() && checkEmail() && checkPassword() && checkBox()) {

@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('Asia/Kolkata');
+
 include '_.config/_s_db_.php';
 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
     if ($link->connect_error) {
@@ -25,7 +25,7 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
           $comments = mysqli_num_rows($commentsData);
 
           // get author name
-          $selectPostAuthor = "SELECT * FROM fast_users Where userID = '$postUserID'";
+          $selectPostAuthor = "SELECT * FROM user_credentials Where userID = '$postUserID'";
           $authorData = mysqli_query($link, $selectPostAuthor);
           $authorArray = $authorData->fetch_assoc();
           $authorName = $authorArray['userFullName'];

@@ -6,6 +6,13 @@ if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
     document.location = "../profile";
   </script>';
 }
+if (isset($_GET['message'])) {
+  $Message ='<div id="errorMessage">
+  <span style="color: red">'.$_GET['message'].'</span></div>
+  ';
+}else {
+  $Message = '';
+}
  ?>
 <html lang="en" dir="ltr">
   <head>
@@ -24,6 +31,7 @@ if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
         <span id="login">Log In</span>
         <br>
         <form class="loginForm" action="../users/auth.php" method="post">
+          <?php echo $Message; ?>
           <span id="ULNS" class="stat"></span>
           <div class="loginFields" id="emailField">
             <input id="emailOrPassword"type="text" onkeyup="" name="usernameOrEMail" value="" placeholder="Email Or Username">
@@ -45,7 +53,7 @@ if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
             <span class="">Or</span>
           </div>
         </form>
-        <a href="../register"><button class="createAccount" >
+        <a class="butLink"href="../register"><button class="createAccount" >
           <span>Create An Account </span>
           <img width="13px" width="13px"src="../assets/pics/svgs/plus.svg" alt="">
         </button></a>

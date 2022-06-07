@@ -25,9 +25,9 @@
 
 
     if (isset($_GET['errorMessage'])) {
-      $Message ='<br><div id="errorMessage">
+      $Message ='<div id="errorMessage">
       <span style="color: red">'.$_GET['errorMessage'].'</span></div>
-      <br>';
+      ';
     }else {
       $Message = '';
     }
@@ -39,22 +39,24 @@
 
     <form class="loginForm" action="../users/createUser.php" method="post">
    <?php echo $Message; ?>
+   <span id="FNS" class="stat" style="color:red;"> All Fields Are Mendatory*</span>
+   <div class="loginFields">
+     <input width="100%" id="fullName" onkeyup="checkFullName()" type="text" name="username" value="" placeholder="Full Name*" required>
+     <!-- <span id="usernameStatus"class="status"></span> -->
+   </div>
     <span id="UNS" class="stat"></span>
     <div class="loginFields">
-
-      <input width="100%" id="username" onkeyup="checkUsername()" type="text" name="username" value="" placeholder="Username" required>
-      <!-- <span id="usernameStatus"class="status"></span> -->
+      <input width="100%" id="username" onkeyup="checkUsername()" type="text" name="username" value="" placeholder="Username*" required>
     </div>
 
     <span id="EMS" class="stat"></span>
     <div class="loginFields">
-      <input id="signUpEmail" onkeyup="checkEmail()" type="text" name="email" value="" placeholder="E-mail" required>
-      <!-- <span id="estatus"></span> -->
+      <input id="signUpEmail" onkeyup="checkEmail()" type="text" name="email" value="" placeholder="E-mail*" required>
     </div>
 
     <span id="PMS" class="stat"></span>
     <div id="passwordField" class="loginFields">
-      <input id="password" onkeyup="checkPassword()"type="password" name="password" value="" placeholder="Password" required>
+      <input id="password" onkeyup="checkPassword()"type="password" name="password" value="" placeholder="Password*" required>
       <span class="status">
         <img onclick="change()" id="eyeClosed"src="../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
         <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
@@ -72,7 +74,7 @@
       <span class="">Or</span>
     </div>
     </form>
-    <a href="../login"><button class="createAccount">
+    <a class="butLink" href="../login"><button class="createAccount">
       <span>Log In</span>
     </button></a>
     </div>
