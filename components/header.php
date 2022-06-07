@@ -2,9 +2,9 @@
 $source = "assets";
 $svgFolder = $source."/pics/svgs";
 if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
-  $user = "/profile";
+  $user = "profile.php";
 }else {
-  $user = "/users/login";
+  $user = "users/login.php";
 }
 
 $header = '<div class="header">
