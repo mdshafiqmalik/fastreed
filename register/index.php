@@ -41,7 +41,7 @@
    <?php echo $Message; ?>
    <span id="FNS" class="stat" style="color:red;"> All Fields Are Mendatory*</span>
    <div class="loginFields">
-     <input width="100%" id="fullName" onkeyup="checkFullName()" type="text" name="username" value="" placeholder="Full Name*" required>
+     <input width="100%" id="fullName" onkeyup="checkFullName()" type="text" name="fullName" value="" placeholder="Full Name*" required>
      <!-- <span id="usernameStatus"class="status"></span> -->
    </div>
     <span id="UNS" class="stat"></span>

@@ -141,14 +141,42 @@ $articles = '<!-- Popular Articles Open -->
       $dUserID = openssl_decrypt ($_COOKIE['userID'], $ciphering,
       $decryption_key, $options, $decryption_iv);
       $_SESSION["userID"] = $dUserID;
-      renderProfile($_SESSION["userID"]);
-    }elseif (isset($_SESSION['userID'])) {
-      renderProfile($_SESSION["userID"]);
+      if (checkUserID($_SESSION["userID"])) {
+        renderProfile($_SESSION['userID']);
+      }else {
+        echo '<script type="text/javascript">
+          document.location = "../login";
+        </script>';
+      }
+    }elseif(isset($_SESSION['userID'])) {
+      if (checkUserID($_SESSION["userID"])) {
+        renderProfile($_SESSION['userID']);
+      }else {
+        echo '<script type="text/javascript">
+          document.location = "../login";
+        </script>';
+      }
     }else {
       echo '<script type="text/javascript">
         document.location = "../login";
       </script>';
     }
+
+function checkUserID($dUserID){
+  include '../_.config/_s_db_.php';
+  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+  $checkUserID = "SELECT userID FROM fast_users Where userID = '$dUserID'";
+  $userDat = mysqli_query($link, $checkUserID);
+
+  if (mysqli_num_rows($userDat)) {
+    $exist = true;
+  }else {
+    setcookie("userID", "", time()-3600);
+    $exist = false;
+  }
+  return $exist;
+}
+
 
   function renderProfile($UID){
     include '../_.config/_s_db_.php';

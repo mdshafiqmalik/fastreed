@@ -4,19 +4,40 @@ include '../components/uniSession.php';
 include '../_.config/_s_db_.php';
 if (isset($_POST)) {
   if (isset($_POST['email'])) {
+    $fullName = sanitizeData($_POST['fullName']);
     $username = sanitizeData($_POST['username']);
-    $passWord =sanitizeData($_POST['password']);
+    $passWords =sanitizeData($_POST['password']);
     $email = sanitizeData($_POST['email']);
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $link = new mysqli("$hostName","$userName","$passWord","$dbName");
 
+      $checkMailAlreadyExist = "SELECT userEmail FROM fast_users Where userEmail = '$email'";
+      $result = mysqli_query($link, $checkMailAlreadyExist);
+      if (mysqli_num_rows($result)) { // email already exist
+        header("Location: ../register?errorMessage= Email is linked with another account");
       }else {
-        header("Location: ../login?errorMessage= Please enter a valid email address");
+        $checkUsernameExist = "SELECT userName FROM fast_users Where userName = '$username'";
+        $result1 = mysqli_query($link, $checkUsernameExist);
+        if (mysqli_num_rows($result1)) {
+          header("Location: ../register?errorMessage= Username is Taken");
+        }else {
+          $OTP = createOTP(6);
+          $message = "Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below";
+          $to = "mdshafiqmalik98@gmail.com";
+          $subject = "OTP Authenication";
+          $headers = "From: support@earnmore.com" . "\r\n" .
+          "CC: admin@shafiqhub.com";
+          mail($to,$subject,$message,$headers);
+        }
+      }
+      }else {
+        header("Location: ../register?errorMessage= Please enter a valid email address");
       }
     }else {
-      header("Location: ../login");
+      header("Location: ../register");
     }
 }else {
-  header("Location: ../login");
+  header("Location: ../register");
 }
 
 function sanitizeData($data) {
