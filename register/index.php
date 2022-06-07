@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include 'components/uniSession.php'; ?>
+<?php include '../components/uniSession.php'; ?>
 
 <html lang="en" dir="ltr">
   <head>
@@ -78,5 +78,5 @@
     </div>
   </body>
   <script src="../users/src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
-  <!-- <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script> -->
+  <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
 </html>

@@ -151,9 +151,9 @@ input:-webkit-autofill:active {
   padding-left: .7em;
 }
 .createAccount img{
-  border: 1px solid black;
+  border: 2px solid black;
   filter: var(--colorWhite);
-  border-radius: 3px;
+  border-radius: 20px;
   padding: .08em;
 }
 .createAccount:hover{

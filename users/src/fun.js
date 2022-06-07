@@ -17,34 +17,31 @@ function checkUsername(){
   var userName = document.getElementById('username').value;
   var userStatus = document.getElementById('UNS');
   var haveSpace = hasWhiteSpace(userName);
-
+if (haveSpace) {
+  userExist = false;
+  userStatus.innerHTML = "Spaces Not Allowed";
+  userStatus.style.color =  "red";
+}else {
   if (userName.length > 6) {
-    if (haveSpace) {
-      userExist = false;
-      userStatus.innerHTML = "Spaces Not Allowed";
-      userStatus.style.color =  "red";
-    }else {
-      var response = $.getJSON(`../../server/hidden/checkUNAME.php?username=${userName}`, function(data){
-        if (data.Result) {
-          userExist = false; //user exist
-          // userStatus.style.display = "block";
-          userStatus.innerHTML = "Username Taken";
-          userStatus.style.color =  "red";
-        }else {
-          userExist = true; //user not exist
-          // userStatus.style.display = "none";
-          userStatus.innerHTML = "Username Available";
-          userStatus.style.color =  "#20e120";
-        }
-      });
-
-
-    }
+    var response = $.getJSON(`../../server/hidden/checkUNAME.php?username=${userName}`, function(data){
+      if (data.Result) {
+        userExist = false; //user exist
+        // userStatus.style.display = "block";
+        userStatus.innerHTML = "Username Taken";
+        userStatus.style.color =  "red";
+      }else {
+        userExist = true; //user not exist
+        // userStatus.style.display = "none";
+        userStatus.innerHTML = "Username Available";
+        userStatus.style.color =  "#20e120";
+      }
+    });
   }else {
     userExist = false;
     userStatus.innerHTML = "6 Letters or More";
     userStatus.style.color =  "red";
   }
+}
   return userExist
 }
 

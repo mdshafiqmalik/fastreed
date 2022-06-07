@@ -1,7 +1,7 @@
 <?php
 session_start();
-$containerStart = '<div id="" class="container">';
-$divStop = '</div>';
+$GLOBALS['containerStart'] = '<div id="" class="container">';
+$GLOBALS['divStop'] = '</div>';
 $selfProfile = '
 <!-- Self Profile Opened -->
   <div class="authorProfile">
@@ -117,6 +117,8 @@ $articles = '<!-- Popular Articles Open -->
   </div>
 <!-- Popular Articles Close -->';
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -139,98 +141,96 @@ $articles = '<!-- Popular Articles Open -->
       $dUserID = openssl_decrypt ($_COOKIE['userID'], $ciphering,
       $decryption_key, $options, $decryption_iv);
       $_SESSION["userID"] = $dUserID;
-      include '../_.config/_s_db_.php';
-      $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-      $getUserData = "SELECT * FROM user_credentials Where userID = '$dUserID'";
-      $result = mysqli_query($db,$getUserData);
-      if (mysqli_num_rows($result)) {
-        $row = $result->fetch_assoc();
-        $userFullName = $row['userFullName'];
-        $userJoinDate = $row['userJoiningDate'];
-        $upp = unserialize($row['userProfilePic']);
-        $userCountry = $row['userCountry'];
-        switch ($row['userType']) {
-          case '0':
-            $userType = "Reader";
-            break;
-          case '1':
-            $userType = "Author";
-            break;
-          case '2':
-            $userType = "Administator";
-            break;
-          default:
-            $userType = "Reader";
-            break;
-        }
-        $getPost = "SELECT * FROM fast_posts WHERE userID ='$dUserID'";
-        $postData = mysqli_query($link, $getPost);
-        $postsCount = mysqli_num_rows($postData);
-
-        $getFollow = "SELECT * FROM fast_follows WHERE toUserID ='$dUserID'";
-        $followData = mysqli_query($link, $getFollow);
-        $followCount = mysqli_num_rows($followData);
-
-        $getRating = "SELECT * FROM fast_rating WHERE toUserID ='$dUserID'";
-        $rateData = mysqli_query($link, $getRating);
-        $rateCount = mysqli_num_rows($rateData);
-        $totalRating = 0;
-        while ($row = $rateData->fetch_assoc()) {
-          $totalRating += $row['rateUser'];
-        }
-        $rateDec = $totalRating/$rateCount;
-        $rate = number_format((float)$rateDec, 1, '.','');
-
-        
-        echo $containerStart;
-        echo '
-        <!-- Self Profile Opened -->
-          <div class="authorProfile">
-            <div class="topDiv">
-              <div class="authorPic"> <img src="../uploads/'.$upp['folder'].'/'.$upp['year'].'/'.$upp['month'].'/'.$upp['id'].'.'.$upp['ext'].'" alt=""> </div>
-              <div class="authorDetails">
-                <div class="userNameWork">
-                  <span id="userFullName">'.$userFullName.'</span>
-                  <span id="userType">'.$userType.'</span>
-                  <span class="designation">'.$userCountry.'</span>
-                  <span class="designation">Joined '.$userJoinDate.'</span>
-                </div>
-                <div class="userParam">
-                  <div class="userArticles">
-                    <span class="userParameters">Articles</span>
-                    <span class="values">'.$postsCount.'</span>
-                  </div>
-                  <div class="userFollowers">
-                    <span class="userParameters">Follows</span>
-                    <span class="values">'.$followCount.'</span>
-                  </div>
-                  <div class="userRating">
-                    <span class="userParameters">Rating</span>
-                    <span class="values">'.$rate.'</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bottomDiv">
-              <div id="linkOne"class="linkOne"> <span class="links"> <a href="#">Create</a></span> </div>
-              <div id="linkTwo" class="linkOne"> <span class="links"> <a href="#">Settings</a> </span> </div>
-            </div>
-          </div>
-        <!-- Self Profile Closed -->';
-      }
-      echo $divStop;
+      renderProfile($_SESSION["userID"]);
     }elseif (isset($_SESSION['userID'])) {
-      $userID = $_SESSION['userID'] ;
-      echo $containerStart;
-      echo $selfProfile;
-      echo $featuredArticle;
-      echo $channels;
-      echo $articles;
-      echo $divStop;
+      renderProfile($_SESSION["userID"]);
     }else {
       echo '<script type="text/javascript">
         document.location = "../login";
       </script>';
+    }
+
+  function renderProfile($UID){
+    include '../_.config/_s_db_.php';
+    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+    $getUserData = "SELECT * FROM user_credentials Where userID = '$UID'";
+    $result = mysqli_query($db,$getUserData);
+    if (mysqli_num_rows($result)) {
+      $row = $result->fetch_assoc();
+      $userFullName = $row['userFullName'];
+      $userJoinDate = $row['userJoiningDate'];
+      $upp = unserialize($row['userProfilePic']);
+      $userCountry = $row['userCountry'];
+      switch ($row['userType']) {
+        case '0':
+          $userType = "Reader";
+          break;
+        case '1':
+          $userType = "Author";
+          break;
+        case '2':
+          $userType = "Administator";
+          break;
+        default:
+          $userType = "Reader";
+          break;
+      }
+      $getPost = "SELECT * FROM fast_posts WHERE userID ='$UID'";
+      $postData = mysqli_query($link, $getPost);
+      $postsCount = mysqli_num_rows($postData);
+
+      $getFollow = "SELECT * FROM fast_follows WHERE toUserID ='$UID'";
+      $followData = mysqli_query($link, $getFollow);
+      $followCount = mysqli_num_rows($followData);
+
+      $getRating = "SELECT * FROM fast_rating WHERE toUserID ='$UID'";
+      $rateData = mysqli_query($link, $getRating);
+      $rateCount = mysqli_num_rows($rateData);
+      $totalRating = 0;
+      while ($row = $rateData->fetch_assoc()) {
+        $totalRating += $row['rateUser'];
+      }
+      $rateDec = $totalRating/$rateCount;
+      $rate = number_format((float)$rateDec, 1, '.','');
+
+
+      echo $GLOBALS['containerStart'];
+      echo '
+      <!-- Self Profile Opened -->
+        <div class="authorProfile">
+          <div class="topDiv">
+            <div class="authorPic"> <img src="../uploads/'.$upp['folder'].'/'.$upp['year'].'/'.$upp['month'].'/'.$upp['id'].'.'.$upp['ext'].'" alt=""> </div>
+            <div class="authorDetails">
+              <div class="userNameWork">
+                <span id="userFullName">'.$userFullName.'</span>
+                <span id="userType">'.$userType.'</span>
+                <span class="designation">'.$userCountry.'</span>
+                <span class="designation">Joined '.$userJoinDate.'</span>
+              </div>
+              <div class="userParam">
+                <div class="userArticles">
+                  <span class="userParameters">Articles</span>
+                  <span class="values">'.$postsCount.'</span>
+                </div>
+                <div class="userFollowers">
+                  <span class="userParameters">Follows</span>
+                  <span class="values">'.$followCount.'</span>
+                </div>
+                <div class="userRating">
+                  <span class="userParameters">Rating</span>
+                  <span class="values">'.$rate.'</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottomDiv">
+            <div id="linkOne"class="linkOne"> <span class="links"> <a href="#">Create</a></span> </div>
+            <div id="linkTwo" class="linkOne"> <span class="links"> <a href="#">Settings</a> </span> </div>
+          </div>
+        </div>
+      <!-- Self Profile Closed -->';
+    }
+    echo $GLOBALS['divStop'];
     }
      ?>
   </body>
