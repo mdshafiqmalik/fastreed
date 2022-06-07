@@ -23,7 +23,7 @@ if (isset($_POST)) {
         }else {
 
           $OTP = createOTP(6);
-          $message = "<body>Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below</body>";
+          $message = "<html><body>Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below</body></html>";
           $to = "mdshafiqmalik98@gmail.com";
           $subject = "OTP Authenication";
           $headers = "From: support@earnmore.com" . "\r\n" .
