@@ -16,9 +16,9 @@
     <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <?php
-  if (isset($_COOKIE["userID"])) {
+  if (isset($_SESSION["userID"])) {
     header("Location: ../profile");
-  }elseif(isset($_SESSION["userID"])) {
+  }elseif(isset($_COOKIE["userID"])) {
     header("Location: ../profile");
   }else {
     header("Location: login");
