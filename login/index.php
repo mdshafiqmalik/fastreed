@@ -3,7 +3,7 @@
 session_start();
 if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
   echo '<script type="text/javascript">
-    document.location = "profile";
+    document.location = "../profile";
   </script>';
 }
  ?>
