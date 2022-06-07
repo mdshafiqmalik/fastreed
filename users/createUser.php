@@ -21,6 +21,7 @@ if (isset($_POST)) {
         if (mysqli_num_rows($result1)) {
           header("Location: ../register?errorMessage= Username is Taken");
         }else {
+
           $OTP = createOTP(6);
           $message = "Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below";
           $to = "mdshafiqmalik98@gmail.com";
@@ -39,7 +40,15 @@ if (isset($_POST)) {
 }else {
   header("Location: ../register");
 }
-
+function createOTP($keyLen){
+  // Set a blank variable to store the key in
+   $key = "";
+   for ($x = 1; $x <= $keyLen; $x++) {
+       // Set each digit
+       $key .= random_int(0, 9);
+   }
+   return $key;
+}
 function sanitizeData($data) {
   $data = trim($data);
   $data = stripslashes($data);
