@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <?php include '../components/uniSession.php'; ?>
 
@@ -17,14 +18,11 @@
   </div>
   <?php
   if (isset($_SESSION["userID"])) {
-    echo "Session Enabled";
-    // header("Location: ../profile");
+    header("Location: ../profile");
   }elseif(isset($_COOKIE["userID"])) {
-      echo "Cookie Enabled";
-    // header("Location: ../profile");
+    header("Location: ../profile");
   }else {
-    // header("Location: login");
-    echo "Nothing is Set";
+    header("Location: login");
   }
   ?>
 
