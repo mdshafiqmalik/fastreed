@@ -121,15 +121,15 @@
 .links{
   padding: .4em 0;
   width: 6em;
-  border: 1px solid;
-  border-radius: 3px;
+  background-color: #10396b;
+  border-radius: 30px;
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;
 }
 .links a{
   text-decoration: none;
-  color: #967e98;
+  color: white;
 }
 .links:hover a, .links:hover{
   color: white;
@@ -224,8 +224,8 @@
   font-size: .8em;
   color: white;
   font-weight: bold;
-  background-color: #967e98;
-  padding: .24em .4em;
+  background-color: #8c5e8f;
+  padding: .3em .45em;
   border-radius: 5px;
 }
 .featuredPost{
