@@ -26,8 +26,10 @@ if (isset($_POST)) {
           $message = "<html><body>Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below</body></html>";
           $to = "mdshafiqmalik98@gmail.com";
           $subject = "OTP Authenication";
-          $headers = "From: support@earnmore.com" . "\r\n" .
-          "CC: admin@shafiqhub.com";
+          $headers = "From: support@earnmore.com" . "\r\n" ."CC: admin@shafiqhub.com";
+          $headers  .= 'MIME-Version: 1.0' . "\r\n";
+          $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
           mail($to,$subject,$message,$headers);
         }
       }
