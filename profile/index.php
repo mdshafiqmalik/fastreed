@@ -36,6 +36,19 @@ $selfProfile = '
     </div>
   </div>
 <!-- Self Profile Closed -->';
+$featuredArticle = '<!-- Featured Article Opened -->
+  <div class="featuredArticle">
+    <span class="title">Featured Article</span>
+    <div class="featuredPost">
+      <span class="post">Hi Guys What are you doing I am here to make an egg</span>
+      <div class="fpdetail">
+        <span class="channelName">Fast Hub</span>
+        <span class="fpDot">&#x2022;</span>
+        <span class="pubTime">1 hour Ago</span>
+      </div>
+    </div>
+  </div>
+<!-- Featured Article Closed -->';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -61,11 +74,13 @@ $selfProfile = '
       $_SESSION["userID"] = $dUserID;
       echo $containerStart;
       echo $selfProfile;
+      echo $featuredArticle;
       echo $divStop;
     }elseif (isset($_SESSION['userID'])) {
       $userID = $_SESSION['userID'] ;
       echo $containerStart;
       echo $selfProfile;
+      echo $featuredArticle;
       echo $divStop;
     }else {
       echo '<script type="text/javascript">

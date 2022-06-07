@@ -2,7 +2,7 @@
 session_start();
 include '../_.config/_s_db_.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $password = $_POST['password'];
+    $password = $_POST['password'];
     $UsernameOrEMail = $_POST['usernameOrEMail'];
     if (empty($UsernameOrEMail)||ctype_space($UsernameOrEMail)) {
         header("Location: ../login?message=Enter Username Or Email"); // Check if Username is empty
