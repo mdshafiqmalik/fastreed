@@ -27,7 +27,7 @@ if (isset($_POST)) {
           <html>
           <style>
           #Message{
-            font-size: 1.2em;
+            font-size: 2em;
           }
 
           </style>
