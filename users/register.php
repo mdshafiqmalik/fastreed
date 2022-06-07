@@ -16,6 +16,12 @@
       <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
     </div>
     <?php
+    session_start();
+    if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
+      header("Location: ../profile");
+    }
+
+
     if (isset($_GET['errorMessage'])) {
       $Message ='<br><div id="errorMessage">
       <span style="color: red">'.$_GET['errorMessage'].'</span></div>

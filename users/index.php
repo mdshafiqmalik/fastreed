@@ -13,16 +13,16 @@
   </head>
   <body>
   <div class="navigation">
-    <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
+    <span onclick="history.back()"> <a id="backArrow" href="">&#171;  <span>Back</span></a> </span>
   </div>
   <?php
-  // if (isset($_COOKIE['userID'])) {
-  //   $UID = $_COOKIE['userID'];
-  //   $cookietime = $_COOKIE['cookieTime'];
-  //   $userEmail = $_COOKIE['userEmail'];
-  // }else {
-    header("Location: login.php");
-  // }
+  if (isset($_COOKIE["userID"])) {
+    header("Location: profile");
+  }elseif(isset($_SESSION["userID"])) {
+    header("Location: ../prfile");
+  }else {
+    header("Location: login");
+  }
   ?>
 
   <script src="src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>

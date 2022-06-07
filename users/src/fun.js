@@ -14,13 +14,16 @@ function change(){
 
 let userExist;
 function checkUsername(){
-
   var userName = document.getElementById('username').value;
   var userStatus = document.getElementById('UNS');
   var haveSpace = hasWhiteSpace(userName);
 
   if (userName.length > 6) {
-    if (!haveSpace) {
+    if (haveSpace) {
+      userExist = false;
+      userStatus.innerHTML = "Spaces Not Allowed";
+      userStatus.style.color =  "red";
+    }else {
       var response = $.getJSON(`../../server/hidden/checkUNAME.php?username=${userName}`, function(data){
         if (data.Result) {
           userExist = false; //user exist
@@ -34,46 +37,48 @@ function checkUsername(){
           userStatus.style.color =  "#20e120";
         }
       });
-    }else {
-      userExist = false;
-      // userStatus.style.display = "block";
-      userStatus.innerHTML = "Spaces Not Allowed";
-      userStatus.style.color =  "red";
+
+
     }
   }else {
     userExist = false;
-    // userStatus.style.display = "block";
     userStatus.innerHTML = "6 Letters or More";
     userStatus.style.color =  "red";
   }
   return userExist
 }
 
-function hasWhiteSpace(userName){
-  return userName.includes(' ');
-}
+
+
 let isEmail;
 function checkEmail(){
   var enteredEmail = document.getElementById('signUpEmail').value;
   var emailStat = document.getElementById('EMS');
   var re = /\S+@\S+\.\S+/;
   var isMail = re.test(enteredEmail);
-  if (isMail) {
-      var response = $.getJSON(`../../server/hidden/checkUNAME.php?email=${enteredEmail}`, function(data){
-        if (data.Result) {
-          isEmail = false;
-          emailStat.innerHTML = "Email Already Exist";
-          emailStat.style.color =  "red";
-        }else {
-          isEmail = true;
-          emailStat.innerHTML = "Valid Email";
-          emailStat.style.color =  "#20e120";
-        }
-      });
-  }else {
-    emailStat.innerHTML = "Enter a Valid Email";
+
+  if (hasWhiteSpace(enteredEmail)) {
+    emailStat.innerHTML = "Spaces Not Allowed";
     emailStat.style.color =  "red";
     isEmail = false;
+  }else {
+    if (isMail) {
+        var response = $.getJSON(`../../server/hidden/checkUNAME.php?email=${enteredEmail}`, function(data){
+          if (data.Result) {
+            isEmail = false;
+            emailStat.innerHTML = "Email Already Exist";
+            emailStat.style.color =  "red";
+          }else {
+            isEmail = true;
+            emailStat.innerHTML = "Valid Email";
+            emailStat.style.color =  "#20e120";
+          }
+        });
+    }else {
+      emailStat.innerHTML = "Enter a Valid Email";
+      emailStat.style.color =  "red";
+      isEmail = false;
+    }
   }
   return isEmail;
 }
@@ -134,7 +139,9 @@ function checkOTP(){
 //     EPField.style.justifyContent = "flex-start";
 //   }
 // }
-
+function hasWhiteSpace(data){
+  return data.includes(' ');
+}
 function checkButton(){
   if (checkUsername() && checkEmail() && checkPassword() && checkBox()) {
     var verifyButton = document.getElementById('verifyOTP');

@@ -5,10 +5,10 @@ include '../_.config/_s_db_.php';
 if (isset($_POST)) {
   if (isset($_POST['email'])) {
     $username = sanitizeData($_POST['username']);
-    $passWord = sanitizeData($_POST['password']);
+    $passWord =sanitizeData($_POST['password']);
     $email = sanitizeData($_POST['email']);
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      
+
       }else {
         header("Location: /users?errorMessage= Please enter a valid email address");
       }

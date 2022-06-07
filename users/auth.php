@@ -21,44 +21,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $userHashPassword = $row['userHashPassword'];
           $isPasswordCorrect = password_verify($sanPassword, $userHashPassword);
           if ($isPasswordCorrect) {  // Check if password correct
-            $userDetail = array(
-            'userID' => $row['userID'],
-            'userName' => $row['userName'],
-            'userFullName' => $row['userFullName'],
-            'userEmail' => $row['userEmail'],
-            'userDOB' => $row['userDOB'],
-            'userGender' => $row['userGender'],
-            'userJoiningDate' => $row['userJoiningDate'],
-            'userType' => $row['userType'],
-           );
-           if (isset($_POST['rememberMe'])) {
-             if ($_POST['rememberMe']) {
-               header("Location: profile.php");
-               if (isset($_COOKIE['userID'])) {
-                 $_SESSION['userID'] = $_COOKIE['userID'];
-                 $_SESSION['userEmail'] = $_COOKIE['userEmail'];
-               }else {
+            $userID = $row['userID'];
+           if (isset($_POST['rememberMe'])) { // check if checkbox is set
+             if ((boolean) $_POST['rememberMe']) { // check if checkbox is checked
                  include '../_.config/sjdhfjsadkeys.php';
-                 $encUID = openssl_encrypt($userDetail['userID'], $ciphering,
-                 $encryption_key, $options, $encryption_iv);
-                 $encEmail = openssl_encrypt($userDetail['userEmail'], $ciphering,
+                 $encUID = openssl_encrypt($userID, $ciphering,
                  $encryption_key, $options, $encryption_iv);
                  setcookie('userID', $encUID, time() + (86400 * 30), "/");
-                 setcookie('userEmail', $encEmail, time() + (86400 * 30), "/");
-                 $_SESSION['userID'] = $COOKIE['userID'];
-                 $_SESSION['userID'] = $COOKIE['userEmail'];
-                  header("Location: profile.php");
-               }
+                 header("Location: profile");
              }else {
-               $_SESSION['userID'] = $userDetail['userID'];
-               $_SESSION['userEmail'] = $userDetail['userEmail'];
-               header("Location: profile.php");
+               $_SESSION["userID"] = $userID;
+               header("Location: ../profile");
              }
 
            }else {
-             $_SESSION['userID'] = $userDetail['userID'];
-             $_SESSION['userEmail'] = $userDetail['userEmail'];
-             header("Location: profile.php");
+             $_SESSION["userID"] = $userID;
+             header("Location: ../profile");
            }
 
           }else {
@@ -70,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        }
     }
   }else {
-    header("Location: login.php"); // Check if form is not submitted
+    header("Location: login"); // Check if form is not submitted
   }
 
 // }

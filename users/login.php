@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
+  header("Location: ../profile");
+}
+ ?>
 <html lang="en" dir="ltr">
   <head>
     <?php include '../components/randVersion.php' ?>
@@ -9,7 +15,7 @@
   </head>
   <body>
     <div class="navigation">
-      <span> <a id="backArrow" href="../users">&#171;  <span>Back</span></a> </span>
+      <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
     </div>
     <div id="userDiv" class="cont">
       <div class="content">

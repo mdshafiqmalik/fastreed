@@ -42,10 +42,10 @@ $selfProfile = '
   <head>
     <head>
       <meta charset="utf-8">
-      <?php include '../components/randVersion.php' ?>
-      <link rel="stylesheet" href="src/style.css?v=<?php echo($randVersion); ?>">
-      <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
-      <link rel="stylesheet" href="src/profile.css?v=<?php echo($randVersion); ?>">
+      <?php include 'components/randVersion.php' ?>
+      <link rel="stylesheet" href="users/src/style.css?v=<?php echo($randVersion); ?>">
+      <link rel="stylesheet" href="assets/css/root.css?v=<?php echo($randVersion); ?>">
+      <link rel="stylesheet" href="users/src/profile.css?v=<?php echo($randVersion); ?>">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
@@ -55,7 +55,7 @@ $selfProfile = '
     </div>
     <?php
     if(isset($_COOKIE['userID'])) {
-      include '../_.config/sjdhfjsadkeys.php';
+      include '_.config/sjdhfjsadkeys.php';
       $dUserID = openssl_decrypt ($_COOKIE['userID'], $ciphering,
       $decryption_key, $options, $decryption_iv);
       $_SESSION["userID"] = $dUserID;
@@ -70,8 +70,6 @@ $selfProfile = '
     }else {
       header("Location: /users/");
     }
-
-
      ?>
   </body>
 </html>
