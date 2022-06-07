@@ -17,9 +17,9 @@
   </div>
   <?php
   if (isset($_COOKIE["userID"])) {
-    header("Location: profile");
+    header("Location: ../profile");
   }elseif(isset($_SESSION["userID"])) {
-    header("Location: ../prfile");
+    header("Location: ../profile");
   }else {
     header("Location: login");
   }
