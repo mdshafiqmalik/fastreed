@@ -27,7 +27,7 @@ if (isset($_POST)) {
           $to = "mdshafiqmalik98@gmail.com";
           $subject = "OTP Authenication";
           $headers = "From: support@earnmore.com" . "\r\n" ."CC: admin@shafiqhub.com";
-          $headers .= 'Content-type: text/html';
+          $headers = 'Content-type: text/html';
 
           mail($to,$subject,$message,$headers);
         }
