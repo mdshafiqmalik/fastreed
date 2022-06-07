@@ -37,7 +37,7 @@ if (isset($_POST)) {
           </head>
           <body><p id='message'>
           Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3>
-          <a href='https://m.shafiqhub.com/users/verify.php?ssID=".$_SESSION["UNIQUESESSION"] ."&OTP=".$encOTP."'></a>
+          <a href='https://m.shafiqhub.com/users/verify.php?ssID=".$_SESSION["UNIQUESESSION"] ."&OTP=".$encOTP."'> Verify Now</a>
           </body>
           </html>";
           $to = "mdshafiqmalik98@gmail.com";
