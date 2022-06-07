@@ -70,8 +70,6 @@ $selfProfile = '
     }else {
       header("Location: /users/");
     }
-
-
      ?>
   </body>
 </html>
