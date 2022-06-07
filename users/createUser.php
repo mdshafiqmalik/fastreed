@@ -27,7 +27,7 @@ if (isset($_POST)) {
           <html>
           <style>
           font-size: 1.2em;
-          </styel>
+          </style>
           <body><span id='Message'>
           Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below
           </body>
