@@ -13,7 +13,7 @@
   </head>
   <body>
   <div class="navigation">
-    <span onclick="history.back()"> <a id="backArrow" href="">&#171;  <span>Back</span></a> </span>
+    <span> <a id="backArrow" href="/">&#171;  <span>Back</span></a> </span>
   </div>
   <?php
   if (isset($_COOKIE["userID"])) {
