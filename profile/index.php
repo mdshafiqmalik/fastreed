@@ -72,7 +72,6 @@ $selfProfile = '
         document.location = "../login";
       </script>';
     }
-    }
      ?>
   </body>
 </html>
