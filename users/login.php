@@ -2,8 +2,9 @@
 <?php
 session_start();
 if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
-  echo "set";
-  header("Location: ../profile");
+  echo '<script type="text/javascript">
+    document.location = "../profile";
+  </script>';
 }
  ?>
 <html lang="en" dir="ltr">
