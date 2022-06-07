@@ -68,7 +68,10 @@ $selfProfile = '
       echo $selfProfile;
       echo $divStop;
     }else {
-      header("Location: ../login");
+      echo '<script type="text/javascript">
+        document.location = "../login";
+      </script>';
+    }
     }
      ?>
   </body>
