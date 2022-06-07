@@ -11,15 +11,15 @@ function change(){
     document.getElementById('password').type = "password";
   }
 }
-// window.onload = function(){
-//     let errorMessage = document.getElementById('errorMessage');
-//   if (!errorMessage) {
-//   }else {
-//     setTimeout(function(){
-//       errorMessage.style.display = "none";
-//     },3000);
-//   }
-// }
+window.onload = function(){
+    let errorMessage = document.getElementById('errorMessage');
+  if (!errorMessage) {
+  }else {
+    setTimeout(function(){
+      errorMessage.style.display = "none";
+    },3000);
+  }
+}
 function checkFullName(){
   var fullName = document.getElementById('fullName').value;
   var userStatus = document.getElementById('FNS');
@@ -114,29 +114,29 @@ function checkEmail(){
 }
 
 function checkPassword() {
-  let Password =   document.getElementById('password');
-  let pStat = document.getElementById('PMS');
-  var hasDigit = hasNumber(Password);
-  var hasSpecialChar = hasSpecialChars(Password);
-  console.log(hasDigit);
-  console.log(hasSpecialChar);
-    if (hasDigit) {
-      if (hasSpecialChar) {
-        if (password.length > 8) {
-          pStat.innerHTML = "Strong Password"
-          pStat.style.color= "20e120";
-        }else {
-          pStat.innerHTML = "Min length is 8"
-          pStat.style.color= "red";
-        }
-      }else {
-        pStat.innerHTML = "Atleast One Special Char"
-        pStat.style.color= "red";
-      }
-    }else {
-      pStat.innerHTML = "Atleast One Number"
-      pStat.style.color= "red";
-    }
+  // let Password =   document.getElementById('password');
+  // let pStat = document.getElementById('PMS');
+  // var hasDigit = hasNumber(Password);
+  // var hasSpecialChar = hasSpecialChars(Password);
+  // console.log(hasDigit);
+  // console.log(hasSpecialChar);
+  //   if (hasDigit) {
+  //     if (hasSpecialChar) {
+  //       if (password.length > 8) {
+  //         pStat.innerHTML = "Strong Password"
+  //         pStat.style.color= "20e120";
+  //       }else {
+  //         pStat.innerHTML = "Min length is 8"
+  //         pStat.style.color= "red";
+  //       }
+  //     }else {
+  //       pStat.innerHTML = "Atleast One Special Char"
+  //       pStat.style.color= "red";
+  //     }
+  //   }else {
+  //     pStat.innerHTML = "Atleast One Number"
+  //     pStat.style.color= "red";
+  //   }
 }
 
 function isChecked(){
