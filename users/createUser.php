@@ -25,13 +25,15 @@ if (isset($_POST)) {
           $OTP = createOTP(6);
           $message = "
           <html>
-          <style>
-          #Message{
-            font-size: 2em;
-          }
-
+          <head>
+          <title>OTP Authenication</title>
+          <style media='screen'>
+            #message{
+              font-size: 1.2em;
+            }
           </style>
-          <body><h3>
+          </head>
+          <body><p id='message'>
           Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3>
           </body>
           </html>";
@@ -74,3 +76,18 @@ function sanitizeData($data) {
 // $saveOTP = "INSERT INTO `fast_otp` (`sentOTP`, `sessionID`, `emailAddress`, `sentTime`) VALUES ('$OTP', '$sessionID',' $email', '$sentTime')";
 
  ?>
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+     <title></title>
+     <style media="screen">
+       #message{
+         font-size: 1.2em;
+       }
+     </style>
+   </head>
+   <body>
+
+   </body>
+ </html>
