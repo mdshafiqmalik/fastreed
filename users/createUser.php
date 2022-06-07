@@ -21,8 +21,10 @@ if (isset($_POST)) {
         if (mysqli_num_rows($result1)) {
           header("Location: ../register?errorMessage= Username is Taken");
         }else {
-
+          include '../_.config/sjdhfjsadkeys.php';
           $OTP = createOTP(6);
+          $encOTP = openssl_encrypt($OTP, $ciphering,
+          $encryption_key, $options, $encryption_iv);
           $message = "
           <html>
           <head>
@@ -35,6 +37,7 @@ if (isset($_POST)) {
           </head>
           <body><p id='message'>
           Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3>
+          <a href='https://m.shafiqhub.com/users/verify.php?ssID=".$_SESSION["UNIQUESESSION"] ."&OTP=".$encOTP."'></a>
           </body>
           </html>";
           $to = "mdshafiqmalik98@gmail.com";
@@ -88,6 +91,6 @@ function sanitizeData($data) {
      </style>
    </head>
    <body>
-
+<a href="#"></a>
    </body>
  </html>
