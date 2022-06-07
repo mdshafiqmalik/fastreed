@@ -1,6 +1,9 @@
 <?php
-
- session_start();
- $_SESSION['HI'] = "one";
- $_SESSION['Hello'] = "two";
+$arrayName = array('folder' => "users",
+'year' => "2022",
+'month' => "7",
+'id' => "25316532",
+'ext' => "jpg"
+ );
+ echo serialize($arrayName);
  ?>
