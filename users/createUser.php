@@ -29,7 +29,7 @@ if (isset($_POST)) {
           font-size: 1.2em;
           </style>
           <body><span id='Message'>
-          Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below
+          Your One Time Password(OTP) is <b>".$OTP."</b>. It will expires in <b>10 Minutes </b> verify by using OTP or the link given below</span>
           </body>
           </html>";
           $to = "mdshafiqmalik98@gmail.com";
