@@ -45,7 +45,7 @@ if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
             <span class="">Or</span>
           </div>
         </form>
-        <a href="register"><button class="createAccount" >
+        <a href="../register"><button class="createAccount" >
           <span>Create An Account </span>
           <img width="13px" width="13px"src="../assets/pics/svgs/plus.svg" alt="">
         </button></a>
