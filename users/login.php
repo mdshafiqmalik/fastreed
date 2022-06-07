@@ -2,6 +2,7 @@
 <?php
 session_start();
 if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
+  echo "set";
   header("Location: ../profile");
 }
  ?>
