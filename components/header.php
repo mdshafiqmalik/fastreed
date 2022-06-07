@@ -4,7 +4,7 @@ $svgFolder = $source."/pics/svgs";
 if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
   $user = "profile";
 }else {
-  $user = "users/login";
+  $user = "login";
 }
 
 $header = '<div class="header">

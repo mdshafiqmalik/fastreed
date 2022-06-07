@@ -3,16 +3,16 @@
 session_start();
 if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
   echo '<script type="text/javascript">
-    document.location = "../profile";
+    document.location = "profile";
   </script>';
 }
  ?>
 <html lang="en" dir="ltr">
   <head>
     <?php include '../components/randVersion.php' ?>
-    <link rel="stylesheet" href="src/style.css?v=<?php echo($randVersion); ?>">
+    <link rel="stylesheet" href="../users/src/style.css?v=<?php echo($randVersion); ?>">
     <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
-    <link rel="stylesheet" href="src/profile.css?v=<?php echo($randVersion); ?>">
+    <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo($randVersion); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -23,7 +23,7 @@ if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
       <div class="content">
         <span id="login">Log In</span>
         <br>
-        <form class="loginForm" action="auth.php" method="post">
+        <form class="loginForm" action="../users/auth.php" method="post">
           <span id="ULNS" class="stat"></span>
           <div class="loginFields" id="emailField">
             <input id="emailOrPassword"type="text" onkeyup="" name="usernameOrEMail" value="" placeholder="Email Or Username">
@@ -52,6 +52,6 @@ if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
       </div>
     </div>
   </body>
-  <script src="src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
-  <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
+  <script src="../users/src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
+  <!-- <script src="assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script> -->
 </html>

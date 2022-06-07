@@ -10,13 +10,13 @@ if (isset($_POST)) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
       }else {
-        header("Location: /users?errorMessage= Please enter a valid email address");
+        header("Location: ../login?errorMessage= Please enter a valid email address");
       }
     }else {
-      header("Location: /users/");
+      header("Location: ../login");
     }
 }else {
-  header("Location: /users/");
+  header("Location: ../login");
 }
 
 function sanitizeData($data) {

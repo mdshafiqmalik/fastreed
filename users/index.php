@@ -27,7 +27,7 @@
     </script>';
   }else {
     echo '<script type="text/javascript">
-      document.location = "login";
+      document.location = "../login";
     </script>';
   }
   ?>
