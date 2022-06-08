@@ -38,7 +38,7 @@ if (isset($_GET['message'])) {
           </div>
           <span id="LPWD" class="stat"></span>
           <div class="loginFields">
-            <input id="passworD" type="password" name="password" value="" placeholder="Password">
+            <input id="password" type="password" name="password" value="" placeholder="Password">
             <span class="status">
               <img onclick="change()" id="eyeClosed"src="../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
               <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
