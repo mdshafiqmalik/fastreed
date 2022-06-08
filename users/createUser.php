@@ -55,7 +55,7 @@ function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
 
 // Add user to Database
 function addUser($link, $newUserID, $username, $fullName, $email, $password, $encPass){
-  $checkEmail = "SELECT userEmail FROM fast_noverify_users Where emailAddress = '$email'";
+  $checkEmail = "SELECT userEmail FROM fast_noverify_users Where userEmail = '$email'";
   $res = mysqli_query($link, $checkEmail);
   if ($res) {
     $delRecord = "DELETE FROM `fast_noverify_users` Where `fast_noverify_users`.`userEmail`= '$email'";
