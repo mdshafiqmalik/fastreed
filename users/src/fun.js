@@ -114,29 +114,24 @@ function checkEmail(){
 }
 
 function checkPassword() {
-  // let Password =   document.getElementById('password');
-  // let pStat = document.getElementById('PMS');
-  // var hasDigit = hasNumber(Password);
-  // var hasSpecialChar = hasSpecialChars(Password);
-  // console.log(hasDigit);
-  // console.log(hasSpecialChar);
-  //   if (hasDigit) {
-  //     if (hasSpecialChar) {
-  //       if (password.length > 8) {
-  //         pStat.innerHTML = "Strong Password"
-  //         pStat.style.color= "20e120";
-  //       }else {
-  //         pStat.innerHTML = "Min length is 8"
-  //         pStat.style.color= "red";
-  //       }
-  //     }else {
-  //       pStat.innerHTML = "Atleast One Special Char"
-  //       pStat.style.color= "red";
-  //     }
-  //   }else {
-  //     pStat.innerHTML = "Atleast One Number"
-  //     pStat.style.color= "red";
-  //   }
+  let Password =   document.getElementById('passworD').value;
+  let pStat = document.getElementById('PMS');
+  var hasDigit = hasNumber(Password);
+  var hasSpecialChar = hasSpecialChars(Password);
+  var hasUpperandLowerCases = hasUpperCase(Password);
+  console.log(hasUpperandLowerCases);
+  var strongPassword = (hasUpperandLowerCases && hasDigit && hasSpecialChar);
+  var mediumPassword = ((hasUpperandLowerCases && hasDigit) || (hasUpperandLowerCases && hasSpecialChar));
+  var weakPassword = (hasUpperandLowerCases || hasDigit);
+
+  if (Password.length > 8) {
+      pStat.innerHTML = "Password Accepted"
+      pStat.style.color= "#20e120";
+  }else {
+    pStat.innerHTML = "Min length is 8"
+    pStat.style.color= "red";
+  }
+
 }
 
 function isChecked(){
@@ -194,6 +189,9 @@ function hasSpecialChars(str) {
 function hasUpperandLowerCase(str){
   const upandlow = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$/;
   return upandlow.test(str);
+}
+function hasUpperCase(str){
+  return str.match(/^[A-Z]*$/);
 }
 function hasTwoWord(name) {
     var matches = name.match(/\b[^\d\s]+\b/g);
