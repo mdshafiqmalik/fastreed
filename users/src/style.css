@@ -74,10 +74,6 @@
   width: 92%;
   border-bottom: 2px solid #777;
 }
-.loginForm{
-  text-align: center;
-  padding: 0;
-}
 .loginSubmit{
   border:0;
   flex-direction:column;
