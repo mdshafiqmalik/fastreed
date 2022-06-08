@@ -19,7 +19,7 @@ if (count($_SESSION) > 0)  {
   if (addOTP($link, $newUserID, $randOTP,$email,$sentTime)) {
    if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword)) {
      if (sendOTP($fullName, $email, $newUserID, $randOTP)) {
-       echo "Everything is ok";
+       echo $email;
      }else {
        header("Location: ../register?errorMessage= OTP Not Send&id=FNS");
      }
