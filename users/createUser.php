@@ -19,7 +19,7 @@ if (count($_SESSION) > 0)  {
   if (addOTP($link, $newUserID, $randOTP,$email,$sentTime)) {
    if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword)) {
      if (sendOTP($fullName, $email, $newUserID, $randOTP)) {
-       echo $email;
+
      }else {
        header("Location: ../register?errorMessage= OTP Not Send&id=FNS");
      }
@@ -64,8 +64,6 @@ function addUser($link, $newUserID, $username, $fullName, $email, $password, $en
 function sendOTP($fullName, $email, $newUserID, $randomOTP){
   include '../_.config/sjdhfjsadkeys.php';
 
-  $encOTP = openssl_encrypt($randomOTP, $ciphering,
-  $encryption_key, $options, $encryption_iv);
   $message = "
   <html>
   <head>
@@ -79,7 +77,7 @@ function sendOTP($fullName, $email, $newUserID, $randomOTP){
   <body><p id='message'>
   Hello <b>".$fullName." </b><br>
   Your One Time Password is <b>".$randomOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3><br /><br />
-  <a href='https://m.shafiqhub.com/users/verify.php?suid=".$newUserID ."&cenpto=".$encOTP."'> Verify Now</a>
+  <a href='https://m.shafiqhub.com/users/verify.php?suid=".$newUserID ."&cenpto=".$randomOTP."'> Verify Now</a>
   </body>
   </html>";
   $subject = $randomOTP." is Your OTP";
