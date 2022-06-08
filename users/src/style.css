@@ -51,6 +51,9 @@
   margin-left: .3em;
   max-width: 300px;
 }
+#passwordEYE{
+  margin-right: 1em;
+}
 .tc{
   margin: .4em 1.5em .2em .6em;
   display: flex;
@@ -68,7 +71,7 @@
 .loginFields,.loginSubmit{
   max-width: 350px;
   margin: .2em .5em;
-  width: 90%;
+  width: 87%;
   border-bottom: 2px solid #777;
 }
 .loginSubmit{
