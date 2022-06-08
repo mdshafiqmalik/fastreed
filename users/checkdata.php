@@ -100,17 +100,12 @@ function checkUserNameExist($enterdUserName){
   include '../_.config/_s_db_.php';
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   // check in verified users table
-  $sqlV = "SELECT userName FROM fast_users WHERE userName = '$enterdUserName'";
-  $resultV = mysqli_query($link, $sqlV);
-  $userNameExistV = mysqli_num_rows($resultV);
-
-  // check in non verified users mysql_list_tables
-  $sqlN =  "SELECT userName FROM fast_noverify_users WHERE userName = '$enterdUserName'";
-  $resultN = mysqli_query($link, $sqlN);
-  $userNameExistN = mysqli_num_rows($resultN);
+  $sql = "SELECT userName FROM fast_users WHERE userName = '$enterdUserName'";
+  $result = mysqli_query($link, $sql);
+  $userNameExist = mysqli_num_rows($result);
 
   // check if username exist in any tables
-  if ($userNameExistV || $userNameExistN) {
+  if ($userNameExist) {
     $unameExist = true;
   }else {
     $unameExist = false;
@@ -123,17 +118,12 @@ function checkEmailExist($emailInput){
   include '../_.config/_s_db_.php';
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   // check in verified users table
-  $sqlV = "SELECT userEmail FROM fast_users WHERE userEmail = '$emailInput'";
-  $resultV = mysqli_query($link, $sqlV);
-  $emailExistV = mysqli_num_rows($resultV);
-
-  // check in non verified users mysql_list_tables
-  $sqlN =  "SELECT userEmail FROM fast_noverify_users WHERE userEmail = '$emailInput'";
-  $resultN = mysqli_query($link, $sqlN);
-  $emailExistN = mysqli_num_rows($resultN);
+  $sql = "SELECT userEmail FROM fast_users WHERE userEmail = '$emailInput'";
+  $result = mysqli_query($link, $sql);
+  $emailExist= mysqli_num_rows($result);
 
   // check if username exist in any tables
-  if ($emailExistV || $emailExistN) {
+  if ($emailExist) {
     $emailExist = true;
   }else {
     $emailExist = false;

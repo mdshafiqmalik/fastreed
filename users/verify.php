@@ -16,21 +16,56 @@
   </div>
 
   <?php
-  echo '
-  <div id="userDiv" class="cont">
-  <div class="content">
-  <span id="signUp" >Verify Your OTP</span>
-  <span id="successMessage">We have sent a 6 digit OTP to your email</span>
-  <form class="loginForm" action="verify.php" method="get">
-  <div class="loginFields">
-    <input id="OTPfield"onkeyup="checkOTP()" type="number" name="email" value="" placeholder="Enter OTP">
-  </div>
-  <div class="loginSubmit">
-    <input id="verifyOTP" type="submit" name="" value="VERIFY"disabled>
-  </div>
-  </form>
-  </div>
-  ';
+  session_start();
+  session_destroy();
+  if (isset($_GET['suid'])) {
+    // Check suid present or not
+    $userID = $_GET['suid'];
+    $isUserPresent = checkUserID($userID);
+    if ($isUserPresent) {
+      if (isset($_GET['OTP'])) {
+        $OTP = $_GET['OTP'];
+        // authenticateOTP($userID);
+      }else {
+        echo '
+        <div id="userDiv" class="cont">
+        <div class="content">
+        <span id="signUp" >Verify Your OTP</span>
+        <span id="successMessage">We have sent a 6 digit OTP to your email</span>
+        <form class="loginForm" action="makeRealUser.php?suid=867648756487" method="get">
+        <div class="loginFields">
+          <input id="OTPfield"onkeyup="checkOTP()" type="number" name="OTP" value="" placeholder="Enter OTP">
+        </div>
+        <div class="loginSubmit">
+          <input id="verifyOTP" type="submit" name="" value="VERIFY"disabled>
+        </div>
+        </form>
+        </div>
+        ';
+      }
+    }else {
+      header("Location: ../register");
+    }
+  }else {
+    header("Location: ../register");
+  }
+
+
+
+
+  function checkUserID($userID){
+    include '../_.config/_s_db_.php';
+    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+    $checkSUID = "SELECT userID FROM fast_noverify_users WHERE userID = '$userID'";
+    $result = mysqli_query($link, $checkSUID);
+    $isUserID = mysqli_num_rows($result);
+    if ($isUserID) {
+      $userIDPresent = true;
+    }else {
+      $userIDPresent = false;
+    }
+    return $userIDPresent;
+  }
   ?>
 
 </div>

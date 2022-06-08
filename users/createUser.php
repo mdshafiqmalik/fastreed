@@ -9,7 +9,7 @@ if (count($_SESSION) > 0)  {
       // Set each digit
       $randOTP .= random_int(0, 9);
   }
-  $sentTime = time()+600; // For six minutes
+  $sentTime = date('Y-m-d'); // For six minutes
   $email = $_SESSION['userEmail'];
   $hashPassword = $_SESSION['passWord'];
   $fullName = $_SESSION['fullName'];
@@ -19,7 +19,7 @@ if (count($_SESSION) > 0)  {
   if (addOTP($link, $newUserID, $randOTP,$email,$sentTime)) {
    if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword)) {
      if (sendOTP($fullName, $email, $newUserID, $randOTP)) {
-
+       header("Location: verify.php?suid=$newUserID");
      }else {
        header("Location: ../register?errorMessage= OTP Not Send&id=FNS");
      }
@@ -29,6 +29,8 @@ if (count($_SESSION) > 0)  {
  }else {
    header("Location: ../register?errorMessage= OTP Not Added&id=FNS");
  }
+}else {
+  header("Location: ../register");
 }
 
 
