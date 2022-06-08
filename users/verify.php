@@ -33,11 +33,12 @@
           echo '<center><span id="errorMessage">OTP Wrong Or Expired</span></center>';
         }
       }else {
+        $self = htmlspecialchars($_SERVER["PHP_SELF"]);
         echo '
-
         <span id="successMessage">We have sent a 6 digit OTP to your email</span>
-        <form class="loginForm" action="makeRealUser.php?suid=867648756487" method="get">
+        <form class="loginForm" action="'.$self.'" method="get">
         <div class="loginFields">
+          <input id="OTPfield" type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
           <input id="OTPfield"onkeyup="checkOTP()" type="number" name="OTP" value="" placeholder="Enter OTP">
         </div>
         <div class="loginSubmit">
