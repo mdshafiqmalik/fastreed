@@ -90,7 +90,7 @@ function sendOTP($fullName, $email, $newUserID, $randomOTP){
   <body><p id='message'>
   Hello <b>".$fullName." </b><br>
   Your One Time Password is <b>".$randomOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3><br /><br />
-  <a href='https://m.shafiqhub.com/users/verify.php?suid=".$newUserID ."&cenpto=".$randomOTP."'> Verify Now</a>
+  <a href='https://m.shafiqhub.com/users/verify.php?suid=".$newUserID ."&centpo=".$randomOTP."'> Verify Now</a>
   </body>
   </html>";
   $subject = $randomOTP." is Your OTP";
