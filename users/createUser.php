@@ -9,7 +9,7 @@ if (count($_SESSION) > 0)  {
       // Set each digit
       $randOTP .= random_int(0, 9);
   }
-  $sentTime = date('Y-m-d'); // For six minutes
+  $sentTime = time()+600; // For Ten minutes
   $email = $_SESSION['userEmail'];
   $hashPassword = $_SESSION['passWord'];
   $fullName = $_SESSION['fullName'];
@@ -36,6 +36,12 @@ if (count($_SESSION) > 0)  {
 
 // add OTP to Database
 function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
+  $checkOTP = "SELECT userID FROM fast_otp Where emailAddress = '$email'";
+  $res = mysqli_query($link, $checkOTP);
+  if ($res) {
+    $delRecord = "DELETE FROM fast_otp Where emailAddress= '$email'";
+    mysqli_query($link, $delRecord);
+  }
   $addOTP = "INSERT INTO `fast_otp` (`userID`, `sentOTP`, `emailAddress`,`sentTime`) VALUES ('$newUserID', '$randOTP','$email','$sentTime')";
   $result = mysqli_query($link, $addOTP);
   if ($result) {
@@ -49,11 +55,16 @@ function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
 
 // Add user to Database
 function addUser($link, $newUserID, $username, $fullName, $email, $password, $encPass){
-  $addPassword = "INSERT INTO `user_sec` (`userID`, `ePassword`) VALUES ('$newUserID', '$encPass')";
-  $addUser = "INSERT INTO `fast_noverify_users` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password')";
-  $result1 = mysqli_query($link, $addUser);
-  $result2 = mysqli_query($link, $addPassword);
-  if ($result1 && $result2) {
+  $checkEmail = "SELECT userID FROM fast_noverify_users Where emailAddress = '$email'";
+  $res = mysqli_query($link, $checkEmail);
+  if ($res) {
+    $delRecord = "DELETE FROM fast_noverify_users Where emailAddress= '$email'";
+    mysqli_query($link, $delRecord);
+  }
+
+  $addUser = "INSERT INTO `fast_noverify_users` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`,`ePassword`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password', '$encPass')";
+  $result = mysqli_query($link, $addUser);
+  if ($result) {
     $userAdded = true;
   }else {
     $userAdded = false;
