@@ -24,13 +24,7 @@
     }
 
 
-    if (isset($_GET['errorMessage'])) {
-      $Message ='<div id="errorMessage">
-      <span style="color: red">'.$_GET['errorMessage'].'</span></div>
-      ';
-    }else {
-      $Message = '';
-    }
+
      ?>
 
     <div id="userDiv" class="cont">
@@ -38,7 +32,6 @@
     <span id="signUp" >Create An Account</span>
 
     <form class="loginForm" action="../users/checkdata.php" method="post">
-   <?php echo $Message; ?>
    <span id="FNS" class="stat" style="color:red;"> All Fields Are Mendatory*</span>
    <div class="loginFields">
      <input width="100%" id="fullName" onkeyup="checkFullName()" type="text" name="fullName" value="" placeholder="Full Name*" >
@@ -75,6 +68,15 @@
     </button></a>
     </div>
   </body>
+  <?php
+  if (isset($_GET['errorMessage'])) {
+    echo '  <script type="text/javascript">
+        document.getElementById("FNS").innerHTML = "'.$_GET['errorMessage'].'";
+        document.getElementById("FNS").style.color = "red";
+      </script>';
+  }
+   ?>
+
   <script src="../users/src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
   <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
 </html>

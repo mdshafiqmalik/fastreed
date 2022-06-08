@@ -12,7 +12,7 @@ function change(){
   }
 }
 window.onload = function(){
-    let errorMessage = document.getElementById('errorMessage');
+    let errorMessage = document.getElementById('FNS');
   if (!errorMessage) {
   }else {
     setTimeout(function(){
