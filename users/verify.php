@@ -39,10 +39,10 @@
         <form class="loginForm" action="'.$self.'" method="get">
         <div class="loginFields">
           <input id="OTPfield" type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-          <input id="OTPfield"onkeyup="checkOTP()" type="number" name="OTP" value="" placeholder="Enter OTP">
+          <input id="OTPfield" onkeyup="checkOTP()" type="number" name="OTP" value="" placeholder="Enter OTP">
         </div>
         <div class="loginSubmit">
-          <input id="verifyOTP" type="submit" name="" value="VERIFY"disabled>
+          <input id="verifyOTP" type="submit" name="" value="VERIFY">
         </div>
         </form>
 
