@@ -9,6 +9,21 @@ if (isset($_POST)) {
     $passWord = $_POST['password'];
     $inputEmpty = (empty($emailAddress) && empty($userName) && empty($fullName) && empty($passWord));
     if (!$inputEmpty) { // Inputs are not empty
+
+      // passwords
+      $hashPassword =  password_hash($passWord, PASSWORD_DEFAULT);
+      include '../_.config/sjdhfjsadkeys.php';
+      $encPassword = openssl_encrypt($passWord, $ciphering,
+      $encryption_key, $options, $encryption_iv);
+      $minPasswordLenght = strLen($passWord) > 8;
+
+      // Full name Validation
+      $sanitizeFullName = sanitizeData($fullName);
+      $fullNameLength = strLen($sanitizeFullName);
+      $minFullNameLength = $fullNameLength > 8;
+      $nameHasNumber = preg_match('/[0-9]/',$sanitizeFullName);
+      $nameHasSpecialChar = preg_match('/[\'!`.~^$%&*()}{}@#-?><_,|=+]/', $sanitizeFullName);
+
       // Username Validation
       $sanitizedUserName = sanitizeData($userName);
       $userNameLength = strlen($sanitizedUserName);
@@ -21,22 +36,42 @@ if (isset($_POST)) {
       $validEMail = filter_var($sanitizedEmail, FILTER_VALIDATE_EMAIL);
       $checkEMailExists = checkEmailExist($validEMail);
 
-      if ($minUserNameLen) {
-        if ($userNameValid) {
-          if (!$checkUserNameExists) {
-            if (!$checkEMailExists) {
+      if (!$nameHasNumber || !$nameHasSpecialChar) {
+        if ($minFullNameLength) {
+          if ($minUserNameLen) {
+            if ($userNameValid) {
+              if (!$checkUserNameExists) {
+                if (!$checkEMailExists) {
+                  if ($minPasswordLenght) {
 
+                    // create sessions
+                    session_start();
+                    $_SESSION['userName'] = $sanitizedUserName;
+                    $_SESSION['userEmail'] = $sanitizedEmail;
+                    $_SESSION['fullName'] = $sanitizeFullName;
+                    $_SESSION['passWord'] = $hashPassword;
+                    $_SESSION['encPassword'] = $encPassword;
+                    header("Location: createUser.php");
+                  }else {
+                    header("Location: ../register/?errorMessage=Password Minimum Length is 8 letters&id=PMS");
+                  }
+                }else {
+                  header("Location: ../register/?errorMessage=There is already have an account with this e-mail address&id=EMS");
+                }
+              }else {
+                header("Location: ../register/?errorMessage=Username is Taken&id=UNS");
+              }
             }else {
-              header("Location: ../register/?errorMessage=There is already have an account with this e-mail address");
+              header("Location: ../register/?errorMessage=Only Alphabets, No's and underscore(_) is allowed in Username&id=UNS");
             }
           }else {
-            header("Location: ../register/?errorMessage=Username is Taken");
+            header("Location: ../register/?errorMessage=Username Minimum Length is 8 letters&id=UNS");
           }
         }else {
-          header("Location: ../register/?errorMessage=Only Alphabets, No's and underscore(_) is allowed in Username");
+          header("Location: ../register/?errorMessage=Full Name Minimum Length is 8 letters&id=FNS");
         }
       }else {
-        header("Location: ../register/?errorMessage=Username Min Length is 8 letters");
+        header("Location: ../register/?errorMessage=Number and Special Characters are not allowed&id=FNS");
       }
 
     }else {
@@ -67,7 +102,6 @@ function checkUserNameExist($enterdUserName){
   // check in verified users table
   $sqlV = "SELECT userName FROM fast_users WHERE userName = '$enterdUserName'";
   $resultV = mysqli_query($link, $sqlV);
-  var_dump($resultV);
   $userNameExistV = mysqli_num_rows($resultV);
 
   // check in non verified users mysql_list_tables
@@ -91,7 +125,6 @@ function checkEmailExist($emailInput){
   // check in verified users table
   $sqlV = "SELECT userEmail FROM fast_users WHERE userEmail = '$emailInput'";
   $resultV = mysqli_query($link, $sqlV);
-  var_dump($resultV);
   $emailExistV = mysqli_num_rows($resultV);
 
   // check in non verified users mysql_list_tables

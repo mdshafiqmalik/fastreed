@@ -11,15 +11,7 @@ function change(){
     document.getElementById('password').type = "password";
   }
 }
-window.onload = function(){
-    let errorMessage = document.getElementById('FNS');
-  if (!errorMessage) {
-  }else {
-    setTimeout(function(){
-      errorMessage.style.display = "none";
-    },3000);
-  }
-}
+
 function checkFullName(){
   var fullName = document.getElementById('fullName').value;
   var userStatus = document.getElementById('FNS');
@@ -119,7 +111,6 @@ function checkPassword() {
   var hasDigit = hasNumber(Password);
   var hasSpecialChar = hasSpecialChars(Password);
   var hasUpperandLowerCases = hasUpperCase(Password);
-  console.log(hasUpperandLowerCases);
   var strongPassword = (hasUpperandLowerCases && hasDigit && hasSpecialChar);
   var mediumPassword = ((hasUpperandLowerCases && hasDigit) || (hasUpperandLowerCases && hasSpecialChar));
   var weakPassword = (hasUpperandLowerCases || hasDigit);

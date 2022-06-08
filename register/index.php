@@ -71,9 +71,21 @@
   <?php
   if (isset($_GET['errorMessage'])) {
     echo '  <script type="text/javascript">
-        document.getElementById("FNS").innerHTML = "'.$_GET['errorMessage'].'";
-        document.getElementById("FNS").style.color = "red";
-      </script>';
+        document.getElementById("'.$_GET['id'].'").innerHTML = "'.$_GET['errorMessage'].'";
+        document.getElementById("'.$_GET['id'].'").style.color = "red";
+
+        window.onload = function(){
+            let errorMessage = document.getElementById("'.$_GET['id'].'");
+          if (!errorMessage) {
+          }else {
+            setTimeout(function(){
+              errorMessage.innerHTML = "";
+            },6000);
+          }
+        }
+      </script>'
+
+      ;
   }
    ?>
 
