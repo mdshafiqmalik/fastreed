@@ -71,8 +71,12 @@
 .loginFields,.loginSubmit{
   max-width: 350px;
   margin: .2em .5em;
-  width: 90%;
+  width: 92%;
   border-bottom: 2px solid #777;
+}
+.loginForm{
+  text-align: center;
+  padding: 0;
 }
 .loginSubmit{
   border:0;
@@ -181,7 +185,7 @@ input:-webkit-autofill:active {
   color: red;
 }
 #successMessage{
-  margin: .3em 0 .8em 0em;
+  margin: .3em 0 .8em -.2em;
   width: 100%;
   max-width: 250px;
   background-color: #e8f7f2;
