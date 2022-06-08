@@ -30,7 +30,7 @@
         if (authenticateOTP($userID , $OTP)) {
           echo '<span id="successMessage">You are verified Now</span>';
         }else {
-          echo '<center><span id="errorMessage">OTP Wrong Or Expired</span></center>';
+          echo '<center><span id="errorMessage">OTP Expired Please Create another OTP</span></center>';
         }
       }else {
         $self = htmlspecialchars($_SERVER["PHP_SELF"]);
