@@ -120,7 +120,7 @@ function sendOTP($fullName, $email, $newUserID, $randomOTP){
 // Create Random ID
 function checkRandomID($link, $randID){
   $sqlV = "SELECT userID FROM fast_users WHERE userID ='$randID'";
-  $sqlN = "SELECT userID FROM fast_noVerify_users WHERE userID ='$randID'";
+  $sqlN = "SELECT userID FROM fast_noverify_users WHERE userID ='$randID'";
   $resultV = mysqli_query($link, $sqlV);
   $resultN = mysqli_query($link, $sqlN);
   if (mysqli_num_rows($resultV)) {
