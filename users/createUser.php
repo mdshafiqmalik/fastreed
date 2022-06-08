@@ -29,7 +29,7 @@ if (isset($_POST)) {
           }
           $sentTime = time()+600;
           if (addOTP($link, $newUserID, $randOTP,$email,$sentTime)) {
-            if (addUser($link,$newUserID, $username,$fullName, $email,$passWords)) {
+            if (addUser($link,$newUserID, $username,$fullName, $email, $passWords)) {
               if (sendOTP($fullName, $email, $newUserID, $randOTP)) {
                 echo "Everything is ok";
               }else {
@@ -68,8 +68,8 @@ function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
 
 
 // Add user to Database
-function addUser($link,$newUserID, $username,$fullName, $email,$password){
-  $addUser = "INSERT INTO `fast_noVerify_users` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password')";
+function addUser($link, $newUserID, $username, $fullName, $email, $password){
+  $addUser = "INSERT INTO `fast_noverify_users` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password')";
   $result = mysqli_query($link, $addUser);
   if ($result) {
     $userAdded = true;
