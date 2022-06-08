@@ -58,7 +58,7 @@ function addUser($link, $newUserID, $username, $fullName, $email, $password, $en
   $checkEmail = "SELECT userID FROM fast_noverify_users Where emailAddress = '$email'";
   $res = mysqli_query($link, $checkEmail);
   if ($res) {
-    $delRecord = "DELETE FROM fast_noverify_users Where emailAddress= '$email'";
+    $delRecord = "DELETE FROM fast_noverify_users Where userEmail= '$email'";
     mysqli_query($link, $delRecord);
   }
 
