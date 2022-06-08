@@ -7,15 +7,8 @@
 // }
 // check if username exist in Database
 // Validate Username
-function isValidUsername($userName){
-  $allowed  = array("_","-");
-  if (ctype_alnum(str_replace($allowed, '', $userName))) {
-    $isvalid = true;
-  }else {
-    $isvalid = false;
-  }
-  return $isvalid;
+date_default_timezone_set('Asia/Kolkata');
+if ('1654710765' < time()) {
+  echo "Time Up";
 }
-
-var_dump(isValidUsername("MDSHAFIQ7"));
  ?>

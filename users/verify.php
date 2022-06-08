@@ -14,7 +14,9 @@
   <div class="navigation">
     <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
   </div>
-
+  <div id="userDiv" class="cont">
+  <div class="content">
+  <span id="signUp" >Verify Your OTP</span>
   <?php
   session_start();
   session_destroy();
@@ -23,14 +25,16 @@
     $userID = $_GET['suid'];
     $isUserPresent = checkUserID($userID);
     if ($isUserPresent) {
-      if (isset($_GET['OTP'])) {
-        $OTP = $_GET['OTP'];
-        // authenticateOTP($userID);
+      if (isset($_GET['centpo'])) {
+        $OTP = $_GET['centpo'];
+        if (authenticateOTP($userID , $OTP)) {
+          echo '<span id="successMessage">You are verified Now</span>';
+        }else {
+          echo '<center><span id="errorMessage">OTP Wrong Or Expired</span></center>';
+        }
       }else {
         echo '
-        <div id="userDiv" class="cont">
-        <div class="content">
-        <span id="signUp" >Verify Your OTP</span>
+
         <span id="successMessage">We have sent a 6 digit OTP to your email</span>
         <form class="loginForm" action="makeRealUser.php?suid=867648756487" method="get">
         <div class="loginFields">
@@ -40,7 +44,7 @@
           <input id="verifyOTP" type="submit" name="" value="VERIFY"disabled>
         </div>
         </form>
-        </div>
+
         ';
       }
     }else {
@@ -51,7 +55,25 @@
   }
 
 
-
+  function authenticateOTP($userID, $OTP){
+    include '../_.config/_s_db_.php';
+    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+    $noVerifyUser = "SELECT * FROM fast_otp WHERE userID = '$userID'";
+    $result = mysqli_query($link, $noVerifyUser);
+    $dbArray = $result->fetch_assoc();
+    $dbOTP = $dbArray['sentOTP'];
+    $expTime = $dbArray['sentTime'];
+    if ($expTime < time()) {
+      $OAuth = false;
+    }else {
+      if ($dbOTP == $OTP) {
+        $OAuth = true;
+      }else {
+        $OAuth = false;
+      }
+    }
+    return $OAuth;
+  }
 
   function checkUserID($userID){
     include '../_.config/_s_db_.php';
@@ -67,7 +89,7 @@
     return $userIDPresent;
   }
   ?>
-
+</div>
 </div>
   <script src="src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
   <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
