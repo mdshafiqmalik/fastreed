@@ -150,13 +150,7 @@ function RID(){
   return $randUID;
 }
 
-// Sanitize Data
-function sanitizeData($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+
 // $OTP = createOTP(6);
 // $sessionID = $_SESSION["UNIQUESESSION"];
 // $sentTime = time();

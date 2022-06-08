@@ -37,29 +37,29 @@
     <div class="content">
     <span id="signUp" >Create An Account</span>
 
-    <form class="loginForm" action="../users/createUser.php" method="post">
+    <form class="loginForm" action="../users/checkdata.php" method="post">
    <?php echo $Message; ?>
    <span id="FNS" class="stat" style="color:red;"> All Fields Are Mendatory*</span>
    <div class="loginFields">
-     <input width="100%" id="fullName" onkeyup="checkFullName()" type="text" name="fullName" value="" placeholder="Full Name*" required>
+     <input width="100%" id="fullName" onkeyup="checkFullName()" type="text" name="fullName" value="" placeholder="Full Name*" >
      <!-- <span id="usernameStatus"class="status"></span> -->
    </div>
     <span id="UNS" class="stat"></span>
     <div class="loginFields">
-      <input width="100%" id="username" onkeyup="checkUsername()" type="text" name="username" value="" placeholder="Username*" required>
+      <input width="100%" id="username" onkeyup="checkUsername()" type="text" name="username" value="" placeholder="Username*" >
     </div>
 
     <span id="EMS" class="stat"></span>
     <div class="loginFields">
-      <input id="signUpEmail" onkeyup="checkEmail()" type="text" name="email" value="" placeholder="E-mail*" required>
+      <input id="signUpEmail" onkeyup="checkEmail()" type="text" name="email" value="" placeholder="E-mail*" >
     </div>
 
     <span id="PMS" class="stat"></span>
     <div id="passwordField" class="loginFields">
-      <input id="passworD" onkeyup="checkPassword()" type="text" name="password" value="" placeholder="Password*" required>
+      <input id="passworD" onkeyup="checkPassword()" type="text" name="password" value="" placeholder="Password*">
     </div>
     <div class="tc">
-    <input id="checkBox" onclick="isChecked()" type="checkbox" name="checkbox"  required>
+    <input id="checkBox" onclick="isChecked()" type="checkbox" name="checkbox" >
     <span id="tc">By clicking here I agree to the <a href=""> terms and services</a></span>
     </div>
     <div class="loginSubmit">
