@@ -46,7 +46,6 @@
                     document.location = "../profile";
                   </script>';
                 }else {
-                  var_dump($_COOKIE);
                   echo '<center><span id="successMessage">Registerd but can\'t login (000U20)</span></center><br>';
                   echo '<center><span id="successMessage"><a href="../login">Login Instead</a></span></center>';
                 }
