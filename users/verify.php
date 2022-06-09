@@ -37,7 +37,9 @@
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
                 setcookie('userID', $encUID, time() + (86400 * 30), "/");
-                header("Location: ../profile");
+                echo '<script type="text/javascript">
+                  document.location = "../register";
+                </script>';
 
               }else {
                 echo '<center><span id="errorMessage">There is some problem at our end (000X2)</span></center>';
@@ -45,7 +47,6 @@
             }else {
               echo '<center><span id="errorMessage">There is some problem at our end (000X1)</span></center>';
             }
-            echo '<center><span id="successMessage">Your Account Is Verified</span></center>';
 
           }else {
             $self = htmlspecialchars($_SERVER["PHP_SELF"]);
