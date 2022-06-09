@@ -18,7 +18,6 @@
   <div class="content">
   <span id="signUp" >Verify Your OTP</span>
   <?php
-  session_start();
   session_destroy();
   // unset($_SESSION['userEmail']);
   // unset($_SESSION['passWord']);
