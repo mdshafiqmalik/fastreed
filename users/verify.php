@@ -180,7 +180,7 @@
  }
 
   // Resend OTP
-  function resendOTP($suid,$randOTP, $userEmail, $userFullName){
+  function resendOTP($suid, $randOTP, $userEmail, $userFullName){
     include '../_.config/sjdhfjsadkeys.php';
     $message = "
     <html>
@@ -195,12 +195,12 @@
     <body><p id='message'>
     Hello <b>".$userFullName." </b><br>
     Your One Time Password is <b>".$randOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3><br /><br />
-    <a href='https://m.shafiqhub.com/users/verify.php?suid=".$newUserID ."&centpo=".$suid."'> Verify Now</a>
+    <a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$suid."'> Verify Now</a>
     </body>
     </html>";
     $subject = $randomOTP." is Your OTP";
     $headers = "From: admin@shafiqhub.com" . "\r\n" ."CC: admin@shafiqhub.com"."\r\n"."Content-type: text/html";
-    $mailDeliverd =  mail($email,$subject,$message,$headers);
+    $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
     if ($mailDeliverd) {
       $mailStatus = true;
     }else {
