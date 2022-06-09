@@ -92,7 +92,7 @@
     if ($paramSet) {
       $userID = $_POST['suid'];
       if (checkUserID($userID)) {
-        if(resendOTP($userID)){
+        if(updateOTP($userID)){
           $self = htmlspecialchars($_SERVER["PHP_SELF"]);
           echo '
           <span id="successMessage">We have <i>Resent a 6 digit OTP</i> to your email</span>
@@ -147,7 +147,7 @@
     header("Location: ../register");
   }
 
- function resendOTP($suid){
+ function updateOTP($suid){
    $expTime = time()+600;
    $randOTP = "";
    for ($x = 1; $x <= 6; $x++) {
@@ -159,12 +159,55 @@
    $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
    $result = mysqli_query($link, $upOTPandTime);
    if ($result) {
-     $otpResend = true;
+     $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
+     $result = mysqli_query($link, $upOTPandTime);
+     if ($result) {
+       $arrayDat = $result->fetch_assoc();
+       $userFullName = arrayDat['userFullName'];
+       $userEmail = arrayDat['userEmail'];
+       if (resendOTP($suid, $randOTP, $userEmail, $userFullName)) {
+         $otpResend = true;
+       }else {
+         $otpResend = false;
+       }
+     }else {
+       $otpResend = false;
+     }
    }else {
      $otpResend = false;
    }
    return $otpResend;
  }
+
+  // Resend OTP
+  function resendOTP($suid,$randOTP, $userEmail, $userFullName){
+    include '../_.config/sjdhfjsadkeys.php';
+    $message = "
+    <html>
+    <head>
+    <title>OTP Authenication</title>
+    <style media='screen'>
+      #message{
+        font-size: 1.2em;
+      }
+    </style>
+    </head>
+    <body><p id='message'>
+    Hello <b>".$userFullName." </b><br>
+    Your One Time Password is <b>".$randOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3><br /><br />
+    <a href='https://m.shafiqhub.com/users/verify.php?suid=".$newUserID ."&centpo=".$suid."'> Verify Now</a>
+    </body>
+    </html>";
+    $subject = $randomOTP." is Your OTP";
+    $headers = "From: admin@shafiqhub.com" . "\r\n" ."CC: admin@shafiqhub.com"."\r\n"."Content-type: text/html";
+    $mailDeliverd =  mail($email,$subject,$message,$headers);
+    if ($mailDeliverd) {
+      $mailStatus = true;
+    }else {
+      $mailStatus = false;
+    }
+    return $mailStatus;
+  }
 
   function checkOTPEXP($userID, $OTP){
     include '../_.config/_s_db_.php';

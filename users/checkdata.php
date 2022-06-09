@@ -20,14 +20,14 @@ if (isset($_POST)) {
       // Full name Validation
       $sanitizeFullName = sanitizeData($fullName);
       $fullNameLength = strLen($sanitizeFullName);
-      $minFullNameLength = $fullNameLength > 8;
+      $minFullNameLength = $fullNameLength > 6;
       $nameHasNumber = preg_match('/[0-9]/',$sanitizeFullName);
       $nameHasSpecialChar = preg_match('/[\'!`.~^$%&*()}{}@#-?><_,|=+]/', $sanitizeFullName);
 
       // Username Validation
       $sanitizedUserName = sanitizeData($userName);
       $userNameLength = strlen($sanitizedUserName);
-      $minUserNameLen = $userNameLength > 8;
+      $minUserNameLen = $userNameLength > 6;
       $checkUserNameExists = checkUserNameExist($sanitizedUserName);
       $userNameValid = isValidUsername($sanitizedUserName);
 
@@ -65,10 +65,10 @@ if (isset($_POST)) {
               header("Location: ../register/?errorMessage=Only Alphabets, No's and underscore(_) is allowed in Username&id=UNS");
             }
           }else {
-            header("Location: ../register/?errorMessage=Username Minimum Length is 8 letters&id=UNS");
+            header("Location: ../register/?errorMessage=Username Minimum Length is 6&id=UNS");
           }
         }else {
-          header("Location: ../register/?errorMessage=Full Name Minimum Length is 8 letters&id=FNS");
+          header("Location: ../register/?errorMessage=Full Name Minimum Length is 6 letters&id=FNS");
         }
       }else {
         header("Location: ../register/?errorMessage=Number and Special Characters are not allowed&id=FNS");
