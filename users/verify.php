@@ -128,7 +128,7 @@
       echo '<center><span id="successMessage">Redirecting...</span></center>';
       echo '<script type="text/javascript">
       setTimeout(function(){
-        document.location = "../login?errorMessage=000U32&id=FNS&id=FNS";
+        document.location = "../login?errorMessage=000USER33";
       },3000);
 
       </script>';
