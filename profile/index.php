@@ -157,9 +157,9 @@ $articles = '<!-- Popular Articles Open -->
           setcookie('uisnnue', $encUID, time()+(86400*30), '/');
           renderProfile($_SESSION['uisnnue']);
         }else {
-          echo '<script type="text/javascript">
-            document.location = "../login?code=3";
-          </script>';
+          // echo '<script type="text/javascript">
+          //   document.location = "../login?code=3";
+          // </script>';
         }
       }else {
         echo '<script type="text/javascript">
@@ -186,7 +186,8 @@ function checkUserID($dUserID){
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   $checkUserID = "SELECT userID FROM fast_users Where userID = '$dUserID'";
   $userDat = mysqli_query($link, $checkUserID);
-
+  var_dump($userDat);
+  var_dump($dUserID);
   if (mysqli_num_rows($userDat)) {
     $exist = true;
   }else {
