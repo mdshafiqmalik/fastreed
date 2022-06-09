@@ -117,7 +117,7 @@
       }
     }else {
       echo '<script type="text/javascript">
-        document.location = "../register?errorMessage=?errorMessage=000U32&id=FNS&id=FNS";
+        document.location = "../register?errorMessage=000U32&id=FNS&id=FNS";
       </script>';
     }
   }elseif(isset($_POST)) {
