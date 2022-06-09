@@ -117,8 +117,12 @@
       }
     }else {
       echo '<span style="color:orange;" id="errorMessage">User verified already</span>';
+      echo '<span id="successMessage">Redirecting...</span>';
       echo '<script type="text/javascript">
+      setTimeout(function(){
         document.location = "../login?errorMessage=000U32&id=FNS&id=FNS";
+      },3000);
+
       </script>';
 
     }
