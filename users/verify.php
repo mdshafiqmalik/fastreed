@@ -160,7 +160,7 @@
    $result1 = mysqli_query($link, $upOTPandTime);
    if ($result1) {
      $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
-     $result2 = mysqli_query($link, $upOTPandTime);
+     $result2 = mysqli_query($link, $getEmailandFullName);
      if ($result2) {
        $arrayDat = $result2->fetch_assoc();
        $userFullName = arrayDat['userFullName'];
