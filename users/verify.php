@@ -117,8 +117,9 @@
       }
     }else {
       echo '<script type="text/javascript">
-        document.location = "../register?errorMessage=000U32&id=FNS&id=FNS";
+        document.location = "../login?errorMessage=000U32&id=FNS&id=FNS";
       </script>';
+      echo '<span style="color:orange;" id="errorMessage">User verified already</span>';
     }
   }elseif(isset($_POST)) {
     $paramSet = isset($_POST['suid']) && isset($_POST['resendOTP']);
