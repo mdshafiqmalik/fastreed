@@ -228,9 +228,9 @@
     $result = mysqli_query($link, $sentOTP);
     $expTime = $result->fetch_assoc();
     if ($expTime < time()) {
-      $OTPEXP = true;
-    }else {
       $OTPEXP = false;
+    }else {
+      $OTPEXP = true;
     }
     return $OTPEXP;
   }
