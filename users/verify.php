@@ -40,14 +40,15 @@
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
-                var_dump($encUID);
-                if (setcookie('userID', $encUID, time() + (86400 * 30), "/")) {
+                $setCookie = setcookie('userID', $encUID, time() + (86400 * 30), "/");
+                if ($setCookie) {
                   echo '<script type="text/javascript">
                     document.location = "../profile";
                   </script>';
                 }else {
-                  echo '<center><span id="errorMessage">There is some problem at our end (000U20)</span></center><br>';
-                  echo '<center><span id="successMessage"><a href="../login"></a></span></center>';
+                  var_dump($_COOKIE);
+                  echo '<center><span id="successMessage">Registerd but can\'t login (000U20)</span></center><br>';
+                  echo '<center><span id="successMessage"><a href="../login">Login Instead</a></span></center>';
                 }
 
               }else {
