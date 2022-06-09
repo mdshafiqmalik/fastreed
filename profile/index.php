@@ -156,6 +156,16 @@ $articles = '<!-- Popular Articles Open -->
           document.location = "../login";
         </script>';
       }
+    }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
+      if ((boolean)$_GET['eikooCtes']) {
+        include '../_.config/sjdhfjsadkeys.php';
+        $encUID = openssl_encrypt($_SESSION['uisnnue'], $ciphering,
+        $encryption_key, $options, $encryption_iv);
+        setcookie('uisnnue', $encUID, time()+(86400*30), '/');
+        renderProfile($_SESSION['uisnnue']);
+      }else {
+        renderProfile($_SESSION['uisnnue']);
+      }
     }else {
       echo '<script type="text/javascript">
         document.location = "../login";

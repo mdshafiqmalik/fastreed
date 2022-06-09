@@ -35,14 +35,24 @@ session_start();
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
-                $setCookie = setcookie('uisnnue', $encUID, time() + (86400 * 30), "/");
-                if ($setCookie) {
+                $_SESSION['uisnnue'] = $userID;
+                if (isset($_SESSION['uisnnue'])) {
+                  echo '<center><span id="successMessage">Registered Sucesssfully</span></center><br>';
+                  echo '<center><span id="successMessage">Logging In......</span></center>';
+
                   echo '<script type="text/javascript">
-                    document.location = "../profile";
+                  setTimeout(function(){
+                    document.location = "../profile?eikooCtes=true";
+                  },5000);
                   </script>';
                 }else {
-                  echo '<center><span id="successMessage">Registerd but can\'t login (000U20)</span></center><br>';
-                  echo '<center><span id="successMessage"><a href="../login">Login Instead</a></span></center>';
+                  echo '<center><span id="successMessage">Registered Sucesssfully</span></center>';
+                  echo '<center><span id="successMessage">Redirecting to Login page</span></center>';
+                  echo '<script type="text/javascript">
+                  setTimeout(function(){
+                    document.location = "../login";
+                  },5000);
+                  </script>';
                 }
 
               }else {
