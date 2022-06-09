@@ -216,15 +216,19 @@
         font-weight:bold;
         letter-spacing: 3px;
       }
+      #note{
+        background-color: #eee;
+        margin-top: 1em;
+      }
     </style>
     </head>
     <body><div id='message'>
     Dear <b>".$userFullName." </b><br><br>
-    One Time Password(OTP) for account verification is: <b>(Valid For 10 Minutes Only)</b>
+    One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
     <div id='OTP'><p>".$randOTP."</p></div>
-    <div>Or you can verify your account by clicking on the link given  <b>(Valid For 10 Minutes Only)</b></div>
+    <div>Or you can verify your account by clicking on the link given  <b>(valid for 10 minutes only)</b>
     <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
-    <div><b>Note:</b> Kindly ignore this e-mail if you don't know about it.</div>
+    <div id='note'><b>Note:</b> Kindly ignore this e-mail if you don't know about it.</div>
     </div>
     </body>
     </html>";
