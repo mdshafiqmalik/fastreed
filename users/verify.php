@@ -91,7 +91,7 @@
     }else {
       header("Location: ../register");
     }
-  }elseif(isset($_POST) && $_POST['randcheck']==$_SESSION['rand']) {
+  }elseif(isset($_POST)) {
     $paramSet = isset($_POST['suid']) && isset($_POST['resendOTP']);
     if ($paramSet) {
       $userID = $_POST['suid'];
@@ -152,35 +152,38 @@
   }
 
  function updateOTP($suid){
-   $expTime = time()+600;
-   $randOTP = "";
-   for ($x = 1; $x <= 6; $x++) {
-       // Set each digit
-       $randOTP .= random_int(0, 9);
-   }
-   include '../_.config/_s_db_.php';
-   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
-   $result1 = mysqli_query($link, $upOTPandTime);
-   if ($result1) {
-     $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
-     $result2 = mysqli_query($link, $getEmailandFullName);
-     if ($result2) {
-       $arrayDat = $result2->fetch_assoc();
-       $userFullName = $arrayDat['userFullName'];
-       $userEmail = $arrayDat['userEmail'];
-       if (resendOTP($suid, $randOTP, $userEmail, $userFullName)) {
-         $otpResend = true;
+   if ($_POST['randcheck']==$_SESSION['rand']) {
+     $expTime = time()+600;
+     $randOTP = "";
+     for ($x = 1; $x <= 6; $x++) {
+         // Set each digit
+         $randOTP .= random_int(0, 9);
+     }
+     include '../_.config/_s_db_.php';
+     $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+     $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
+     $result1 = mysqli_query($link, $upOTPandTime);
+     if ($result1) {
+       $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
+       $result2 = mysqli_query($link, $getEmailandFullName);
+       if ($result2) {
+         $arrayDat = $result2->fetch_assoc();
+         $userFullName = $arrayDat['userFullName'];
+         $userEmail = $arrayDat['userEmail'];
+         if (resendOTP($suid, $randOTP, $userEmail, $userFullName)) {
+           $otpResend = true;
+         }else {
+           $otpResend = false;
+         }
        }else {
          $otpResend = false;
        }
      }else {
        $otpResend = false;
      }
-   }else {
-     $otpResend = false;
+     return $otpResend;
    }
-   return $otpResend;
+
  }
 
   // Resend OTP
