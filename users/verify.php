@@ -224,15 +224,19 @@
       $inUserCred =  "INSERT INTO `user_credentials` (`userID`, `userFullName`, `userDOB`, `userProfilePic`, `userGender`, `userJoiningDate`, `userCountry`, `userType`) VALUES ('$userID', '$fullName','','$defaultProfilePic','', '$userJoiningDate','','0')";
 
       // add to user_sec
-      $inUserSec = "INSERT INTO `user_sec` (`userId`,`ePassword`) VALUES ('$userID', '$ePassword')";
+      $inUserSec = "INSERT INTO `user_sec` (`userID`,`ePassword`) VALUES ('$userID', '$ePassword')";
+
+      // add to user_verify
+      $inUserverify = "INSERT INTO `user_verify` (`userID`,`emailVerify`, `phoneVerify`,`IDVerify`,`greenTickVerified`) VALUES ('$userID', '1', '0', '0', '0')";
 
       $r1 = mysqli_query($link, $insertData);
       $r2 = mysqli_query($link, $inUserCred);
       $r3 = mysqli_query($link, $inUserSec);
-      if ($r1 && $r2 && $r3) {
+      $r4 = mysqli_query($link, $inUserverify);
+      if ($r1 && $r2 && $r3 && $r4) {
         $delNoVerify ="DELETE FROM fast_noverify_users WHERE userID = '$userID'";
-        $r3 = mysqli_query($link, $delNoVerify);
-        if ($r3) {
+        $r5 = mysqli_query($link, $delNoVerify);
+        if ($r5) {
           $userAdded = true;
         }else {
           $userAdded = false;
