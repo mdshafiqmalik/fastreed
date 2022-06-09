@@ -163,8 +163,8 @@
      $result2 = mysqli_query($link, $getEmailandFullName);
      if ($result2) {
        $arrayDat = $result2->fetch_assoc();
-       $userFullName = arrayDat['userFullName'];
-       $userEmail = arrayDat['userEmail'];
+       $userFullName = $arrayDat['userFullName'];
+       $userEmail = $arrayDat['userEmail'];
        if (resendOTP($suid, $randOTP, $userEmail, $userFullName)) {
          $otpResend = true;
        }else {
