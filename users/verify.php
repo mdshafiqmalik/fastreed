@@ -37,6 +37,7 @@
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
                 setcookie('userID', $encUID, time() + (86400 * 30), "/");
+
                 echo '<script type="text/javascript">
                   document.location = "../profile";
                 </script>';
@@ -115,7 +116,9 @@
         ';
       }
     }else {
-      header("Location: ../register");
+      echo '<script type="text/javascript">
+        document.location = "../register?errorMessage=?errorMessage=000U32&id=FNS&id=FNS";
+      </script>';
     }
   }elseif(isset($_POST)) {
     $paramSet = isset($_POST['suid']) && isset($_POST['resendOTP']);
