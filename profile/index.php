@@ -148,15 +148,6 @@ $articles = '<!-- Popular Articles Open -->
           document.location = "../login";
         </script>';
       }
-    }elseif(isset($_SESSION['uisnnue'])) {
-      if (checkUserID($_SESSION["uisnnue"])) {
-        renderProfile($_SESSION['uisnnue']);
-      }else {
-
-        echo '<script type="text/javascript">
-          document.location = "../login?code=1";
-        </script>';
-      }
     }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
       if ((boolean)$_GET['eikooCtes']) {
         include '../_.config/sjdhfjsadkeys.php';
@@ -171,6 +162,15 @@ $articles = '<!-- Popular Articles Open -->
       echo '<script type="text/javascript">
         document.location = "../login?code=2";
       </script>';
+    }elseif(isset($_SESSION['uisnnue'])) {
+      if (checkUserID($_SESSION["uisnnue"])) {
+        renderProfile($_SESSION['uisnnue']);
+      }else {
+
+        echo '<script type="text/javascript">
+          document.location = "../login?code=1";
+        </script>';
+      }
     }
 
 function checkUserID($dUserID){
