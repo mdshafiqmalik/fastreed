@@ -39,7 +39,7 @@
             echo '
             <span id="errorMessage">Entered link or OTP Expired</span>
             <form class="loginForm" action="'.$self.'" method="post">
-             <input type="hidden" value="'.$rand.'" name="randcheck" />
+             <input type="hidden" value=".'$rand'." name="randcheck" />
             <br>
               <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
               <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
@@ -116,6 +116,11 @@
           <div class="loginSubmit">
             <input id="resendOTP" type="submit" name="" value="Resend OTP">
           </div>
+          <script>
+           if ( window.history.replaceState ) {
+              window.history.replaceState( null, null, window.location.href );
+             }
+          </script>
           </form>
           ';
         }else {
@@ -152,38 +157,35 @@
   }
 
  function updateOTP($suid){
-   if ($_POST['randcheck']==$_SESSION['rand']) {
-     $expTime = time()+600;
-     $randOTP = "";
-     for ($x = 1; $x <= 6; $x++) {
-         // Set each digit
-         $randOTP .= random_int(0, 9);
-     }
-     include '../_.config/_s_db_.php';
-     $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-     $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
-     $result1 = mysqli_query($link, $upOTPandTime);
-     if ($result1) {
-       $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
-       $result2 = mysqli_query($link, $getEmailandFullName);
-       if ($result2) {
-         $arrayDat = $result2->fetch_assoc();
-         $userFullName = $arrayDat['userFullName'];
-         $userEmail = $arrayDat['userEmail'];
-         if (resendOTP($suid, $randOTP, $userEmail, $userFullName)) {
-           $otpResend = true;
-         }else {
-           $otpResend = false;
-         }
+   $expTime = time()+600;
+   $randOTP = "";
+   for ($x = 1; $x <= 6; $x++) {
+       // Set each digit
+       $randOTP .= random_int(0, 9);
+   }
+   include '../_.config/_s_db_.php';
+   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
+   $result1 = mysqli_query($link, $upOTPandTime);
+   if ($result1) {
+     $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
+     $result2 = mysqli_query($link, $getEmailandFullName);
+     if ($result2) {
+       $arrayDat = $result2->fetch_assoc();
+       $userFullName = $arrayDat['userFullName'];
+       $userEmail = $arrayDat['userEmail'];
+       if (resendOTP($suid, $randOTP, $userEmail, $userFullName)) {
+         $otpResend = true;
        }else {
          $otpResend = false;
        }
      }else {
        $otpResend = false;
      }
-     return $otpResend;
+   }else {
+     $otpResend = false;
    }
-
+   return $otpResend;
  }
 
   // Resend OTP
