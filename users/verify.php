@@ -190,16 +190,28 @@
       #message{
         font-size: 1.2em;
       }
+      #message a{
+        text-align:center;
+        color: white;
+        text-decoration:none;
+        background-color: #555;
+        font-weight: bold;
+        padding: .2em .5em;
+        border-radius: 5px;
+      }
+      #message a:hover{
+        background-color: black;
+      }
     </style>
     </head>
     <body><p id='message'>
-    Hello <b>".$randOTP." </b><br>
+    Dear <b>".$userFullName." </b><br>
     Your One Time Password is <b>".$randOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3><br /><br />
-    <a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$suid."'> Verify Now</a>
+    <a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$suid."'> Verify Now</a></p>
     </body>
     </html>";
-    $subject = $randomOTP." is Your OTP";
-    $headers = "From: OTP Authentication <admin@shafiqhub.com>" . "\r\n" ."CC: admin@shafiqhub.com"."\r\n"."Content-type: text/html";
+    $subject = $randOTP." is Your OTP";
+    $headers = "From: Fastreed OTP Authentication <admin@shafiqhub.com>" . "\r\n" ."CC: admin@shafiqhub.com"."\r\n"."Content-type: text/html";
     $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
     if ($mailDeliverd) {
       $mailStatus = true;
