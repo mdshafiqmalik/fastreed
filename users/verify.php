@@ -85,7 +85,7 @@
     }else {
       header("Location: ../register");
     }
-  }elseif (isset($_POST['suid']&&isset($_POST['resendOTP']))) {
+  }elseif (isset($_POST['suid'] && isset($_POST['resendOTP'])) {
       $userID = $_POST['suid'];
       if (checkSUID($userID)) {
         if(resendOTP($userID)){
