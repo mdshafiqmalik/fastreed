@@ -152,8 +152,9 @@ $articles = '<!-- Popular Articles Open -->
       if (checkUserID($_SESSION["uisnnue"])) {
         renderProfile($_SESSION['uisnnue']);
       }else {
+
         echo '<script type="text/javascript">
-          document.location = "../login";
+          document.location = "../login?code=1";
         </script>';
       }
     }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
@@ -168,7 +169,7 @@ $articles = '<!-- Popular Articles Open -->
       }
     }else {
       echo '<script type="text/javascript">
-        document.location = "../login";
+        document.location = "../login?code=2";
       </script>';
     }
 
