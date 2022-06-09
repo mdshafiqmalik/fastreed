@@ -197,13 +197,13 @@
       #link a{
         color: white;
         text-decoration:none;
-        background-color: #555;
+        background-color: #0165E1;
         font-weight: bold;
         padding: .4em 1.5em;
         border-radius: 2px;
       }
       #message a:hover{
-        background-color: black;
+        background-color: #0072ff;
       }
       #OTP{
         text-align:center;
@@ -220,10 +220,11 @@
     </head>
     <body><div id='message'>
     Dear <b>".$userFullName." </b><br><br>
-    The One Time Password(OTP) for account verification is:
+    One Time Password(OTP) for account verification is: <b>(Valid For 10 Minutes Only)</b>
     <div id='OTP'><p>".$randOTP."</p></div>
-    <div>Or you can verify your account by clicking on the link given</div>
+    <div>Or you can verify your account by clicking on the link given  <b>(Valid For 10 Minutes Only)</b></div>
     <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
+    <div><b>Note:</b> Kindly ignore this e-mail if you don't know about it.</div>
     </div>
     </body>
     </html>";
