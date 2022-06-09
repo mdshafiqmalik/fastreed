@@ -36,11 +36,13 @@
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
-                setcookie('userID', $encUID, time() + (86400 * 30), "/");
-
-                echo '<script type="text/javascript">
-                  document.location = "../profile";
-                </script>';
+                if (setcookie('userID', $encUID, time() + (86400 * 30), "/")) {
+                  echo '<script type="text/javascript">
+                    document.location = "../profile";
+                  </script>';
+                }else {
+                  echo '<center><span id="errorMessage">There is some problem at our end (000U20)</span></center>';
+                }
 
               }else {
                 echo '<center><span id="errorMessage">There is some problem at our end (000X2)</span></center>';
