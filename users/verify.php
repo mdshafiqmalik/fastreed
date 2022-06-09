@@ -53,8 +53,8 @@
           <span id="errorMessage">Wrong OTP entered</span>
           <form class="loginForm" action="'.$self.'" method="get">
           <div class="loginFields">
-            <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-            <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="Enter OTP">
+            <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
+            <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
           </div>
           <div class="loginSubmit">
             <input id="verifyOTP" type="submit" name="" value="VERIFY">
@@ -62,7 +62,7 @@
           </form>
           <br>
           <form class="loginForm" action="'.$self.'" method="post">
-            <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
+            <input type="hidden" name="suid" value="'.$userID.'" placeholder="000000">
             <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
           <div class="loginSubmit">
             <input id="resendOTP" type="submit" name="" value="Resend OTP">
@@ -76,8 +76,8 @@
         <span id="successMessage">We have sent a 6 digit OTP to your email</span>
         <form class="loginForm" action="'.$self.'" method="get">
         <div class="loginFields">
-          <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-          <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="Enter OTP">
+          <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
+          <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
         </div>
         <div class="loginSubmit">
           <input id="verifyOTP" type="submit" name="" value="VERIFY">
@@ -85,8 +85,8 @@
         </form>
         <form class="loginForm" action="'.$self.'" method="post">
         <br>
-          <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-          <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
+          <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
+          <input type="hidden" name="resendOTP" value="true" placeholder="">
         <div class="loginSubmit">
           <input id="resendOTP" type="submit" name="" value="Resend OTP">
         </div>
@@ -112,8 +112,8 @@
           <span id="successMessage">We have <i>Resent a 6 digit OTP</i> to your email</span>
           <form class="loginForm" action="'.$self.'" method="get">
           <div class="loginFields">
-            <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-            <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="Enter OTP">
+            <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
+            <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
           </div>
           <div class="loginSubmit">
             <input id="verifyOTP" type="submit" name="" value="VERIFY">
@@ -121,8 +121,8 @@
           </form>
           <br>
           <form class="loginForm" action="'.$self.'" method="post">
-            <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-            <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
+            <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
+            <input type="hidden" name="resendOTP" value="true" placeholder="">
           <div class="loginSubmit">
             <input id="resendOTP" type="submit" name="" value="Resend OTP">
           </div>
@@ -139,8 +139,8 @@
           <span style="color:orange;" id="errorMessage">Failed to resend OTP again</span>
           <form class="loginForm" action="'.$self.'" method="get">
           <div class="loginFields">
-            <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-            <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="Enter OTP">
+            <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
+            <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
           </div>
           <div class="loginSubmit">
             <input id="verifyOTP" type="submit" name="" value="VERIFY">
@@ -148,8 +148,8 @@
           </form>
           <br>
           <form class="loginForm" action="'.$self.'" method="post">
-            <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-            <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
+            <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
+            <input type="hidden" name="resendOTP" value="true" placeholder="">
           <div class="loginSubmit">
             <input id="resendOTP" type="submit" name="" value="Resend OTP">
           </div>
