@@ -102,7 +102,6 @@
       header("Location: ../register");
     }
   }elseif(isset($_POST)) {
-    var_dump($_POST);
     $paramSet = isset($_POST['suid']) && isset($_POST['resendOTP']);
     if ($paramSet) {
       $userID = $_POST['suid'];
@@ -162,10 +161,12 @@
       }
     }else {
       header("Location: ../register");
+      echo '<script type="text/javascript">
+        document.location = "../profile";
+      </script>';
     }
   }else {
     header("Location: ../register");
-    var_dump("hello");
   }
 
  function updateOTP($suid){
