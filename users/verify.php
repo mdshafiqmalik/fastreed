@@ -115,8 +115,8 @@
           </form>
           ';
         }else {
-          echo '
           $self = htmlspecialchars($_SERVER["PHP_SELF"]);
+          echo '
           <span style="color:orange;" id="errorMessage">Failed to resend OTP again</span>
           <form class="loginForm" action="'.$self.'" method="get">
           <div class="loginFields">
@@ -156,7 +156,7 @@
    }
    include '../_.config/_s_db_.php';
    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$userID'";
+   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
    $result = mysqli_query($link, $upOTPandTime);
    if ($result) {
      $otpResend = true;
