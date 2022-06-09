@@ -157,16 +157,19 @@
           ';
         }
       }else {
-        header("Location: ../register");
+        echo '<script type="text/javascript">
+          document.location = "../register";
+        </script>';
       }
     }else {
-      header("Location: ../register");
       echo '<script type="text/javascript">
-        document.location = "../profile";
+        document.location = "../register?errorMessage=Session Expired&id=FNS";
       </script>';
     }
   }else {
-    header("Location: ../register");
+    echo '<script type="text/javascript">
+      document.location = "../register";
+    </script>';
   }
 
  function updateOTP($suid){
