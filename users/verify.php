@@ -227,6 +227,7 @@
     $sentOTP = "SELECT expTime FROM fast_otp WHERE userID = '$userID'";
     $result = mysqli_query($link, $sentOTP);
     $expTime = $result->fetch_assoc();
+    var_dump($expT);
     if ($expTime < time()) {
       $OTPEXP = false;
     }else {
