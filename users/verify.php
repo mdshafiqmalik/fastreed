@@ -83,7 +83,6 @@
           <input id="verifyOTP" type="submit" name="" value="VERIFY">
         </div>
         </form>
-        <br>
         <form class="loginForm" action="'.$self.'" method="post">
         <br>
           <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
