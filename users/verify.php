@@ -32,6 +32,7 @@
           if (!checkOTPEXP($userID , $OTP)) {
             echo '<span id="successMessage">You are verified Now</span>';
           }else {
+            $self = htmlspecialchars($_SERVER["PHP_SELF"]);
             echo '
             <span id="errorMessage">Entered link or OTP Expired</span>
             <form class="loginForm" action="'.$self.'" method="post">
@@ -46,6 +47,7 @@
           }
 
         }else {
+          $self = htmlspecialchars($_SERVER["PHP_SELF"]);
           echo '
           <span id="errorMessage">Wrong OTP entered</span>
           <form class="loginForm" action="'.$self.'" method="get">
@@ -114,6 +116,7 @@
           ';
         }else {
           echo '
+          $self = htmlspecialchars($_SERVER["PHP_SELF"]);
           <span style="color:orange;" id="errorMessage">Failed to resend OTP again</span>
           <form class="loginForm" action="'.$self.'" method="get">
           <div class="loginFields">
