@@ -42,7 +42,7 @@ function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
     $delRecord = "DELETE FROM fast_otp Where emailAddress= '$email'";
     mysqli_query($link, $delRecord);
   }
-  $addOTP = "INSERT INTO `fast_otp` (`userID`, `sentOTP`, `emailAddress`,`sentTime`) VALUES ('$newUserID', '$randOTP','$email','$sentTime')";
+  $addOTP = "INSERT INTO `fast_otp` (`userID`, `sentOTP`, `emailAddress`,`expTime`) VALUES ('$newUserID', '$randOTP','$email','$sentTime')";
   $result = mysqli_query($link, $addOTP);
   if ($result) {
     $OTPadded = true;
