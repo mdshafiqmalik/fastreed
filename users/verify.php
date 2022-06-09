@@ -40,6 +40,7 @@
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
+                var_dump($encUID);
                 if (setcookie('userID', $encUID, time() + (86400 * 30), "/")) {
                   echo '<script type="text/javascript">
                     document.location = "../profile";
