@@ -30,7 +30,21 @@
         $OTP = $_GET['centpo'];
         if (authenticateOTP($userID , $OTP)) {
           if (!checkOTPEXP($userID)) {
+            if (delOTP($userID)) {
+              if (verifyUser($userID)) {
 
+                include '../_.config/sjdhfjsadkeys.php';
+                $encUID = openssl_encrypt($userID, $ciphering,
+                $encryption_key, $options, $encryption_iv);
+                setcookie('userID', $encUID, time() + (86400 * 30), "/");
+                header("Location: ../profile");
+
+              }else {
+                echo '<center><span id="errorMessage">There is some problem at our end (000X2)</span></center>';
+              }
+            }else {
+              echo '<center><span id="errorMessage">There is some problem at our end (000X1)</span></center>';
+            }
             echo '<center><span id="successMessage">Your Account Is Verified</span></center>';
 
           }else {
@@ -172,7 +186,66 @@
       document.location = "../register";
     </script>';
   }
+// Delete OTP Data
+  function delOTP($userID){
+    include '../_.config/_s_db_.php';
+    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+    $sql = "DELETE FROM fast_otp WHERE userID = '$userID'";
+    if(mysqli_query($link, $sql)){
+      $otpDeleted = true;
+    }else {
+      $otpDeleted = false;;
+    }
+    return $otpDeleted;
+  }
 
+
+// Move User Data from no Verify to verified users
+  function verifyUser($userID){
+    include '../_.config/_s_db_.php';
+    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+    $sql = "SELECT * FROM fast_noverify_users WHERE userID = '$userID'";
+    $result = mysqli_query($link, $sql);
+    if ($result) {
+      $data = $result->fetch_assoc();
+      $userID = $data['userID'];
+      $fullName = $data['userFullName'];
+      $userName = $data['userName'];
+      $userEmail = $data['userEmail'];
+      $userHashPassword = $data['userHashPassword'];
+      $ePassword = $data['ePassword'];
+      $userJoiningDate = date('d-m-y H:i:s:a');
+      $defaultProfilePic = 'a:4:{s:6:"folder";s:5:"users";s:4:"type";s:7:"default";s:2:"id";s:8:"56467888";s:3:"ext";s:3:"jpg";}';
+      // add to fast_users
+      $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userName', '', '$userEmail', '$userHashPassword')";
+
+      // add to uers_crendentials
+      $inUserCred =  "INSERT INTO `user_credentials` (`userID`, `userFullName`, `userDOB`, `userProfilePic`, `userGender`, `userJoiningDate`, `userCountry`, `userType`) VALUES ('$userID', '$fullName','','$defaultProfilePic','', '$userJoiningDate','','0')";
+
+      // add to user_sec
+      $inUserSec = "INSERT INTO `user_sec` (`userId`,`ePassword`) VALUES ('$userID', '$ePassword')";
+
+      $r1 = mysqli_query($link, $insertData);
+      $r2 = mysqli_query($link, $inUserCred);
+      $r3 = mysqli_query($link, $inUserSec);
+      if ($r1 && $r2 && $r3) {
+        $delNoVerify ="DELETE FROM fast_noverify_users WHERE userID = '$userID'";
+        $r3 = mysqli_query($link, $delNoVerify);
+        if ($r3) {
+          $userAdded = true;
+        }else {
+          $userAdded = false;
+        }
+      }else {
+        $userAdded = false;
+      }
+    }else {
+      $userAdded = false;
+    }
+    return $userAdded;
+  }
+
+// Update OTP
  function updateOTP($suid){
    $expTime = time()+600;
    $randOTP = "";
