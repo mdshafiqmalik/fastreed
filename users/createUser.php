@@ -74,9 +74,8 @@ function addUser($link, $newUserID, $username, $fullName, $email, $password, $en
 
 
  // Send OTP to email
-function sendOTP($fullName, $email, $newUserID, $randomOTP){
+function sendOTP($userFullName, $email, $suid, $randOTP){
   include '../_.config/sjdhfjsadkeys.php';
-
   $message = "
   <html>
   <head>
@@ -85,12 +84,47 @@ function sendOTP($fullName, $email, $newUserID, $randomOTP){
     #message{
       font-size: 1.2em;
     }
+    #link{
+      text-align:center;
+      margin: .8em 0em;
+    }
+    #link a{
+      color: white;
+      text-decoration:none;
+      background-color: #0165E1;
+      font-weight: bold;
+      padding: .4em 1.5em;
+      border-radius: 2px;
+    }
+    #message a:hover{
+      background-color: #0072ff;
+    }
+    #OTP{
+      text-align:center;
+      margin: .8em 0em;
+    }
+    #OTP p{
+      font-size: 1.2em;
+      padding: .4em 2em;
+      background-color: #eee;
+      font-weight:bold;
+      letter-spacing: 3px;
+    }
+    #note{
+      background-color: #eee;
+      margin-top: 1em;
+      padding: .4em;
+    }
   </style>
   </head>
-  <body><p id='message'>
-  Hello <b>".$fullName." </b><br>
-  Your One Time Password is <b>".$randomOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3><br /><br />
-  <a href='https://m.shafiqhub.com/users/verify.php?suid=".$newUserID ."&centpo=".$randomOTP."'> Verify Now</a>
+  <body><div id='message'>
+  Dear <b>".$userFullName." </b><br><br>
+  One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
+  <div id='OTP'><p>".$randOTP."</p></div>
+  <div>Or you can verify your account by clicking on the link given  <b>(valid for 10 minutes only)</b>
+  <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
+  <div id='note'><b>Note:</b> Kindly ignore this e-mail if you don't know about it.</div>
+  </div>
   </body>
   </html>";
   $subject = $randomOTP." is Your OTP";
