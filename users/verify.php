@@ -242,7 +242,7 @@
     $result = mysqli_query($link, $fastOTP);
     $dbArray = $result->fetch_assoc();
     $dbOTP = $dbArray['sentOTP'];
-    $expTime = $dbArray['sentTime'];
+    $expTime = $dbArray['expTime'];
     if ($dbOTP == $OTP) {
       $OAuth = true;
     }else {
