@@ -187,7 +187,6 @@ function checkUserID($dUserID){
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   $checkUserID = "SELECT userID FROM fast_users Where userID = '$dUserID'";
   $userDat = mysqli_query($link, $checkUserID);
-  var_dump($dUserID);
   if (mysqli_num_rows($userDat)) {
     $exist = true;
   }else {
