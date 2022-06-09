@@ -36,8 +36,8 @@ session_start();
                 $encryption_key, $options, $encryption_iv);
                 $_SESSION['uisnnue'] = $userID;
                 if (isset($_SESSION['uisnnue'])) {
-                  echo '<center><span id="successMessage">Registered Sucesssfully</span></center><br>';
-                  echo '<center><span id="successMessage">Logging In......</span></center>';
+                  // echo '<center><span id="successMessage">Registered Sucesssfully</span></center><br>';
+                  // echo '<center><span id="successMessage">Logging In......</span></center>';
                   header("Location: ../profile?eikooCtes=true");
                 }else {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center>';
