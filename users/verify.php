@@ -192,13 +192,14 @@
       }
       #link{
         text-align:center;
+        margin: .8em 0em;
       }
       #link a{
         color: white;
         text-decoration:none;
         background-color: #555;
         font-weight: bold;
-        padding: .4em .8em;
+        padding: .4em 1.5em;
         border-radius: 2px;
       }
       #message a:hover{
@@ -206,17 +207,21 @@
       }
       #OTP{
         text-align:center;
+        margin: .8em 0em;
+      }
+      #OTP p{
         font-size: 1.2em;
-        padding: .4em .8em;
+        padding: .4em 2em;
         background-color: #eee;
-
+        font-weight:bold;
+        letter-spacing: 3px;
       }
     </style>
     </head>
     <body><div id='message'>
     Dear <b>".$userFullName." </b><br><br>
     The One Time Password(OTP) for account verification is:
-    <div id='OTP'>".$randOTP."</div>
+    <div id='OTP'><p>".$randOTP."</p></div>
     <div>Or you can verify your account by clicking on the link given</div>
     <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
     </div>
