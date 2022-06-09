@@ -193,6 +193,10 @@ input:-webkit-autofill:active {
 #verifyOTP{
   background-color: rgb(170,170,170);
 }
+#OTPfield{
+  text-align: center;
+  letter-spacing: 4px;
+}
 /* Logged Users */
 .backPhoto{
   min-height: 100px;
