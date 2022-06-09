@@ -204,12 +204,22 @@
       #message a:hover{
         background-color: black;
       }
+      #OTP{
+        text-align:center;
+        font-size: 1.2em;
+        padding: .4em .8em;
+        background-color: #eee;
+
+      }
     </style>
     </head>
-    <body><p id='message'>
-    Dear <b>".$userFullName." </b><br>
-    Your One Time Password is <b>".$randOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</p>
+    <body><div id='message'>
+    Dear <b>".$userFullName." </b><br><br>
+    The One Time Password(OTP) for account verification is:
+    <div id='OTP'>".$randOTP."</div>
+    <div>Or you can verify your account by clicking on the link given</div>
     <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
+    </div>
     </body>
     </html>";
     $subject = $randOTP." is Your OTP";
