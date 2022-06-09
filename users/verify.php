@@ -28,9 +28,36 @@
       if (isset($_GET['centpo'])) {
         $OTP = $_GET['centpo'];
         if (authenticateOTP($userID , $OTP)) {
-          echo '<span id="successMessage">You are verified Now</span>';
+          if (!checkOTPEXP($userID , $OTP)) {
+            echo '<span id="successMessage">You are verified Now</span>';
+          }else {
+            echo '
+            <span id="errorMessage">Entered link or OTP Expired</span>
+            <form class="loginForm" action="'.$self.'" method="get">
+            <div class="loginFields">
+              <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
+              <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="Enter OTP">
+            </div>
+            <div class="loginSubmit">
+              <input id="verifyOTP" type="submit" name="" value="VERIFY">
+            </div>
+            </form>
+            ';
+          }
+
         }else {
-          echo '<center><span id="errorMessage">OTP Expired Please Create another OTP</span></center>';
+          echo '
+          <span id="errorMessage">Wrong OTP entered</span>
+          <form class="loginForm" action="'.$self.'" method="get">
+          <div class="loginFields">
+            <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
+            <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="Enter OTP">
+          </div>
+          <div class="loginSubmit">
+            <input id="verifyOTP" type="submit" name="" value="VERIFY">
+          </div>
+          </form>
+          ';
         }
       }else {
         $self = htmlspecialchars($_SERVER["PHP_SELF"]);
@@ -55,6 +82,19 @@
     header("Location: ../register");
   }
 
+  function checkOTPEXP($userID, $OTP){
+    include '../_.config/_s_db_.php';
+    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+    $noVerifyUser = "SELECT sentTime FROM fast_otp WHERE userID = '$userID'";
+    $result = mysqli_query($link, $noVerifyUser);
+    $expTime = $result->fetch_assoc();
+    if ($expTime < time()) {
+      $OTPEXP = false;
+    }else {
+      $OTPEXP = true;
+    }
+    return $OTPEXP;
+  }
 
   function authenticateOTP($userID, $OTP){
     include '../_.config/_s_db_.php';
@@ -64,14 +104,10 @@
     $dbArray = $result->fetch_assoc();
     $dbOTP = $dbArray['sentOTP'];
     $expTime = $dbArray['sentTime'];
-    if ($expTime < time()) {
-      $OAuth = false;
+    if ($dbOTP == $OTP) {
+      $OAuth = true;
     }else {
-      if ($dbOTP == $OTP) {
-        $OAuth = true;
-      }else {
-        $OAuth = false;
-      }
+      $OAuth = false;
     }
     return $OAuth;
   }
