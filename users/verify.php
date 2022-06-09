@@ -182,7 +182,12 @@
    }
    include '../_.config/_s_db_.php';
    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' totalOTP = '+1' WHERE userID = '$suid'";
+   $totalOTP = "SELECT * FROM fast_otp WHERE userID = '$suid'";
+   $result0 = mysqli_query($link, $totalOTP);
+   $arrayD = $result0->fetch_assoc();
+   $tOTP = $arrayD['totalOTP'];
+   $newTimesOtp .=$tOTP;
+   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' totalOTP = '$newTimesOtp' WHERE userID = '$suid'";
    $result1 = mysqli_query($link, $upOTPandTime);
    if ($result1) {
      $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
