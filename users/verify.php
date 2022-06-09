@@ -29,7 +29,7 @@
       if (isset($_GET['centpo'])) {
         $OTP = $_GET['centpo'];
         if (authenticateOTP($userID , $OTP)) {
-          if (!checkOTPEXP($userID , $OTP)) {
+          if (checkOTPEXP($userID , $OTP)) {
             echo '<span id="successMessage">You are verified Now</span>';
           }else {
             $self = htmlspecialchars($_SERVER["PHP_SELF"]);
