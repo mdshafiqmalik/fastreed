@@ -164,6 +164,7 @@
     }
   }else {
     header("Location: ../register");
+    echo "hello";
   }
 
  function updateOTP($suid){
