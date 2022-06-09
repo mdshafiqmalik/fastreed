@@ -34,12 +34,10 @@
             echo '
             <span id="errorMessage">Entered link or OTP Expired</span>
             <form class="loginForm" action="'.$self.'" method="get">
-            <div class="loginFields">
+            <br>
               <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
-              <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="Enter OTP">
-            </div>
             <div class="loginSubmit">
-              <input id="verifyOTP" type="submit" name="" value="VERIFY">
+              <input id="resendOTP" type="submit" name="" value="Resend OTP">
             </div>
             </form>
             ';
