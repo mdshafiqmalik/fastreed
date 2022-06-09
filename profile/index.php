@@ -218,8 +218,8 @@ function checkUserID($dUserID){
       while ($row = $rateData->fetch_assoc()) {
         $totalRating += $row['rateUser'];
       }
-      $rateDec = $totalRating/$rateCount;
-      $rate = number_format((float)$rateDec, 1, '.','');
+      // $rateDec = $totalRating/$rateCount;
+      // $rate = number_format((float)$rateDec, 1, '.','');
 
 
       echo $GLOBALS['containerStart'];
@@ -246,7 +246,7 @@ function checkUserID($dUserID){
                 </div>
                 <div class="userRating">
                   <span class="userParameters">Rating</span>
-                  <span class="values">'.$rate.'</span>
+                  <span class="values">9</span>
                 </div>
               </div>
             </div>
