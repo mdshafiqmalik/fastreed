@@ -219,6 +219,7 @@
       #note{
         background-color: #eee;
         margin-top: 1em;
+        padding: .4em;
       }
     </style>
     </head>
