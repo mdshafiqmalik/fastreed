@@ -83,6 +83,15 @@
           <input id="verifyOTP" type="submit" name="" value="VERIFY">
         </div>
         </form>
+        <br>
+        <form class="loginForm" action="'.$self.'" method="post">
+        <br>
+          <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
+          <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
+        <div class="loginSubmit">
+          <input id="resendOTP" type="submit" name="" value="Resend OTP">
+        </div>
+        </form>
         ';
       }
     }else {
