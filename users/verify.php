@@ -1,4 +1,7 @@
 
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -18,13 +21,6 @@
   <div class="content">
   <span id="signUp" >Verify Your OTP</span>
   <?php
-  session_start();
-  // unset($_SESSION['userEmail']);
-  // unset($_SESSION['passWord']);
-  // unset($_SESSION['fullName']);
-  // unset($_SESSION['userName']);
-  // unset($_SESSION['encPassword']);
-
   if (isset($_GET['suid'])) {
     // Check suid present or not
     $userID = $_GET['suid'];
@@ -40,7 +36,6 @@
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
                 $setCookie = setcookie('uisnnue', $encUID, time() + (86400 * 30), "/");
-                var_dump($_SESSION['userEmail']);
                 if ($setCookie) {
                   echo '<script type="text/javascript">
                     document.location = "../profile";
