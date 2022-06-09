@@ -1,4 +1,3 @@
-
 <?php
 session_start();
  ?>
@@ -35,17 +34,11 @@ session_start();
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
-                session_start();
                 $_SESSION['uisnnue'] = $userID;
                 if (isset($_SESSION['uisnnue'])) {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center><br>';
                   echo '<center><span id="successMessage">Logging In......</span></center>';
-
-                  echo '<script type="text/javascript">
-                  setTimeout(function(){
-                    document.location = "../profile?eikooCtes=true";
-                  },5000);
-                  </script>';
+                  header("Location: ../profile?eikooCtes=true");
                 }else {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center>';
                   echo '<center><span id="successMessage">Redirecting to Login page</span></center>';
