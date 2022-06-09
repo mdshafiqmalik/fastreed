@@ -188,8 +188,7 @@
    $tOTP = $arrayD['totalOTP'];
    $tOTP = intval($tOTP);
    $tOTP +=1;
-   var_dump($tOTP);
-   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' totalOTP = '$tOTP' WHERE userID = '$suid'";
+   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime', totalOTP = '$tOTP' WHERE userID = '$suid'";
    $result1 = mysqli_query($link, $upOTPandTime);
    if ($result1) {
      $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
