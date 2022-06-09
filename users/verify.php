@@ -230,11 +230,9 @@
     $eTime = $expTime['expTime'];
     var_dump($eTime);
     if (time() > $eTime) {
-      var_dump("Time Over");
       $OTPEXP = true;
     }else {
       $OTPEXP = false;
-      var_dump("Time haa");
     }
     return $OTPEXP;
   }
