@@ -214,10 +214,12 @@ function checkUserID($dUserID){
       $getRating = "SELECT * FROM fast_rating WHERE toUserID ='$UID'";
       $rateData = mysqli_query($link, $getRating);
       $rateCount = mysqli_num_rows($rateData);
+      var_dump($rateCount);
       $totalRating = 0;
       while ($row = $rateData->fetch_assoc()) {
         $totalRating += $row['rateUser'];
       }
+
       // $rateDec = $totalRating/$rateCount;
       // $rate = number_format((float)$rateDec, 1, '.','');
 
