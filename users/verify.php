@@ -18,7 +18,7 @@
   <div class="content">
   <span id="signUp" >Verify Your OTP</span>
   <?php
-  session_destroy();
+  session_start();
   // unset($_SESSION['userEmail']);
   // unset($_SESSION['passWord']);
   // unset($_SESSION['fullName']);
@@ -39,8 +39,8 @@
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
-
-                $setCookie = setcookie('userID', $encUID, time() + (86400 * 30), "/");
+                $setCookie = setcookie('uisnnue', $encUID, time() + (86400 * 30), "/");
+                var_dump($_SESSION['userEmail']);
                 if ($setCookie) {
                   echo '<script type="text/javascript">
                     document.location = "../profile";
