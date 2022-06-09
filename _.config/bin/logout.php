@@ -8,7 +8,7 @@
 // check if username exist in Database
 // Validate Username
 date_default_timezone_set('Asia/Kolkata');
-if ('1654710765' < time()) {
-  echo "Time Up";
+if ("1654757059" < time()) {
+  echo "string";
 }
  ?>

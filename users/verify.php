@@ -211,7 +211,7 @@
     </body>
     </html>";
     $subject = $randOTP." is Your OTP";
-    $headers = "From: Fastreed OTP Authentication <admin@shafiqhub.com>" . "\r\n" ."CC: admin@shafiqhub.com"."\r\n"."Content-type: text/html";
+    $headers = "From: Fastreed OTP Authentication <no-reply@shafiqhub.com>" . "\r\n" ."CC: admin@shafiqhub.com"."\r\n"."Content-type: text/html";
     $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
     if ($mailDeliverd) {
       $mailStatus = true;
@@ -228,9 +228,9 @@
     $result = mysqli_query($link, $sentOTP);
     $expTime = $result->fetch_assoc();
     if ($expTime < time()) {
-      $OTPEXP = false;
-    }else {
       $OTPEXP = true;
+    }else {
+      $OTPEXP = false;
     }
     return $OTPEXP;
   }
@@ -238,7 +238,7 @@
   function authenticateOTP($userID, $OTP){
     include '../_.config/_s_db_.php';
     $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-    $fastOTP = "SELECT expTime FROM fast_otp WHERE userID = '$userID'";
+    $fastOTP = "SELECT * FROM fast_otp WHERE userID = '$userID'";
     $result = mysqli_query($link, $fastOTP);
     $dbArray = $result->fetch_assoc();
     $dbOTP = $dbArray['sentOTP'];
