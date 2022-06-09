@@ -92,6 +92,11 @@
           <input id="resendOTP" type="submit" name="" value="Resend OTP">
         </div>
         </form>
+        <script>
+         if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+           }
+        </script>
         ';
       }
     }else {
