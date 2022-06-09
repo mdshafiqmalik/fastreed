@@ -8,6 +8,11 @@
 // check if username exist in Database
 // Validate Username
 date_default_timezone_set('Asia/Kolkata');
-$arrayName = array('folder' => 'users','type'=>'default', 'id'=>'56467888','ext'=>'jpg' );
-echo serialize($arrayName);
+$upp['folder'] = 'users';
+$upp['year'] = '2022';
+$upp['month'] = '7';
+$upp['id'] ='874954';
+$upp['ext'] = 'jpg';
+$profileImage = $upp['folder'].'/'.$upp['year'].'/'.$upp['month'].'/'.$upp['id'].'.'.$upp['ext'];
+echo $profileImage;
  ?>

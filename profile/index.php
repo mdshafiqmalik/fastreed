@@ -187,7 +187,6 @@ function checkUserID($dUserID){
       $row = $result->fetch_assoc();
       $userFullName = $row['userFullName'];
       $userJoinDate = $row['userJoiningDate'];
-      $upp = unserialize($row['userProfilePic']);
       $userCountry = $row['userCountry'];
       switch ($row['userType']) {
         case '0':
@@ -214,22 +213,29 @@ function checkUserID($dUserID){
       $getRating = "SELECT * FROM fast_rating WHERE toUserID ='$UID'";
       $rateData = mysqli_query($link, $getRating);
       $rateCount = mysqli_num_rows($rateData);
-      var_dump($rateCount);
-      $totalRating = 0;
-      while ($row = $rateData->fetch_assoc()) {
-        $totalRating += $row['rateUser'];
+      if ($rateCount == 0) {
+        $rate = 0;
+      }else {
+        $totalRating = 0;
+        while ($row = $rateData->fetch_assoc()) {
+          $totalRating += $row['rateUser'];
+        }
+        $rateDec = $totalRating/$rateCount;
+        $rate = number_format((float)$rateDec, 1, '.','');
       }
 
-      // $rateDec = $totalRating/$rateCount;
-      // $rate = number_format((float)$rateDec, 1, '.','');
-
-
+      if ($upp == 0) {
+        $profileImage = "users/default.jpg";
+      }else {
+        $upp = unserialize($row['userProfilePic']);
+        $profileImage = $upp['folder'].'/'.$upp['year'].'/'.$upp['month'].'/'.$upp['id'].'.'.$upp['ext'];
+      }
       echo $GLOBALS['containerStart'];
       echo '
       <!-- Self Profile Opened -->
         <div class="authorProfile">
           <div class="topDiv">
-            <div class="authorPic"> <img src="../uploads/'.$upp['folder'].'/'.$upp['year'].'/'.$upp['month'].'/'.$upp['id'].'.'.$upp['ext'].'" alt=""> </div>
+            <div class="authorPic"> <img src="../uploads/'.$profileImage.'" alt=""> </div>
             <div class="authorDetails">
               <div class="userNameWork">
                 <span id="userFullName">'.$userFullName.'</span>
