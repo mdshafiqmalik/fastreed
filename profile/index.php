@@ -149,7 +149,6 @@ $articles = '<!-- Popular Articles Open -->
         </script>';
       }
     }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
-      var_dump($_SESSION['uisnnue']);
       if ((boolean)$_GET['eikooCtes']) {
         if (checkUserID($_SESSION['uisnnue'])) {
 
@@ -188,7 +187,6 @@ function checkUserID($dUserID){
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   $checkUserID = "SELECT userID FROM fast_users Where userID = '$dUserID'";
   $userDat = mysqli_query($link, $checkUserID);
-  // var_dump($userDat);
   var_dump($dUserID);
   if (mysqli_num_rows($userDat)) {
     $exist = true;
@@ -276,7 +274,7 @@ function checkUserID($dUserID){
                 </div>
                 <div class="userRating">
                   <span class="userParameters">Rating</span>
-                  <span class="values">9</span>
+                  <span class="values">'.$rate.'</span>
                 </div>
               </div>
             </div>
