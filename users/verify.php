@@ -35,6 +35,7 @@ session_start();
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
+                session_start();
                 $_SESSION['uisnnue'] = $userID;
                 if (isset($_SESSION['uisnnue'])) {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center><br>';
