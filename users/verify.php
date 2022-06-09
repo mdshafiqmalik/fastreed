@@ -157,12 +157,12 @@
    include '../_.config/_s_db_.php';
    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
    $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
-   $result = mysqli_query($link, $upOTPandTime);
-   if ($result) {
+   $result1 = mysqli_query($link, $upOTPandTime);
+   if ($result1) {
      $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
-     $result = mysqli_query($link, $upOTPandTime);
-     if ($result) {
-       $arrayDat = $result->fetch_assoc();
+     $result2 = mysqli_query($link, $upOTPandTime);
+     if ($result2) {
+       $arrayDat = $result2->fetch_assoc();
        $userFullName = arrayDat['userFullName'];
        $userEmail = arrayDat['userEmail'];
        if (resendOTP($suid, $randOTP, $userEmail, $userFullName)) {
