@@ -215,10 +215,10 @@
       $userEmail = $data['userEmail'];
       $userHashPassword = $data['userHashPassword'];
       $ePassword = $data['ePassword'];
-      $userJoiningDate = date('d-m-y H:i:s:a');
+      $userJoiningDate = date('y-m-d H:i:s');
       $defaultProfilePic = 'a:4:{s:6:"folder";s:5:"users";s:4:"type";s:7:"default";s:2:"id";s:8:"56467888";s:3:"ext";s:3:"jpg";}';
       // add to fast_users
-      $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userName', '', '$userEmail', '$userHashPassword')";
+      $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userEmail', 'userName','', '$userHashPassword')";
 
       // add to uers_crendentials
       $inUserCred =  "INSERT INTO `user_credentials` (`userID`, `userFullName`, `userDOB`, `userProfilePic`, `userGender`, `userJoiningDate`, `userCountry`, `userType`) VALUES ('$userID', '$fullName','','$defaultProfilePic','', '$userJoiningDate','','0')";
