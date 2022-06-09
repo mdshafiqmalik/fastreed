@@ -136,21 +136,21 @@ $articles = '<!-- Popular Articles Open -->
       <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
     </div>
     <?php
-    if(isset($_COOKIE['userID'])) {
+    if(isset($_COOKIE['uisnnue'])) {
       include '../_.config/sjdhfjsadkeys.php';
       $dUserID = openssl_decrypt ($_COOKIE['userID'], $ciphering,
       $decryption_key, $options, $decryption_iv);
-      $_SESSION["userID"] = $dUserID;
-      if (checkUserID($_SESSION["userID"])) {
-        renderProfile($_SESSION['userID']);
+      $_SESSION["uisnnue"] = $dUserID;
+      if (checkUserID($_SESSION["uisnnue"])) {
+        renderProfile($_SESSION['uisnnue']);
       }else {
         echo '<script type="text/javascript">
           document.location = "../login";
         </script>';
       }
-    }elseif(isset($_SESSION['userID'])) {
-      if (checkUserID($_SESSION["userID"])) {
-        renderProfile($_SESSION['userID']);
+    }elseif(isset($_SESSION['uisnnue'])) {
+      if (checkUserID($_SESSION["uisnnue"])) {
+        renderProfile($_SESSION['uisnnue']);
       }else {
         echo '<script type="text/javascript">
           document.location = "../login";

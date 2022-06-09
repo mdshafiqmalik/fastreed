@@ -36,11 +36,14 @@
           if (!checkOTPEXP($userID)) {
             if (delOTP($userID)) {
               if (verifyUser($userID)) {
-
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
+
                 $setCookie = setcookie('userID', $encUID, time() + (86400 * 30), "/");
+                echo '<script type="text/javascript">
+                  console.log('.var_dump($setCookie).');
+                </script>';
                 if ($setCookie) {
                   echo '<script type="text/javascript">
                     document.location = "../profile";

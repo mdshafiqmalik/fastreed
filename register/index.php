@@ -17,7 +17,7 @@
     </div>
     <?php
     session_start();
-    if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
+    if (isset($_SESSION["userID"]) || isset($_COOKIE["uisnnue"])) {
       echo '<script type="text/javascript">
         document.location = "../profile";
       </script>';
