@@ -39,7 +39,7 @@
             echo '
             <span id="errorMessage">Entered link or OTP Expired</span>
             <form class="loginForm" action="'.$self.'" method="post">
-             <input type="hidden" value=".'$rand'." name="randcheck" />
+             <input type="hidden" value="'.$rand.'" name="randcheck" />
             <br>
               <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
               <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
