@@ -30,7 +30,7 @@
         $OTP = $_GET['centpo'];
         if (authenticateOTP($userID , $OTP)) {
           if (!checkOTPEXP($userID)) {
-            echo '<span id="successMessage">You are verified Now</span>';
+            echo '<center><span id="successMessage">Your Account Is Verified</span></center>';
           }else {
             $self = htmlspecialchars($_SERVER["PHP_SELF"]);
             echo '
