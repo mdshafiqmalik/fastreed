@@ -138,7 +138,7 @@ $articles = '<!-- Popular Articles Open -->
     <?php
     if(isset($_COOKIE['uisnnue'])) {
       include '../_.config/sjdhfjsadkeys.php';
-      $dUserID = openssl_decrypt ($_COOKIE['userID'], $ciphering,
+      $dUserID = openssl_decrypt ($_COOKIE['uisnnue'], $ciphering,
       $decryption_key, $options, $decryption_iv);
       $_SESSION["uisnnue"] = $dUserID;
       if (checkUserID($_SESSION["uisnnue"])) {
