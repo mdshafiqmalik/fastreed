@@ -158,10 +158,6 @@ $articles = '<!-- Popular Articles Open -->
       }else {
         renderProfile($_SESSION['uisnnue']);
       }
-    }else {
-      echo '<script type="text/javascript">
-        document.location = "../login?code=2";
-      </script>';
     }elseif(isset($_SESSION['uisnnue'])) {
       if (checkUserID($_SESSION["uisnnue"])) {
         renderProfile($_SESSION['uisnnue']);
@@ -171,6 +167,10 @@ $articles = '<!-- Popular Articles Open -->
           document.location = "../login?code=1";
         </script>';
       }
+    }else {
+      echo '<script type="text/javascript">
+        document.location = "../login?code=2";
+      </script>';
     }
 
 function checkUserID($dUserID){
@@ -182,7 +182,7 @@ function checkUserID($dUserID){
   if (mysqli_num_rows($userDat)) {
     $exist = true;
   }else {
-    setcookie("userID", "", time()-3600);
+    setcookie("uisnnue", "", time()-3600);
     $exist = false;
   }
   return $exist;
