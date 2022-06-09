@@ -190,14 +190,16 @@
       #message{
         font-size: 1.2em;
       }
-      #message a{
+      #link{
         text-align:center;
+      }
+      #link a{
         color: white;
         text-decoration:none;
         background-color: #555;
         font-weight: bold;
-        padding: .2em .5em;
-        border-radius: 5px;
+        padding: .4em .8em;
+        border-radius: 2px;
       }
       #message a:hover{
         background-color: black;
@@ -206,8 +208,8 @@
     </head>
     <body><p id='message'>
     Dear <b>".$userFullName." </b><br>
-    Your One Time Password is <b>".$randOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3><br /><br />
-    <a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify Now</a></p>
+    Your One Time Password is <b>".$randOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</p>
+    <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
     </body>
     </html>";
     $subject = $randOTP." is Your OTP";
