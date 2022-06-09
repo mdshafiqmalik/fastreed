@@ -102,6 +102,7 @@
       header("Location: ../register");
     }
   }elseif(isset($_POST)) {
+    var_dump($_POST);
     $paramSet = isset($_POST['suid']) && isset($_POST['resendOTP']);
     if ($paramSet) {
       $userID = $_POST['suid'];
