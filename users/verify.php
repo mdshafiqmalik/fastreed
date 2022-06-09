@@ -174,17 +174,17 @@
         }
       }else {
         echo '<script type="text/javascript">
-          document.location = "../register";
+          document.location = "../register?errorMessage=000X3&id=FNS";
         </script>';
       }
     }else {
       echo '<script type="text/javascript">
-        document.location = "../register?errorMessage=Session Expired&id=FNS";
+        document.location = "../register?errorMessage=?errorMessage=000X4&id=FNS&id=FNS";
       </script>';
     }
   }else {
     echo '<script type="text/javascript">
-      document.location = "../register";
+      document.location = "../register?errorMessage=000X5&id=FNS";
     </script>';
   }
 // Delete OTP Data
