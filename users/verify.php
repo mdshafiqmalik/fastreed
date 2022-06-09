@@ -207,7 +207,7 @@
     <body><p id='message'>
     Dear <b>".$userFullName." </b><br>
     Your One Time Password is <b>".$randOTP."</b>.<br /> The OTP will expires in <b>10 Minutes </b> verify by using OTP or the link given below</h3><br /><br />
-    <a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$suid."'> Verify Now</a></p>
+    <a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify Now</a></p>
     </body>
     </html>";
     $subject = $randOTP." is Your OTP";
