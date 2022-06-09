@@ -116,7 +116,7 @@
         ';
       }
     }else {
-      echo '<center><span style="color:orange;" id="errorMessage">User verified already</span></center>';
+      echo '<center><span style="color:orange;" id="errorMessage">User verified already</span></center><br>';
       echo '<center><span id="successMessage">Redirecting...</span></center>';
       echo '<script type="text/javascript">
       setTimeout(function(){
