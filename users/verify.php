@@ -30,6 +30,7 @@
         $OTP = $_GET['centpo'];
         if (authenticateOTP($userID , $OTP)) {
           if (!checkOTPEXP($userID)) {
+
             echo '<center><span id="successMessage">Your Account Is Verified</span></center>';
 
           }else {
@@ -181,7 +182,7 @@
    }
    include '../_.config/_s_db_.php';
    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
+   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' totalOTP = '+1' WHERE userID = '$suid'";
    $result1 = mysqli_query($link, $upOTPandTime);
    if ($result1) {
      $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
