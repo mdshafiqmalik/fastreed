@@ -91,7 +91,7 @@
     $paramSet = isset($_POST['suid']) && isset($_POST['resendOTP']);
     if ($paramSet) {
       $userID = $_POST['suid'];
-      if (checkSUID($userID)) {
+      if (checkUserID($userID)) {
         if(resendOTP($userID)){
           $self = htmlspecialchars($_SERVER["PHP_SELF"]);
           echo '
