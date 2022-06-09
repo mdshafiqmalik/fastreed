@@ -94,7 +94,7 @@ function sendOTP($fullName, $email, $newUserID, $randomOTP){
   </body>
   </html>";
   $subject = $randomOTP." is Your OTP";
-  $headers = "From: admin@shafiqhub.com" . "\r\n" ."CC: admin@shafiqhub.com"."\r\n"."Content-type: text/html";
+  $headers = "From: OTP Authentication <admin@shafiqhub.com>" . "\r\n" ."CC: admin@shafiqhub.com"."\r\n"."Content-type: text/html";
   $mailDeliverd =  mail($email,$subject,$message,$headers);
   if ($mailDeliverd) {
     $mailStatus = true;
