@@ -148,7 +148,7 @@
   }
 
  function updateOTP($suid){
-   $expTime = time()+600;
+   $expTime = time()+60;
    $randOTP = "";
    for ($x = 1; $x <= 6; $x++) {
        // Set each digit
