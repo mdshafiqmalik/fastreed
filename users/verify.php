@@ -153,7 +153,7 @@
    if ($result) {
      $otpResend = true;
    }else {
-     $otpResend = false
+     $otpResend = false;
    }
    return $otpResend;
  }
