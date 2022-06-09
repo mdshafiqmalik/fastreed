@@ -149,8 +149,10 @@ $articles = '<!-- Popular Articles Open -->
         </script>';
       }
     }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
+      echo $_SESSION['uisnnue'];
       if ((boolean)$_GET['eikooCtes']) {
         if (checkUserID($_SESSION['uisnnue'])) {
+
           include '../_.config/sjdhfjsadkeys.php';
           $encUID = openssl_encrypt($_SESSION['uisnnue'], $ciphering,
           $encryption_key, $options, $encryption_iv);
