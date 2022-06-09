@@ -228,7 +228,6 @@
     $result = mysqli_query($link, $sentOTP);
     $expTime = $result->fetch_assoc();
     $eTime = $expTime['expTime'];
-    var_dump($eTime);
     if (time() > $eTime) {
       $OTPEXP = true;
     }else {
