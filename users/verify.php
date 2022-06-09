@@ -19,7 +19,11 @@
   <span id="signUp" >Verify Your OTP</span>
   <?php
   session_start();
-  session_destroy();
+  unset($_SESSION['userEmail']);
+  unset($_SESSION['passWord']);
+  unset($_SESSION['fullName']);
+  unset($_SESSION['userName']);
+  unset($_SESSION['encPassword']);
 
   if (isset($_GET['suid'])) {
     // Check suid present or not
@@ -32,7 +36,7 @@
           if (!checkOTPEXP($userID)) {
             if (delOTP($userID)) {
               if (verifyUser($userID)) {
-                session_start();
+
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
@@ -41,7 +45,8 @@
                     document.location = "../profile";
                   </script>';
                 }else {
-                  echo '<center><span id="errorMessage">There is some problem at our end (000U20)</span></center>';
+                  echo '<center><span id="errorMessage">There is some problem at our end (000U20)</span></center><br>';
+                  echo '<center><span id="successMessage"><a href="../login"></a></span></center>';
                 }
 
               }else {
