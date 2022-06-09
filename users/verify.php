@@ -224,7 +224,7 @@
   function checkOTPEXP($userID, $OTP){
     include '../_.config/_s_db_.php';
     $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-    $sentOTP = "SELECT * FROM fast_otp WHERE userID = '$userID'";
+    $sentOTP = "SELECT expTime FROM fast_otp WHERE userID = '$userID'";
     $result = mysqli_query($link, $sentOTP);
     $expTime = $result->fetch_assoc();
     var_dump($expTime);
