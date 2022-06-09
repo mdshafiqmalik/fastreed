@@ -186,6 +186,8 @@
    $result0 = mysqli_query($link, $totalOTP);
    $arrayD = $result0->fetch_assoc();
    $tOTP = $arrayD['totalOTP'];
+   $tOTP = intval($tOTP);
+   $tOTP .=1;
    var_dump(intval($tOTP++));
    $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' totalOTP = '$tOTP' WHERE userID = '$suid'";
    $result1 = mysqli_query($link, $upOTPandTime);
