@@ -38,7 +38,8 @@ session_start();
                 if (isset($_SESSION['uisnnue'])) {
                   // echo '<center><span id="successMessage">Registered Sucesssfully</span></center><br>';
                   // echo '<center><span id="successMessage">Logging In......</span></center>';
-                  header("Location: ../profile?eikooCtes=true");
+                  // header("Location: ../profile?eikooCtes=true");
+                  header("Location: ../profile.php?eikooCtes=true");
                 }else {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center>';
                   echo '<center><span id="successMessage">Redirecting to Login page</span></center>';
