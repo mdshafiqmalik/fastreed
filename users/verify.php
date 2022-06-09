@@ -29,7 +29,7 @@
       if (isset($_GET['centpo'])) {
         $OTP = $_GET['centpo'];
         if (authenticateOTP($userID , $OTP)) {
-          if (!checkOTPEXP($userID , $OTP)) {
+          if (!checkOTPEXP($userID)) {
             echo '<span id="successMessage">You are verified Now</span>';
           }else {
             $self = htmlspecialchars($_SERVER["PHP_SELF"]);
@@ -221,7 +221,7 @@
     return $mailStatus;
   }
 
-  function checkOTPEXP($userID, $OTP){
+  function checkOTPEXP($userID){
     include '../_.config/_s_db_.php';
     $link = new mysqli("$hostName","$userName","$passWord","$dbName");
     $sentOTP = "SELECT expTime FROM fast_otp WHERE userID = '$userID'";
@@ -229,9 +229,11 @@
     $expTime = $result->fetch_assoc();
     $eTime = intval($expTime);
     if (time() > $eTime) {
+      var_dump("Time Over");
       $OTPEXP = true;
     }else {
       $OTPEXP = false;
+      var_dump("Time haa")
     }
     return $OTPEXP;
   }
