@@ -195,7 +195,7 @@ input:-webkit-autofill:active {
 }
 #OTPfield{
   text-align: center;
-  letter-spacing: 4px;
+  letter-spacing: 10px;
 }
 /* Logged Users */
 .backPhoto{
