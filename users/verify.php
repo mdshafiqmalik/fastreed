@@ -156,7 +156,7 @@
    }
    include '../_.config/_s_db_.php';
    $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suid'";
+   $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' WHERE userID = '$suids'";
    $result = mysqli_query($link, $upOTPandTime);
    if ($result) {
      $otpResend = true;
