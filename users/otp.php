@@ -1,8 +1,8 @@
 <?php
-$user = "user";
+
 // Send OTP
 function sendOTP($userEmail, $userID, $randOTP, $userfullName){
-  include '../_.config/sjdhfjsadkeys.php';
+  $user = "user";
   $message = "
   <html>
     <head>
