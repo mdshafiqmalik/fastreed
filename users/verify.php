@@ -312,7 +312,6 @@ function updateOTP($suid){
      $arrayDat = $result2->fetch_assoc();
      $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
-     var_dump($userFullName);
      include 'otp.php';
      if (sendOTP($userEmail, $suid, $randOTP, $userFullName)) {
        $otpResend = true;
