@@ -73,9 +73,8 @@ function addUser($link, $newUserID, $username, $fullName, $email, $password, $en
   return $userAdded;
 }
 
-
- // Send OTP to email
-function sendOTP($userFullName, $email, $suid, $randOTP){
+// Resend OTP
+function sendOTP($suid, $userEmail, $randOTP, $userFullName){
   include '../_.config/sjdhfjsadkeys.php';
   $message = "
   <html>
@@ -116,6 +115,10 @@ function sendOTP($userFullName, $email, $suid, $randOTP){
       margin-top: 1em;
       padding: .4em;
     }
+    #footer{
+      padding: .4em;
+      background-color: #eea;
+    }
   </style>
   </head>
   <body><div id='message'>
@@ -124,13 +127,20 @@ function sendOTP($userFullName, $email, $suid, $randOTP){
   <div id='OTP'><p>".$randOTP."</p></div>
   <div>Or you can verify your account by clicking on the link given  <b>(valid for 10 minutes only)</b>
   <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
-  <div id='note'><b>Note:</b> Kindly ignore this e-mail if you don't know about it.</div>
   </div>
+
+  <footer id='footer'>
+  This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br>Kindly ignore if you don't know about this.</b>
+  </footer>
+  <br>
+  <hr>
+  <div><center>You can create an account with us by clicking on link given below</center></div>
+  <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a></div>
   </body>
   </html>";
   $subject = $randOTP." is Your OTP";
   $headers = "From: Fastreed OTP Authentication <no-reply@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
-  $mailDeliverd =  mail($email,$subject,$message,$headers);
+  $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
   if ($mailDeliverd) {
     $mailStatus = true;
   }else {
@@ -138,7 +148,6 @@ function sendOTP($userFullName, $email, $suid, $randOTP){
   }
   return $mailStatus;
 }
-
 
 
 

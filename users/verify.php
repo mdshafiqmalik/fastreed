@@ -312,7 +312,7 @@ function updateOTP($suid){
      $arrayDat = $result2->fetch_assoc();
      $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
-     if (resendOTP($suid, $randOTP, $userEmail, $userFullName)) {
+     if (endOTP($suid, $randOTP, $userEmail, $userFullName)) {
        $otpResend = true;
      }else {
        $otpResend = false;
@@ -327,7 +327,7 @@ function updateOTP($suid){
 }
 
 // Resend OTP
-function resendOTP($suid, $randOTP, $userEmail, $userFullName){
+function sendOTP($suid, $randOTP, $userEmail, $userFullName){
   include '../_.config/sjdhfjsadkeys.php';
   $message = "
   <html>
