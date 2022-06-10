@@ -397,13 +397,13 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
             </div>
             <div><center><b>OR</b></center> </div>
             <div>You can verify your account by clicking on the link given
-              <b>(valid for 10 minutes only)</b>
+              <b>(valid for 10 minutes only)</b><br><br>
               <div id='link'>
                 <a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify Account</a>
               </div>
             </div><br>
         </div><hr>
-        <div>You can create your channel and publish your content. For more please have a visit at our website:
+        <div>You can create your channel and publish your content. To know more about us please have a visit at our website:
         </div><br>
         <div id='link'><a href='https://m.shafiqhub.com/'> Website Link</a>
         </div><br>
