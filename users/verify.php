@@ -310,10 +310,10 @@ function updateOTP($suid){
    $result2 = mysqli_query($link, $getEmailandFullName);
    if ($result2) {
      $arrayDat = $result2->fetch_assoc();
-     $userName = $arrayDat['userName'];
+     $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
      include 'otp.php';
-     if (sendOTP($userName, $userEmail, $suid, $randOTP)) {
+     if (sendOTP($userEmail, $userEmail, $suid, $randOTP)) {
        $otpResend = true;
      }else {
        $otpResend = false;
