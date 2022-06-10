@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" ){
 function checkUser($param){
   include '../../_.config/_s_db_.php';
   $UnameEmail = mysqli_real_escape_string($db,$param);
-  $sql = "SELECT * FROM fast_users Where userName = '$UnameEmail' OR userEmail = '$UnameEmail' OR userPhone = '$UnameEmail'";
+  $sql = "SELECT * FROM fast_users Where BINARY userName = '$UnameEmail' OR userEmail = '$UnameEmail' OR userPhone = '$UnameEmail'";
   $result = mysqli_query($db,$sql);
   if (mysqli_num_rows($result)) {
     $row = $result->fetch_assoc();

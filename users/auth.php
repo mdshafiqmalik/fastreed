@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sanitizeUsername = sanitizeData($UsernameOrEMail);
         $usernameOrEMail = mysqli_real_escape_string($db,$sanitizeUsername);
         $mypassword = mysqli_real_escape_string($db,$sanPassword);
-        $sql = "SELECT * FROM fast_users Where userName = '$usernameOrEMail' OR userEmail = '$usernameOrEMail' OR userPhone = '$usernameOrEMail'";
+        $sql = "SELECT * FROM fast_users Where BINARY userName = '$usernameOrEMail' OR userEmail = '$usernameOrEMail' OR userPhone = '$usernameOrEMail'";
         $result = mysqli_query($db,$sql);
         if (mysqli_num_rows($result)) {
           $row = $result->fetch_assoc();
