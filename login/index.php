@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_GET['message'])) {
   $Message ='<div id="errorMessage">
   <span style="color: red">'.$_GET['message'].'</span></div>
@@ -6,6 +7,7 @@ if (isset($_GET['message'])) {
 }else {
   $Message = '';
 }
+
 if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
       header("Location: ../profile/");
 }

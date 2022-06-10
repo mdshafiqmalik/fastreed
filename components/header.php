@@ -1,4 +1,5 @@
 <?php
+session_start();
 $source = "assets";
 $svgFolder = $source."/pics/svgs";
 if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {

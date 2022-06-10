@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<?php include '../components/uniSession.php'; ?>
+<?php
+session_start();
+include '../components/uniSession.php';
+?>
 
 <html lang="en" dir="ltr">
   <head>
