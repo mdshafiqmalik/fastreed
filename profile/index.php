@@ -95,6 +95,7 @@ function renderProfile($UID){
         $userType = "Reader";
         break;
     }
+
     $getPost = "SELECT * FROM fast_posts WHERE userID ='$UID'";
     $postData = mysqli_query($link, $getPost);
     $postsCount = mysqli_num_rows($postData);
@@ -112,9 +113,10 @@ function renderProfile($UID){
       $totalRating = 0;
       while ($row = $rateData->fetch_assoc()) {
         $totalRating += $row['rateUser'];
+        break;
       }
-      $rateDec = $totalRating/$rateCount;
-      $rate = number_format((float)$rateDec, 1, '.','');
+      $rateInDecimal = $totalRating/$rateCount;
+      $rate = number_format((float)$rateInDecimal, 1, '.','');
     }
 
     if ($upp == 0) {

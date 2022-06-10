@@ -1,6 +1,5 @@
 <?php
 session_start();
-include '../_.config/_s_db_.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $UsernameOrEMail = $_POST['usernameOrEMail'];
@@ -10,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($password)||ctype_space($password)) { // Check if password is  empty
         header("Location: ../login/?message=Enter Password");
       }else {
+        include '../_.config/_s_db_.php';
         $sanPassword = sanitizeData($password);
         $sanitizeUsername = sanitizeData($UsernameOrEMail);
         $usernameOrEMail = mysqli_real_escape_string($db,$sanitizeUsername);
