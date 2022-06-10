@@ -15,10 +15,10 @@ if (count($_SESSION) > 0)  {
   $fullName = $_SESSION['fullName'];
   $username = $_SESSION['userName'];
   $encPassword = $_SESSION['encPassword'];
-  include 'otp.php';
+
   if (addOTP($link, $newUserID, $randOTP,$email,$sentTime)) {
    if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword)) {
-
+    include 'otp.php';
      if (sendOTP($email, $newUserID, $randOTP, $fullName)) {
        header("Location: verify.php?suid=$newUserID");
      }else {
