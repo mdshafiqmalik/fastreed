@@ -395,7 +395,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
             <div id='OTP'>
               <span id='cpOTP'>".$randOTP." </span>
             </div>
-            <div><center>Or</center> </div>
+            <div><center><b>OR</b></center> </div>
             <div>You can verify your account by clicking on the link given
               <b>(valid for 10 minutes only)</b>
               <div id='link'>
@@ -403,9 +403,9 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
               </div>
             </div><br>
         </div><hr>
-        <div>You can create an account with us by clicking on link given below
+        <div>You can create your channel and publish your content. For more please have a visit at our website:
         </div><br>
-        <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a>
+        <div id='link'><a href='https://m.shafiqhub.com/'> Website Link</a>
         </div><br>
         <footer id='footer'>
         This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br><br>Kindly ignore if you don't know about this.</b>
