@@ -334,9 +334,6 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
     <head>
     <title>OTP Authenication</title>
     <style media='screen'>
-      #message{
-        font-size: 1.2em;
-      }
       #link{
         text-align:center;
         margin: .8em 0em;
@@ -378,6 +375,9 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         font-size:.9em;
         color: red;
       }
+      #message, #link{
+        font-size: 1.2em;
+      }
       #cont{
         background-color: white;
         padding: .3em;
@@ -406,9 +406,10 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         </div>
         <footer id='footer'>
         This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br>Kindly ignore if you don't know about this.</b>
-        </footer><hr>
+        </footer><br><hr>
         <div>You can create an account with us by clicking on link given below
         </div>
+        <br>
         <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a>
         </div>
       </div>
