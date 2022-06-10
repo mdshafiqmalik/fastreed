@@ -372,12 +372,23 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
       padding: .4em;
       background-color: #dee;
     }
+    #copy{
+      margin:
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ddd;
+    }
   </style>
   </head>
-  <body style='max-width: 500px'><div id='message'>
+  <body>
+  <div style='max-width: 500px;' >
+  <div id='message'>
   Dear <b>".$userFullName." </b><br><br>
   One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
-  <div id='OTP'><p>".$randOTP." <img height='18px' width='22px'src='https://m.shafiqhub.com/uploads/copy_icon.png'> </p></div>
+  <div id='OTP'><p>".$randOTP." <span id ='copy'>copy</span> </p></div>
   <div>Or you can verify your account by clicking on the link given  <b>(valid for 10 minutes only)</b>
   <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify Account</a></div>
   </div>
@@ -389,6 +400,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
   <hr>
   <div><center>You can create an account with us by clicking on link given below</center></div>
   <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a></div>
+  </div>
   </body>
   </html>";
   $subject = $randOTP." is Your OTP";
