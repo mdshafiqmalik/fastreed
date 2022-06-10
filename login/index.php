@@ -2,9 +2,7 @@
 <?php
 session_start();
 if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
-  echo '<script type="text/javascript">
-    document.location = "../profile";
-  </script>';
+  header("Location: ../profile.php?eikooCtes=true");
 }
 if (isset($_GET['message'])) {
   $Message ='<div id="errorMessage">
