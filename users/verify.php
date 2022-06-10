@@ -387,6 +387,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
       max-width: 500px;
     }
   </style>
+  
   </head>
   <body id='b'>
     <div id='cont'>
