@@ -375,10 +375,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         font-size:.9em;
         color: red;
       }
-      #copy:hover{
-        cursor: pointer;
-      }
-      #message, #link{
+      #message, #link a{
         font-size: 1.2em;
       }
       #cont{
@@ -398,21 +395,21 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
             <div id='OTP'>
               <span id='cpOTP'>".$randOTP." </span>
             </div>
-            <div>Or you can verify your account by clicking on the link given
+            <div><center>Or</center> </div>
+            <div>You can verify your account by clicking on the link given
               <b>(valid for 10 minutes only)</b>
               <div id='link'>
                 <a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify Account</a>
               </div>
             </div><br>
-        </div>
-        <footer id='footer'>
-        This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br>Kindly ignore if you don't know about this.</b>
-        </footer><br><hr>
+        </div><hr>
         <div>You can create an account with us by clicking on link given below
-        </div>
-        <br>
+        </div><br>
         <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a>
-        </div>
+        </div><br>
+        <footer id='footer'>
+        This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br><br>Kindly ignore if you don't know about this.</b>
+        </footer><br>
       </div>
     </body>
   </html>
