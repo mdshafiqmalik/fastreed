@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+
 <?php
 session_start();
+if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
+      header("Location: ../profile/");
+}
 include '../components/uniSession.php';
 ?>
-
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -18,11 +21,6 @@ include '../components/uniSession.php';
     <div class="navigation">
       <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
     </div>
-    <?php
-    if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
-          header("Location: ../profile/");
-    }
-     ?>
 
     <div id="userDiv" class="cont">
     <div class="content">
