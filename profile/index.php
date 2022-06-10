@@ -48,6 +48,8 @@ if(isset($_COOKIE['uisnnue'])) {
   </script>';
 }
 
+
+
 $GLOBALS['containerStart'] = '<div id="" class="container">';
 $GLOBALS['divStop'] = '</div>';
 function checkUserID($dUserID){
@@ -116,7 +118,7 @@ function renderProfile($UID){
       $upp = unserialize($row['userProfilePic']);
       $profileImage = $upp['folder'].'/'.$upp['year'].'/'.$upp['month'].'/'.$upp['id'].'.'.$upp['ext'];
     }
-    $profile ='
+    $GLOBALS['profile'] ='
 
     '.$GLOBALS['containerStart'].'
     <!-- Self Profile Opened -->
@@ -155,7 +157,6 @@ function renderProfile($UID){
   }
   }
  ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -173,8 +174,8 @@ function renderProfile($UID){
       <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
     </div>
     <?php
-    if (isset($profile)) {
-      echo $profile;
+    if (isset($GLOBALS['profile'])) {
+      echo $GLOBALS['profile'];
     }
      ?>
   </body>
