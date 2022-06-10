@@ -119,9 +119,8 @@ function renderProfile($UID){
       $profileImage = $upp['folder'].'/'.$upp['year'].'/'.$upp['month'].'/'.$upp['id'].'.'.$upp['ext'];
     }
     $GLOBALS['profile'] ='
-
-    '.$GLOBALS['containerStart'].'
     <!-- Self Profile Opened -->
+    <div id="" class="container">
       <div class="authorProfile">
         <div class="topDiv">
           <div class="authorPic"> <img src="../uploads/'.$profileImage.'" alt=""> </div>
@@ -153,7 +152,8 @@ function renderProfile($UID){
           <div id="linkTwo" class="linkOne"> <span class="links"> <a href="#">Settings</a> </span> </div>
         </div>
       </div>
-    <!-- Self Profile Closed -->'.$GLOBALS['divStop'].'';
+      </div>
+    <!-- Self Profile Closed -->';
   }
   }
  ?>
