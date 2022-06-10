@@ -53,11 +53,6 @@ if(isset($_COOKIE['uisnnue'])) {
   }
 }else {
   echo '<script type="text/javascript">
-    document.location = "../login/?code=006UNF";
-  </script>';
-}
-}else {
-  echo '<script type="text/javascript">
     document.location = "../login?code=00NCSS";
   </script>';
 }
