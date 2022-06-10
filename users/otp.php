@@ -88,6 +88,7 @@ function sendOTP($userfullName, $userEmail, $userID, $randOTP){
       </div>
     </body>
   </html>";
+  
   $subject = $randOTP." is Your OTP";
   $headers = "From: Fastreed OTP Authentication <no-reply@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
   $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
