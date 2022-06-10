@@ -285,7 +285,7 @@ function verifyUser($userID){
   }
   return $userAdded;
 }
-
+include 'otp.php';
 // Update OTP
 function updateOTP($suid){
  $expTime = time()+600;
@@ -312,7 +312,6 @@ function updateOTP($suid){
      $arrayDat = $result2->fetch_assoc();
      $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
-     include 'otp.php';
      if (sendOTP($userEmail, $suid, $randOTP, $userFullName)) {
        $otpResend = true;
      }else {

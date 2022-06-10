@@ -1,6 +1,4 @@
 <?php
-
-
 // Send OTP
 function sendOTP($userEmail, $userID, $randOTP, $userfullName){
   include '../_.config/sjdhfjsadkeys.php';
