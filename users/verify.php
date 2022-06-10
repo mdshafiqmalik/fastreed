@@ -376,14 +376,14 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
     }
   </style>
   </head>
-  <body><div id='message'>
+  <body style='max-width: 500px'><div id='message'>
   Dear <b>".$userFullName." </b><br><br>
   One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
   <div id='OTP'><p>".$randOTP."</p></div>
   <div>Or you can verify your account by clicking on the link given  <b>(valid for 10 minutes only)</b>
   <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify Account</a></div>
   </div>
-
+  <br>
   <footer id='footer'>
   This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br>Kindly ignore if you don't know about this.</b>
   </footer>
