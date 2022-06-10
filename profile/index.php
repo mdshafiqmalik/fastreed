@@ -145,11 +145,11 @@ $articles = '<!-- Popular Articles Open -->
         renderProfile($_SESSION['uisnnue']);
       }else {
         echo '<script type="text/javascript">
-          document.location = "../login";
+          document.location = "../login/?code=001UNF";
         </script>';
       }
     }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
-      // if ((boolean)$_GET['eikooCtes']== true) {
+      if ((boolean)$_GET['eikooCtes']== true) {
         if (checkUserID($_SESSION['uisnnue'])) {
           $encUID = openssl_encrypt($_SESSION['uisnnue'], $ciphering,
           $encryption_key, $options, $encryption_iv);
@@ -157,28 +157,31 @@ $articles = '<!-- Popular Articles Open -->
           $u = $_SESSION['uisnnue'];
           renderProfile($u);
         }else {
+          var_dump('user not exist');
           // echo '<script type="text/javascript">
-          //   document.location = "../login?code=3";
+          //   document.location = "../login?code=000UNF";
           // </script>';
         }
-      // }else {
-        // echo '<script type="text/javascript">
-        //   document.location = "../login?code=9";
-        // </script>';
-      // }
+      }else {
+        if (checkUserID($_SESSION['uisnnue'])) {
+          renderProfile($_SESSION['uisnnue']);
+        }else {
+          echo '<script type="text/javascript">
+            document.location = "../login?code=002UNF";
+          </script>';
+        }
 
     }elseif(isset($_SESSION['uisnnue'])) {
       if (checkUserID($_SESSION['uisnnue'])) {
         renderProfile($_SESSION['uisnnue']);
       }else {
-
         echo '<script type="text/javascript">
-          document.location = "../login?code=1";
+          document.location = "../login?code=0003NF";
         </script>';
       }
     }else {
       echo '<script type="text/javascript">
-        document.location = "../login?code=2";
+        document.location = "../login?code=00NCSS";
       </script>';
     }
 
@@ -191,6 +194,7 @@ function checkUserID($dUserID){
     $exist = true;
   }else {
     setcookie("uisnnue", "", time()-3600);
+    unset($_SESSION['uisnnue']);
     $exist = false;
   }
   return $exist;
