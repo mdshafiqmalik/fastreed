@@ -40,7 +40,7 @@ function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
   $checkOTP = "SELECT userID FROM fast_otp Where emailAddress = '$email'";
   $res = mysqli_query($link, $checkOTP);
   if ($res) {
-    $delRecord = "DELETE FROM fast_otp Where emailAddress= '$email' AND optIntentb ='AV'";
+    $delRecord = "DELETE FROM fast_otp Where emailAddress= '$email' AND optIntent ='AV'";
     mysqli_query($link, $delRecord);
   }
   $sentDateTime = date('y-m-d H:i:s');
