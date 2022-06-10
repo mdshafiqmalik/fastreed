@@ -56,14 +56,14 @@ function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
 
 // Add user to Database
 function addUser($link, $newUserID, $username, $fullName, $email, $password, $encPass){
-  $checkEmail = "SELECT userEmail FROM fast_noverify_users Where userEmail = '$email'";
+  $checkEmail = "SELECT userEmail FROM user_noverify Where userEmail = '$email'";
   $res = mysqli_query($link, $checkEmail);
   if ($res) {
-    $delRecord = "DELETE FROM `fast_noverify_users` Where `fast_noverify_users`.`userEmail`= '$email'";
+    $delRecord = "DELETE FROM `user_noverify` Where `user_noverify`.`userEmail`= '$email'";
     mysqli_query($link, $delRecord);
   }
 
-  $addUser = "INSERT INTO `fast_noverify_users` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`,`ePassword`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password', '$encPass')";
+  $addUser = "INSERT INTO `user_noverify` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`,`ePassword`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password', '$encPass')";
   $result = mysqli_query($link, $addUser);
   if ($result) {
     $userAdded = true;
@@ -145,7 +145,7 @@ function sendOTP($userFullName, $email, $suid, $randOTP){
 // Create Random ID
 function checkRandomID($link, $randID){
   $sqlV = "SELECT userID FROM fast_users WHERE userID ='$randID'";
-  $sqlN = "SELECT userID FROM fast_noverify_users WHERE userID ='$randID'";
+  $sqlN = "SELECT userID FROM user_noverify WHERE userID ='$randID'";
   $resultV = mysqli_query($link, $sqlV);
   $resultN = mysqli_query($link, $sqlN);
   if (mysqli_num_rows($resultV)) {

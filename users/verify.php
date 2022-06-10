@@ -241,7 +241,7 @@ function delOTP($userID){
 function verifyUser($userID){
   include '../_.config/_s_db_.php';
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-  $sql = "SELECT * FROM fast_noverify_users WHERE userID = '$userID'";
+  $sql = "SELECT * FROM user_noverify WHERE userID = '$userID'";
   $result = mysqli_query($link, $sql);
   if ($result) {
     $data = $result->fetch_assoc();
@@ -270,7 +270,7 @@ function verifyUser($userID){
     $r3 = mysqli_query($link, $inUserSec);
     $r4 = mysqli_query($link, $inUserverify);
     if ($r1 && $r2 && $r3 && $r4) {
-      $delNoVerify ="DELETE FROM fast_noverify_users WHERE userID = '$userID'";
+      $delNoVerify ="DELETE FROM user_noverify WHERE userID = '$userID'";
       $r5 = mysqli_query($link, $delNoVerify);
       if ($r5) {
         $userAdded = true;
@@ -306,7 +306,7 @@ function updateOTP($suid){
  $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime', totalOTP = '$tOTP' , sentDateTime = '$sentDateTime' WHERE userID = '$suid'";
  $result1 = mysqli_query($link, $upOTPandTime);
  if ($result1) {
-   $getEmailandFullName = "SELECT userEmail, userFullName FROM fast_noverify_users WHERE userID ='$suid'";
+   $getEmailandFullName = "SELECT userEmail, userFullName FROM user_noverify WHERE userID ='$suid'";
    $result2 = mysqli_query($link, $getEmailandFullName);
    if ($result2) {
      $arrayDat = $result2->fetch_assoc();
@@ -425,7 +425,7 @@ function authenticateOTP($userID, $OTP){
 function checkUserID($userID){
   include '../_.config/_s_db_.php';
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-  $checkSUID = "SELECT userID FROM fast_noverify_users WHERE userID = '$userID'";
+  $checkSUID = "SELECT userID FROM user_noverify WHERE userID = '$userID'";
   $result = mysqli_query($link, $checkSUID);
   $isUserID = mysqli_num_rows($result);
   if ($isUserID) {
