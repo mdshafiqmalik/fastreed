@@ -370,7 +370,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
     }
     #footer{
       padding: .4em;
-      background-color: #eea;
+      background-color: #ebe;
     }
   </style>
   </head>
@@ -379,7 +379,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
   One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
   <div id='OTP'><p>".$randOTP."</p></div>
   <div>Or you can verify your account by clicking on the link given  <b>(valid for 10 minutes only)</b>
-  <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
+  <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify Account</a></div>
   </div>
 
   <footer id='footer'>
