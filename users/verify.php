@@ -25,6 +25,7 @@ if (isset($_GET['suid'])) {
                 $userFullNam = $row['userFullName'];
                 $userEmail = $row['userEmail'];
                 $userName = $row['userName'];
+                var_dump($userFullNam);
                 greeetingMail($userFullNam, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
