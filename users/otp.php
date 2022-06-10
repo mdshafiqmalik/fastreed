@@ -65,7 +65,7 @@ function sendOTP($userfullName, $userEmail, $userID, $randOTP){
     <body>
       <div id='cont'>
         <div id='message'>
-            Dear <b>".$userfullName." </b><br><br>
+            Dear <b>".$userFullName." </b><br><br>
             One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
             <div id='OTP'>
               <span id='cpOTP'>".$randOTP." </span>
@@ -98,7 +98,4 @@ function sendOTP($userfullName, $userEmail, $userID, $randOTP){
   }
   return $mailStatus;
 }
-
-
-
  ?>
