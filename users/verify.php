@@ -34,7 +34,7 @@ session_start();
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
-                $setcookie('uisnnue', $encUID, time()+(86400*7), '/');
+                setcookie('uisnnue', $encUID, time()+(86400*7), '/');
                 if (isset($_COOKIE['uisnnue'])) {
                   var_dump($_COOKIE['uisnnue']);
                   // header("Location: ../profile/");
