@@ -154,7 +154,7 @@ $articles = '<!-- Popular Articles Open -->
           $encryption_key, $options, $encryption_iv);
           setcookie('uisnnue', $encUID, time()+(86400*30), '/');
           $u = $_SESSION['uisnnue'];
-          renderProfile($_SESSION['uisnnue']);
+          renderProfile($u);
         }else {
           // echo '<script type="text/javascript">
           //   document.location = "../login?code=3";
