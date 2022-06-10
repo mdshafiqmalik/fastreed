@@ -39,6 +39,7 @@ session_start();
                 if (isset($_SESSION['uisnnue'])) {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center>';
                   echo '<center><span id="successMessage">Redirecting....</span></center>';
+                  
                   echo '<script type="text/javascript">
                     document.location = "../profile/?eikooCtes=true";
                   </script>';

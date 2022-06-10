@@ -28,15 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                  $encUID = openssl_encrypt($userID, $ciphering,
                  $encryption_key, $options, $encryption_iv);
                  setcookie('uisnnue', $encUID, time() + (86400 * 30), "/");
-                 header("Location: ../profile");
+                 header("Location: ../profile?eikooCtes=true");
              }else {
                $_SESSION["uisnnue"] = $userID;
-               header("Location: ../profile");
+               header("Location: ../profile?eikooCtes=false");
              }
 
            }else {
              $_SESSION["uisnnue"] = $userID;
-             header("Location: ../profile");
+             header("Location: ../profile?eikooCtes=false");
            }
 
           }else {
