@@ -1,7 +1,7 @@
 <?php
 $source = "assets";
 $svgFolder = $source."/pics/svgs";
-
+session_start();
 if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
   if (!empty($_SESSION["uisnnue"]) && !empty($_COOKIE["uisnnue"])) {
       $user = "profile";
