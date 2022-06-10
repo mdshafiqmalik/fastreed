@@ -368,6 +368,10 @@ function resendOTP($suid, $randOTP, $userEmail, $userFullName){
       margin-top: 1em;
       padding: .4em;
     }
+    #footer{
+      padding: .4em;
+      background-color: #eea;
+    }
   </style>
   </head>
   <body><div id='message'>
@@ -376,8 +380,15 @@ function resendOTP($suid, $randOTP, $userEmail, $userFullName){
   <div id='OTP'><p>".$randOTP."</p></div>
   <div>Or you can verify your account by clicking on the link given  <b>(valid for 10 minutes only)</b>
   <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
-  <div id='note'><b>Note:</b> Kindly ignore this e-mail if you don't know about it.</div>
   </div>
+
+  <footer id='footer'>
+  This mail is sent to <b>".$userEmail." and is intended for account verification of <b>".$userFullName."</b>. <br>Kindly ignore if you don't know about this.</b>
+  </footer>
+  <br>
+  <hr>
+  <div><center>You can create an account with us by clicking on link given below</center></div>
+  <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a></div>
   </body>
   </html>";
   $subject = $randOTP." is Your OTP";
