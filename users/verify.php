@@ -355,6 +355,8 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
     #OTP{
       text-align:center;
       margin: .8em 0em;
+      max-width: 400px;
+      width: 100%;
     }
     #OTP p{
       font-size: 1.2em;
