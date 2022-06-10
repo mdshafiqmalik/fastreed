@@ -1,4 +1,5 @@
 <?php
+$user = "user";
 // Send OTP
 function sendOTP($userEmail, $userID, $randOTP, $userfullName){
   include '../_.config/sjdhfjsadkeys.php';
@@ -63,7 +64,7 @@ function sendOTP($userEmail, $userID, $randOTP, $userfullName){
     <body>
       <div id='cont'>
         <div id='message'>
-            Dear <b>".$userFullName." </b><br><br>
+            Dear <b>".$user." </b><br><br>
             One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
             <div id='OTP'>
               <span id='cpOTP'>".$randOTP." </span>
