@@ -37,8 +37,7 @@ session_start();
                 $_SESSION['uisnnue'] = $userID;
                 // setcookie('uisnnue', $encUID, time()+(86400*7), '/');
                 if (isset($_SESSION['uisnnue'])) {
-                  var_dump($_SESSION['uisnnue']);
-                  // header("Location: ../profile/");
+                  header("Location: ../profile/?eikooCtes=true");
                 }else {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center>';
                   echo '<center><span id="successMessage">Redirecting to Login page</span></center>';

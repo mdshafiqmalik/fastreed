@@ -149,6 +149,7 @@ $articles = '<!-- Popular Articles Open -->
         </script>';
       }
     }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
+      if ((boolean)$_GET['eikooCtes']== true) {
         if (checkUserID($_SESSION['uisnnue'])) {
           $encUID = openssl_encrypt($_SESSION['uisnnue'], $ciphering,
           $encryption_key, $options, $encryption_iv);
@@ -160,6 +161,12 @@ $articles = '<!-- Popular Articles Open -->
           //   document.location = "../login?code=3";
           // </script>';
         }
+      }else {
+        // echo '<script type="text/javascript">
+        //   document.location = "../login?code=9";
+        // </script>';
+      }
+
     }elseif(isset($_SESSION['uisnnue'])) {
       if (checkUserID($_SESSION['uisnnue'])) {
         renderProfile($_SESSION['uisnnue']);
