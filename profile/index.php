@@ -170,7 +170,7 @@ $articles = '<!-- Popular Articles Open -->
             document.location = "../login?code=002UNF";
           </script>';
         }
-
+      }
     }elseif(isset($_SESSION['uisnnue'])) {
       if (checkUserID($_SESSION['uisnnue'])) {
         renderProfile($_SESSION['uisnnue']);
