@@ -137,17 +137,24 @@ $articles = '<!-- Popular Articles Open -->
     </div>
     <?php
     if(isset($_COOKIE['uisnnue'])) {
-      include '../_.config/sjdhfjsadkeys.php';
-      $dUserID = openssl_decrypt ($_COOKIE['uisnnue'], $ciphering,
-      $decryption_key, $options, $decryption_iv);
-      $_SESSION["uisnnue"] = $dUserID;
-      if (checkUserID($_SESSION["uisnnue"])) {
-        renderProfile($_SESSION['uisnnue']);
+      if (!empty($_COOKIE['uisnnue'])) {
+        include '../_.config/sjdhfjsadkeys.php';
+        $dUserID = openssl_decrypt ($_COOKIE['uisnnue'], $ciphering,
+        $decryption_key, $options, $decryption_iv);
+        $_SESSION["uisnnue"] = $dUserID;
+        if (checkUserID($_SESSION["uisnnue"])) {
+          renderProfile($_SESSION['uisnnue']);
+        }else {
+          echo '<script type="text/javascript">
+            document.location = "../login/?code=001UNF";
+          </script>';
+        }
       }else {
         echo '<script type="text/javascript">
-          document.location = "../login/?code=001UNF";
+          document.location = "../login/?code=002UNF";
         </script>';
       }
+
     }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
       if ((boolean)$_GET['eikooCtes']) {
         if (checkUserID($_SESSION['uisnnue'])) {
@@ -159,7 +166,7 @@ $articles = '<!-- Popular Articles Open -->
         }else {
           var_dump('user not exist');
           // echo '<script type="text/javascript">
-          //   document.location = "../login?code=0002UNF";
+          //   document.location = "../login?code=0003UNF";
           // </script>';
         }
       }else {
@@ -167,7 +174,7 @@ $articles = '<!-- Popular Articles Open -->
           renderProfile($_SESSION['uisnnue']);
         }else {
           echo '<script type="text/javascript">
-            document.location = "../login?code=003UNF";
+            document.location = "../login?code=004UNF";
           </script>';
         }
       }
