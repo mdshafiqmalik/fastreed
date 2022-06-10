@@ -203,7 +203,7 @@ if (isset($_GET['suid'])) {
   </head>
   <body>
   <div class="navigation">
-    <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
+    <span> <a id="backArrow" href="../register">&#171;  <span>Back</span></a> </span>
   </div>
   <div id="userDiv" class="cont">
   <div class="content">

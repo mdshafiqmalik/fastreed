@@ -25,7 +25,7 @@ $link = new mysqli("$hostName","$userName","$passWord","$dbName");
           $comments = mysqli_num_rows($commentsData);
 
           // get author name
-          $selectPostAuthor = "SELECT * FROM user_credentials Where userID = '$postUserID'";
+          $selectPostAuthor = "SELECT * FROM user_cred Where userID = '$postUserID'";
           $authorData = mysqli_query($link, $selectPostAuthor);
           $authorArray = $authorData->fetch_assoc();
           $authorName = $authorArray['userFullName'];
