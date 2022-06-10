@@ -15,7 +15,7 @@ if (isset($_SESSION["uisnnue"])) {
     $user = "login";
   }
 }else {
-  $user = "login";.
+  $user = "login";
 }
 
 $header = '<div class="header">
