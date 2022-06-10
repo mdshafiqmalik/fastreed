@@ -20,7 +20,7 @@ if(isset($_COOKIE['uisnnue'])) {
   }
 
 }elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
-  if ((boolean)$_GET['eikooCtes']) {
+  if ((boolean)$_GET['eikooCtes'] == true) {
     if (checkUserID($_SESSION['uisnnue'])) {
       include '../_.config/sjdhfjsadkeys.php';
       $encUID = openssl_encrypt($_SESSION['uisnnue'], $ciphering,
