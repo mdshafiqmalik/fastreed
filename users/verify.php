@@ -17,9 +17,10 @@ if (isset($_GET['suid'])) {
               $_SESSION['uisnnue'] = $userID;
               // setcookie('uisnnue', $encUID, time()+(86400*7), '/');
               if (isset($_SESSION['uisnnue'])) {
+                $userID = $_SESSION['uisnnue']);
                 include 'otp.php';
                 include '../_.config/_s_db_.php';
-                $sql = "SELECT * FROM fast_users WHERE userID = '$userID'";
+                $sql = "SELECT * FROM fast_users WHERE userID = '$userID";
                 $res = mysqli_query($db, $sql);
                 $row = $res-> fetch_assoc();
                 $userFullNam = $row['userFullName'];
