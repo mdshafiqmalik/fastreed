@@ -43,6 +43,19 @@ if(isset($_COOKIE['uisnnue'])) {
       </script>';
     }
   }
+}elseif ($_SESSION["uisnnue"]) {
+  if (checkUserID($_SESSION["uisnnue"])) {
+    renderProfile($_SESSION['uisnnue']);
+  }else {
+    echo '<script type="text/javascript">
+      document.location = "../login/?code=005UNF";
+    </script>';
+  }
+}else {
+  echo '<script type="text/javascript">
+    document.location = "../login/?code=006UNF";
+  </script>';
+}
 }else {
   echo '<script type="text/javascript">
     document.location = "../login?code=00NCSS";
