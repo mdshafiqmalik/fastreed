@@ -8,7 +8,10 @@ if (isset($_GET['message'])) {
 }
 session_start();
 if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
-  header("Location: ../profile/");
+  if (!empty($_SESSION["uisnnue"]) && !empty($_COOKIE["uisnnue"])) {
+      header("Location: ../profile/");
+  }
+
 }
 ?>
 
