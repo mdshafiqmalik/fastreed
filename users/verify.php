@@ -382,14 +382,12 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         background-color: white;
         padding: .3em;
         max-width: 500px;
-        background-color: #eee;
+        border: .5px solid;
+        border-radius: 5px;
       }
     </style>
     </head>
-    <body style='display: flex;
-    justify-content:  center;
-    align-items: center;
-    background-color: #fff;'>
+    <body>
       <div id='cont'>
         <div id='message'>
             Dear <b>".$userFullName." </b><br><br>
