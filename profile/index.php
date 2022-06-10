@@ -78,7 +78,7 @@ function checkUserID($dUserID){
 function renderProfile($UID){
   include '../_.config/_s_db_.php';
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-  $getUserData = "SELECT * FROM user_credentials Where userID = '$UID'";
+  $getUserData = "SELECT * FROM user_cred Where userID = '$UID'";
   $result = mysqli_query($db,$getUserData);
   if (mysqli_num_rows($result)) {
     $row = $result->fetch_assoc();
