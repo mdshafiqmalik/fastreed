@@ -370,7 +370,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
     }
     #footer{
       padding: .4em;
-      background-color: #1ee;
+      background-color: #dee;
     }
   </style>
   </head>
