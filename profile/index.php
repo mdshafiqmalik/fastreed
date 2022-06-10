@@ -151,7 +151,7 @@ function renderProfile($UID){
           <div id="linkTwo" class="linkOne"> <span class="links"> <a href="#">Settings</a> </span> </div>
         </div>
       </div>
-    <!-- Self Profile Closed -->'.$GLOBALS['divStop'].';
+    <!-- Self Profile Closed -->'.$GLOBALS['divStop'].'';
   }
   }
  ?>
