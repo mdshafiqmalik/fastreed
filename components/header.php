@@ -2,14 +2,20 @@
 $source = "assets";
 $svgFolder = $source."/pics/svgs";
 session_start();
-if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
-  if (!empty($_SESSION["uisnnue"]) && !empty($_COOKIE["uisnnue"])) {
+if (isset($_SESSION["uisnnue"])) {
+  if (!empty($_SESSION["uisnnue"])) {
       $user = "profile";
   }else {
     $user = "login";
   }
+}elseif(isset($_COOKIE["uisnnue"])) {
+  if (!empty($_COOKIE["uisnnue"])) {
+    $user = "profile";
+  }else {
+    $user = "login";
+  }
 }else {
-  $user = "login";
+  $user = "login";.
 }
 
 $header = '<div class="header">
