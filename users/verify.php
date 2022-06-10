@@ -313,7 +313,7 @@ function updateOTP($suid){
      $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
      include 'otp.php';
-     if (sendOTP($userEmail, $suid, $randOTP, $userFullName)) {
+     if (sendOTP('userEmail', $suid, $randOTP, $userFullName)) {
        $otpResend = true;
      }else {
        $otpResend = false;
