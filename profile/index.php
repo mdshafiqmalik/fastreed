@@ -159,7 +159,7 @@ $articles = '<!-- Popular Articles Open -->
         }else {
           var_dump('user not exist');
           // echo '<script type="text/javascript">
-          //   document.location = "../login?code=000UNF";
+          //   document.location = "../login?code=0002UNF";
           // </script>';
         }
       }else {
@@ -167,7 +167,7 @@ $articles = '<!-- Popular Articles Open -->
           renderProfile($_SESSION['uisnnue']);
         }else {
           echo '<script type="text/javascript">
-            document.location = "../login?code=002UNF";
+            document.location = "../login?code=003UNF";
           </script>';
         }
       }
