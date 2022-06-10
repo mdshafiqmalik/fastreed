@@ -19,8 +19,9 @@ if (isset($_GET['suid'])) {
               if (isset($_SESSION['uisnnue'])) {
                 include 'otp.php';
                 include '../_.config/_s_db_.php';
-                $sql = "SELECT * FROM fast_users WHERE userID = '$userID";
-                $res = mysqli_query($db, $sql);
+                $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+                $sqli = "SELECT * FROM fast_users WHERE userID = '$userID";
+                $res = mysqli_query($link, $sqli);
                 $row = $res->fetch_assoc();
                 $userFullNam = $row['userFullName'];
                 $userEmail = $row['userEmail'];
