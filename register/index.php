@@ -16,11 +16,8 @@
       <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
     </div>
     <?php
-    session_start();
     if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
-      if (!empty($_SESSION["uisnnue"]) && !empty($_COOKIE["uisnnue"])) {
           header("Location: ../profile/");
-      }
     }
      ?>
 

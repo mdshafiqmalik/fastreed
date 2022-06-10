@@ -6,11 +6,8 @@ if (isset($_GET['message'])) {
 }else {
   $Message = '';
 }
-session_start();
 if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
-  if (!empty($_SESSION["uisnnue"]) && !empty($_COOKIE["uisnnue"])) {
       header("Location: ../profile/");
-  }
 }
 ?>
 
