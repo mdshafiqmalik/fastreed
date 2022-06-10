@@ -39,7 +39,7 @@ session_start();
                   // echo '<center><span id="successMessage">Registered Sucesssfully</span></center><br>';
                   // echo '<center><span id="successMessage">Logging In......</span></center>';
                   // header("Location: ../profile?eikooCtes=true");
-                  header("Location: ../profile.php?eikooCtes=true");
+                  header("Location: ../profile/?eikooCtes=true");
                 }else {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center>';
                   echo '<center><span id="successMessage">Redirecting to Login page</span></center>';
