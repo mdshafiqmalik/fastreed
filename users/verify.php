@@ -373,7 +373,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         background-color: #dee;
       }
       #copy{
-        margin: 5px;
+        margin-left: 5px;
       }
       #b{
         display: flex;
