@@ -382,7 +382,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         background-color: white;
         padding: .3em;
         max-width: 500px;
-        border: .5px solid;
+        border: .5px solid #eee;
         border-radius: 5px;
       }
     </style>
