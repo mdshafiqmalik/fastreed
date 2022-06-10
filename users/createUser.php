@@ -18,7 +18,8 @@ if (count($_SESSION) > 0)  {
 
   if (addOTP($link, $newUserID, $randOTP,$email,$sentTime)) {
    if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword)) {
-     if (sendOTP($fullName, $email, $newUserID, $randOTP)) {
+     include 'otp.php';
+     if (sendOTP($userfullName, $email, $newUserID, $randOTP)) {
        header("Location: verify.php?suid=$newUserID");
      }else {
        header("Location: ../register?errorMessage= OTP Not Send&id=FNS");
@@ -72,83 +73,6 @@ function addUser($link, $newUserID, $username, $fullName, $email, $password, $en
   }
   return $userAdded;
 }
-
-// Resend OTP
-function sendOTP($suid, $userEmail, $randOTP, $userFullName){
-  include '../_.config/sjdhfjsadkeys.php';
-  $message = "
-  <html>
-  <head>
-  <title>OTP Authenication</title>
-  <style media='screen'>
-    #message{
-      font-size: 1.2em;
-    }
-    #link{
-      text-align:center;
-      margin: .8em 0em;
-    }
-    #link a{
-      color: white;
-      text-decoration:none;
-      background-color: #0165E1;
-      font-weight: bold;
-      padding: .4em 1.5em;
-      border-radius: 2px;
-    }
-    #message a:hover{
-      background-color: #0072ff;
-    }
-    #OTP{
-      text-align:center;
-      margin: .8em 0em;
-    }
-    #OTP p{
-      font-size: 1.2em;
-      padding: .4em 2em;
-      background-color: #eee;
-      font-weight:bold;
-      letter-spacing: 3px;
-    }
-    #note{
-      background-color: #eee;
-      margin-top: 1em;
-      padding: .4em;
-    }
-    #footer{
-      padding: .4em;
-      background-color: #eea;
-    }
-  </style>
-  </head>
-  <body><div id='message'>
-  Dear <b>".$userFullName." </b><br><br>
-  One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
-  <div id='OTP'><p>".$randOTP."</p></div>
-  <div>Or you can verify your account by clicking on the link given  <b>(valid for 10 minutes only)</b>
-  <div id='link'><a href='https://m.shafiqhub.com/users/verify.php?suid=".$suid ."&centpo=".$randOTP."'> Verify</a></div>
-  </div>
-
-  <footer id='footer'>
-  This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br>Kindly ignore if you don't know about this.</b>
-  </footer>
-  <br>
-  <hr>
-  <div><center>You can create an account with us by clicking on link given below</center></div>
-  <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a></div>
-  </body>
-  </html>";
-  $subject = $randOTP." is Your OTP";
-  $headers = "From: Fastreed OTP Authentication <no-reply@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
-  $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
-  if ($mailDeliverd) {
-    $mailStatus = true;
-  }else {
-    $mailStatus = false;
-  }
-  return $mailStatus;
-}
-
 
 
 // Create Random ID
