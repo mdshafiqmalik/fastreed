@@ -288,7 +288,7 @@ function verifyUser($userID){
 
 // Update OTP
 function updateOTP($suid){
- $expTime = time();
+ $expTime = time()+600;
  $randOTP = "";
  for ($x = 1; $x <= 6; $x++) {
      // Set each digit
