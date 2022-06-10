@@ -75,6 +75,11 @@ function renderProfile($UID){
     $row = $result->fetch_assoc();
     $userFullName = $row['userFullName'];
     $userJoinDate = $row['userJoiningDate'];
+
+    include_once '../components/time.php';
+    $pTime = strtotime($userJoinDate);
+    $joinDate = pTiming($pTime);
+
     $userCountry = $row['userCountry'];
     switch ($row['userType']) {
       case '0':
@@ -129,7 +134,7 @@ function renderProfile($UID){
               <span id="userFullName">'.$userFullName.'</span>
               <span id="userType">'.$userType.'</span>
               <span class="designation">'.$userCountry.'</span>
-              <span class="designation">Joined '.$userJoinDate.'</span>
+              <span class="designation">Joined '.$joinDate.'</span>
             </div>
             <div class="userParam">
               <div class="userArticles">
