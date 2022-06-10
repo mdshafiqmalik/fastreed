@@ -31,12 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                  header("Location: ../profile?eikooCtes=true");
              }else {
                $_SESSION["uisnnue"] = $userID;
-               header("Location: ../profile/?eikooCtes=false");
+               header("Location: ../profile/");
              }
 
            }else {
              $_SESSION["uisnnue"] = $userID;
-             header("Location: ../profile/?eikooCtes=false");
+             header("Location: ../profile/");
            }
 
           }else {
