@@ -133,7 +133,7 @@ function greeetingMail($userFullName, $userName, $userEmail, ){
     </head>
     <body>
       <div id="cont">
-        <p> Hi <b>'..$userFullName'</b> </p>
+        <p> Hi <b>'.$userFullName.'</b> </p>
          <p> Thanks for joinig us you are now a part of a huge content community.Your account is all set and <b>verified now</b>.
            <br> You can login to your account using your <b>Username or Email</b> with password. <br><br>
            Username : <b>'.$userName.'</b><br>
