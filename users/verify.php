@@ -393,8 +393,8 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
             Dear <b>".$userFullName." </b><br><br>
             One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
             <div id='OTP'>
-              <p>".$randOTP."
-                <span id ='copy'>copy</span>
+              <p id='cpOTP'>".$randOTP."
+                <span onclick='copyText()' id ='copy'>copy</span>
               </p>
             </div>
             <div>Or you can verify your account by clicking on the link given
@@ -413,6 +413,18 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a>
         </div>
       </div>
+      <script>
+      function copyText(){
+        var copyText = document.getElementById('cpOTP');
+        var cp = document.getElementById('copy');
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+        cp.innerHTML = 'copied';
+        cp.style.color= 'orange';
+      }
+      </script>
     </body>
   </html>";
   $subject = $randOTP." is Your OTP";
