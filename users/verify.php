@@ -375,13 +375,20 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
     #copy{
       margin:
     }
+    body{
+      display: flex;
+      justify-content:  center;
+      align-items: center;
+      background-color: #eee;
+    }
+    #cont{
+      background-color: white;
+      padding: .3em;
+    }
   </style>
   </head>
-  <body style='display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #eee;'>
-  <div style='max-width: 500px;' >
+  <body>
+  <div id='cont'style='max-width: 500px'>
   <div id='message'>
   Dear <b>".$userFullName." </b><br><br>
   One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
@@ -398,8 +405,10 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
   <div><center>You can create an account with us by clicking on link given below</center></div>
   <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a></div>
   </div>
+  </div>
   </body>
-  </html>";
+  </html>
+";
   $subject = $randOTP." is Your OTP";
   $headers = "From: Fastreed OTP Authentication <no-reply@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
   $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
