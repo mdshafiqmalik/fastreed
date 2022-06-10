@@ -375,9 +375,6 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
     #copy{
       margin:
     }
-    body{
-
-    }
   </style>
   </head>
   <body style='display: flex;
