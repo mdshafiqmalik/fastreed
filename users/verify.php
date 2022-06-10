@@ -34,12 +34,9 @@ session_start();
                 include '../_.config/sjdhfjsadkeys.php';
                 $encUID = openssl_encrypt($userID, $ciphering,
                 $encryption_key, $options, $encryption_iv);
-                $_SESSION['uisnnue'] = $encUID;
-                if (isset($_SESSION['uisnnue'])) {
-                  // echo '<center><span id="successMessage">Registered Sucesssfully</span></center><br>';
-                  // echo '<center><span id="successMessage">Logging In......</span></center>';
-                  // header("Location: ../profile?eikooCtes=true");
-                  header("Location: ../profile/?eikooCtes=true");
+                $cookieSet =   $setcookie('uisnnue', $encUID, time()+(86400*7), '/');
+                if ($cookieSet) {
+                  header("Location: ../profile/");
                 }else {
                   echo '<center><span id="successMessage">Registered Sucesssfully</span></center>';
                   echo '<center><span id="successMessage">Redirecting to Login page</span></center>';
