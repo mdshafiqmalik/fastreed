@@ -353,7 +353,7 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         text-align:center;
         margin: .8em 0em;
       }
-      #OTP p{
+      #OTP{
         font-size: 1.2em;
         padding: .4em 2em;
         background-color: #eee;
@@ -375,6 +375,9 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         font-size:.9em;
         color: red;
       }
+      #copy:hover{
+        cursor: pointer;
+      }
       #message, #link{
         font-size: 1.2em;
       }
@@ -393,9 +396,8 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
             Dear <b>".$userFullName." </b><br><br>
             One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
             <div id='OTP'>
-              <p id='cpOTP'>".$randOTP."
-                <span onclick='copyText()' id ='copy'>copy</span>
-              </p>
+              <code id='cpOTP'>".$randOTP."
+              </code><button id ='copy' onclick='CopyToClipboard('cpOTP')' >copy</button>
             </div>
             <div>Or you can verify your account by clicking on the link given
               <b>(valid for 10 minutes only)</b>
@@ -413,20 +415,24 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
         <div id='link'><a href='https://m.shafiqhub.com/register'> Sign Up With Fastreed</a>
         </div>
       </div>
-      <script>
-      function copyText(){
-        var copyText = document.getElementById('cpOTP');
-        var cp = document.getElementById('copy');
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /* For mobile devices */
-        /* Copy the text inside the text field */
-        navigator.clipboard.writeText(copyText.value);
-        cp.innerHTML = 'copied';
-        cp.style.color= 'orange';
+      <script type='text/javascript'>
+      function CopyToClipboard(id)
+      {
+      var r = document.createRange();
+      r.selectNode(document.getElementById(id));
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      let cp = document.getElementById('copy');
+      cp.innerHTML = 'copied';
+      cp.style.color= 'orange';
       }
+
       </script>
     </body>
-  </html>";
+  </html>
+";
   $subject = $randOTP." is Your OTP";
   $headers = "From: Fastreed OTP Authentication <no-reply@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
   $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
