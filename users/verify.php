@@ -22,10 +22,10 @@ if (isset($_GET['suid'])) {
                 $sql = "SELECT * FROM fast_users WHERE userID = '$userID'";
                 $res = mysqli_query($db, $sql);
                 $row = $res-> fetch_assoc();
-                $userFullName = $row['userFullName'];
+                $userFullNam = $row['userFullName'];
                 $userEmail = $row['userEmail'];
                 $userName = $row['userName'];
-                greeetingMail($userFullName, $userName, $userEmail);
+                greeetingMail($userFullNam, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
                 <script type="text/javascript">

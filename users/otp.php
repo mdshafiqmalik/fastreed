@@ -101,11 +101,11 @@ function sendOTP($userEmail, $userID, $randOTP, $userFullName){
 
 
 
-function greeetingMail($userFullName, $userName, $userEmail, ){
+function greeetingMail($userFullNam, $userName, $userEmail, ){
   $message = '
   <html>
     <head>
-    <title>Welcome '.$userFullName.'</title>
+    <title>Welcome '.$userFullNam.'</title>
     <style media="screen">
       #cont{
         background-color: white;
@@ -133,11 +133,11 @@ function greeetingMail($userFullName, $userName, $userEmail, ){
     </head>
     <body>
       <div id="cont">
-        <p> Hi <b>'.$userFullName.'</b> </p>
+        <p> Hi <b>'.$userFullNam.'</b> </p>
          <p> Thanks for joinig us you are now a part of a huge content community.Your account is all set and <b>verified now</b>.
            <br> You can login to your account using your <b>Username or Email</b> with password. <br><br>
            Username : <b>'.$userName.'</b><br>
-           Email : <b>'.$userEmail.'@gmail.com</b><br>
+           Email : <b>'.$userEmail.'</b><br>
          </p>
          <p>  <b>Note: </b>Please keep all your login details personal. </p><br>
          <hr>
@@ -151,7 +151,7 @@ function greeetingMail($userFullName, $userName, $userEmail, ){
     </body>
   </html>
   ';
-  $subject = 'Welcome '.$userFullName.' to Fastreed';
+  $subject = 'Welcome '.$userFullNam.' to Fastreed';
   $headers = "From: Welcome To Fastreed <support@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
   $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
   if ($mailDeliverd) {
