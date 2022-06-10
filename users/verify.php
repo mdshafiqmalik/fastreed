@@ -374,6 +374,9 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
       }
       #copy{
         margin-left: 5px;
+        letter-spacing: 1px;
+        font-size:.9em;
+        color: red;
       }
       #b{
         display: flex;
@@ -388,7 +391,10 @@ function sendOTP($suid, $randOTP, $userEmail, $userFullName){
       }
     </style>
     </head>
-    <body id='b'>
+    <body style='display: flex;
+    justify-content:  center;
+    align-items: center;
+    background-color: #eee;'>
       <div id='cont'>
         <div id='message'>
             Dear <b>".$userFullName." </b><br><br>
