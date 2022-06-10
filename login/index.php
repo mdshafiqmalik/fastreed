@@ -1,9 +1,4 @@
-<!DOCTYPE html>
 <?php
-session_start();
-if (isset($_SESSION["userID"]) || isset($_COOKIE["userID"])) {
-  header("Location: ../profile.php?eikooCtes=true");
-}
 if (isset($_GET['message'])) {
   $Message ='<div id="errorMessage">
   <span style="color: red">'.$_GET['message'].'</span></div>
@@ -11,7 +6,13 @@ if (isset($_GET['message'])) {
 }else {
   $Message = '';
 }
- ?>
+session_start();
+if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
+  header("Location: ../profile.php");
+}
+?>
+
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <?php include '../components/randVersion.php' ?>
