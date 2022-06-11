@@ -31,8 +31,8 @@ if (isset($_GET['suid'])) {
                 $userFullN = mysqli_query($link, $getFullName);
                 $userFullName = $userFullN->fetch_assoc();
                 $UFN = $userFullName['userFullName'];
-                
-                include 'otp.php';
+
+                include 'mail/greeetingMail.php';
                 greeetingMail($UFN, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
@@ -329,7 +329,7 @@ function updateOTP($suid){
      $arrayDat = $result2->fetch_assoc();
      $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
-     include 'otp.php';
+     include 'mail/avOTP.php';
      if (sendOTP($userEmail, $suid, $randOTP, $userFullName)) {
        $otpResend = true;
      }else {
