@@ -1,5 +1,34 @@
 <?php
 session_start();
+$VYO = '<span id="signUp" >Verify Your OTP</span>';
+$self = htmlspecialchars($_SERVER["PHP_SELF"]);
+$formHead = '<form class="loginForm" action="'.$self.'" method="get">
+<div class="loginFields">
+  <input type="hidden" name="suid" value="';
+
+$formTop = '" placeholder="">
+<input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
+</div>
+<div class="loginSubmit">
+<input id="verifyOTP" type="submit" name="" value="VERIFY">
+</div>
+</form>
+<br>
+<form class="loginForm" action="'.$self.'" method="post">
+<input type="hidden" name="suid" value="';
+
+$formBottom =   '" placeholder="">
+  <input type="hidden" name="resendOTP" value="true" placeholder="">
+<div class="loginSubmit">
+  <input id="resendOTP" type="submit" name="" value="Resend OTP">
+</div>
+</form>';
+
+$historyReplace = '<script>
+ if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+   }
+</script>';
 if (isset($_GET['suid'])) {
   // Check suid present or not
   $userID = $_GET['suid'];
@@ -32,8 +61,8 @@ if (isset($_GET['suid'])) {
                 $userFullName = $userFullN->fetch_assoc();
                 $UFN = $userFullName['userFullName'];
 
-                include 'mail/greeetingMail.php';
-                greeetingMail($UFN, $userName, $userEmail);
+                include 'mail/greetingMail.php';
+                // greetingMail($UFN, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
                 <script type="text/javascript">
@@ -58,7 +87,6 @@ if (isset($_GET['suid'])) {
           }
 
         }else {
-          $self = htmlspecialchars($_SERVER["PHP_SELF"]);
           $GLOBALS['body']  =  '
           <span id="errorMessage">Entered link or OTP Expired</span>
           <form class="loginForm" action="'.$self.'" method="post">
@@ -71,59 +99,13 @@ if (isset($_GET['suid'])) {
           </form>
           ';
         }
-
       }else {
-        $self = htmlspecialchars($_SERVER["PHP_SELF"]);
-        $GLOBALS['body']  =  '
-        <span id="signUp" >Verify Your OTP</span>
-        <span id="errorMessage">Wrong OTP entered</span>
-        <form class="loginForm" action="'.$self.'" method="get">
-        <div class="loginFields">
-          <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
-          <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
-        </div>
-        <div class="loginSubmit">
-          <input id="verifyOTP" type="submit" name="" value="VERIFY">
-        </div>
-        </form>
-        <br>
-        <form class="loginForm" action="'.$self.'" method="post">
-          <input type="hidden" name="suid" value="'.$userID.'" placeholder="000000">
-          <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
-        <div class="loginSubmit">
-          <input id="resendOTP" type="submit" name="" value="Resend OTP">
-        </div>
-        </form>
-        ';
+        $message = '<span id="errorMessage">Wrong OTP entered</span>';
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$userID.$formTop.$userID.$formBottom;
       }
     }else {
-      $self = htmlspecialchars($_SERVER["PHP_SELF"]);
-      $GLOBALS['body']  =  '
-      <span id="signUp" >Verify Your OTP</span>
-      <span id="successMessage">We have sent a 6 digit OTP to your email</span>
-      <form class="loginForm" action="'.$self.'" method="get">
-      <div class="loginFields">
-        <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
-        <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
-      </div>
-      <div class="loginSubmit">
-        <input id="verifyOTP" type="submit" name="" value="VERIFY">
-      </div>
-      </form>
-      <form class="loginForm" action="'.$self.'" method="post">
-      <br>
-        <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
-        <input type="hidden" name="resendOTP" value="true" placeholder="">
-      <div class="loginSubmit">
-        <input id="resendOTP" type="submit" name="" value="Resend OTP">
-      </div>
-      </form>
-      <script>
-       if ( window.history.replaceState ) {
-          window.history.replaceState( null, null, window.location.href );
-         }
-      </script>
-      ';
+      $message = '<span id="successMessage">We have sent a 6 digit OTP to your email</span>';
+      $GLOBALS['body']  =  $VYO.$message.$formHead.$userID.$formTop.$userID.$formBottom.$historyReplace;
     }
   }else {
     $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">User verified already</span></center><br>
@@ -140,56 +122,12 @@ if (isset($_GET['suid'])) {
     $userID = $_POST['suid'];
     if (checkUserID($userID)) {
       if(updateOTP($userID)){
-        $self = htmlspecialchars($_SERVER["PHP_SELF"]);
-        $GLOBALS['body']  =  '
-        <span id="signUp" >Verify Your OTP</span>
-        <span id="successMessage">We have <i>Resent a 6 digit OTP</i> to your email</span>
-        <form class="loginForm" action="'.$self.'" method="get">
-        <div class="loginFields">
-          <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
-          <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
-        </div>
-        <div class="loginSubmit">
-          <input id="verifyOTP" type="submit" name="" value="VERIFY">
-        </div>
-        </form>
-        <br>
-        <form class="loginForm" action="'.$self.'" method="post">
-          <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
-          <input type="hidden" name="resendOTP" value="true" placeholder="">
-        <div class="loginSubmit">
-          <input id="resendOTP" type="submit" name="" value="Resend OTP">
-        </div>
-        <script>
-         if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-           }
-        </script>
-        </form>
-        ';
+        $message = '<span id="successMessage">We have <i>Resent a 6 digit OTP</i> to your email</span>';
+
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$userID.$formTop.$userID.$formBottom .$historyReplace;
       }else {
-        $self = htmlspecialchars($_SERVER["PHP_SELF"]);
-        $GLOBALS['body']  =  '
-        <span id="signUp" >Verify Your OTP</span>
-        <span style="color:orange;" id="errorMessage">Failed to resend OTP again</span>
-        <form class="loginForm" action="'.$self.'" method="get">
-        <div class="loginFields">
-          <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
-          <input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
-        </div>
-        <div class="loginSubmit">
-          <input id="verifyOTP" type="submit" name="" value="VERIFY">
-        </div>
-        </form>
-        <br>
-        <form class="loginForm" action="'.$self.'" method="post">
-          <input type="hidden" name="suid" value="'.$userID.'" placeholder="">
-          <input type="hidden" name="resendOTP" value="true" placeholder="">
-        <div class="loginSubmit">
-          <input id="resendOTP" type="submit" name="" value="Resend OTP">
-        </div>
-        </form>
-        ';
+        $message = '<span style="color:orange;" id="errorMessage">Failed to resend OTP again</span>';
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$userID.$formTop.$userID.$formBottom;
       }
     }else {
       $GLOBALS['body']  =  '<script type="text/javascript">
@@ -207,14 +145,16 @@ if (isset($_GET['suid'])) {
   </script>';
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <?php include '../components/randVersion.php' ?>
-    <link rel="stylesheet" href="src/style.css?v=<?php echo($randVersion); ?>">
-    <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
-    <link rel="stylesheet" href="src/profile.css?v=<?php echo($randVersion); ?>">
+    <link rel="stylesheet" href="src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
+    <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
+    <link rel="stylesheet" href="src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
@@ -231,8 +171,8 @@ if (isset($_GET['suid'])) {
     ?>
   </div>
   </div>
-  <script src="src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
-  <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
+  <script src="src/fun.js?v=<?php echo $_SESSION['randVersion'] ?>" charset="utf-8"></script>
+  <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $_SESSION['randVersion'] ?>" charset="utf-8"></script>
   </body>
 </html>
 
@@ -330,7 +270,7 @@ function updateOTP($suid){
      $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
      include 'mail/avOTP.php';
-     if (sendOTP($userEmail, $suid, $randOTP, $userFullName)) {
+     if (true) { //sendOTP($userEmail, $suid, $randOTP, $userFullName)
        $otpResend = true;
      }else {
        $otpResend = false;

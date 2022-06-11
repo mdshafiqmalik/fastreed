@@ -1,6 +1,4 @@
 <?php
-
-
 // Greeting Mail
 
 function greeetingMail($userFullNam, $userName, $userEmail){
@@ -53,8 +51,8 @@ function greeetingMail($userFullNam, $userName, $userEmail){
     </body>
   </html>
   ';
-  $subject = 'Welcome '.$userFullNam.' to Future';
-  $headers = "From: Welcome To Fastreed <support@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
+  $subject = 'Welcome '.$userFullNam.'  to Fastreed';
+  $headers = "From: Fastreed  <support@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
   $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
   if ($mailDeliverd) {
     $mailStatus = true;

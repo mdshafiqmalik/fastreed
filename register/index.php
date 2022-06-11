@@ -11,9 +11,9 @@ include '../components/uniSession.php';
   <head>
     <meta charset="utf-8">
     <?php include '../components/randVersion.php' ?>
-    <link rel="stylesheet" href="../users/src/style.css?v=<?php echo($randVersion); ?>">
-    <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
-    <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo($randVersion); ?>">
+    <link rel="stylesheet" href="../users/src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
+    <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
+    <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
@@ -83,6 +83,6 @@ include '../components/uniSession.php';
   }
    ?>
 
-  <script src="../users/src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
-  <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
+  <script src="../users/src/fun.js?v=<?php echo $_SESSION['randVersion'] ?>" charset="utf-8"></script>
+  <script src="../assets/js/jquery-3.6.0.js?v=<?php echo $_SESSION['randVersion'] ?>" charset="utf-8"></script>
 </html>

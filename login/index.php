@@ -19,9 +19,9 @@ if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
 <html lang="en" dir="ltr">
   <head>
     <?php include '../components/randVersion.php' ?>
-    <link rel="stylesheet" href="../users/src/style.css?v=<?php echo($randVersion); ?>">
-    <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo($randVersion); ?>">
-    <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo($randVersion); ?>">
+    <link rel="stylesheet" href="../users/src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
+    <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
+    <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -49,7 +49,7 @@ if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
           <div class="rememberMe"><input id="rememberMe" type="checkbox" name="rememberMe" value="true"> Remember Me</div>
           <div class="loginSubmit">
             <input type="submit" name="" value="LOGIN">
-            <a href="#">Forgotten Password?</a>
+            <a href="../users/passwordRecovery/">Forgotten Password?</a>
           </div>
           <div class="or">
             <span class="">Or</span>
@@ -62,6 +62,6 @@ if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
       </div>
     </div>
   </body>
-  <script src="../users/src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
-  <!-- <script src="assets/js/jquery-3.6.0.js?v=<?php echo $randVersion ?>" charset="utf-8"></script> -->
+  <script src="../users/src/fun.js?v=<?php echo $_SESSION['randVersion'] ?>" charset="utf-8"></script>
+  <!-- <script src="assets/js/jquery-3.6.0.js?v=<?php echo $_SESSION['randVersion'] ?>" charset="utf-8"></script> -->
 </html>

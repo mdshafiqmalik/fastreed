@@ -1,7 +1,6 @@
 <?php
 // Send OTP
 function sendOTP($userEmail, $userID, $randOTP, $userFullName){
-  $user = "user";
   $message = "
   <html>
     <head>
@@ -81,7 +80,7 @@ function sendOTP($userEmail, $userID, $randOTP, $userFullName){
         <div id='link'><a href='https://m.shafiqhub.com/'> Website Link</a>
         </div><br>
         <footer id='footer'>
-        This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br><br>Kindly ignore if you don't know about this.</b>
+        This mail is sent to <b>".$userEmail." </b>and is intended for account verification of <b>".$userFullName."</b>. <br><br>Kindly ignore if you haven't generated the OTP</b>
         </footer><br>
       </div>
     </body>

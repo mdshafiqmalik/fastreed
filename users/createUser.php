@@ -9,17 +9,17 @@ if (count($_SESSION) > 0)  {
       // Set each digit
       $randOTP .= random_int(0, 9);
   }
-  $sentTime = time()+600; // For Ten minutes
+  $expTime = time()+600; // For Ten minutes
   $email = $_SESSION['userEmail'];
   $hashPassword = $_SESSION['passWord'];
   $fullName = $_SESSION['fullName'];
   $username = $_SESSION['userName'];
   $encPassword = $_SESSION['encPassword'];
 
-  if (addOTP($link, $newUserID, $randOTP,$email,$sentTime)) {
+  if (addOTP($link, $newUserID, $randOTP,$email,$expTime)) {
    if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword)) {
     include 'mail/avOTP.php';
-     if (sendOTP($email, $newUserID, $randOTP, $fullName)) {
+     if (true) { //sendOTP($email, $newUserID, $randOTP, $fullName)
        header("Location: verify.php?suid=$newUserID");
      }else {
        header("Location: ../register?errorMessage= OTP Not Send&id=FNS");
@@ -36,7 +36,7 @@ if (count($_SESSION) > 0)  {
 
 
 // add OTP to Database
-function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
+function addOTP($link,$newUserID, $randOTP,$email,$expTime){
   $checkOTP = "SELECT userID FROM fast_otp Where emailAddress = '$email'";
   $res = mysqli_query($link, $checkOTP);
   if ($res) {
@@ -44,7 +44,7 @@ function addOTP($link,$newUserID, $randOTP,$email,$sentTime){
     mysqli_query($link, $delRecord);
   }
   $sentDateTime = date('y-m-d H:i:s');
-  $addOTP = "INSERT INTO `fast_otp` (`userID`, `sentOTP`, `emailAddress`,`expTime`,`totalOTP`, `sentDateTime`, `otpIntent`) VALUES ('$newUserID', '$randOTP','$email','$sentTime', '1', '$sentDateTime', 'AV')";
+  $addOTP = "INSERT INTO `fast_otp` (`userID`, `sentOTP`, `emailAddress`,`expTime`,`totalOTP`, `sentDateTime`, `otpIntent`) VALUES ('$newUserID', '$randOTP','$email','$expTime', '1', '$sentDateTime', 'AV')";
   $result = mysqli_query($link, $addOTP);
   if ($result) {
     $OTPadded = true;

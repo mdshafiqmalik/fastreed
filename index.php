@@ -5,9 +5,9 @@ include 'components/randVersion.php';
 <html lang="en" dir="ltr">
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $randVersion; ?>">
-      <link rel="stylesheet" href="assets/css/root.css?v=<?php echo $randVersion; ?>">
-      <script src="assets/js/fun.js?v=<?php echo $randVersion; ?>" charset="utf-8"></script>
+      <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
+      <link rel="stylesheet" href="assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
+      <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
   </head>
   <body>
