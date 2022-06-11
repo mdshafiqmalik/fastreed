@@ -69,7 +69,7 @@ function checkUserID($dUserID){
   if (mysqli_num_rows($userDat)) {
     $exist = true;
   }else {
-    setcookie("uisnnue", "", time()-3600);
+    setcookie('uisnnue', '', time() -3600, "/");
     unset($_SESSION['uisnnue']);
     $exist = false;
   }
