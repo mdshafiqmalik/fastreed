@@ -1,5 +1,5 @@
 <?php
-include 'file';
+include '../components/randVersion.php';
 if (isset($_GET['message'])) {
   $Message ='<div id="errorMessage">
   <span style="color: red">'.$_GET['message'].'</span></div>
@@ -18,7 +18,6 @@ if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php include '../components/randVersion.php' ?>
     <link rel="stylesheet" href="../users/src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
     <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
     <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
