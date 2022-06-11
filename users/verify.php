@@ -22,12 +22,13 @@ if (isset($_GET['suid'])) {
                 include '../_.config/_s_db_.php';
                 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
                 $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$uID'";
+                $getFullName = "SELECT userFullName FROM user_cred WHERE userID = 'uID'";
                 $userDetail = mysqli_query($link, $getUserDetail);
+                $userFullName = mysqli_query($link, $getFullName);
                 $userDetailArray = $userDetail->fetch_assoc();
                 $userFullNam = $userDetailArray['userFullName'];
                 $userEmail = $userDetailArray['userEmail'];
-                $userName = $userDetailArray['userName'];
-                greeetingMail($userFullNam, $userName, $userEmail);
+                greeetingMail($userFullName, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
                 <script type="text/javascript">
