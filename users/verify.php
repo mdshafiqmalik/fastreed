@@ -21,13 +21,14 @@ if (isset($_GET['suid'])) {
                 include 'otp.php';
                 include '../_.config/_s_db_.php';
                 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
+                var_dump($uID);
                 $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$uID";
-                $results = mysqli_query($link, $getUserDetail);
-                var_dump($results);
-                $userDetail = $results->fetch_assoc();
-                $userFullNam = $row['userFullName'];
-                $userEmail = $row['userEmail'];
-                $userName = $row['userName'];
+                $userDetail = mysqli_query($link, $getUserDetail);
+                var_dump($userDetail);
+                $userDetailArray = $userDetail->fetch_assoc();
+                $userFullNam = $userDetailArray['userFullName'];
+                $userEmail = $userDetailArray['userEmail'];
+                $userName = $userDetailArray['userName'];
                 greeetingMail($userFullNam, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
