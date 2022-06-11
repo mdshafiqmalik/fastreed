@@ -27,10 +27,10 @@ if (isset($_GET['suid'])) {
                 $userName = $userDetailArray['userName'];
                 $userEmail = $userDetailArray['userEmail'];
 
-                $getFullName = "SELECT userFullName FROM user_cred WHERE userID = '$uID'";
+                $getFullName = "SELECT * FROM user_cred WHERE userID = '$uID'";
                 $userFullN = mysqli_query($link, $getFullName);
                 $userFullName = $userFullN->fetch_assoc();
-
+                $UFN = $userFullName['userFullName'];
                 include 'otp.php';
                 greeetingMail($userFullName, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
