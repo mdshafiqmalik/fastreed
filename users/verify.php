@@ -1,5 +1,5 @@
 <?php
-session_start();
+include '../components/randVersion.php';
 $VYO = '<span id="signUp" >Verify Your OTP</span>';
 $self = htmlspecialchars($_SERVER["PHP_SELF"]);
 $formHead = '<form class="loginForm" action="'.$self.'" method="get">

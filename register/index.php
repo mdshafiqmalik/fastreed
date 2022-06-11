@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+include '../components/randVersion.php';
 if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
       header("Location: ../profile/");
 }

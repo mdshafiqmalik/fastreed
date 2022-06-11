@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include '../components/randVersion.php'; ?>
 <!DOCTYPE html>
 <?php include '../components/uniSession.php'; ?>
 

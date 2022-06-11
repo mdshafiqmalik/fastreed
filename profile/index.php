@@ -1,5 +1,5 @@
 <?php
-session_start();
+include '../components/randVersion.php';
 if(isset($_COOKIE['uisnnue'])) {
   if (!empty($_COOKIE['uisnnue'])) {
     include '../_.config/sjdhfjsadkeys.php';

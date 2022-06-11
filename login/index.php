@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'file';
 if (isset($_GET['message'])) {
   $Message ='<div id="errorMessage">
   <span style="color: red">'.$_GET['message'].'</span></div>
