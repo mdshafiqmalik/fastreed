@@ -21,10 +21,10 @@ if (isset($_GET['suid'])) {
                 include 'otp.php';
                 include '../_.config/_s_db_.php';
                 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-                $sqli = "SELECT * FROM fast_users WHERE userID = '$uID";
-                $res = mysqli_query($link, $sqli);
-                var_dump($res);
-                $row = $res->fetch_assoc();
+                $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$uID";
+                $results = mysqli_query($link, $getUserDetail);
+                var_dump($results);
+                $userDetail = $results->fetch_assoc();
                 $userFullNam = $row['userFullName'];
                 $userEmail = $row['userEmail'];
                 $userName = $row['userName'];
