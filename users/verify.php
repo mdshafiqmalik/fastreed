@@ -22,6 +22,8 @@ if (isset($_GET['suid'])) {
                 include '../_.config/_s_db_.php';
                 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
                 var_dump($uID);
+                var_dump($link);
+                $sqlV = "SELECT * FROM fast_users WHERE userID ='$uID'";
                 $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$uID";
                 $userDetail = mysqli_query($link, $getUserDetail);
                 var_dump($userDetail);
