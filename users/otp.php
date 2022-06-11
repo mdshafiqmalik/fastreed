@@ -101,7 +101,7 @@ function sendOTP($userEmail, $userID, $randOTP, $userFullName){
 
 
 
-function greeetingMail($userFullNam, $userName, $userEmail, ){
+function greeetingMail($userFullNam, $userName, $userEmail){
   $message = '
   <html>
     <head>
