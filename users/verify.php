@@ -17,16 +17,16 @@ if (isset($_GET['suid'])) {
               $_SESSION['uisnnue'] = $userID;
               // setcookie('uisnnue', $encUID, time()+(86400*7), '/');
               if (isset($_SESSION['uisnnue'])) {
+                $uID = $_SESSION['uisnnue'];
                 include 'otp.php';
                 include '../_.config/_s_db_.php';
                 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-                $sqli = "SELECT * FROM fast_users WHERE userID = '$userID";
+                $sqli = "SELECT * FROM fast_users WHERE userID = '$uID";
                 $res = mysqli_query($link, $sqli);
                 $row = $res->fetch_assoc();
                 $userFullNam = $row['userFullName'];
                 $userEmail = $row['userEmail'];
                 $userName = $row['userName'];
-                var_dump($userFullNam);
                 greeetingMail($userFullNam, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
