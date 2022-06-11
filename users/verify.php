@@ -18,16 +18,20 @@ if (isset($_GET['suid'])) {
               // setcookie('uisnnue', $encUID, time()+(86400*7), '/');
               if (isset($_SESSION['uisnnue'])) {
                 $uID = $_SESSION['uisnnue'];
-                include 'otp.php';
+
                 include '../_.config/_s_db_.php';
                 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
                 $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$uID'";
-                $getFullName = "SELECT `userFullName` FROM user_cred WHERE userID = 'uID'";
                 $userDetail = mysqli_query($link, $getUserDetail);
-                $userFullName = mysqli_query($link, $getFullName);
                 $userDetailArray = $userDetail->fetch_assoc();
-                $userFullNam = $userDetailArray['userFullName'];
+                $userName = $userDetailArray['userName'];
                 $userEmail = $userDetailArray['userEmail'];
+
+                $getFullName = "SELECT userFullName FROM user_cred WHERE userID = '$uID'";
+                $userFullN = mysqli_query($link, $getFullName);
+                $userFullName = $userFullN->fetch_assoc();
+
+                include 'otp.php';
                 greeetingMail($userFullName, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
