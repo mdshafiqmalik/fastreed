@@ -75,6 +75,7 @@ function checkUserID($dUserID){
   }
   return $exist;
 }
+
 function renderProfile($UID){
   include '../_.config/_s_db_.php';
   $link = new mysqli("$hostName","$userName","$passWord","$dbName");
