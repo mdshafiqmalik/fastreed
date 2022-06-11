@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_id= '') {
+  session_start();
+}
+
 if (!isset($_SESSION['randVersion'])) {
   $r1= rand(0,10);
   $r2= rand(0,10);
