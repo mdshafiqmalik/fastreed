@@ -31,8 +31,9 @@ if (isset($_GET['suid'])) {
                 $userFullN = mysqli_query($link, $getFullName);
                 $userFullName = $userFullN->fetch_assoc();
                 $UFN = $userFullName['userFullName'];
+                
                 include 'otp.php';
-                greeetingMail($userFullName, $userName, $userEmail);
+                greeetingMail($UFN, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
                 <script type="text/javascript">
