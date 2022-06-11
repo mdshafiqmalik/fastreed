@@ -23,7 +23,6 @@ if (isset($_GET['suid'])) {
                 $link = new mysqli("$hostName","$userName","$passWord","$dbName");
                 $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$uID'";
                 $userDetail = mysqli_query($link, $getUserDetail);
-                var_dump($userDetail);
                 $userDetailArray = $userDetail->fetch_assoc();
                 $userFullNam = $userDetailArray['userFullName'];
                 $userEmail = $userDetailArray['userEmail'];
