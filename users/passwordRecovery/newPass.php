@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   if (isset($_GET['recID'])) {
     if (!empty($_GET['recID'])) {
       $encId = $_GET['recID'];
+
       include '../../_.config/sjdhfjsadkeys.php';
        $decId =  openssl_decrypt($encId, $ciphering,
       $decryption_key, $options, $decryption_iv);
