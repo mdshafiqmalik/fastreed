@@ -42,7 +42,6 @@ $successReset = '
 </div>
 </div>
 ';
-session_start();
 if (isset($_SESSION['newPassID'])) {
   $userID = $_SESSION['newPassID'];
   if (checkUser($userID)) {
