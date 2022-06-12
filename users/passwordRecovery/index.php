@@ -168,6 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
           include '../../_.config/sjdhfjsadkeys.php';
           $newID = openssl_encrypt($uid, $ciphering,
           $encryption_key, $options, $encryption_iv);
+          session_start();
           $_SESSION['newID'] = $uid;
           header('Location: newPass.php?recID='.$newID);
         }else {
