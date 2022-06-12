@@ -49,7 +49,7 @@ if (isset($_SESSION['newPassID'])) {
     </div>';
   }else {
     unset($_SESSION['newPassID']);
-    header('Location: index.php');
+    header('Location: index.php?error=UNF');
   }
 }else {
   unset($_SESSION['newPassID']);
