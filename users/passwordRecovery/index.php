@@ -110,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
           // Set each digit
           $randOTP .= random_int(0, 9);
         }
-        $sentTime  = time()+60;
+        $sentTime  = time()+600;
         if (addOTP($userID, $randOTP,$userEmail,$sentTime)) {
           include '../mail/prOTP.php';
           if (passRecMail($userID, $randOTP, $userEmail, $userName)) { // passRecMail($userID, $randOTP, $userEmail, $userName)
@@ -219,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
 
 <?php
 function updateOTP($suid){
-  $expTime = time()+60;
+  $expTime = time()+600;
   $randOTP = "";
   for ($x = 1; $x <= 6; $x++) {
       // Set each digit

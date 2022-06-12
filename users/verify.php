@@ -61,7 +61,7 @@ if (isset($_GET['suid'])) {
                 $UFN = $userFullName['userFullName'];
 
                 include 'mail/greetingMail.php';
-                // greetingMail($UFN, $userName, $userEmail);
+                greetingMail($UFN, $userName, $userEmail);
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
                 <script type="text/javascript">
