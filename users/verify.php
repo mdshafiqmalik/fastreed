@@ -254,7 +254,7 @@ function updateOTP($suid){
      $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
      include 'mail/avOTP.php';
-     if (true) { //sendOTP($userEmail, $suid, $randOTP, $userFullName)
+     if (sendOTP($userEmail, $suid, $randOTP, $userFullName)) { //sendOTP($userEmail, $suid, $randOTP, $userFullName)
        $otpResend = true;
      }else {
        $otpResend = false;

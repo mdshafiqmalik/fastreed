@@ -19,7 +19,7 @@ if (count($_SESSION) > 0)  {
   if (addOTP($link, $newUserID, $randOTP,$email,$expTime)) {
    if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword)) {
     include 'mail/avOTP.php';
-     if (true) { //sendOTP($email, $newUserID, $randOTP, $fullName)
+     if (sendOTP($email, $newUserID, $randOTP, $fullName)) { //sendOTP($email, $newUserID, $randOTP, $fullName)
        header("Location: verify.php?suid=$newUserID");
      }else {
        header("Location: ../register?errorMessage= OTP Not Send&id=FNS");
