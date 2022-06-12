@@ -50,7 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $newPassword = $_POST['newPassword'];
       $confirmPassword = $_POST['confirmPassword'];
       $userID = $_SESSION['newID'];
-      var_dump($userID);
       if (strLen($confirmPassword) > 8) {
         if ($newPassword == $confirmPassword) {
           $hashPassword =  password_hash($confirmPassword, PASSWORD_DEFAULT);
