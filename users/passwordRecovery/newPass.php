@@ -1,3 +1,4 @@
+   <?php include '../../components/randVersion.php' ?>
 <?php
 $createPass = '
    <span id="signUp">Create New Password</span>
@@ -101,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  <html lang="en" dir="ltr">
  <head>
    <meta charset="utf-8">
-   <?php include '../../components/randVersion.php' ?>
+
    <link rel="stylesheet" href="../src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
    <link rel="stylesheet" href="../../assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
    <link rel="stylesheet" href="../src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
