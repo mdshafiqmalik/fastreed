@@ -248,7 +248,7 @@ function updateOTP($suid){
  //   $tOTP = 1;
  // }
  $sentDateTime = date('y-m-d H:i:s');
- $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' , sentDateTime = '$sentDateTime' WHERE userID = '$suid' AND optIntent ='AV'";
+ $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' , sentDateTime = '$sentDateTime' WHERE userID = '$suid' AND otpIntent ='AV'";
  $result1 = mysqli_query($db, $upOTPandTime);
  if ($result1) {
    $getEmailandFullName = "SELECT userEmail, userFullName FROM user_noverify WHERE userID ='$suid'";
