@@ -45,11 +45,12 @@ $successReset = '
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   if (isset($_GET['recID'])) {
     if (!empty($_GET['recID'])) {
-      $encId = $_GET['recID'];
+      $encID = $_GET['recID'];
       include '../../_.config/sjdhfjsadkeys.php';
-      $decID = openssl_decrypt($encId, $ciphering,
-      $encryption_key, $options, $encryption_iv);
+      $decID = openssl_decrypt($encID, $ciphering,
+      $decryption_key, $options, $decryption_iv);
 
+      var_dump($decID);
       if (checkUser($decID)) {
         $GLOBALS['content'] = $createPass.'
         </div>

@@ -164,7 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
     $otp = $_GET['centpo'];
     if (checkUser($uid)) {
       if (authenticateOTP($uid, $otp)) {
-        if (!isExpired($uid, $otp)) {
+        if (!isExpired($uid)) {
           include '../../_.config/sjdhfjsadkeys.php';
           $newID = openssl_encrypt($uid, $ciphering,
           $encryption_key, $options, $encryption_iv);
@@ -283,7 +283,7 @@ function addOTP($userID, $randOTP,$email,$sentTime){
   }
   return $OTPadded;
 }
-function isExpired($uid, $otp){
+function isExpired($uid){
   include '../../_.config/_s_db_.php';
   $sentOTP = "SELECT * FROM fast_otp WHERE userID = '$uid' AND otpIntent = 'PR'";
   $result = mysqli_query($db, $sentOTP);
