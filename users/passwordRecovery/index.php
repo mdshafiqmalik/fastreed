@@ -251,6 +251,10 @@ function updateOTP($suid){
       $userFullName = $arrayDat['userFullName'];
       $userEmail = $arrayDat['userEmail'];
       include 'prOTP.php';
+      var_dump($userID);
+      var_dump($randOTP);
+      var_dump($userEmail);
+      var_dump($userName);
       if (passRecMail($userID, $randOTP, $userEmail, $userName)) { //passRecMail($userID, $randOTP, $userEmail, $userName)
         $otpResend = true;
       }else {
