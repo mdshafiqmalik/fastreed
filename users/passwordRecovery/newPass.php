@@ -41,21 +41,30 @@ $successReset = '
 </div>
 </div>
 ';
-if (isset($_SESSION['newPassID'])) {
-  $userID = $_SESSION['newPassID'];
-  if (checkUser($userID)) {
-    $GLOBALS['content'] = $createPass.'
-    </div>
-    </div>';
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  if (isset($_GET['recID'])) {
+    if (!empty($_GET['recID'])) {
+      $encId = $_GET['recID'];
+      include '../../_.config/sjdhfjsadkeys.php';
+       $decId =  openssl_decrypt($encId, $ciphering,
+      $decryption_key, $options, $decryption_iv);
+      if (checkUser($decId)) {
+        $GLOBALS['content'] = $createPass.'
+        </div>
+        </div>';
+      }else {
+        header('Location: index.php?error=UNF');
+      }
+    }else {
+      header('Location: index.php?error=GTIDE');
+    }
   }else {
-    unset($_SESSION['newPassID']);
-    header('Location: index.php?error=UNF');
+    header('Location: index.php?error=RIDNF');
   }
 }else {
-  unset($_SESSION['newPassID']);
-  header('Location: index.php?error=SNF');
+  header('Location: index.php?error=GTNF');
 }
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['newPassword']) &&  isset($_POST['confirmPassword'])) {
