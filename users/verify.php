@@ -239,10 +239,14 @@ function updateOTP($suid){
  include '../_.config/_s_db_.php';
  $totalOTP = "SELECT * FROM fast_otp WHERE userID = '$suid' AND optIntent ='AV'";
  $result0 = mysqli_query($db, $totalOTP);
- $arrayD = $result0->fetch_assoc();
- $tOTP = $arrayD['totalOTP'];
- $tOTP = intval($tOTP);
- $tOTP +=1;
+ if (mysqli_num_rows($result0)) {
+   $arrayD = $result0->fetch_assoc();
+   $tOTP = $arrayD['totalOTP'];
+   $tOTP = intval($tOTP);
+   $tOTP +=1;
+ }else {
+   $tOTP = 1;
+ }
  $sentDateTime = date('y-m-d H:i:s');
  $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime', totalOTP = '$tOTP' , sentDateTime = '$sentDateTime' WHERE userID = '$suid' AND optIntent ='AV'";
  $result1 = mysqli_query($db, $upOTPandTime);
