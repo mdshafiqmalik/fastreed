@@ -167,7 +167,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
         if (!isExpired($uid, $otp)) {
           $_SESSION['newPassID'] = $uid;
           var_dump($_SESSION['newPassID']);
-          // header('Location: newPass.php');
+          header('Location: newPass.php');
         }else {
           $message =  '<span id="errorMessage" >Entered '.$type.' Expired Resend Another</span></center>';
           $GLOBALS['content'] = $top.$message.$resendOTP1.$uid.$resendOTP2.$historyReplace;
