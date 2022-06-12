@@ -1,5 +1,5 @@
 <?php
-function passRecMail(){
+function passRecMail($userID, $randOTP, $userEmail, $userFullName){
   $message ="<html>
     <head>
     <title>OTP Authenication</title>
@@ -69,7 +69,7 @@ function passRecMail(){
             <div>You can also reset your password by clicking on the link given
               <b>(valid for 10 minutes only)</b><br><br>
               <div id='link'>
-                <a href='https://m.shafiqhub.com/users/passwordRecovery/newPass.php?suid=".$userID ."&centpo=".$randOTP."'> Reset Password Link</a>
+                <a href='https://m.shafiqhub.com/users/passwordRecovery/newPass.php?suid=".$userID ."&centpo=".$randOTP."&type=Link'> Reset Password Link</a>
               </div>
             </div><br>
         </div><hr>

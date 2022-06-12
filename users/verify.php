@@ -49,9 +49,8 @@ if (isset($_GET['suid'])) {
                 $uID = $_SESSION['uisnnue'];
 
                 include '../_.config/_s_db_.php';
-                $link = new mysqli("$hostName","$userName","$passWord","$dbName");
                 $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$uID'";
-                $userDetail = mysqli_query($link, $getUserDetail);
+                $userDetail = mysqli_query($db, $getUserDetail);
                 $userDetailArray = $userDetail->fetch_assoc();
                 $userName = $userDetailArray['userName'];
                 $userEmail = $userDetailArray['userEmail'];
@@ -88,7 +87,7 @@ if (isset($_GET['suid'])) {
 
         }else {
           $GLOBALS['body']  =  '
-          <span id="errorMessage">Entered link or OTP Expired</span>
+          <span id="errorMessage">Entered link or OTP Expired and Now Deleted</span>
           <form class="loginForm" action="'.$self.'" method="post">
           <br>
             <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
@@ -180,26 +179,12 @@ if (isset($_GET['suid'])) {
 
 
 <?php
-// Delete OTP Data
-function delOTP($userID){
-  include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-  $sql = "DELETE FROM fast_otp WHERE userID = '$userID'";
-  if(mysqli_query($link, $sql)){
-    $otpDeleted = true;
-  }else {
-    $otpDeleted = false;;
-  }
-  return $otpDeleted;
-}
-
 
 // Move User Data from no Verify to verified users
 function verifyUser($userID){
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   $sql = "SELECT * FROM user_noverify WHERE userID = '$userID'";
-  $result = mysqli_query($link, $sql);
+  $result = mysqli_query($db, $sql);
   if ($result) {
     $data = $result->fetch_assoc();
     $userID = $data['userID'];
@@ -209,12 +194,12 @@ function verifyUser($userID){
     $userHashPassword = $data['userHashPassword'];
     $ePassword = $data['ePassword'];
     $userJoiningDate = date('y-m-d H:i:s');
-    $defaultProfilePic = '0';
+    $profilePic = '0';
     // add to fast_users
     $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userEmail', '$userName','', '$userHashPassword')";
 
     // add to uers_crendentials
-    $inUserCred =  "INSERT INTO `user_cred` (`userID`, `userFullName`, `userDOB`, `userProfilePic`, `userGender`, `userJoiningDate`, `userCountry`, `userType`) VALUES ('$userID', '$fullName','','$defaultProfilePic','', '$userJoiningDate','','0')";
+    $inUserCred =  "INSERT INTO `user_cred` (`userID`, `userFullName`, `userDOB`, `userEmail`, `userProfilePic`, `userGender`, `userJoiningDate`, `userCountry`, `userType`) VALUES ('$userID', '$fullName','','$userEmail','$profilePic','', '$userJoiningDate','','0')";
 
     // add to user_sec
     $inUserSec = "INSERT INTO `user_sec` (`userID`,`ePassword`) VALUES ('$userID', '$ePassword')";
@@ -222,13 +207,13 @@ function verifyUser($userID){
     // add to user_verify
     $inUserverify = "INSERT INTO `user_verify` (`userID`,`emailVerify`, `phoneVerify`,`IDVerify`,`greenTickVerified`) VALUES ('$userID', '1', '0', '0', '0')";
 
-    $r1 = mysqli_query($link, $insertData);
-    $r2 = mysqli_query($link, $inUserCred);
-    $r3 = mysqli_query($link, $inUserSec);
-    $r4 = mysqli_query($link, $inUserverify);
+    $r1 = mysqli_query($db, $insertData);
+    $r2 = mysqli_query($db, $inUserCred);
+    $r3 = mysqli_query($db, $inUserSec);
+    $r4 = mysqli_query($db, $inUserverify);
     if ($r1 && $r2 && $r3 && $r4) {
       $delNoVerify ="DELETE FROM user_noverify WHERE userID = '$userID'";
-      $r5 = mysqli_query($link, $delNoVerify);
+      $r5 = mysqli_query($db, $delNoVerify);
       if ($r5) {
         $userAdded = true;
       }else {
@@ -252,19 +237,18 @@ function updateOTP($suid){
      $randOTP .= random_int(0, 9);
  }
  include '../_.config/_s_db_.php';
- $link = new mysqli("$hostName","$userName","$passWord","$dbName");
- $totalOTP = "SELECT * FROM fast_otp WHERE userID = '$suid'";
- $result0 = mysqli_query($link, $totalOTP);
+ $totalOTP = "SELECT * FROM fast_otp WHERE userID = '$suid' AND optIntent ='AV'";
+ $result0 = mysqli_query($db, $totalOTP);
  $arrayD = $result0->fetch_assoc();
  $tOTP = $arrayD['totalOTP'];
  $tOTP = intval($tOTP);
  $tOTP +=1;
  $sentDateTime = date('y-m-d H:i:s');
- $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime', totalOTP = '$tOTP' , sentDateTime = '$sentDateTime' WHERE userID = '$suid'";
- $result1 = mysqli_query($link, $upOTPandTime);
+ $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime', totalOTP = '$tOTP' , sentDateTime = '$sentDateTime' WHERE userID = '$suid' AND optIntent ='AV'";
+ $result1 = mysqli_query($db, $upOTPandTime);
  if ($result1) {
    $getEmailandFullName = "SELECT userEmail, userFullName FROM user_noverify WHERE userID ='$suid'";
-   $result2 = mysqli_query($link, $getEmailandFullName);
+   $result2 = mysqli_query($db, $getEmailandFullName);
    if ($result2) {
      $arrayDat = $result2->fetch_assoc();
      $userFullName = $arrayDat['userFullName'];
@@ -286,24 +270,34 @@ function updateOTP($suid){
 
 function checkOTPEXP($userID){
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-  $sentOTP = "SELECT * FROM fast_otp WHERE userID = '$userID'";
-  $result = mysqli_query($link, $sentOTP);
+  $sentOTP = "SELECT * FROM fast_otp WHERE userID = '$userID' AND otpIntent = 'AV'";
+  $result = mysqli_query($db, $sentOTP);
   $expTime = $result->fetch_assoc();
   $eTime = $expTime['expTime'];
   if (time() > $eTime) {
     $OTPEXP = true;
+    delOTP($userID);
   }else {
     $OTPEXP = false;
   }
   return $OTPEXP;
 }
 
+// Delete OTP Data
+function delOTP($userID){
+  include '../_.config/_s_db_.php';
+  $sql = "DELETE FROM fast_otp WHERE userID = '$userID' AND otpIntent ='AV'";
+  if(mysqli_query($db, $sql)){
+    $otpDeleted = true;
+  }else {
+    $otpDeleted = false;;
+  }
+  return $otpDeleted;
+}
 function authenticateOTP($userID, $OTP){
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   $fastOTP = "SELECT * FROM fast_otp WHERE userID = '$userID' AND otpIntent = 'AV'";
-  $result = mysqli_query($link, $fastOTP);
+  $result = mysqli_query($db, $fastOTP);
   $dbArray = $result->fetch_assoc();
   $dbOTP = $dbArray['sentOTP'];
   $expTime = $dbArray['expTime'];
@@ -317,9 +311,8 @@ function authenticateOTP($userID, $OTP){
 
 function checkUserID($userID){
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   $checkSUID = "SELECT userID FROM user_noverify WHERE userID = '$userID'";
-  $result = mysqli_query($link, $checkSUID);
+  $result = mysqli_query($db, $checkSUID);
   $isUserID = mysqli_num_rows($result);
   if ($isUserID) {
     $userIDPresent = true;
