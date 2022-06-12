@@ -226,18 +226,18 @@ function updateOTP($suid){
       $randOTP .= random_int(0, 9);
   }
   include '../../_.config/_s_db_.php';
-  $totalOTP = "SELECT * FROM fast_otp WHERE userID = '$suid' AND otpIntent ='PR'";
-  $result0 = mysqli_query($db, $totalOTP);
-  if (mysqli_num_rows($result0)) {
-    $arrayD = $result0->fetch_assoc();
-    $tOTP = $arrayD['totalOTP'];
-    $tOTP = intval($tOTP);
-    $tOTP +=1;
-  }else {
-    $tOTP = 1;
-  }
+  // $totalOTP = "SELECT * FROM fast_otp WHERE userID = '$suid' AND otpIntent ='PR'";
+  // $result0 = mysqli_query($db, $totalOTP);
+  // if (mysqli_num_rows($result0)) {
+  //   $arrayD = $result0->fetch_assoc();
+  //   $tOTP = $arrayD['totalOTP'];
+  //   $tOTP = intval($tOTP);
+  //   $tOTP +=1;
+  // }else {
+  //   $tOTP = 1;
+  // }
   $sentDateTime = date('y-m-d H:i:s');
-  $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime', totalOTP = '$tOTP' , sentDateTime = '$sentDateTime' WHERE userID = '$suid' AND otpIntent ='PR'";
+  $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' , sentDateTime = '$sentDateTime' WHERE userID = '$suid' AND otpIntent ='PR'";
   $result1 = mysqli_query($db, $upOTPandTime);
   if ($result1) {
     $getEmailandFullName = "SELECT userEmail, userFullName FROM user_cred WHERE userID ='$suid'";
