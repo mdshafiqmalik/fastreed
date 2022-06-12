@@ -1,5 +1,5 @@
 <?php
-include '../../components/randVersion.php';
+
 /*
 if (postSet) {
   if (emailOrUsernameGiven) {
