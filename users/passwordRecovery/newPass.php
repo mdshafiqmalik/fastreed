@@ -73,12 +73,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           if ($result) {
             delOTP($userID);
             unset($_SESSION['newPassID']);
+            session_destroy();
             $GLOBALS['content'] = $successReset.'
       </div>
       </div>'. $erro1;
           }else {
             delOTP($userID);
             unset($_SESSION['newPassID']);
+            session_destroy();
             $GLOBALS['content'] = $createPass.'
       </div>
       </div>'. $erro1;
