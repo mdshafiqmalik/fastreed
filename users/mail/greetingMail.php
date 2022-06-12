@@ -1,7 +1,7 @@
 <?php
 // Greeting Mail
 
-function greeetingMail($userFullNam, $userName, $userEmail){
+function greetingMail($userFullNam, $userName, $userEmail){
   $message = '
   <html>
     <head>
