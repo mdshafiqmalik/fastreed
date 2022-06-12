@@ -47,9 +47,9 @@ $successReset = '
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['newPassword']) &&  isset($_POST['confirmPassword'])) {
     if (!empty(isset($_POST['newPassword'])) && !empty(isset($_POST['confirmPassword']))) {
-      $newPassword = sanitizeData($_POST['newPassword']);
-      $confirmPassword = sanitizeData($_POST['confirmPassword']);
-      $userID = $_SESSION['newPassID'];
+      $newPassword = $_POST['newPassword'];
+      $confirmPassword = $_POST['confirmPassword'];
+      $userID = $_SESSION['uid'];
       if (strLen($confirmPassword) > 8) {
         if ($newPassword == $confirmPassword) {
           $hashPassword =  password_hash($confirmPassword, PASSWORD_DEFAULT);
