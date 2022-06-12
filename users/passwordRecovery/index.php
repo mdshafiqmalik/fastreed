@@ -103,8 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
       if ((boolean)$userExist) {
         $userID = $userExist['userID'];
         $userEmail = $userExist['userEmail'];
-        $userName = $userExist['userName'];
-        // $userFullName = $userExist['userFullName'];
+        // $userName = $userExist['userName'];
+        $userFullName = $userExist['userFullName'];
         $randOTP = "";
         for ($i=0; $i < 6 ; $i++) {
           // Set each digit
@@ -116,8 +116,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
           var_dump($userID);
           var_dump($randOTP);
           var_dump($userEmail);
-          var_dump($userName);
-          if (passRecMail($userID, $randOTP, $userEmail, $userName)) { // passRecMail($userID, $randOTP, $userEmail, $userName)
+          var_dump($userFullName);
+          if (passRecMail($userID, $randOTP, $userEmail, $userFullName)) { // passRecMail($userID, $randOTP, $userEmail, $userName)
             $message = '<span id="successMessage" >Enter OTP sent to email linked with your account</span>';
             $GLOBALS['content'] = $top.$message.$verifyOTP1.$userID.$verifyOTP2.$resendOTP1.$userID.$resendOTP2.$historyReplace;
           }else {
@@ -251,11 +251,11 @@ function updateOTP($suid){
       $userFullName = $arrayDat['userFullName'];
       $userEmail = $arrayDat['userEmail'];
       include 'prOTP.php';
-      var_dump($userID);
+      var_dump($suid);
       var_dump($randOTP);
       var_dump($userEmail);
       var_dump($userName);
-      if (passRecMail($userID, $randOTP, $userEmail, $userName)) { //passRecMail($userID, $randOTP, $userEmail, $userName)
+      if (passRecMail($suid, $randOTP, $userEmail, $userFullName)) { //passRecMail($userID, $randOTP, $userEmail, $userName)
         $otpResend = true;
       }else {
         $otpResend = false;
