@@ -42,7 +42,6 @@ $successReset = '
 </div>
 </div>
 ';
-session_start();
 var_dump($_SESSION['newPassID']);
 if (isset($_SESSION['newPassID'])) {
   $userID = $_SESSION['newPassID'];
