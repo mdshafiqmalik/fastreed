@@ -42,29 +42,7 @@ $successReset = '
 </div>
 ';
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  if (isset($_GET['recID'])) {
-    if (!empty($_GET['recID'])) {
-      $encID = $_GET['recID'];
-      include '../../_.config/sjdhfjsadkeys.php';
-      $decID = openssl_decrypt($encID, $ciphering,
-      $decryption_key, $options, $decryption_iv);
-      if (checkUser($decID)) {
-        $GLOBALS['content'] = $createPass.'
-        </div>
-        </div>';
-      }else {
-        header('Location: index.php?error=UNF');
-      }
-    }else {
-      header('Location: index.php?error=GTIDE');
-    }
-  }else {
-    header('Location: index.php?error=RIDNF');
-  }
-}else {
-  header('Location: index.php?error=GTNF');
-}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['newPassword']) &&  isset($_POST['confirmPassword'])) {
@@ -105,6 +83,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
   }
+}elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+  if (isset($_GET['recID'])) {
+    if (!empty($_GET['recID'])) {
+      $encID = $_GET['recID'];
+      include '../../_.config/sjdhfjsadkeys.php';
+      $decID = openssl_decrypt($encID, $ciphering,
+      $decryption_key, $options, $decryption_iv);
+      if (checkUser($decID)) {
+        $GLOBALS['content'] = $createPass.'
+        </div>
+        </div>';
+      }else {
+        header('Location: index.php?error=UNF');
+      }
+    }else {
+      header('Location: index.php?error=GTIDE');
+    }
+  }else {
+    header('Location: index.php?error=RIDNF');
+  }
+}else {
+  header('Location: index.php?error=GTNF');
 }
  ?>
  <!DOCTYPE html>
