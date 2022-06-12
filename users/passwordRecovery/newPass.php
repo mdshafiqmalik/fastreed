@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  </head>
    <body>
      <div class="navigation">
-       <span> <a id="backArrow" href="../../login">&#171;  <span>Back</span></a> </span>
+       <span> <a id="backArrow" href="index.php">&#171;  <span>Back</span></a> </span>
      </div>
      <div id="userDiv" class="cont">
      <div class="content">
