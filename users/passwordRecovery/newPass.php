@@ -1,5 +1,4 @@
-
-<?php
+<?php session_start();
 $createPass = '
    <span id="signUp">Create New Password</span>
    <form class="" action="" method="post">
