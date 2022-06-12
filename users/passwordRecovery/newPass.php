@@ -53,7 +53,7 @@ if (isset($_SESSION['newPassID'])) {
   }
 }else {
   unset($_SESSION['newPassID']);
-  header('Location: index.php');
+  header('Location: index.php?error=SNF');
 }
 
 
