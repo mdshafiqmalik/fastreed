@@ -98,10 +98,9 @@ function isValidUsername($userName){
 // check if username exist in Database
 function checkUserNameExist($enterdUserName){
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   // check in verified users table
   $sql = "SELECT userName FROM fast_users WHERE userName = '$enterdUserName'";
-  $result = mysqli_query($link, $sql);
+  $result = mysqli_query($db, $sql);
   $userNameExist = mysqli_num_rows($result);
 
   // check if username exist in any tables
@@ -116,10 +115,9 @@ function checkUserNameExist($enterdUserName){
 // Check if email exits
 function checkEmailExist($emailInput){
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   // check in verified users table
   $sql = "SELECT userEmail FROM fast_users WHERE userEmail = '$emailInput'";
-  $result = mysqli_query($link, $sql);
+  $result = mysqli_query($db, $sql);
   $emailExist= mysqli_num_rows($result);
 
   // check if username exist in any tables

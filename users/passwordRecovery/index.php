@@ -335,9 +335,8 @@ function findUser($param){
 
 function authenticateOTP($userID, $OTP){
   include '../../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   $fastOTP = "SELECT * FROM fast_otp WHERE userID = '$userID' AND otpIntent = 'PR'";
-  $result = mysqli_query($link, $fastOTP);
+  $result = mysqli_query($db, $fastOTP);
   $dbArray = $result->fetch_assoc();
   $dbOTP = $dbArray['sentOTP'];
   $expTime = $dbArray['expTime'];
