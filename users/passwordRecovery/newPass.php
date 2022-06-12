@@ -50,24 +50,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $newPassword = $_POST['newPassword'];
       $confirmPassword = $_POST['confirmPassword'];
       $userID = $_POST['uid'];
+      var_dump($userID);
       if (strLen($confirmPassword) > 8) {
         if ($newPassword == $confirmPassword) {
           $hashPassword =  password_hash($confirmPassword, PASSWORD_DEFAULT);
           include '../../_.config/_s_db_.php';
-          var_dump($hashPassword);
           $updatePassword = "UPDATE fast_users SET userHashPassword = '$hashPassword' WHERE userID = '$userID'";
           $result = mysqli_query($db, $updatePassword);
           if ($result) {
             delOTP($userID);
-            unset($_SESSION['newPassID']);
-            session_destroy();
             $GLOBALS['content'] = $successReset.'
       </div>
       </div>'. $erro1;
           }else {
             delOTP($userID);
-            unset($_SESSION['newPassID']);
-            session_destroy();
+
             $GLOBALS['content'] = $createPass.'
       </div>
       </div>'. $erro1;
