@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $GLOBALS['content'] = $successReset.'
       </div>
       </div>';
-          sessio_destroy();
+          session_destroy();
           }else {
             delOTP($userID);
 
