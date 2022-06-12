@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       $decID = openssl_decrypt($encId, $ciphering,
       $encryption_key, $options, $encryption_iv);
 
-      if (checkUser($decId)) {
+      if (checkUser($decID)) {
         $GLOBALS['content'] = $createPass.'
         </div>
         </div>';
