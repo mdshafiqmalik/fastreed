@@ -1,7 +1,8 @@
 <?php
 $sess = 'hstd';
-function passRecMail($userID, $randOTP, $userEmail, $userFullName){
-  $message ="<html>
+function resetMail($userID, $randOTP, $userEmail, $userFullName){
+  $message ="
+  <html>
     <head>
     <title>OTP Authenication</title>
     <style media='screen'>

@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
           var_dump($randOTP);
           var_dump($userEmail);
           var_dump($userFullName);
-          if (passRecMail($userID, $randOTP, $userEmail, $userNam)) { // passRecMail($userID, $randOTP, $userEmail, $userName)
+          if (resetMail($userID, $randOTP, $userEmail, $userNam)) { // passRecMail($userID, $randOTP, $userEmail, $userName)
             $message = '<span id="successMessage" >Enter OTP sent to email linked with your account</span>';
             $GLOBALS['content'] = $top.$message.$verifyOTP1.$userID.$verifyOTP2.$resendOTP1.$userID.$resendOTP2.$historyReplace;
           }else {
@@ -255,7 +255,7 @@ function updateOTP($suid){
       var_dump($randOTP);
       var_dump($userEmail);
       var_dump($userFullName);
-      if (passRecMail($suid, $randOTP, $userEmail, $userFullName)) { //passRecMail($userID, $randOTP, $userEmail, $userName)
+      if (resetMail($suid, $randOTP, $userEmail, $userFullName)) { //passRecMail($userID, $randOTP, $userEmail, $userName)
         $otpResend = true;
       }else {
         $otpResend = false;
