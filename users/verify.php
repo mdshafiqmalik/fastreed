@@ -56,7 +56,7 @@ if (isset($_GET['suid'])) {
                 $userEmail = $userDetailArray['userEmail'];
 
                 $getFullName = "SELECT * FROM user_cred WHERE userID = '$uID'";
-                $userFullN = mysqli_query($link, $getFullName);
+                $userFullN = mysqli_query($db, $getFullName);
                 $userFullName = $userFullN->fetch_assoc();
                 $UFN = $userFullName['userFullName'];
 

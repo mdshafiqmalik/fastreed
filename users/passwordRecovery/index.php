@@ -113,7 +113,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
         $sentTime  = time()+60;
         if (addOTP($userID, $randOTP,$userEmail,$sentTime)) {
           include '../mail/prOTP.php';
-          echo $userEmail;
           if (passRecMail($userID, $randOTP, $userEmail, $userName)) { // passRecMail($userID, $randOTP, $userEmail, $userName)
             $message = '<span id="successMessage" >Enter OTP sent to email linked with your account</span>';
             $GLOBALS['content'] = $top.$message.$verifyOTP1.$userID.$verifyOTP2.$resendOTP1.$userID.$resendOTP2.$historyReplace;
