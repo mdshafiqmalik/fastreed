@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($newPassword == $confirmPassword) {
           $hashPassword =  password_hash($confirmPassword, PASSWORD_DEFAULT);
           include '../../_.config/_s_db_.php';
+          var_dump($hashPassword);
           $updatePassword = "UPDATE fast_users SET userHashPassword = '$hashPassword' WHERE userID = '$userID'";
           $result = mysqli_query($db, $updatePassword);
           if ($result) {
