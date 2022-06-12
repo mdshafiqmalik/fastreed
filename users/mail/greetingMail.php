@@ -25,6 +25,7 @@ function greetingMail($userFullNam, $userName, $userEmail){
         color: white;
         font-weight: bold;
         border-radius: 5px;
+        font-size: 1.2em;
       }
       #link a:hover{
           background-color: #0072ff;
