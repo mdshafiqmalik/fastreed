@@ -169,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
           $newID = openssl_encrypt($uid, $ciphering,
           $encryption_key, $options, $encryption_iv);
 
-          header('Location: newPass.php?recID='.'$newID');
+          header('Location: newPass.php?recID='.$newID);
         }else {
           $message =  '<span id="errorMessage" >Entered '.$type.' Expired Resend Another</span></center>';
           $GLOBALS['content'] = $top.$message.$resendOTP1.$uid.$resendOTP2.$historyReplace;
