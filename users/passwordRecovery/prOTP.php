@@ -83,7 +83,6 @@ function resetMail($userID, $randOTP, $userEmail, $userFullName){
   </html>";
 
   $subject = $randOTP." is your OTP";
-  "From: Fastreed  <support@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
   $headers = "From: Fastreed\: Password Recovery <no-reply@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
   $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
   if ($mailDeliverd) {
