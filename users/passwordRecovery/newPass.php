@@ -49,8 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       include '../../_.config/sjdhfjsadkeys.php';
       $decID = openssl_decrypt($encID, $ciphering,
       $decryption_key, $options, $decryption_iv);
-
-      var_dump($decID);
       if (checkUser($decID)) {
         $GLOBALS['content'] = $createPass.'
         </div>
