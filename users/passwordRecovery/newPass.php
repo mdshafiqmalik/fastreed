@@ -42,7 +42,7 @@ $successReset = '
 </div>
 ';
 if (isset($_SESSION['newPassID'])) {
-  if (empty($_SESSION['newPassID']))) {
+  if (!empty($_SESSION['newPassID'])) {
     $userID = $_SESSION['newPassID'];
     if (checkUser($userID)) {
       $GLOBALS['content'] = $createPass.'
