@@ -254,7 +254,7 @@ function updateOTP($suid){
       var_dump($suid);
       var_dump($randOTP);
       var_dump($userEmail);
-      var_dump($userName);
+      var_dump($userFullName);
       if (passRecMail($suid, $randOTP, $userEmail, $userFullName)) { //passRecMail($userID, $randOTP, $userEmail, $userName)
         $otpResend = true;
       }else {
