@@ -42,25 +42,17 @@ $successReset = '
 </div>
 ';
 if (isset($_SESSION['newPassID'])) {
-  if (!empty($_SESSION['newPassID'])) {
-    $userID = $_SESSION['newPassID'];
-    if (checkUser($userID)) {
-      $GLOBALS['content'] = $createPass.'
-      </div>
-      </div>';
-    }else {
-      unset($_SESSION['newPassID']);
-      session_destroy();
-      header('Location: index.php');
-    }
+  $userID = $_SESSION['newPassID'];
+  if (checkUser($userID)) {
+    $GLOBALS['content'] = $createPass.'
+    </div>
+    </div>';
   }else {
     unset($_SESSION['newPassID']);
-    session_destroy();
     header('Location: index.php');
   }
 }else {
   unset($_SESSION['newPassID']);
-  session_destroy();
   header('Location: index.php');
 }
 
