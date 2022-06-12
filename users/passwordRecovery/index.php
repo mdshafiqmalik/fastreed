@@ -168,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
           include '../../_.config/sjdhfjsadkeys.php';
           $newID = openssl_encrypt($uid, $ciphering,
           $encryption_key, $options, $encryption_iv);
-
+          $_SESSION['newID'] = $uid;
           header('Location: newPass.php?recID='.$newID);
         }else {
           $message =  '<span id="errorMessage" >Entered '.$type.' Expired Resend Another</span></center>';
@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
         $GLOBALS['content'] = $top.$message.$verifyOTP1.$uid.$verifyOTP2.$resendOTP1.$uid.$resendOTP2.$historyReplace;
       }
     }else {
-      $message = '<span id="errorMessage" >'.$type.' already used</span>';
+      $message = '<span id="errorMessage" >'.$type.' already Used</span>';
       $GLOBALS['content'] =  $top.$message.$template.$template2;
     }
   }else {

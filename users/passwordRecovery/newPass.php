@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty(isset($_POST['newPassword'])) && !empty(isset($_POST['confirmPassword']))) {
       $newPassword = $_POST['newPassword'];
       $confirmPassword = $_POST['confirmPassword'];
-      $userID = $_POST['uid'];
+      $userID = $_SESSION['newID'];
       var_dump($userID);
       if (strLen($confirmPassword) > 8) {
         if ($newPassword == $confirmPassword) {
@@ -61,7 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             delOTP($userID);
             $GLOBALS['content'] = $successReset.'
       </div>
-      </div>'. $erro1;
+      </div>';
+          sessio_destroy();
           }else {
             delOTP($userID);
 
