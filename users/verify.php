@@ -15,7 +15,7 @@ $formTop = '" placeholder="">
 </form>
 <br>
 <form class="loginForm" action="'.$self.'" method="post">
-<input type="hidden" name="suid" value="';
+<input type="hidden" name="_secRandID" value="';
 
 $formBottom =   '" placeholder="">
   <input type="hidden" name="resendOTP" value="true" placeholder="">
