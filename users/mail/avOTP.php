@@ -71,7 +71,7 @@ function sendOTP($userEmail, $userID, $randOTP, $userFullName){
             <div>You can verify your account by clicking on the link given
               <b>(valid for 10 minutes only)</b><br><br>
               <div id='link'>
-                <a href='https://m.shafiqhub.com/users/verify.php?suid=".$userID ."&centpo=".$randOTP."'> Verify Account</a>
+                <a href='https://m.shafiqhub.com/users/verify.php?_secRandID=".$userID ."&centpo=".$randOTP."'> Verify Account</a>
               </div>
             </div><br>
         </div><hr>
