@@ -124,7 +124,7 @@ if (isset($_GET['_secRandID'])) {
 }elseif(isset($_POST)) {
   $paramSet = isset($_POST['_secRandID']) && isset($_POST['resendOTP']);
   if ($paramSet) {
-
+    $encUID = $_POST['_secRandID'];
     include '../_.config/sjdhfjsadkeys.php';
     $userID = openssl_decrypt($_POST['_secRandID'], $ciphering,
     $encryption_key, $options, $encryption_iv);
@@ -133,10 +133,10 @@ if (isset($_GET['_secRandID'])) {
       if(updateOTP($userID)){
         $message = '<span id="successMessage">We have <i>Resent a 6 digit OTP</i> to your email</span>';
 
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$userID.$formTop.$userID.$formBottom .$historyReplace;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$encUID.$formTop.$encUID.$formBottom .$historyReplace;
       }else {
         $message = '<span style="color:orange;" id="errorMessage">Failed to resend OTP again</span>';
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$userID.$formTop.$userID.$formBottom;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$encUID.$formTop.$encUID.$formBottom;
       }
     }else {
       $GLOBALS['body']  =  '<script type="text/javascript">
