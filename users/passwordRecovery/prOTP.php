@@ -80,7 +80,7 @@ function resetMail($userID, $randOTP, $userEmail, $userFullName){
             </div><br>
         </div><hr>
         <footer id='footer'>
-        This mail is sent to <b>".$userEmail." </b>and is intended for password recovery. <br><br>Kindly ignore if you haven't generated this OTP</b>
+        This mail is sent to <b>".$userEmail." </b>and is intended for password recovery. <br><br>Please <a href='https://m.shafiqhub.com/contact-us'>contact us </a> if you haven't generated this OTP</b>
         </footer><br>
       </div>
     </body>
