@@ -35,7 +35,6 @@ if (isset($_GET['_secRandID'])) {
   $decUID = openssl_decrypt($_GET['_secRandID'], $ciphering,
   $decryption_key, $options, $decryption_iv);
   // Check suid present or not
-  var_dump($decUID);
   $userID = $decUID;
   $isUserPresent = checkUserID($userID);
   if ($isUserPresent) {
