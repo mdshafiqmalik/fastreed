@@ -4,7 +4,7 @@ $VYO = '<span id="signUp" >Verify Your OTP</span>';
 $self = htmlspecialchars($_SERVER["PHP_SELF"]);
 $formHead = '<form class="loginForm" action="'.$self.'" method="get">
 <div class="loginFields">
-  <input type="hidden" name="suid" value="';
+  <input type="hidden" name="_secRandID" value="';
 
 $formTop = '" placeholder="">
 <input id="OTPfield" onkeyup="checkOTP()" type="number" minlength="6" maxlength="6" name="centpo" value="" placeholder="000000">
