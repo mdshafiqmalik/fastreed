@@ -145,7 +145,7 @@ if (isset($_GET['_secRandID'])) {
     }
   }else {
     $GLOBALS['body']  =  '<script type="text/javascript">
-      document.location = "../register?errorMessage=?errorMessage=000X4&id=FNS";
+      document.location = "../register?errorMessage=000X4&id=FNS";
     </script>';
   }
 }else {
