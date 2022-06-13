@@ -120,9 +120,13 @@ if (isset($_GET['_secRandID'])) {
     </script>';
   }
 }elseif(isset($_POST)) {
-  $paramSet = isset($_POST['suid']) && isset($_POST['resendOTP']);
+  $paramSet = isset($_POST['_secRandID']) && isset($_POST['resendOTP']);
   if ($paramSet) {
-    $userID = $_POST['suid'];
+
+    include '../_.config/sjdhfjsadkeys.php';
+    $userID = openssl_decrypt($_POST['_secRandID'], $ciphering,
+    $encryption_key, $options, $encryption_iv);
+
     if (checkUserID($userID)) {
       if(updateOTP($userID)){
         $message = '<span id="successMessage">We have <i>Resent a 6 digit OTP</i> to your email</span>';
@@ -139,7 +143,7 @@ if (isset($_GET['_secRandID'])) {
     }
   }else {
     $GLOBALS['body']  =  '<script type="text/javascript">
-      document.location = "../register?errorMessage=?errorMessage=000X4&id=FNS&id=FNS";
+      document.location = "../register?errorMessage=?errorMessage=000X4&id=FNS";
     </script>';
   }
 }else {
