@@ -30,7 +30,7 @@ $historyReplace = '<script>
    }
 </script>';
 if (isset($_GET['_secRandID'])) {
-
+  $encID = $_GET['_secRandID'];
   include '../_.config/sjdhfjsadkeys.php';
   $decUID = openssl_decrypt($_GET['_secRandID'], $ciphering,
   $decryption_key, $options, $decryption_iv);
@@ -95,7 +95,7 @@ if (isset($_GET['_secRandID'])) {
           <span id="errorMessage">Entered link or OTP Expired and Now Deleted</span>
           <form class="loginForm" action="'.$self.'" method="post">
           <br>
-            <input type="hidden" name="suid" value="'.$userID.'" placeholder="Enter OTP">
+            <input type="hidden" name="suid" value="'.$encID.'" placeholder="Enter OTP">
             <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
           <div class="loginSubmit">
             <input id="resendOTP" type="submit" name="" value="Resend OTP">
@@ -105,11 +105,11 @@ if (isset($_GET['_secRandID'])) {
         }
       }else {
         $message = '<span id="errorMessage">Wrong OTP entered</span>';
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$userID.$formTop.$userID.$formBottom;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$userID.$formBottom;
       }
     }else {
       $message = '<span id="successMessage">We have sent a 6 digit OTP to your email</span>';
-      $GLOBALS['body']  =  $VYO.$message.$formHead.$userID.$formTop.$userID.$formBottom.$historyReplace;
+      $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$userID.$formBottom.$historyReplace;
     }
   }else {
     $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">User verified already</span></center><br>
@@ -120,6 +120,7 @@ if (isset($_GET['_secRandID'])) {
     },3000);
     </script>';
   }
+  // for resending OTP
 }elseif(isset($_POST)) {
   $paramSet = isset($_POST['_secRandID']) && isset($_POST['resendOTP']);
   if ($paramSet) {
