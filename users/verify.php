@@ -7,7 +7,7 @@ $formHead = '<form class="loginForm" action="'.$self.'" method="get">
   <input type="hidden" name="suid" value="';
 
 $formTop = '" placeholder="">
-<input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
+<input id="OTPfield" onkeyup="checkOTP()" type="number" minlength="6" maxlength="6" name="centpo" value="" placeholder="000000">
 </div>
 <div class="loginSubmit">
 <input id="verifyOTP" type="submit" name="" value="VERIFY">

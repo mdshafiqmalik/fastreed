@@ -19,7 +19,7 @@ $verifyOTP1 = '
 <input type="hidden" name="type" value="OTP">
 <input type="hidden" name="recID" value="';
 
-$verifyOTP2='"><input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
+$verifyOTP2='"><input id="OTPfield" onkeyup="checkOTP()" type="number" minlength="6" maxlength="6" name="centpo" value="" placeholder="000000">
 </div>
 <div class="loginSubmit">
 <input id="verifyOTP" type="submit" name="" value="VERIFY">
