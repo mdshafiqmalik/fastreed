@@ -16,7 +16,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:#bbb;
+  background-color:#ddd;
   font-family: var(--fontfam);
 }
 .mainCont{
@@ -28,7 +28,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:#bbb;
+  background-color:#ddd;
 }
 .cont500{
   max-width: 500px;
