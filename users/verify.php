@@ -105,11 +105,11 @@ if (isset($_GET['_secRandID'])) {
         }
       }else {
         $message = '<span id="errorMessage">Wrong OTP entered</span>';
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$userID.$formBottom;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$encID.$formBottom;
       }
     }else {
       $message = '<span id="successMessage">We have sent a 6 digit OTP to your email</span>';
-      $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$userID.$formBottom.$historyReplace;
+      $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$encID.$formBottom.$historyReplace;
     }
   }else {
     $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">User verified already</span></center><br>
