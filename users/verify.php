@@ -29,9 +29,13 @@ $historyReplace = '<script>
     window.history.replaceState( null, null, window.location.href );
    }
 </script>';
-if (isset($_GET['suid'])) {
+if (isset($_GET['_secRandID'])) {
+
+  include '../_.config/sjdhfjsadkeys.php';
+  $decUID = openssl_decrypt($_GET['_secRandID'], $ciphering,
+  $encryption_key, $options, $encryption_iv);
   // Check suid present or not
-  $userID = $_GET['suid'];
+  $userID = $decUID;
   $isUserPresent = checkUserID($userID);
   if ($isUserPresent) {
     if (isset($_GET['centpo'])) {
