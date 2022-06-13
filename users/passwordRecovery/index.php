@@ -1,59 +1,6 @@
 <?php
-
-/*
-if (postSet) {
-  if (emailOrUsernameGiven) {
-    if (checkUser) {
-      if (updateOTP) {
-        if (sendOTP) {
-          // Enter OTP Sent to email
-          //  Make form with Get
-        }else {
-          // Enter email/username
-          // Cannot Send OTP
-        }
-      }else {
-        // Enter email/username
-        // Server Error
-      }
-    }else {
-      // Enter email/username
-      // User Not Found
-    }
-  }elseif (PasswordandConfirmPassword) {
-    // code...
-  }else {
-    // Enter email/username
-  }
-}elseif (GETSet) {
-  if (userID && OTP) {
-    if (!empty(userID && OTP)) {
-      // OTP Form
-      if (OTPauth) {
-        if (!isOTPExpires) {
-          // create random session
-        }else {
-          // Enter OTP Sent to email
-          // Expired OTP
-          // Resend OTP
-        }
-      }else {
-        // Enter OTP Sent to email
-        // Wrong OTP
-        // Resend OTP
-      }
-    }else {
-      // Enter email/username
-    }
-  }else {
-    // Enter email/username
-  }
-}else {
-  // Enter email/username
-}
-*/
 $self = htmlspecialchars($_SERVER["PHP_SELF"]);
-$top = '<span id="signUp" >Reset Password</span>';
+$top = '<span id="signUp" >Recover Password</span>';
 $intent = '<span id="successMessage" style="color: black;">Enter Username or Email to Recover Password</span>';
 $template = '
     <form class="" action="'.$self.'" method="post">';
@@ -70,7 +17,7 @@ $verifyOTP1 = '
 <form class="" action="'.$self.'" method="get">
 <div class="loginFields">
 <input type="hidden" name="type" value="OTP">
-<input type="hidden" name="uid" value="';
+<input type="hidden" name="recID" value="';
 
 $verifyOTP2='"><input id="OTPfield" onkeyup="checkOTP()" type="number" name="centpo" value="" placeholder="000000">
 </div>
@@ -159,8 +106,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
   }else {
     $type = 'OTP';
   }
-  if (isset($_GET['uid']) && isset($_GET['centpo'])) {
-    $uid = $_GET['uid'];
+  if (isset($_GET['recID']) && isset($_GET['centpo'])) {
+    $uid = $_GET['recID'];
     $otp = $_GET['centpo'];
     if (checkUser($uid)) {
       if (authenticateOTP($uid, $otp)) {
