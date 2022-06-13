@@ -52,7 +52,7 @@ function greetingMail($userFullNam, $userName, $userEmail){
     </body>
   </html>
   ';
-  $subject = 'Welcome '.$userFullNam.'  to Fastreed';
+  $subject = 'Welcome '.$userFullNam.' to Fastreed';
   $headers = "From: Fastreed  <support@shafiqhub.com>" . "\r\n" ."CC: support@shafiqhub.com"."\r\n"."Content-type: text/html";
   $mailDeliverd =  mail($userEmail,$subject,$message,$headers);
   if ($mailDeliverd) {
