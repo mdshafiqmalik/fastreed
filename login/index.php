@@ -52,10 +52,6 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
             $logout = ($red == '/logout/');
             $home = ($red == '/');
             $register = ($red == '/register/');
-
-            var_dump($logout);
-            var_dump($home);
-            var_dump($register);
             if ($logout || $register || $home) {
             }else {
               echo '<input type="hidden" name="redirect" value="'.$red.'">';
