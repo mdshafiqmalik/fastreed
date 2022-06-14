@@ -1,5 +1,4 @@
 <?php
-session_start();
 $logID = $_SESSION['logID'];
 include '_.config/_s_db_.php';
 var_dump($loginID);
