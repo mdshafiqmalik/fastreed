@@ -13,7 +13,7 @@
   <body>
     <style media="screen">
     .cont600{
-      max-width: 400px;
+      max-width: 350px;
       display: flex;
       justify-content: center;
       align-items:center;
