@@ -1,17 +1,15 @@
-<?php
-include '_.config/sjdhfjsadkeys.php';
-$newID = openssl_encrypt('256738965268752', $ciphering,
-$encryption_key, $options, $encryption_iv);
 
-echo $newID;
-echo "<br><br>";
-
-$decID = openssl_decrypt($newID, $ciphering,
-$encryption_key, $options, $encryption_iv);
-
-echo $decID;
-
-?>
-$2y$10$VDGTrlwPVjUGE1y/yHi/rOzCJgvLKpp15Dkz1e9xHNnYBinQ372ra
-
-$2y$10$VDGTrlwPVjUGE1y/yHi/rOzCJgvLKpp15Dkz1e9xHNnYBinQ372ra
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+  </head>
+  <body>
+    <?php
+    $browser = get_browser(NULL, true);
+    var_dump($browser);
+    ?>
+  </body>
+</html>
