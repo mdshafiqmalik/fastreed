@@ -49,8 +49,6 @@ function checkLogDetails($logID){
       $row = $userDat->fetch_assoc();
       $exist = $row['userID'];
     }else {
-      setcookie('logID', '', time() -3600, "/");
-      unset($_SESSION['logID']);
       $exist = false;
     }
 
