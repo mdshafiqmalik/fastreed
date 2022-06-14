@@ -85,7 +85,7 @@ function createLogin($userID){
   $logDate = date('y-m-d H:i:s');
   $getDeviceInfo = $_SERVER['HTTP_USER_AGENT'];
   include '../_.config/_s_db_.php';
-  $sql = "INSERT INTO fast_logged_users (`loginID`,`userID`,`loginDateTime`,`loginDevice`, `status`) VALUES ('$randLogID','$userID','$logDate','$getMacAddress', '1')";
+  $sql = "INSERT INTO fast_logged_users (`loginID`,`userID`,`loginDateTime`,`loginDevice`, `status`) VALUES ('$randLogID','$userID','$logDate','$getDeviceInfo', '1')";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $loginCreated = $randLogID;
