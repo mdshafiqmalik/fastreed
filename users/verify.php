@@ -245,16 +245,16 @@ function createUser($userID){
     $inUserCred =  "INSERT INTO `user_cred` (`userID`, `userFullName`, `userDOB`, `userEmail`, `userProfilePic`, `userGender`, `userJoiningDate`, `userCountry`, `userType`) VALUES ('$userID', '$fullName','','$userEmail','$profilePic','$userGender', '$userJoiningDate','','0')";
 
     // add to user_sec
-    $inUserSec = "INSERT INTO `user_sec` (`userID`,`ePassword`) VALUES ('$userID', '$ePassword')";
+    // $inUserSec = "INSERT INTO `user_sec` (`userID`,`ePassword`) VALUES ('$userID', '$ePassword')";
 
     // add to user_verify
-    $inUserverify = "INSERT INTO `user_verify` (`userID`,`emailVerify`, `phoneVerify`,`IDVerify`,`greenTickVerified`) VALUES ('$userID', '1', '0', '0', '0')";
+    // $inUserverify = "INSERT INTO `user_verify` (`userID`,`emailVerify`, `phoneVerify`,`IDVerify`,`greenTickVerified`) VALUES ('$userID', '1', '0', '0', '0')";
 
     $r1 = mysqli_query($db, $insertData);
     $r2 = mysqli_query($db, $inUserCred);
-    $r3 = mysqli_query($db, $inUserSec);
-    $r4 = mysqli_query($db, $inUserverify);
-    if ($r1 && $r2 && $r3 && $r4) {
+    // $r3 = mysqli_query($db, $inUserSec);
+    // $r4 = mysqli_query($db, $inUserverify);
+    if ($r1 && $r2) {
       $delNoVerify ="DELETE FROM user_noverify WHERE userID = '$userID'";
       $r5 = mysqli_query($db, $delNoVerify);
       if ($r5) {
