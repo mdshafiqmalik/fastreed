@@ -45,7 +45,7 @@ function checkLogDetails($logID){
   $userDat = mysqli_query($db, $checkLoginID);
   if (mysqli_num_rows($userDat)) {
     $status = $row['status'];
-    if (condition) {
+    if ((boolean)$status) {
       $row = $userDat->fetch_assoc();
       $exist = $row['userID'];
     }else {
