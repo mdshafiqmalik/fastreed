@@ -11,7 +11,7 @@ if (isset($_GET['message'])) {
 if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
   var_dump(true);
   if (!empty($_SESSION['logID'])) {
-    var_dump($_SESSION['logID']);
+    var_dump(true);
     // header("Location: ../profile/");
   }
 }
