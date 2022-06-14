@@ -45,7 +45,6 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
               <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
             </span>
           </div>
-
           <?php
           if (isset($_SERVER['HTTP_REFERER'])) {
             $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
@@ -55,10 +54,10 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
             if ($logout || $register || $home) {
             }else {
               echo '<input type="hidden" name="redirect" value="'.$red.'">';
+              echo $red;
             }
           }
            ?>
-
           <div class="rememberMe"><input id="rememberMe" type="checkbox" name="rememberMe" value="true"> Remember Me</div>
           <div class="loginSubmit">
             <input type="submit" name="" value="LOGIN">
