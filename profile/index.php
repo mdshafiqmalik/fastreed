@@ -42,26 +42,23 @@ $GLOBALS['divStop'] = '</div>';
 function checkLogDetails($logID){
   include '../_.config/_s_db_.php';
   $checkLoginID = "SELECT userID FROM fast_logged_users Where loginID = '$logID'";
-  if ($userDat = mysqli_query($db, $checkLoginID)) {
-    if (mysqli_num_rows($userDat)) {
-      $status = $row['status'];
-      if ((boolean)$status) {
-        $row = $userDat->fetch_assoc();
-        $exist = $row['userID'];
-      }else {
-        $exist = false;
-      }
+  $userDat = mysqli_query($db, $checkLoginID);
+  if (mysqli_num_rows($userDat)) {
+    $status = $row['status'];
+    if (condition) {
+      $row = $userDat->fetch_assoc();
+      $exist = $row['userID'];
     }else {
       setcookie('logID', '', time() -3600, "/");
       unset($_SESSION['logID']);
       $exist = false;
     }
+
   }else {
     setcookie('logID', '', time() -3600, "/");
     unset($_SESSION['logID']);
     $exist = false;
   }
-
   return $exist;
 }
 
