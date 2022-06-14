@@ -9,7 +9,6 @@ if (isset($_GET['message'])) {
 }
 
 if (isset($_SESSION["logID"]) || isset($_COOKIE["logID"])) {
-  var_dump($_COOKIE['logID']);
   if (!empty($_SESSION['logID'])) {
     header("Location: ../profile/");
   }
@@ -55,7 +54,6 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["logID"])) {
             if ($logout || $register || $home) {
             }else {
               echo '<input type="hidden" name="redirect" value="'.$redir.'">';
-              echo $redir;
             }
           }
            ?>
