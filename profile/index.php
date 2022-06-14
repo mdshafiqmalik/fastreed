@@ -41,7 +41,7 @@ $GLOBALS['divStop'] = '</div>';
 
 function checkLogDetails($logID){
   include '../_.config/_s_db_.php';
-  $checkLoginID = "SELECT userID FROM fast_logged_users Where loginID = '$logID' AND status = '4'";
+  $checkLoginID = "SELECT userID FROM fast_logged_users Where loginID = '$logID' AND status = '1'";
   $userDat = mysqli_query($db, $checkLoginID);
   if (mysqli_num_rows($userDat)) {
     $row = $userDat->fetch_assoc();
