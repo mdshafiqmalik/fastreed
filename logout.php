@@ -1,5 +1,5 @@
 <?php
-$logID = $_SESSION['logID'];
+$logID = $_COOKIE['logID'];
 include '_.config/_s_db_.php';
 var_dump($loginID);
 $sql = "UPDATE `fast_logged_users` SET `status` = \'6\' WHERE `fast_logged_users`.`loginID` = '$logID'";
