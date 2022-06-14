@@ -47,14 +47,14 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
           </div>
           <?php
           if (isset($_SERVER['HTTP_REFERER'])) {
-            $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
-            $logout = ($red == '/logout/');
-            $home = ($red == '/');
-            $register = ($red == '/register/');
+            $redir = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
+            $logout = ($redir == '/logout/');
+            $home = ($redir == '/');
+            $register = ($redir == '/register/');
             if ($logout || $register || $home) {
             }else {
-              echo '<input type="hidden" name="redirect" value="'.$red.'">';
-              echo $red;
+              echo '<input type="hidden" name="redirect" value="'.$redir.'">';
+              echo $redir;
             }
           }
            ?>
