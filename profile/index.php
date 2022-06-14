@@ -144,7 +144,7 @@ function renderProfile($UID){
           </div>
         </div>
         <div class="bottomDiv">
-          <div id="linkOne"class="linkOne"> <span class="links"> <a href="../logout.php">Logout</a></span> </div>
+          <div id="linkOne"class="linkOne"> <span class="links"> <a href="../logout/">Logout</a></span> </div>
           <div id="linkTwo" class="linkOne"> <span class="links"> <a href="#">Settings</a> </span> </div>
         </div>
       </div>
