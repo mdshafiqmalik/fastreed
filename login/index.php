@@ -13,8 +13,6 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
     header("Location: ../profile/");
   }
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -49,12 +47,15 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
           </div>
 
           <?php
-
           if (isset($_SERVER['HTTP_REFERER'])) {
             $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
-            echo '<input type="hidden" name="redirect" value="'.$red.'">';
+            if ($red !=  '/logout' || $red !=  '/') {
+              echo '<input type="hidden" name="redirect" value="'.$red.'">';
+            }
+
           }
            ?>
+
           <div class="rememberMe"><input id="rememberMe" type="checkbox" name="rememberMe" value="true"> Remember Me</div>
           <div class="loginSubmit">
             <input type="submit" name="" value="LOGIN">
