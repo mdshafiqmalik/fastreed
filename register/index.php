@@ -25,9 +25,11 @@ include '../components/uniSession.php';
         font-weight: bold;
       }
       .Gender select{
+        background: white;
         color: #444;
         margin-left: 2em;
-        border: none;
+        border: 0;
+        outline: 0;
         font-size: .8em;
         font-weight: bold;
         border-bottom: 2px solid;
