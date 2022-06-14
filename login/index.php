@@ -9,7 +9,7 @@ if (isset($_GET['message'])) {
 }
 
 if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
-  if (!empty($_COOKIE['logID'])) {
+  if (!empty($_SESSION['logID'])) {
     header("Location: ../profile/");
   }
 }
