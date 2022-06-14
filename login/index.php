@@ -56,9 +56,9 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
             var_dump($logout);
             var_dump($home);
             var_dump($register);
-            // if () {
-            //   echo '<input type="hidden" name="redirect" value="'.$red.'">';
-            // }
+            if (!$logout || !$register || !$home) {
+              echo '<input type="hidden" name="redirect" value="'.$red.'">';
+            }
           }
            ?>
 
