@@ -5,6 +5,7 @@ include 'components/randVersion.php';
 <html lang="en" dir="ltr">
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="robots" content="noindex">
       <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
       <link rel="stylesheet" href="assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
       <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
@@ -37,7 +38,9 @@ include 'components/randVersion.php';
           <span class="stags" id="trading" onclick="goTo('trading')">trading</span>
         </div>
       </div>
-      <?php include 'posts.php'; ?>
+      <div class="cont500">
+      <?php include 'articles.php'; ?>
+    </div>
     </div>
   </body>
 </html>

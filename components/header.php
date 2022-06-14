@@ -21,20 +21,17 @@ $subheader = '<div class="subheader">
   <div><a href="/notifications"><img id="notification" class="submenu" src="/'.$svgFolder.'/bell_NF.svg" alt=""></a> </div>
   <div><a href="/'.$user.'/"><img id="user" class="submenu" src="/'.$svgFolder.'/user_notFilled.svg" alt=""></a> </div>
 </div>';
-echo '<div class="hd cont500">
-'.$header.''.$subheader.'
-</div>';
-// $homeOther = ($_SERVER['REQUEST_URI'] == "/users/" || $_SERVER['REQUEST_URI'] == "/notifications/");
-// if ($homeOther) {
-//   echo '
-//   <div class="hd cont500">'.$subheader.'
-//   </div>
-//   ';
-// }else {
-//   echo '
-//   <div class="hd cont500">
-//   '.$header.''.$subheader.'
-//   </div>
-//   ';
-// }
+$homeOther = ($_SERVER['REQUEST_URI'] == "/users/" || $_SERVER['REQUEST_URI'] == "/notifications/");
+if ($homeOther) {
+  echo '
+  <div class="hd cont500">'.$subheader.'
+  </div>
+  ';
+}else {
+  echo '
+  <div class="hd cont500">
+  '.$header.''.$subheader.'
+  </div>
+  ';
+}
 ?>
