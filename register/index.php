@@ -16,6 +16,23 @@ include '../components/uniSession.php';
     <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style media="screen">
+      .Gender{
+        display: flex;
+        align-items: center;
+        margin: .3em 1em 1em 1em;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+      .Gender select{
+        color: #444;
+        margin-left: 2em;
+        border: none;
+        font-size: .8em;
+        font-weight: bold;
+        border-bottom: 2px solid;
+      }
+    </style>
   </head>
   <body>
     <div class="navigation">
@@ -27,24 +44,34 @@ include '../components/uniSession.php';
     <span id="signUp" >Create An Account</span>
 
     <form class="loginForm" action="../users/checkdata.php" method="post">
-   <span id="FNS" class="stat" style="color:red;"> All Fields Are Mendatory*</span>
+   <span id="FNS" class="stat" style="color:red;"> All Fields Required*</span>
    <div class="loginFields">
-     <input width="100%" id="fullName" onkeyup="checkFullName()" type="text" name="fullName" value="" placeholder="Full Name*" >
+     <input width="100%" id="fullName" onkeyup="checkFullName()" type="text" name="fullName" value="" placeholder="Full Name (Jhon Doe)" >
      <!-- <span id="usernameStatus"class="status"></span> -->
    </div>
     <span id="UNS" class="stat"></span>
     <div class="loginFields">
-      <input width="100%" id="username" onkeyup="checkUsername()" type="text" name="username" value="" placeholder="Username*" >
+      <input width="100%" id="username" onkeyup="checkUsername()" type="text" name="username" value="" placeholder="Username (jhon_doe)" >
     </div>
 
     <span id="EMS" class="stat"></span>
     <div class="loginFields">
-      <input id="signUpEmail" onkeyup="checkEmail()" type="text" name="email" value="" placeholder="E-mail*" >
+      <input id="signUpEmail" onkeyup="checkEmail()" type="text" name="email" value="" placeholder="Email (jhondoe@gmail.com)" >
     </div>
 
     <span id="PMS" class="stat"></span>
     <div id="passwordField" class="loginFields">
-      <input id="passworD" onkeyup="checkPassword()" type="text" name="password" value="" placeholder="Password*">
+      <input id="passworD" onkeyup="checkPassword()" type="text" name="password" value="" placeholder="Password">
+    </div>
+    <span id="GNS" class="stat"></span>
+    <div class="Gender">
+      <label for="gender">Gender</label>
+      <select name="gender" id="gender"  required>
+        <option value="0">SELECT</option>
+        <option value="male" >MALE</option>
+        <option value="female">FEMALE</option>
+        <option value="others" >OTHERS</option>
+      </select>
     </div>
     <div class="tc">
     <input id="checkBox" onclick="isChecked()" type="checkbox" name="checkbox" >

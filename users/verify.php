@@ -55,9 +55,10 @@ if (isset($_GET['_secRandID'])) {
               $userFullN = mysqli_query($db, $getFullName);
               $userFullName = $userFullN->fetch_assoc();
               $UFN = $userFullName['userFullName'];
+              $gender = $userFullName['gender'];
 
               include 'mail/greetingMail.php';
-              greetingMail($UFN, $userName, $userEmail);
+              greetingMail($UFN, $userName, $userEmail, $gender);
 
               if ($logID = createLogin($userID)) {
                 $_SESSION['logID'] = $logID;
@@ -232,6 +233,7 @@ function createUser($userID){
     $fullName = $data['userFullName'];
     $userName = $data['userName'];
     $userEmail = $data['userEmail'];
+    $userGender = $data['gender'];
     $userHashPassword = $data['userHashPassword'];
     $ePassword = $data['ePassword'];
     $userJoiningDate = date('y-m-d H:i:s');
@@ -240,7 +242,7 @@ function createUser($userID){
     $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userEmail', '$userName','', '$userHashPassword')";
 
     // add to uers_crendentials
-    $inUserCred =  "INSERT INTO `user_cred` (`userID`, `userFullName`, `userDOB`, `userEmail`, `userProfilePic`, `userGender`, `userJoiningDate`, `userCountry`, `userType`) VALUES ('$userID', '$fullName','','$userEmail','$profilePic','', '$userJoiningDate','','0')";
+    $inUserCred =  "INSERT INTO `user_cred` (`userID`, `userFullName`, `userDOB`, `userEmail`, `userProfilePic`, `userGender`, `userJoiningDate`, `userCountry`, `userType`) VALUES ('$userID', '$fullName','','$userEmail','$profilePic','$userGender', '$userJoiningDate','','0')";
 
     // add to user_sec
     $inUserSec = "INSERT INTO `user_sec` (`userID`,`ePassword`) VALUES ('$userID', '$ePassword')";

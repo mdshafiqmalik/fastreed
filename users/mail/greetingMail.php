@@ -1,7 +1,12 @@
 <?php
 // Greeting Mail
 
-function greetingMail($userFullNam, $userName, $userEmail){
+function greetingMail($userFullNam, $userName, $userEmail, $gender){
+  if ($gender = 'male') {
+    $sal = 'Hello! Mr. ';
+  }else {
+    $sal = 'Hello ';
+  }
   $message = '
   <html>
     <head>
@@ -34,7 +39,7 @@ function greetingMail($userFullNam, $userName, $userEmail){
     </head>
     <body>
       <div id="cont">
-        <p> Hi <b>'.$userFullNam.'</b> </p>
+        <p> '.$sal.' <b>'.$userFullNam.'</b> </p>
          <p> Thanks for joinig us you are now a part of a huge content community.Your account is all set and <b>verified now</b>.
            <br> You can login to your account using your <b>Username or Email</b> with password. <br><br>
            Username : <b>'.$userName.'</b><br>

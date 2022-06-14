@@ -1,13 +1,14 @@
 <?php
 if (isset($_POST)) {
-  $allInputSet = (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['fullName']) && isset($_POST['password']) && isset($_POST['checkbox']));
+  $allInputSet = (isset($_POST['gender']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['fullName']) && isset($_POST['password']) && isset($_POST['checkbox']));
   if ($allInputSet) { // Check If all fields are filled
     // make varables of the field Values
     $emailAddress = $_POST['email'];
+    $gender = $_POST['gender'];
     $userName = $_POST['username'];
     $fullName = $_POST['fullName'];
     $passWord = $_POST['password'];
-    $inputEmpty = (empty($emailAddress) && empty($userName) && empty($fullName) && empty($passWord));
+    $inputEmpty = (empty($gender) && empty($emailAddress) && empty($userName) && empty($fullName) && empty($passWord));
     if (!$inputEmpty) { // Inputs are not empty
 
       // passwords
@@ -36,6 +37,8 @@ if (isset($_POST)) {
       $validEMail = filter_var($sanitizedEmail, FILTER_VALIDATE_EMAIL);
       $checkEMailExists = checkEmailExist($validEMail);
 
+      // Check Gender Exist
+
       if (!$nameHasNumber || !$nameHasSpecialChar) {
         if ($minFullNameLength) {
           if ($minUserNameLen) {
@@ -43,15 +46,19 @@ if (isset($_POST)) {
               if (!$checkUserNameExists) {
                 if (!$checkEMailExists) {
                   if ($minPasswordLenght) {
-
-                    // create sessions
-                    session_start();
-                    $_SESSION['userName'] = $sanitizedUserName;
-                    $_SESSION['userEmail'] = $sanitizedEmail;
-                    $_SESSION['fullName'] = $sanitizeFullName;
-                    $_SESSION['passWord'] = $hashPassword;
-                    $_SESSION['encPassword'] = $encPassword;
-                    header("Location: createUser.php");
+                    if ($gender != '0') {
+                      // create sessions
+                      session_start();
+                      $_SESSION['userName'] = $sanitizedUserName;
+                      $_SESSION['userEmail'] = $sanitizedEmail;
+                      $_SESSION['fullName'] = $sanitizeFullName;
+                      $_SESSION['passWord'] = $hashPassword;
+                      $_SESSION['encPassword'] = $encPassword;
+                      $_SESSION['gender'] = $gender;
+                      // header("Location: createUser.php");
+                    }else {
+                      header("Location: ../register/?errorMessage=Select Gender&id=GNS");
+                    }
                   }else {
                     header("Location: ../register/?errorMessage=Password Minimum Length is 8 letters&id=PMS");
                   }
@@ -75,13 +82,13 @@ if (isset($_POST)) {
       }
 
     }else {
-      header("Location: ../register");
+      header("Location: ../register?error=01");
     }
   }else {
-    header("Location: ../register");
+    header("Location: ../register?error=02");
   }
 }else {
-  header("Location: ../register");
+  header("Location: ../register?error=03");
 }
 
 // Validate Username

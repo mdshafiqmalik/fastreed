@@ -1,6 +1,11 @@
 <?php
 // Send OTP
-function sendOTP($userEmail, $userID, $randOTP, $userFullName){
+function sendOTP($userEmail, $userID, $randOTP, $userFullName, $gender){
+  if ($gender = 'male') {
+    $sal = 'Hello! Mr. ';
+  }else {
+    $sal = 'Dear ';
+  }
   $message = "
   <html>
     <head>
@@ -62,7 +67,7 @@ function sendOTP($userEmail, $userID, $randOTP, $userFullName){
     <body>
       <div id='cont'>
         <div id='message'>
-            Dear <b>".$userFullName." </b><br><br>
+            ".$sal."<b>".$userFullName." </b><br><br>
             One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
             <div id='OTP'>
               <span id='cpOTP'>".$randOTP." </span>

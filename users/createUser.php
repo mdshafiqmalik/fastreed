@@ -15,15 +15,16 @@ if (count($_SESSION) > 0)  {
   $fullName = $_SESSION['fullName'];
   $username = $_SESSION['userName'];
   $encPassword = $_SESSION['encPassword'];
+  $gender = $_SESSION['gender'];
 
   if (addOTP($link, $newUserID, $randOTP,$email,$expTime)) {
-   if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword)) {
+   if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword, $gender)) {
      include 'mail/avOTP.php';
      include '../_.config/sjdhfjsadkeys.php';
      $encUID = openssl_encrypt($newUserID, $ciphering,
      $encryption_key, $options, $encryption_iv);
 
-     if (sendOTP($email, $encUID, $randOTP, $fullName)) { //sendOTP($email, $newUserID, $randOTP, $fullName)
+     if (sendOTP($email, $encUID, $randOTP, $fullName, $gender)) { //sendOTP($email, $newUserID, $randOTP, $fullName)
 
        header("Location: verify.php?_secRandID=$encUID");
      }else {
@@ -61,7 +62,7 @@ function addOTP($link,$newUserID, $randOTP,$email,$expTime){
 
 
 // Add user to Database
-function addUser($link, $newUserID, $username, $fullName, $email, $password, $encPass){
+function addUser($link, $newUserID, $username, $fullName, $email, $password, $encPass, $gender){
   $checkEmail = "SELECT userEmail FROM user_noverify Where userEmail = '$email'";
   $res = mysqli_query($link, $checkEmail);
   if ($res) {
@@ -69,7 +70,7 @@ function addUser($link, $newUserID, $username, $fullName, $email, $password, $en
     mysqli_query($link, $delRecord);
   }
 
-  $addUser = "INSERT INTO `user_noverify` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`,`ePassword`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password', '$encPass')";
+  $addUser = "INSERT INTO `user_noverify` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`,`ePassword`, `gender`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password', '$encPass', '$gender')";
   $result = mysqli_query($link, $addUser);
   if ($result) {
     $userAdded = true;
