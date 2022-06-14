@@ -67,7 +67,7 @@ function sendOTP($userEmail, $userID, $randOTP, $userFullName, $gender){
     <body>
       <div id='cont'>
         <div id='message'>
-            ".$sal."<b>".$userFullName." </b><br><br>
+            <b>".$sal.$userFullName." </b><br><br>
             One Time Password(OTP) for account verification is: <b>(valid for 10 minutes only)</b>
             <div id='OTP'>
               <span id='cpOTP'>".$randOTP." </span>
