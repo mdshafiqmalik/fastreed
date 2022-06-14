@@ -1,16 +1,16 @@
 <?php
 session_start();
-$logID = $_COOKIE['logID'];
-var_dump($loginID);
-include '_.config/_s_db_.php';
-// $sql = "UPDATE `fast_logged_users` SET `status` = \'6\' WHERE `fast_logged_users`.`loginID` = '$logID'";
-// $result =mysqli_query($db, $sql);
-// if ($result) {
-//   unset($_SESSION['logID']);
-//   session_destroy();
-//   header("Location: login");
-// }else {
-//   var_dump("Cannot Logout");
-// }
+$ses = $_SESSION['logID'];
+include '../_.config/_s_db_.php';
+$sql = "UPDATE fast_logged_users SET status = 0 WHERE loginID = '$ses' ";
+var_dump($sql);
+$result =mysqli_query($db, $sql);
+if ($result) {
+  unset($_SESSION['logID']);
+  session_destroy();
+  header("Location: ../login?message=Sucesssfully Log out");
+}else {
+  var_dump("Cannot Logout");
+}
 
  ?>
