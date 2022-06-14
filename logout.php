@@ -1,4 +1,5 @@
 <?php
+session_start();
 $logID = $_COOKIE['logID'];
 include '_.config/_s_db_.php';
 var_dump($loginID);
