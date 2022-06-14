@@ -1,5 +1,4 @@
 <?php
-session_start();
 setcookie('logID', '', time() -3600, "/");
 include '_.config/_s_db_.php';
 $logID = $_SESSION['logID'];
