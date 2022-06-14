@@ -83,7 +83,6 @@ include '../components/uniSession.php';
       <input id="submitButton" type="submit" name="" value="Create Account">
     </div>
     <br>
-    <text>hello</text>
     <div class="or">
       <span class="">Or</span>
     </div>
