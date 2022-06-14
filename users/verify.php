@@ -294,14 +294,15 @@ function updateOTP($suid){
  $upOTPandTime = "UPDATE fast_otp SET sentOTP = '$randOTP', expTime = '$expTime' , sentDateTime = '$sentDateTime' WHERE userID = '$suid' AND otpIntent ='AV'";
  $result1 = mysqli_query($db, $upOTPandTime);
  if ($result1) {
-   $getEmailandFullName = "SELECT userEmail, userFullName FROM user_noverify WHERE userID ='$suid'";
+   $getEmailandFullName = "SELECT userEmail, userFullName, gender FROM user_noverify WHERE userID ='$suid'";
    $result2 = mysqli_query($db, $getEmailandFullName);
    if ($result2) {
      $arrayDat = $result2->fetch_assoc();
      $userFullName = $arrayDat['userFullName'];
      $userEmail = $arrayDat['userEmail'];
+     $userGender = $arrayDat['gender'];
      include 'mail/avOTP.php';
-     if (sendOTP($userEmail, $suid, $randOTP, $userFullName)) { //sendOTP($userEmail, $suid, $randOTP, $userFullName)
+     if (sendOTP($userEmail, $suid, $randOTP, $userFullName, $userGender)) { //sendOTP($userEmail, $suid, $randOTP, $userFullName)
        $otpResend = true;
      }else {
        $otpResend = false;
