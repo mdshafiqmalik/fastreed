@@ -49,8 +49,8 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
           <?php
           if (isset($_SERVER['HTTP_REFERER'])) {
             $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
-            $logout = ($red = '/logout/');
-            $home = ($red = '/');
+            $logout = ($red == '/logout/');
+            $home = ($red == '/');
             $register = ($red = '/register/');
 
             var_dump($logout);
