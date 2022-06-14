@@ -13,11 +13,7 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
     header("Location: ../profile/");
   }
 }
-if (isset($_SERVER['HTTP_REFERER'])) {
-  $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
-}else {
-  $red = '';
-}
+
 
 ?>
 
@@ -51,6 +47,14 @@ if (isset($_SERVER['HTTP_REFERER'])) {
               <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
             </span>
           </div>
+
+          <?php
+
+          if (isset($_SERVER['HTTP_REFERER'])) {
+            $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
+            echo '<input type="hidden" name="redirect" value="'.$red.'">';
+          }
+           ?>
           <div class="rememberMe"><input id="rememberMe" type="checkbox" name="rememberMe" value="true"> Remember Me</div>
           <div class="loginSubmit">
             <input type="submit" name="" value="LOGIN">
