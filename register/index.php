@@ -27,7 +27,7 @@ include '../components/uniSession.php';
       .Gender select{
         background: white;
         color: #444;
-        margin-left: 2em;
+        margin-left: 1.5em;
         border: 0;
         outline: 0;
         font-size: .8em;
@@ -70,9 +70,9 @@ include '../components/uniSession.php';
       <label for="gender">Gender</label>
       <select name="gender" id="gender"  required>
         <option value="0">SELECT</option>
-        <option value="male" >MALE</option>
-        <option value="female">FEMALE</option>
-        <option value="others" >OTHERS</option>
+        <option value="male" >Male</option>
+        <option value="female">Female</option>
+        <option value="others" >Other</option>
       </select>
     </div>
     <div class="tc">
@@ -80,7 +80,7 @@ include '../components/uniSession.php';
     <span id="tc">By clicking here I agree to the <a href=""> terms and services</a></span>
     </div>
     <div class="loginSubmit">
-      <input id="submitButton" type="submit" name="" value="SEND OTP">
+      <input id="submitButton" type="submit" name="" value="Create Account">
     </div>
     <br>
     <div class="or">
