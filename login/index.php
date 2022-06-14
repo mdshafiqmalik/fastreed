@@ -15,7 +15,6 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
 }
 if (isset($_SERVER['HTTP_REFERER'])) {
   $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
-  echo $red;
 }else {
   $red = '';
 }
