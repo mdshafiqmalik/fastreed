@@ -55,7 +55,7 @@ if (isset($_POST)) {
                       $_SESSION['passWord'] = $hashPassword;
                       $_SESSION['encPassword'] = $encPassword;
                       $_SESSION['gender'] = $gender;
-                      // header("Location: createUser.php");
+                      header("Location: createUser.php");
                     }else {
                       header("Location: ../register/?errorMessage=Select Gender&id=GNS");
                     }
