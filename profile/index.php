@@ -1,54 +1,30 @@
 <?php
 include '../components/randVersion.php';
-if(isset($_COOKIE['uisnnue'])) {
-  if (!empty($_COOKIE['uisnnue'])) {
+if(isset($_COOKIE['logID'])) {
+  if (!empty($_COOKIE['logID'])) {
     include '../_.config/sjdhfjsadkeys.php';
-    $dUserID = openssl_decrypt ($_COOKIE['uisnnue'], $ciphering,
+    $dUserID = openssl_decrypt ($_COOKIE['logID'], $ciphering,
     $decryption_key, $options, $decryption_iv);
-    $_SESSION["uisnnue"] = $dUserID;
-    if (checkUserID($_SESSION["uisnnue"])) {
-      renderProfile($_SESSION['uisnnue']);
+    $_SESSION["logID"] = $dUserID;
+    if ($userID = checkLogDetails($_SESSION['logID'])) {
+      renderProfile($userID);
     }else {
       echo '<script type="text/javascript">
-        document.location = "../login/?code=001UNF";
+        document.location = "../login/?code=001LIDNF";
       </script>';
     }
   }else {
     echo '<script type="text/javascript">
-      document.location = "../login/?code=002UNF";
+      document.location = "../login/?code=002LIDNF";
     </script>';
   }
 
-}elseif (isset($_SESSION['uisnnue']) && isset($_GET['eikooCtes'])) {
-  if ((boolean)$_GET['eikooCtes'] == true) {
-    if (checkUserID($_SESSION['uisnnue'])) {
-      include '../_.config/sjdhfjsadkeys.php';
-      $encUID = openssl_encrypt($_SESSION['uisnnue'], $ciphering,
-      $encryption_key, $options, $encryption_iv);
-      setcookie('uisnnue', $encUID, time()+(86400*30), '/');
-      $u = $_SESSION['uisnnue'];
-      renderProfile($u);
-    }else {
-      var_dump('user not exist');
-      // echo '<script type="text/javascript">
-      //   document.location = "../login?code=0003UNF";
-      // </script>';
-    }
-  }else {
-    if (checkUserID($_SESSION['uisnnue'])) {
-      renderProfile($_SESSION['uisnnue']);
-    }else {
-      echo '<script type="text/javascript">
-        document.location = "../login?code=004UNF";
-      </script>';
-    }
-  }
-}elseif ($_SESSION["uisnnue"]) {
-  if (checkUserID($_SESSION["uisnnue"])) {
-    renderProfile($_SESSION['uisnnue']);
+}elseif ($_SESSION["logID"]) {
+  if ($userID =checkLogDetails($_SESSION["logID"])) {
+    renderProfile($userID);
   }else {
     echo '<script type="text/javascript">
-      document.location = "../login/?code=005UNF";
+      document.location = "../login/?code=005LIDNF";
     </script>';
   }
 }else {
@@ -61,16 +37,18 @@ if(isset($_COOKIE['uisnnue'])) {
 
 $GLOBALS['containerStart'] = '<div id="" class="container">';
 $GLOBALS['divStop'] = '</div>';
-function checkUserID($dUserID){
+
+
+function checkLogDetails($logID){
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-  $checkUserID = "SELECT userID FROM fast_users Where userID = '$dUserID'";
-  $userDat = mysqli_query($link, $checkUserID);
+  $checkLoginID = "SELECT userID FROM fast_logged_users Where loginID = '$logID' AND status = '4'";
+  $userDat = mysqli_query($db, $checkLoginID);
   if (mysqli_num_rows($userDat)) {
-    $exist = true;
+    $row = $userDat->fetch_assoc();
+    $exist = $row['userID'];
   }else {
-    setcookie('uisnnue', '', time() -3600, "/");
-    unset($_SESSION['uisnnue']);
+    setcookie('logID', '', time() -3600, "/");
+    unset($_SESSION['logID']);
     $exist = false;
   }
   return $exist;

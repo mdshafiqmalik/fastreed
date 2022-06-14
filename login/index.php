@@ -8,11 +8,18 @@ if (isset($_GET['message'])) {
   $Message = '';
 }
 
-if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
-  if (!empty($_COOKIE['uisnnue'])) {
+if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
+  if (!empty($_COOKIE['logID'])) {
     header("Location: ../profile/");
   }
 }
+if (isset($_SERVER['HTTP_REFERER'])) {
+  $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
+  echo $red;
+}else {
+  $red = '';
+}
+
 ?>
 
 <!DOCTYPE html>

@@ -43,33 +43,28 @@ if (isset($_GET['_secRandID'])) {
       if (authenticateOTP($userID , $OTP)) {
         if (!checkOTPEXP($userID)) {
           if (delOTP($userID)) {
-            if (verifyUser($userID)) {
-              include '../_.config/sjdhfjsadkeys.php';
-              $encUID = openssl_encrypt($userID, $ciphering,
-              $encryption_key, $options, $encryption_iv);
-              $_SESSION['uisnnue'] = $userID;
-              // setcookie('uisnnue', $encUID, time()+(86400*7), '/');
-              if (isset($_SESSION['uisnnue'])) {
-                $uID = $_SESSION['uisnnue'];
+            if (createUser($userID)) {
+              include '../_.config/_s_db_.php';
+              $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$userID'";
+              $userDetail = mysqli_query($db, $getUserDetail);
+              $userDetailArray = $userDetail->fetch_assoc();
+              $userName = $userDetailArray['userName'];
+              $userEmail = $userDetailArray['userEmail'];
 
-                include '../_.config/_s_db_.php';
-                $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$uID'";
-                $userDetail = mysqli_query($db, $getUserDetail);
-                $userDetailArray = $userDetail->fetch_assoc();
-                $userName = $userDetailArray['userName'];
-                $userEmail = $userDetailArray['userEmail'];
+              $getFullName = "SELECT * FROM user_cred WHERE userID = '$userID'";
+              $userFullN = mysqli_query($db, $getFullName);
+              $userFullName = $userFullN->fetch_assoc();
+              $UFN = $userFullName['userFullName'];
 
-                $getFullName = "SELECT * FROM user_cred WHERE userID = '$uID'";
-                $userFullN = mysqli_query($db, $getFullName);
-                $userFullName = $userFullN->fetch_assoc();
-                $UFN = $userFullName['userFullName'];
+              include 'mail/greetingMail.php';
+              greetingMail($UFN, $userName, $userEmail);
 
-                include 'mail/greetingMail.php';
-                greetingMail($UFN, $userName, $userEmail);
+              if ($logID = createLogin($userID)) {
+                $_SESSION['logID'] = $logID;
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
                 <script type="text/javascript">
-                  document.location = "../profile/?eikooCtes=true";
+                  document.location = "../profile/";
                 </script>';
               }else {
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
@@ -188,9 +183,32 @@ if (isset($_GET['_secRandID'])) {
 
 
 <?php
+// Create login Data
+function createLogin($userID){
+  $randLogID = random_str(32);
+  $logDate = date('y-m-d H:i:s');
+  ob_start();
+  system('ipconfig /all');
+  $mycom=ob_get_contents();
+  ob_clean();
+  $findme = "Physical";
+  $pmac = strpos($mycom, $findme);
+  $getMacAddress=substr($mycom,($pmac+36),17);
+  $getDeviceInfo = $_SERVER['HTTP_USER_AGENT'];
+  include '../_.config/_s_db_.php';
+  $sql = "INSERT INTO fast_logged_users (`loginID`,`userID`,`loginDateTime`,`loginDevice`,`macAddress`, `status`) VALUES ('$randLogID','$userID','$logDate','$getDeviceInfo','$getMacAddress', '4')";
+  $result = mysqli_query($db, $sql);
+  if ($result) {
+    $loginCreated = $randLogID;
+  }else {
+    $loginCreated = false;
+  }
+  return $loginCreated;
+}
+
 
 // Move User Data from no Verify to verified users
-function verifyUser($userID){
+function createUser($userID){
   include '../_.config/_s_db_.php';
   $sql = "SELECT * FROM user_noverify WHERE userID = '$userID'";
   $result = mysqli_query($db, $sql);
