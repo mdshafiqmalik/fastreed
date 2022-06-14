@@ -83,16 +83,9 @@ function sanitizeData($data) {
 function createLogin($userID){
   $randLogID = random_str(32);
   $logDate = date('y-m-d H:i:s');
-  ob_start();
-  system('ipconfig /all');
-  $mycom=ob_get_contents();
-  ob_clean();
-  $findme = "Physical";
-  $pmac = strpos($mycom, $findme);
-  $getMacAddress=substr($mycom,($pmac+36),17);
   $getDeviceInfo = $_SERVER['HTTP_USER_AGENT'];
   include '../_.config/_s_db_.php';
-  $sql = "INSERT INTO fast_logged_users (`loginID`,`userID`,`loginDateTime`,`loginDevice`,`macAddress`, `status`) VALUES ('$randLogID','$userID','$logDate','$getDeviceInfo','$getMacAddress', '1')";
+  $sql = "INSERT INTO fast_logged_users (`loginID`,`userID`,`loginDateTime`,`loginDevice`, `status`) VALUES ('$randLogID','$userID','$logDate','$getMacAddress', '1')";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $loginCreated = $randLogID;
