@@ -8,7 +8,7 @@ if (isset($_GET['message'])) {
   $Message = '';
 }
 
-if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
+if (isset($_SESSION["logID"]) || isset($_COOKIE["logID"])) {
   var_dump(true);
   if (!empty($_SESSION['logID'])) {
     var_dump(true);
