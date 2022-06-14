@@ -49,10 +49,9 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["uisnnue"])) {
           <?php
           if (isset($_SERVER['HTTP_REFERER'])) {
             $red = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
-            if ($red !=  '/logout/' || $red !=  '/') {
+            if (!$red== '/logout/' || !$red=='/' || !$red=='/register/') {
               echo '<input type="hidden" name="redirect" value="'.$red.'">';
             }
-
           }
            ?>
 
