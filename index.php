@@ -17,7 +17,7 @@ include 'components/randVersion.php';
         position: absolute;
         z-index: 9999;
         overflow: scroll;
-        padding-bottom: .5em;
+        padding-bottom: 2em;
       }
         .settings{
           width: 100%;
