@@ -70,7 +70,7 @@ include 'components/randVersion.php';
         }
       </style>
   </head>
-  <body>
+  <body style="overflow:hidden">
 
     <div class="set">
       <div style="background:#eee; border: 1px solid #ddd;" class="navigation">
