@@ -79,6 +79,9 @@ include 'components/randVersion.php';
           display: flex;
           align-items: center;
         }
+        .options span{
+          width: 100%;
+        }
         .options p img{
           right: 1.6em;
         }
@@ -111,42 +114,42 @@ include 'components/randVersion.php';
           </div>
 
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Edit Profile  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Edit Profile</span>   <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
 
           </div>
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Channels <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span> Channels</span> <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
 
           </div>
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Notification <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Notification</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
 
           </div>
 
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Edit Login Details <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Edit Login Details</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings label">
             <p>Others</p>
           </div>
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Terms <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Terms</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Privacy Policy <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Privacy Policy</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Contact Us </span> <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Help and Feedback</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
 
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Services <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Services</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings options">
-            <p> <img class="setting_icon"  alt=""> Log Out <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Log Out</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
         </div>
       </div>
