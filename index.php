@@ -12,13 +12,27 @@ include 'components/randVersion.php';
       <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
-      .set{
-        /* max-height: 100vh; */
+      .top{
         position: absolute;
-        z-index: 9999;
+        min-height: 100vh;
         height: 100%;
+        max-width: 500px;
+        width: 100%;
+        background-color: white;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .top2{
+        width: 100%;
+        height: 100%;
+        padding-bottom: .3em;
         overflow: scroll;
-        padding-bottom: 2em;
+      }
+      .top3{
+        height: auto;
+        width: 100%;
       }
         .settings{
           width: 100%;
@@ -61,79 +75,91 @@ include 'components/randVersion.php';
           color: #444;
           border-bottom: 1px solid #ddd;
           display: flex;
-          /* justify-content: center; */
           align-items: center;
         }
         .options p img{
-          float:right;
-          position: absolute;
           right: 1.6em;
         }
+
       </style>
   </head>
   <body style="overflow:hidden">
+    <div class="top">
+      <div style="border: 1px solid #ddd;" class="navigation">
+        <span> <a id="backArrow" href="../">&#171;</a> </span>
+      </div>
 
-    <div class="set">
-      <div style="background:#eee; border: 1px solid #ddd;" class="navigation">
+      <div class="top2">
+        <div class="top3">
+          <div class="settings">
+            <div class="profile">
+              <img height="110px" width="110px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
+              <span id="username">md_shafiq</span>
+            </div>
+
+          </div>
+
+          <div class="settings label">
+            <p>Accounts</p>
+          </div>
+
+          <div class="settings options">
+            <p>Edit Profile  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+
+          </div>
+          <div class="settings options">
+            <p>Channels <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+
+          </div>
+          <div class="settings options">
+            <p>Notification <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+
+          </div>
+
+          <div class="settings options">
+            <p>Edit Login Details <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
+          <div class="settings label">
+            <p>Others</p>
+          </div>
+          <div class="settings options">
+            <p>Terms <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
+          <div class="settings options">
+            <p>Privacy Policy <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
+          <div class="settings options">
+            <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
+          <div class="settings options">
+            <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
+
+          <div class="settings options">
+            <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
+          <div class="settings options">
+            <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="hes">
+
+      <div style="border: 1px solid #ddd;" class="navigation">
       <span> <a id="backArrow" href="../">&#171;</a> </span>
-     </div>
-      <div class="contain">
+      </div>
 
-      <div class="settings">
-        <div class="profile">
-          <img height="110px" width="110px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
-          <span id="username">md_shafiq</span>
+      <div class="set">
+        <div class="contain">
+
         </div>
 
       </div>
-
-      <div class="settings label">
-        <p>Accounts</p>
-      </div>
-
-      <div class="settings options">
-        <p>Edit Profile  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-
-      </div>
-      <div class="settings options">
-        <p>Channels <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-
-      </div>
-      <div class="settings options">
-        <p>Notification <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-
-      </div>
-
-      <div class="settings options">
-        <p>Edit Login Details <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-      </div>
-      <div class="settings label">
-        <p>Others</p>
-      </div>
-      <div class="settings options">
-        <p>Terms <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-      </div>
-      <div class="settings options">
-        <p>Privacy Policy <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-      </div>
-      <div class="settings options">
-        <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-      </div>
-      <div class="settings options">
-        <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-      </div>
-
-      <div class="settings options">
-        <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-      </div>
-      <div class="settings options">
-        <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-      </div>
-
-      </div>
-
-    </div>
-
+    </div> -->
     <div class="mainCont">
       <!-- include Header -->
     <?php include 'components/header.php';?>
