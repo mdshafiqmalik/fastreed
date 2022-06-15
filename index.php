@@ -37,7 +37,6 @@ include 'components/randVersion.php';
         padding-bottom: 3em;
       }
         .settings{
-          width: 100%;
           max-width: 500px;
         }
         .gotoprofile{
