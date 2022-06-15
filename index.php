@@ -101,7 +101,7 @@ include 'components/randVersion.php';
   </head>
   <body style="overflow:hidden">
     <div id="top" class="top">
-      <div style=" border:1px solid #eee; font-weight: bold;flex-direction:row-reverse;" class="navigation">
+      <div style=" border:1px solid #ccc; font-weight: bold;flex-direction:row-reverse;" class="navigation">
         <span onclick="renderHome()"style=" margin-right: 1.2em;font-size: 1.5em;"> &#9587; </span>
       </div>
 
@@ -114,7 +114,7 @@ include 'components/randVersion.php';
               <a id="profilelink" href="#">View Your Profile</a>
             </span>
           </div>
-
+          <br><br>
           <div class="settings options">
             <p> <span>Edit Profile</span>   </p>
           </div>
