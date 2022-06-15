@@ -52,6 +52,14 @@ include 'components/randVersion.php';
           background: white;
           color: #444;
           border-bottom: 1px solid #ddd;
+          display: flex;
+          /* justify-content: center; */
+          align-items: center;
+        }
+        .options p img{
+          float:right;
+          position: absolute;
+          right: 1.6em;
         }
       </style>
   </head>
@@ -73,32 +81,36 @@ include 'components/randVersion.php';
     </div>
 
     <div class="settings options">
-      <p>Edit Profile</p>
+      <p>Edit Profile  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+
     </div>
     <div class="settings options">
-      <p>Channels</p>
+      <p>Channels <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+
     </div>
     <div class="settings options">
-      <p>Notification</p>
+      <p>Notification <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+
     </div>
 
     <div class="settings options">
-      <p>Edit Login Details</p>
+      <p>Edit Login Details <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
     </div>
     <div class="settings label">
       <p>Others</p>
     </div>
     <div class="settings options">
-      <p>Terms</p>
+      <p>Terms <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
     </div>
     <div class="settings options">
-      <p>Privacy Policy</p>
+      <p>Privacy Policy <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
     </div>
     <div class="settings options">
-      <p>Contact Us</p>
+      <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
     </div>
     <div class="settings options">
-      <p>Help and Feedback</p>
+      <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+
     </div>
     </div>
 
