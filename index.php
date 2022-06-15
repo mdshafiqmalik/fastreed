@@ -101,8 +101,8 @@ include 'components/randVersion.php';
   </head>
   <body style="overflow:hidden">
     <div id="top" class="top">
-      <div style=" border:1px solid #ccc; font-weight: bold;flex-direction:row-reverse;" class="navigation">
-        <span onclick="renderHome()"style=" margin-right: 1.2em;font-size: 1.5em;"> &#9587; </span>
+      <div style=" border:1px solid #ccc; flex-direction:row-reverse;" class="navigation">
+        <span onclick="renderHome()"style=" margin-right: 1.5em;font-size: 1.5em;"> &#9587; </span>
       </div>
 
       <div class="top2">
