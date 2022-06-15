@@ -39,7 +39,7 @@ include 'components/randVersion.php';
         }
         .settings .profile{
           background: #eee;
-          min-height: 10em;
+          min-height: 1em;
           display: flex;
           justify-content: center;
           align-items: center;
