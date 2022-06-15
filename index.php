@@ -14,7 +14,7 @@ include 'components/randVersion.php';
       <style media="screen">
       .top{
         position: absolute;
-        min-height: 100vh;
+        min-height: 110vh;
         height: 100%;
         max-width: 500px;
         width: 100%;
@@ -32,7 +32,7 @@ include 'components/randVersion.php';
       }
       .top3{
         height: auto;
-        width: 100%;
+        width: 115%;
       }
         .settings{
           width: 100%;
