@@ -110,7 +110,7 @@ include 'components/randVersion.php';
           </div>
           <hr>
           <div class="settings options">
-            <p> <span>Your preferences</span>   </p>
+            <p> <span>Your interests</span>   </p>
           </div>
           <div class="settings options">
             <p> <span>Languages</span>   </p>
