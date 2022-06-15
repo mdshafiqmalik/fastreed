@@ -16,6 +16,7 @@ include 'components/randVersion.php';
         /* max-height: 100vh; */
         position: absolute;
         z-index: 9999;
+        height: 100%;
         overflow: scroll;
         padding-bottom: 2em;
       }
