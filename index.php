@@ -20,7 +20,7 @@ include 'components/randVersion.php';
         width: 100%;
         background-color: white;
         z-index: 9999;
-        display: flex;
+        display: none;
         align-items: center;
         flex-direction: column;
         overflow: hidden;
