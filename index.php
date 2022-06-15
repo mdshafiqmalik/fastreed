@@ -141,7 +141,12 @@ include 'components/randVersion.php';
           <div class="settings options">
             <p>Log Out <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
-
+          <div class="settings options">
+            <p>Services <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
+          <div class="settings options">
+            <p>Log Out <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+          </div>
         </div>
       </div>
     </div>
