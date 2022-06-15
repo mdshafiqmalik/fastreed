@@ -34,7 +34,7 @@ include 'components/randVersion.php';
       .top3{
         height: auto;
         width: 100%;
-        padding: 1em;
+        padding-bottom: 2em;
       }
         .settings{
           width: 100%;
