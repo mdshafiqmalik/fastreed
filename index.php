@@ -31,9 +31,9 @@ include 'components/randVersion.php';
         }
         .label{
           background: #eee;
-
         }
         .label p{
+          color:#444;
           font-weight: bold;
           padding: .7em;
           padding-left: 1em;
