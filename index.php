@@ -27,7 +27,7 @@ include 'components/randVersion.php';
       .top2{
         width: 100%;
         height: 100%;
-        padding-bottom: .3em;
+        padding-bottom: .6em;
         overflow: scroll;
       }
       .top3{
@@ -136,10 +136,10 @@ include 'components/randVersion.php';
           </div>
 
           <div class="settings options">
-            <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p>Services <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings options">
-            <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p>Log Out <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
 
         </div>
