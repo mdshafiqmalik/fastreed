@@ -23,6 +23,7 @@ include 'components/randVersion.php';
         display: flex;
         align-items: center;
         flex-direction: column;
+        overflow: hidden;
       }
       .top2{
         width: 100%;
