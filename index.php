@@ -18,7 +18,7 @@ include 'components/randVersion.php';
         }
         .settings .profile{
           background: #eee;
-          min-height: 12em;
+          min-height: 15em;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -27,7 +27,13 @@ include 'components/randVersion.php';
         .settings .profile img{
           border: 7px solid white;
           outline: 0;
-          border-radius: 80px;
+          border-radius: 100px;
+        }
+        .profile #username{
+          background: none;
+          font-weight: bold;
+          font-size: 1.1em;
+          margin-top: .3em;
         }
         .label{
           background: #eee;
@@ -35,16 +41,17 @@ include 'components/randVersion.php';
         .label p{
           color:#444;
           font-weight: bold;
-          padding: .7em;
+          padding: .8em;
           padding-left: 1em;
+          font-size: 1.2em;
         }
         .options p{
+          font-size: 1.1em;
           font-weight: bold;
-          padding: .7em;
-          padding-left: 1.6em;
+          padding: .8em 1.6em;
           background: white;
           color: #444;
-          border-bottom: 1px solid #eee;
+          border-bottom: 1px solid #ddd;
         }
       </style>
   </head>
@@ -55,8 +62,10 @@ include 'components/randVersion.php';
      </div>
     <div class="settings">
       <div class="profile">
-        <img height="100px" width="100px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
+        <img height="110px" width="110px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
+        <span id="username">md_shafiq</span>
       </div>
+
     </div>
 
     <div class="settings label">
