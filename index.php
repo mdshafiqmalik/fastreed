@@ -42,8 +42,8 @@ include 'components/randVersion.php';
         .gotoprofile{
           display: flex;
           align-items: center;
-          border-bottom: 1px solid #eee;
-          padding: 0.5em 1.6em;
+          border-bottom: 1px solid #aaa;
+          padding: 0.3em 1.6em .8em 1.6em;
         }
         .gotoprofile img{
           border-radius: 5px;
@@ -101,7 +101,7 @@ include 'components/randVersion.php';
   </head>
   <body style="overflow:hidden">
     <div id="top" class="top">
-      <div style=" border:1px solid #ccc; flex-direction:row-reverse;" class="navigation">
+      <div style=" border:0; flex-direction:row-reverse;" class="navigation">
         <span onclick="renderHome()"style=" margin-right: 1.5em;font-size: 1.5em;"> &#9587; </span>
       </div>
 
@@ -114,7 +114,6 @@ include 'components/randVersion.php';
               <a id="profilelink" href="#">View Your Profile</a>
             </span>
           </div>
-          <br><br>
           <div class="settings options">
             <p> <span>Edit Profile</span>   </p>
           </div>
