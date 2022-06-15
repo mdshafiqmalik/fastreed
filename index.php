@@ -42,7 +42,6 @@ include 'components/randVersion.php';
         .gotoprofile{
           display: flex;
           align-items: center;
-          border-bottom: 1px solid #aaa;
           padding: 0.3em 1.6em .8em 1.6em;
         }
         .gotoprofile img{
@@ -77,7 +76,7 @@ include 'components/randVersion.php';
           font-size: 1.1em;
           padding: 1em 2em;
           background: white;
-          color: #444;
+          color: #222;
           display: flex;
           align-items: center;
         }
