@@ -167,7 +167,7 @@ function renderProfile($UID){
   </head>
   <body>
     <div class="navigation">
-      <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
+      <span> <a id="backArrow" href="../">&#171;  <span>Home</span></a> </span>
     </div>
     <?php
     if (isset($GLOBALS['profile'])) {

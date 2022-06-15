@@ -25,7 +25,7 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["logID"])) {
   </head>
   <body>
     <div class="navigation">
-      <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
+      <span> <a id="backArrow" href="../">&#171;  <span>Home</span></a> </span>
     </div>
     <div id="userDiv" class="cont">
       <div class="content">

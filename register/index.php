@@ -37,8 +37,17 @@ include '../components/uniSession.php';
     </style>
   </head>
   <body>
+    <?php
+
+    if (isset($_SERVER['HTTP_REFERER'])) {
+      $back = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
+    }else {
+      $back = '../';
+    }
+
+     ?>
     <div class="navigation">
-      <span> <a id="backArrow" href="../">&#171;  <span>Back</span></a> </span>
+      <span> <a id="backArrow" href="<?php echo $back; ?>">&#171;  <span>Back</span></a> </span>
     </div>
 
     <div id="userDiv" class="cont">

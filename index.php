@@ -8,10 +8,91 @@ include 'components/randVersion.php';
       <meta name="robots" content="noindex">
       <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
       <link rel="stylesheet" href="assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
+      <link rel="stylesheet" href="users/src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
       <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
+      <style media="screen">
+        .settings{
+          width: 100%;
+          max-width: 500px;
+        }
+        .settings .profile{
+          background: #eee;
+          min-height: 12em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .settings .profile img{
+          border: 7px solid white;
+          outline: 0;
+          border-radius: 80px;
+        }
+        .label{
+          background: #eee;
+
+        }
+        .label p{
+          font-weight: bold;
+          padding: .7em;
+          padding-left: 1em;
+        }
+        .options p{
+          font-weight: bold;
+          padding: .7em;
+          padding-left: 1.6em;
+          background: white;
+          color: #444;
+          border-bottom: 1px solid #eee;
+        }
+      </style>
   </head>
   <body>
+    <div class="">
+      <div style="background:#eee; border: 1px solid #ddd;" class="navigation">
+      <span> <a id="backArrow" href="../">&#171;</a> </span>
+     </div>
+    <div class="settings">
+      <div class="profile">
+        <img height="100px" width="100px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="settings label">
+      <p>Accounts</p>
+    </div>
+
+    <div class="settings options">
+      <p>Edit Profile</p>
+    </div>
+    <div class="settings options">
+      <p>Channels</p>
+    </div>
+    <div class="settings options">
+      <p>Notification</p>
+    </div>
+
+    <div class="settings options">
+      <p>Edit Login Details</p>
+    </div>
+    <div class="settings label">
+      <p>Others</p>
+    </div>
+    <div class="settings options">
+      <p>Terms</p>
+    </div>
+    <div class="settings options">
+      <p>Privacy Policy</p>
+    </div>
+    <div class="settings options">
+      <p>Contact Us</p>
+    </div>
+    <div class="settings options">
+      <p>Help and Feedback</p>
+    </div>
+    </div>
+
     <div class="mainCont">
       <!-- include Header -->
     <?php include 'components/header.php';?>
