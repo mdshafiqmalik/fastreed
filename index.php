@@ -12,76 +12,7 @@ include 'components/randVersion.php';
       <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
-      .top{
-        position: absolute;
-        min-height: 100vh;
-        height: 100%;
-        max-width: 500px;
-        width: 100%;
-        background-color: white;
-        z-index: 9999;
-        display: none;
-        align-items: center;
-        flex-direction: column;
-        overflow: hidden;
-      }
-      .top2{
-        width: 100%;
-        height: 100%;
-        padding-bottom: .6em;
-        overflow: scroll;
-      }
-      .top3{
-        height: auto;
-        width: 100%;
-        padding-bottom: 3em;
-      }
-        .settings{
-          max-width: 500px;
-        }
-        .gotoprofile{
-          display: flex;
-          align-items: center;
-          padding: 0.3em 1.6em .8em 1.6em;
-        }
-        .gotoprofile img{
-          border-radius: 5px;
-          border: 1px solid #aaa;
-        }
-        .gotoprofile span{
-          margin-left: 1em;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-        .gotoprofile span p{
-          height: 100%;
-        }
-        .gotoprofile span #name{
-          padding: .2em 0;
-          font-size: 1.3em;
-        }
-        .gotoprofile span #profilelink{
-          text-decoration: none;
-          padding: .2em 0;
-        }
-        .profile #username{
-          background: none;
-          font-weight: bold;
-          font-size: 1.1em;
-          margin-top: .3em;
-        }
-        .options p{
-          font-size: 1.1em;
-          padding: 1em 2em;
-          background: white;
-          color: #222;
-          display: flex;
-          align-items: center;
-        }
-        .options span{
-          width: 100%;
-        }
+      
       </style>
   </head>
   <body>
