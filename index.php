@@ -65,7 +65,7 @@ include 'components/randVersion.php';
           font-weight: bold;
         }
         .gotoprofile span #profilelink{
-          color:  #444;
+
           text-decoration: none;
           padding: .2em 0;
         }
