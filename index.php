@@ -100,9 +100,9 @@ include 'components/randVersion.php';
       </style>
   </head>
   <body style="overflow:hidden">
-    <div class="top">
+    <div id="top" class="top">
       <div style=" border:1px solid #eee; font-weight: bold;flex-direction:row-reverse;" class="navigation">
-        <span style=" margin-right: 1.2em;font-size: 1.5em;"> &#9587; </span>
+        <span onclick="renderHome()"style=" margin-right: 1.2em;font-size: 1.5em;"> &#9587; </span>
       </div>
 
       <div class="top2">
@@ -116,55 +116,31 @@ include 'components/randVersion.php';
           </div>
 
           <div class="settings options">
-            <p> <span>Edit Profile</span>   <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-
+            <p> <span>Edit Profile</span>   </p>
           </div>
           <div class="settings options">
-            <p> <span> Channels</span> <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-
+            <p> <span> About Us</span> </p>
           </div>
           <div class="settings options">
-            <p> <span>Notification</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-
-          </div>
-
-          <div class="settings options">
-            <p> <span>Edit Login Details</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Contact Us </span> </p>
           </div>
           <div class="settings options">
-            <p> <span>Services</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span> Privacy Policy </span>  </p>
           </div>
           <div class="settings options">
-            <p> <span>Contact Us </span> <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Security & Login</span>  </p>
           </div>
           <div class="settings options">
-            <p> <span> Privacy Policy </span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Help & Feedback</span>  </p>
           </div>
 
           <div class="settings options">
-            <p> <span>Help and Feedback</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Log Out</span>  </p>
           </div>
-          <div class="settings options">
-            <p> <span>Log Out</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-          </div>
+
         </div>
       </div>
     </div>
-
-
-    <!-- <div class="hes">
-
-      <div style="border: 1px solid #ddd;" class="navigation">
-      <span> <a id="backArrow" href="../">&#171;</a> </span>
-      </div>
-
-      <div class="set">
-        <div class="contain">
-
-        </div>
-
-      </div>
-    </div> -->
     <div class="mainCont">
       <!-- include Header -->
     <?php include 'components/header.php';?>
@@ -196,4 +172,14 @@ include 'components/randVersion.php';
     </div>
     </div>
   </body>
+  <script type="text/javascript">
+    function renderHome(){
+      var x= document.getElementById('top');
+      x.style.display ="none";
+    }
+     function renderMenu(){
+       var x= document.getElementById('top');
+       x.style.display ="flex";
+     }
+  </script>
 </html>
