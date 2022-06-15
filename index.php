@@ -42,15 +42,32 @@ include 'components/randVersion.php';
         }
         .gotoprofile{
           display: flex;
-          justify-content: center;
-          /* align-items: center; */
-          flex-direction: column;
+          align-items: center;
           border-bottom: 1px solid #eee;
           padding: 0.5em 1.6em;
         }
         .gotoprofile img{
           border-radius: 5px;
           border: 1px solid #aaa;
+        }
+        .gotoprofile span{
+          margin-left: 1em;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .gotoprofile span p{
+          height: 100%;
+        }
+        .gotoprofile span #name{
+          padding: .2em 0;
+          font-size: 1.3em;
+          font-weight: bold;
+        }
+        .gotoprofile span #profilelink{
+          color:  #444;
+          text-decoration: none;
+          padding: .2em 0;
         }
         .profile #username{
           background: none;
@@ -92,7 +109,11 @@ include 'components/randVersion.php';
       <div class="top2">
         <div class="top3">
           <div class="settings gotoprofile">
-            <img width="40px" height="55px"src="uploads/users/default/female/open_head.jpg" alt="">
+            <img width="45px" height="60px"src="uploads/users/default/female/open_head.jpg" alt="">
+            <span>
+              <p id="name">Jhon Doe</p>
+              <a id="profilelink" href="#">View Your Profile</a>
+            </span>
           </div>
 
           <div class="settings options">
