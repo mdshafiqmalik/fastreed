@@ -64,7 +64,6 @@ include 'components/randVersion.php';
           font-weight: bold;
         }
         .gotoprofile span #profilelink{
-
           text-decoration: none;
           padding: .2em 0;
         }
@@ -79,23 +78,12 @@ include 'components/randVersion.php';
           padding: 1em 2em;
           background: white;
           color: #444;
-          border-bottom: 1px solid #eee;
           display: flex;
           align-items: center;
         }
         .options span{
           width: 100%;
         }
-        .options p img{
-          right: 1.6em;
-        }
-        .setting_icon{
-          margin-right: .4em;
-          width: 25px;
-          height: 25px;
-          border-radius: 8px;
-        }
-
       </style>
   </head>
   <body>
@@ -114,8 +102,29 @@ include 'components/randVersion.php';
             </span>
           </div>
           <div class="settings options">
-            <p> <span>Edit Profile</span>   </p>
+            <p> <span>Write an article</span>   </p>
           </div>
+          <div class="settings options">
+            <p> <span>Update profile</span>   </p>
+          </div>
+          <div class="settings options">
+            <p> <span>Your channels</span>   </p>
+          </div>
+          <hr>
+          <div class="settings options">
+            <p> <span>Your preferences</span>   </p>
+          </div>
+          <div class="settings options">
+            <p> <span>Languages</span>   </p>
+          </div>
+          <div class="settings options">
+            <p> <span>Update profile</span>   </p>
+          </div>
+          <div class="settings options">
+            <p> <span>Security & Login</span>  </p>
+          </div>
+          <hr>
+
           <div class="settings options">
             <p> <span> About Us</span> </p>
           </div>
@@ -125,9 +134,7 @@ include 'components/randVersion.php';
           <div class="settings options">
             <p> <span> Privacy Policy </span>  </p>
           </div>
-          <div class="settings options">
-            <p> <span>Security & Login</span>  </p>
-          </div>
+
           <div class="settings options">
             <p> <span>Help & Feedback</span>  </p>
           </div>
