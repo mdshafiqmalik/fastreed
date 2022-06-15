@@ -80,7 +80,7 @@ include 'components/randVersion.php';
   <body style="overflow:hidden">
     <div class="top">
       <div style=" border:1px solid #eee; font-weight: bold;flex-direction:row-reverse;" class="navigation">
-        <span style=" margin-right: 1.2em;font-size: 2em;"> &#9587; </span>
+        <span style=" margin-right: 1.2em;font-size: 1.5em;"> &#9587; </span>
       </div>
 
       <div class="top2">
