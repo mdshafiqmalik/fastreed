@@ -99,7 +99,7 @@ include 'components/randVersion.php';
 
       </style>
   </head>
-  <body style="overflow:hidden">
+  <body>
     <div id="top" class="top">
       <div style=" border:0; flex-direction:row-reverse;" class="navigation">
         <span onclick="renderHome()"style=" margin-right: 1.5em;font-size: 1.5em;"> &#9587; </span>
@@ -175,12 +175,12 @@ include 'components/randVersion.php';
     function renderHome(){
       var x= document.getElementById('top');
       x.style.display ="none";
-      document.getElementsByTagName('body').style.overflow = 'scroll';
+      document.getElementsByTagName('body')[0].style.overflow = 'scroll';
     }
      function renderMenu(){
        var x= document.getElementById('top');
        x.style.display ="flex";
-       document.getElementsByTagName('body').style.overflow = 'hidden';
+       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
      }
   </script>
 </html>
