@@ -76,8 +76,7 @@ include 'components/randVersion.php';
         }
         .options p{
           font-size: 1.1em;
-          font-weight: bold;
-          padding: .8em 1.6em;
+          padding: 1em 2em;
           background: white;
           color: #444;
           border-bottom: 1px solid #eee;
@@ -111,7 +110,7 @@ include 'components/randVersion.php';
             <img width="45px" height="60px"src="uploads/users/default/female/open_head.jpg" alt="">
             <span>
               <p id="name">Jhon Doe</p>
-              <a id="profilelink" href="#">View Your Profile</a>
+              <a id="profilelink" href="#">View your profile</a>
             </span>
           </div>
           <div class="settings options">
