@@ -13,9 +13,11 @@ include 'components/randVersion.php';
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
       .set{
-        min-height: 110vh;
+        max-height: 110vh;
         position: absolute;
         z-index: 9999;
+        overflow: scroll;
+        padding-bottom: .5em;
       }
         .settings{
           width: 100%;
@@ -69,54 +71,66 @@ include 'components/randVersion.php';
       </style>
   </head>
   <body>
+
     <div class="set">
       <div style="background:#eee; border: 1px solid #ddd;" class="navigation">
       <span> <a id="backArrow" href="../">&#171;</a> </span>
      </div>
-    <div class="settings">
-      <div class="profile">
-        <img height="110px" width="110px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
-        <span id="username">md_shafiq</span>
+      <div class="contain">
+
+      <div class="settings">
+        <div class="profile">
+          <img height="110px" width="110px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
+          <span id="username">md_shafiq</span>
+        </div>
+
       </div>
 
-    </div>
+      <div class="settings label">
+        <p>Accounts</p>
+      </div>
 
-    <div class="settings label">
-      <p>Accounts</p>
-    </div>
+      <div class="settings options">
+        <p>Edit Profile  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
 
-    <div class="settings options">
-      <p>Edit Profile  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
+      <div class="settings options">
+        <p>Channels <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
 
-    </div>
-    <div class="settings options">
-      <p>Channels <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
+      <div class="settings options">
+        <p>Notification <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
 
-    </div>
-    <div class="settings options">
-      <p>Notification <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
 
-    </div>
+      <div class="settings options">
+        <p>Edit Login Details <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
+      <div class="settings label">
+        <p>Others</p>
+      </div>
+      <div class="settings options">
+        <p>Terms <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
+      <div class="settings options">
+        <p>Privacy Policy <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
+      <div class="settings options">
+        <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
+      <div class="settings options">
+        <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
 
-    <div class="settings options">
-      <p>Edit Login Details <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-    </div>
-    <div class="settings label">
-      <p>Others</p>
-    </div>
-    <div class="settings options">
-      <p>Terms <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-    </div>
-    <div class="settings options">
-      <p>Privacy Policy <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-    </div>
-    <div class="settings options">
-      <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-    </div>
-    <div class="settings options">
-      <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      <div class="settings options">
+        <p>Contact Us <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
+      <div class="settings options">
+        <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+      </div>
 
-    </div>
+      </div>
+
     </div>
 
     <div class="mainCont">
