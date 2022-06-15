@@ -13,7 +13,7 @@ include 'components/randVersion.php';
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
       .set{
-        max-height: 110vh;
+        max-height: 100vh;
         position: absolute;
         z-index: 9999;
         overflow: scroll;
