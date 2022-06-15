@@ -33,7 +33,7 @@ include 'components/randVersion.php';
       }
       .top3{
         height: auto;
-        width: 100%;
+        width: 110%;
       }
         .settings{
           width: 100%;
