@@ -40,18 +40,11 @@ include 'components/randVersion.php';
           width: 100%;
           max-width: 500px;
         }
-        .settings .profile{
-          background: #eee;
-          min-height: 15em;
+        .gotoprofile{
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
-        }
-        .settings .profile img{
-          border: 7px solid white;
-          outline: 0;
-          border-radius: 100px;
         }
         .profile #username{
           background: none;
@@ -59,23 +52,13 @@ include 'components/randVersion.php';
           font-size: 1.1em;
           margin-top: .3em;
         }
-        .label{
-          background: #eee;
-        }
-        .label p{
-          color:#444;
-          font-weight: bold;
-          padding: .8em;
-          padding-left: 1em;
-          font-size: 1.2em;
-        }
         .options p{
           font-size: 1.1em;
           font-weight: bold;
           padding: .8em 1.6em;
           background: white;
           color: #444;
-          border-bottom: 1px solid #ddd;
+          border-bottom: 1px solid #eee;
           display: flex;
           align-items: center;
         }
@@ -96,21 +79,14 @@ include 'components/randVersion.php';
   </head>
   <body style="overflow:hidden">
     <div class="top">
-      <div style="border: 1px solid #ddd;" class="navigation">
-        <span> <a id="backArrow" href="../">&#171;</a> </span>
+      <div style=" border:1px solid #eee; font-weight: bold;flex-direction:row-reverse;" class="navigation">
+        <span style=" margin-right: 1.2em;font-size: 1em;"> &#9587; </span>
       </div>
 
       <div class="top2">
         <div class="top3">
-          <div class="settings">
-            <div class="profile">
-              <img height="110px" width="110px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
-              <span id="username">md_shafiq</span>
-            </div>
-          </div>
+          <div class="settings gotoprofile">
 
-          <div class="settings label">
-            <p>Accounts</p>
           </div>
 
           <div class="settings options">
@@ -129,24 +105,18 @@ include 'components/randVersion.php';
           <div class="settings options">
             <p> <span>Edit Login Details</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
-          <div class="settings label">
-            <p>Others</p>
-          </div>
           <div class="settings options">
-            <p> <span>Terms</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-          </div>
-          <div class="settings options">
-            <p> <span>Privacy Policy</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Services</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings options">
             <p> <span>Contact Us </span> <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings options">
-            <p> <span>Help and Feedback</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span> Privacy Policy </span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
 
           <div class="settings options">
-            <p> <span>Services</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
+            <p> <span>Help and Feedback</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
           <div class="settings options">
             <p> <span>Log Out</span>  <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
