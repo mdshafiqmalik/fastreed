@@ -34,7 +34,7 @@ include 'components/randVersion.php';
       .top3{
         height: auto;
         width: 100%;
-        padding-bottom: 2.5em;
+        padding-bottom: 3em;
       }
         .settings{
           width: 100%;
@@ -136,12 +136,6 @@ include 'components/randVersion.php';
             <p>Help and Feedback <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
 
-          <div class="settings options">
-            <p>Services <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-          </div>
-          <div class="settings options">
-            <p>Log Out <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
-          </div>
           <div class="settings options">
             <p>Services <img width="20px" height="15px"src="assets/pics/svgs/forward.svg" alt=""></p>
           </div>
