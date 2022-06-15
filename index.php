@@ -60,7 +60,6 @@ include 'components/randVersion.php';
         .gotoprofile span #name{
           padding: .2em 0;
           font-size: 1.3em;
-          font-weight: bold;
         }
         .gotoprofile span #profilelink{
           text-decoration: none;
@@ -117,27 +116,24 @@ include 'components/randVersion.php';
             <p> <span>Languages</span>   </p>
           </div>
           <div class="settings options">
-            <p> <span>Update profile</span>   </p>
+            <p> <span>Privacy</span>   </p>
           </div>
           <div class="settings options">
             <p> <span>Security & Login</span>  </p>
           </div>
           <hr>
 
+
           <div class="settings options">
-            <p> <span> About Us</span> </p>
-          </div>
-          <div class="settings options">
-            <p> <span>Contact Us </span> </p>
-          </div>
-          <div class="settings options">
-            <p> <span> Privacy Policy </span>  </p>
+            <p> <span> Terms & Policy </span>  </p>
           </div>
 
           <div class="settings options">
             <p> <span>Help & Feedback</span>  </p>
           </div>
-
+          <div class="settings options">
+            <p> <span> About Us</span> </p>
+          </div>
           <div class="settings options">
             <p> <span>Log Out</span>  </p>
           </div>
