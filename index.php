@@ -32,8 +32,8 @@ include 'components/randVersion.php';
         overflow: scroll;
       }
       .top3{
-        height: auto;
-        width: 180%;
+        height: 120%;
+        width: 100%;
       }
         .settings{
           width: 100%;
