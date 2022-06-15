@@ -43,8 +43,14 @@ include 'components/randVersion.php';
         .gotoprofile{
           display: flex;
           justify-content: center;
-          align-items: center;
+          /* align-items: center; */
           flex-direction: column;
+          border-bottom: 1px solid #eee;
+          padding: 0.5em 1.6em;
+        }
+        .gotoprofile img{
+          border-radius: 5px;
+          border: 1px solid #aaa;
         }
         .profile #username{
           background: none;
@@ -86,7 +92,7 @@ include 'components/randVersion.php';
       <div class="top2">
         <div class="top3">
           <div class="settings gotoprofile">
-
+            <img width="40px" height="55px"src="uploads/users/default/female/open_head.jpg" alt="">
           </div>
 
           <div class="settings options">
