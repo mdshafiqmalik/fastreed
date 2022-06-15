@@ -12,6 +12,11 @@ include 'components/randVersion.php';
       <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
+      .set{
+        min-height: 110vh;
+        position: absolute;
+        z-index: 9999;
+      }
         .settings{
           width: 100%;
           max-width: 500px;
@@ -64,7 +69,7 @@ include 'components/randVersion.php';
       </style>
   </head>
   <body>
-    <div class="">
+    <div class="set">
       <div style="background:#eee; border: 1px solid #ddd;" class="navigation">
       <span> <a id="backArrow" href="../">&#171;</a> </span>
      </div>
