@@ -32,8 +32,9 @@ include 'components/randVersion.php';
         overflow: scroll;
       }
       .top3{
-        height: 120%;
+        height: auto;
         width: 100%;
+        padding: 1em;
       }
         .settings{
           width: 100%;
@@ -97,7 +98,6 @@ include 'components/randVersion.php';
               <img height="110px" width="110px" src="uploads/users/default/female/cropped_open_head.jpg" alt="">
               <span id="username">md_shafiq</span>
             </div>
-
           </div>
 
           <div class="settings label">
