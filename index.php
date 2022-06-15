@@ -175,10 +175,12 @@ include 'components/randVersion.php';
     function renderHome(){
       var x= document.getElementById('top');
       x.style.display ="none";
+      document.getElementsByTagName('body').style.overflow = 'scroll';
     }
      function renderMenu(){
        var x= document.getElementById('top');
        x.style.display ="flex";
+       document.getElementsByTagName('body').style.overflow = 'hidden';
      }
   </script>
 </html>
