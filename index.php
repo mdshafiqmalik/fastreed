@@ -23,13 +23,15 @@ include 'components/randVersion.php';
 
 
       <div style=" flex-direction:row-reverse; padding: .45em 0em;" class="navigation">
-        <b><span class="menu"onclick="renderHome()"style=" margin-right: 2.5em;"> <img style="height: 34px; width:34px"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
+        <b><span class="menu"onclick="renderHome()"style=" margin-right: 2.5em;"> <img style="height: 34px; width:34px;"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
       </div>
 
       <div class="top2">
         <div class="top3">
           <div class="settings gotoprofile">
-            <img style="border-radius: 40px;" width="60px" height="60px"src="uploads/users/default/female/open_head.jpg" alt="">
+            <div >
+              <img style=" border-radius: 60px;height: 60px; width:60px; overflow: hidden; object-fit:contain;" src="uploads/users/default/female/open_head.jpg" alt="">
+            </div>
             <span>
               <p id="name">Jhon Doe</p>
               <a id="profilelink" href="#">View your profile</a>
