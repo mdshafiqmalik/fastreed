@@ -336,7 +336,7 @@
   font-weight: 1200;
 }
 .postTitle h3{
-  font-weight:300;
+  font-weight:bold;
 }
 #postTitle, #channelName, #authorName{
   text-decoration:none;
@@ -356,6 +356,7 @@
   font-family: var(--fontfam);
   font-size: .9em;
   color: #444;
+  font-weight: bolder;
   text-transform: capitalize;
   /* width: 50%; */
 }
