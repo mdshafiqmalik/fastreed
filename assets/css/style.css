@@ -72,13 +72,13 @@
     margin-top: .3em;
   }
   .options p{
-
-    padding: 1em 2em;
+    padding: 1em 1.2em;
     background: white;
     display: flex;
     align-items: center;
   }
   .options span{
+    margin-left: 1em;
     width: 100%;
     font-size: 1em;
 
