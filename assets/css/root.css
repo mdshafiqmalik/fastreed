@@ -1,5 +1,5 @@
 :root {
- --fontfam: 'Roboto', sans-serif;
+ --fontfam: 'Roboto', Ariel, sans-serif;
  --insCol: rgba(240,242,245,1.0);
  --svgblue: invert(29%) sepia(67%) saturate(5911%) hue-rotate(205deg) brightness(94%) contrast(99%);
  --svgred: invert(27%) sepia(95%) saturate(6682%) hue-rotate(355deg) brightness(95%) contrast(119%);

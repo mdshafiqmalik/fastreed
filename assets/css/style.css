@@ -76,6 +76,7 @@
     background: white;
     display: flex;
     align-items: center;
+    font-family: Roboto, Arial, sans-serif;
   }
   .options span{
     margin-left: 1em;
@@ -331,10 +332,10 @@
 }
 .postBody .postTitle{
   font-family: var(--fontfam);
-  font-weight: 600;
   font-size: 1.2em;
-  text-transform: capitalize;
+  display: -webkit-box;
   padding: .4em .1em;
+  font-weight: 500;
 }
 #postTitle, #channelName, #authorName{
   text-decoration:none;
