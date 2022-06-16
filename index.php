@@ -30,7 +30,7 @@ include 'components/randVersion.php';
         <div class="top3">
           <div class="settings gotoprofile">
             <div >
-              <img style=" border-radius: 60px;height: 60px; width:60px; overflow: hidden; object-fit:contain;" src="uploads/users/default/female/open_head.jpg" alt="">
+              <img style="border-radius: 60px;height: 60px; width:60px; overflow: hidden; object-fit:contain;" src="uploads/users/default/female/open_head.jpg" alt="">
             </div>
             <span>
               <p id="name">Jhon Doe</p>
@@ -136,11 +136,13 @@ include 'components/randVersion.php';
   </body>
   <script type="text/javascript">
     function renderHome(){
+      document.location = "";
       var x= document.getElementById('top');
       x.style.display ="none";
       document.getElementsByTagName('body')[0].style.overflow = 'scroll';
     }
      function renderMenu(){
+       document.location = "#menu";
        var x= document.getElementById('top');
        x.style.display ="flex";
        document.getElementsByTagName('body')[0].style.overflow = 'hidden';
