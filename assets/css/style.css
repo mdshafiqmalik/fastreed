@@ -356,9 +356,7 @@
   font-family: var(--fontfam);
   font-size: .9em;
   color: #444;
-  font-weight: bolder;
   text-transform: capitalize;
-  /* width: 50%; */
 }
 #channelName{
   margin-left: .2em;
@@ -366,9 +364,6 @@
 #Subscribe{
   color: blue;
   text-align: center;
-}
-#date{
-  /* margin-left: .3em; */
 }
 
 
