@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap');
 #home{
   filter: var(--svgblue);
 }
@@ -332,7 +333,7 @@
   font-size: 1.2em;
   display: -webkit-box;
   padding: .4em .1em;
-  font-weight: 500;
+  font-weight: 1200;
 }
 .postTitle h3{
   font-weight:300;
