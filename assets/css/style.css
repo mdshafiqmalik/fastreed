@@ -288,7 +288,6 @@
   cursor: pointer;
 }
 .tagActive, .tags span:hover{
-  background-color: #ccc;
   cursor: pointer;
 }
 .tags select:hover{
