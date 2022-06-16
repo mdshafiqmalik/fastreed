@@ -12,7 +12,7 @@ $header = '<div class="header">
   <h1 class="logo">project</h1>
 </div>
   <div class="menuTop">
-    <div onclick="renderMenu()" class="menu"><img stye="font-weight:bold;" src="/'.$svgFolder.'/menu_NB.svg" alt=""> </div>
+    <div onclick="renderMenu()" class="menu"><img stye="font-weight:bold;" src="/'.$svgFolder.'/menu_open.svg" alt=""> </div>
   </div>
 </div>';
 $subheader = '<div class="subheader">
