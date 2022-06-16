@@ -331,6 +331,7 @@
 }
 .postBody .postTitle{
   font-family: var(--fontfam);
+  font-weight: 600;
   font-size: 1.2em;
   text-transform: capitalize;
   padding: .4em .1em;
@@ -350,7 +351,6 @@
   flex-direction: row;
 }
 .extFoot span{
-  font-variant: small-caps;
   font-family: var(--fontfam);
   font-size: .9em;
   color: #444;
