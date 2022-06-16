@@ -29,7 +29,7 @@ include 'components/randVersion.php';
       <div class="top2">
         <div class="top3">
           <div class="settings gotoprofile">
-            <img width="45px" height="60px"src="uploads/users/default/female/open_head.jpg" alt="">
+            <img style="border-radius: 40px;" width="60px" height="60px"src="uploads/users/default/female/open_head.jpg" alt="">
             <span>
               <p id="name">Jhon Doe</p>
               <a id="profilelink" href="#">View your profile</a>
