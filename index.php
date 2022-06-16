@@ -12,7 +12,6 @@ include 'components/randVersion.php';
       <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
-      
       </style>
   </head>
   <body>
@@ -53,8 +52,6 @@ include 'components/randVersion.php';
             <p> <span>Security & Login</span>  </p>
           </div>
           <hr>
-
-
           <div class="settings options">
             <p> <span> Terms & Policy </span>  </p>
           </div>
@@ -68,10 +65,11 @@ include 'components/randVersion.php';
           <div class="settings options">
             <p> <span>Log Out</span>  </p>
           </div>
-
         </div>
       </div>
     </div>
+
+
     <div class="mainCont">
       <!-- include Header -->
     <?php include 'components/header.php';?>

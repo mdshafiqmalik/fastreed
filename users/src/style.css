@@ -4,9 +4,7 @@
   align-items: center;
   flex-direction:column;
 }
-#user{
-  filter: var(--svgblue);
-}
+
 #login, #signUp{
   margin-top: 1em;
   margin-bottom: .7em;
