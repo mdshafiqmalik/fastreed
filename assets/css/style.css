@@ -317,7 +317,7 @@
   display: flex;
   justify-content: center;
   background-color: var(--insCol);
-  max-height: 220px;
+  max-height: 215px;
   border-radius: 18px;
   border: 0;
   width: 100%;
@@ -325,7 +325,7 @@
 }
 .postBody .postPic img{
   border: 1px solid #ddd;
-  min-height: 220px;
+  min-height: 215px;
   height: 100%;
   border-radius: 18px;
   width: 100%;
