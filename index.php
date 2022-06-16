@@ -6,10 +6,10 @@ include 'components/randVersion.php';
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="robots" content="noindex">
-      <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
-      <link rel="stylesheet" href="assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
-      <link rel="stylesheet" href="users/src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
-      <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
+      <link rel="stylesheet" href="assets/css/style.css?v=<?php echo $randVersion; ?>">
+      <link rel="stylesheet" href="assets/css/root.css?v=<?php echo $randVersion; ?>">
+      <link rel="stylesheet" href="users/src/style.css?v=<?php echo $randVersion; ?>">
+      <script src="assets/js/fun.js?v=<?php echo $randVersion; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
       .options p img{

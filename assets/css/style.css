@@ -140,9 +140,6 @@
 .ml_d2em{
   margin-left: .2em;
 }
-.b{
-  font-weight: bold;
-}
 .fontFam{
   font-family: var(--fontfam);
 }
@@ -339,7 +336,7 @@
 }
 #postTitle, #channelName, #authorName{
   text-decoration:none;
-  color:#333;
+  color: black;
 }
 #channelName, #authorName{
   color: #444;

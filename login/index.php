@@ -18,9 +18,9 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["logID"])) {
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="../users/src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
-    <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
-    <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
+    <link rel="stylesheet" href="../users/src/style.css?v=<?php echo $randVersion; ?>">
+    <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo $randVersion; ?>">
+    <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo $randVersion; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
