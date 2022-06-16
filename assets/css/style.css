@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,300&display=swap');
 #home{
   filter: var(--svgblue);
 }
@@ -74,6 +73,7 @@
     margin-top: .3em;
   }
   .options p{
+    font-weight: 400;
     padding: 1em 2em;
     background: white;
     display: flex;
@@ -258,7 +258,7 @@
 
 .tags span{
   font-family: var(--fontfam);
- font-weight: 600;
+ font-weight: 500;
   padding: .4em 1em;
   border: 1px solid #aaa;
   border-radius: 20px;
@@ -331,13 +331,12 @@
 }
 .postBody .postTitle{
   font-family: var(--fontfam);
-  font-size: 1.2em;
+  font-size: 1.1em;
   display: -webkit-box;
   padding: .4em .1em;
-  font-weight: 1200;
 }
 .postTitle h3{
-  font-weight:bold;
+  font-weight: 500;
 }
 #postTitle, #channelName, #authorName{
   text-decoration:none;
