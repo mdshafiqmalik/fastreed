@@ -14,7 +14,7 @@ include 'components/randVersion.php';
       <style media="screen">
       .options p img{
         width: 26px;
-        height: 28px;
+        height: 26px;
       }
       </style>
   </head>
@@ -37,7 +37,7 @@ include 'components/randVersion.php';
           </div>
           <div class="settings options">
             <p>
-              <img class="opt_icons" src="assets/pics/svgs/add_post.svg" alt="">
+              <img class="opt_icons" src="assets/pics/svgs/articles.svg" alt="">
 
             <span>Write an article</span>   </p>
           </div>
