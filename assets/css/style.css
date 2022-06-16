@@ -317,11 +317,11 @@
   display: flex;
   justify-content: center;
   background-color: #eee;
-  max-height: 220px;
+  max-height: 200px;
   border-radius: 10px;
   border: 0;
   width: 100%;
-  overflow: scroll;
+  overflow: hidden;
 }
 .postBody .postPic img{
   border: 1px solid #ddd;
