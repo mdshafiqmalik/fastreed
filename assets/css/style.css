@@ -334,6 +334,9 @@
   padding: .4em .1em;
   font-weight: 500;
 }
+.postTitle h3{
+  font-weight:300;
+}
 #postTitle, #channelName, #authorName{
   text-decoration:none;
   color: black;
