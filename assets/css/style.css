@@ -329,6 +329,7 @@
   height: 100%;
   border-radius: 10px;
   width: 100%;
+  opacity: .8;
 }
 .postBody .postTitle{
   font-family: var(--fontfam);
