@@ -14,7 +14,7 @@ include 'components/randVersion.php';
       <style media="screen">
       .options p img{
         width: 26px;
-        height: 26px;
+        height: 28px;
       }
       </style>
   </head>
