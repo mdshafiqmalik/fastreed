@@ -20,8 +20,10 @@ include 'components/randVersion.php';
   </head>
   <body>
     <div id="top" class="top">
-      <div style=" border:0; flex-direction:row-reverse;" class="navigation">
-        <span onclick="renderHome()"style=" margin-right: 1.5em;font-size: 1.5em;"> &#9587; </span>
+
+
+      <div style=" flex-direction:row-reverse;" class="navigation">
+        <b><span class="menu"onclick="renderHome()"style=" margin-right: 2.9em; margin-top: 0.4em; height: 29.4px; width:29.4px"> &#9587; </span></b>
       </div>
 
       <div class="top2">
