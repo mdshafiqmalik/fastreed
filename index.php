@@ -22,8 +22,8 @@ include 'components/randVersion.php';
     <div id="top" class="top">
 
 
-      <div style=" flex-direction:row-reverse;" class="navigation">
-        <b><span class="menu"onclick="renderHome()"style=" margin-right: 2.9em; margin-top: 0.4em; "> <img style="height: 34px; width:34px"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
+      <div style=" flex-direction:row-reverse; padding: .45em 0em;" class="navigation">
+        <b><span class="menu"onclick="renderHome()"style=" margin-right: 2.5em;"> <img style="height: 34px; width:34px"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
       </div>
 
       <div class="top2">
