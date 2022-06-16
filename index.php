@@ -12,6 +12,10 @@ include 'components/randVersion.php';
       <script src="assets/js/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
+      .options p svg{
+        /* width: 30px; */
+        /* height: 30px; */
+      }
       </style>
   </head>
   <body>
