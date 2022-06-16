@@ -316,9 +316,9 @@
 .postBody .postPic{
   display: flex;
   justify-content: center;
-  background-color: #eee;
+  background-color: var(--insCol);
   max-height: 200px;
-  border-radius: 20px;
+  border-radius: 18px;
   border: 0;
   width: 100%;
   overflow: hidden;
@@ -327,7 +327,7 @@
   border: 1px solid #ddd;
   min-height: 140px;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 18px;
   width: 100%;
 }
 .postBody .postTitle{
