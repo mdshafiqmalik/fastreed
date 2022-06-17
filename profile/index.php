@@ -64,7 +64,6 @@ function renderProfile($UID){
     $userFullName = $row['userFullName'];
     $userJoinDate = $row['userJoiningDate'];
     $upp = $row['userProfilePic'];
-    $gender = $row['gender'];
 
     include_once '../components/time.php';
     $pTime = strtotime($userJoinDate);
