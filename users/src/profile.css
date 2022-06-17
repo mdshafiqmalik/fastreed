@@ -36,10 +36,8 @@
 }
 .authorPic img{
   background-color: #eee;
-  min-height: 140px;
   width: 6.8em;
-  max-height: 170px;
-  border-radius: 1em;
+  border-radius: 100px;
 }
 .authorDetails{
   width: 100%;
