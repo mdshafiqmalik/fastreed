@@ -37,17 +37,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $encryption_key, $options, $encryption_iv);
                 setcookie('logID', $encUID, time() + (86400 * 30), "/");
                 $_SESSION['logID'] = $logId;
+                $_SESSION['loggedIn'] = 'true';
                 header("Location:".$redirect);
               }else {
                 // Set Session
                 // Continue redirect without cookie set
                 $_SESSION['logID'] = $logId;
+                $_SESSION['loggedIn'] = 'true';
                 header("Location:".$redirect);
               }
             }else {
               // Set Session
               // Continue redierct without cookie set
               $_SESSION['logID'] = $logId;
+              $_SESSION['loggedIn'] = 'true';
               header("Location:".$redirect);
             }
           }else {

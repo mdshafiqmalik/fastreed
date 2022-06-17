@@ -111,8 +111,7 @@ function renderProfile($UID){
     if ($upp == 0) {
       $profileImage = "users/default.jpg";
     }else {
-      $upp = unserialize($row['userProfilePic']);
-      $profileImage = $upp['folder'].'/'.$upp['year'].'/'.$upp['month'].'/'.$upp['id'].'.'.$upp['ext'];
+      $profileImage =$row['userProfilePic']);
     }
     $GLOBALS['profile'] ='
     <!-- Self Profile Opened -->

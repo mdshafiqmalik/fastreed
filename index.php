@@ -1,5 +1,101 @@
 <?php
+$writeArticles = '  <!-- Write an article  -->
+  <div class="settings options">
+    <p>
+      <img class="opt_icons" src="assets/pics/svgs/articles.svg" alt="">
+    <span> <a href="#">Write an article</a> </span>   </p>
+  </div>';
+$updateProfile = '<!-- Update Profile -->
+<div class="settings options">
+  <p>
+    <img class="opt_icons" src="assets/pics/svgs/manage_accounts.svg" alt="">
+    <span> <a href="#">Update profile</a> </span>   </p>
+</div>';
+$channels = '<!-- Channels -->
+<div class="settings options">
+  <p>
+    <img class="opt_icons" src="assets/pics/svgs/channel.svg" alt="">
+<span> <a href="#">Your channels</a> </span>   </p>
+</div>';
+$Interests = '<!-- Your interests -->
+<div class="settings options">
+  <p>
+    <img class="opt_icons" src="assets/pics/svgs/interests.svg" alt="">
+    <span> <a href="#">Your interests</a> </span>   </p>
+</div>';
+$Languages = '<!-- Languages -->
+<div class="settings options">
+  <p>
+    <img class="opt_icons" src="assets/pics/svgs/language.svg" alt="">
+     <span>Languages</span>   </p>
+</div>';
+$privacy = '<!-- Privacy -->
+<div class="settings options">
+  <p>
+    <img class="opt_icons" src="assets/pics/svgs/security.svg" alt="">
+     <span> <a href="#">Privacy</a> </span>   </p>
+</div>';
+$securityLogin = '  <!-- Security and Login -->
+  <div class="settings options">
+    <p>
+      <img class="opt_icons" src="assets/pics/svgs/lock.svg" alt="">
+       <span> <a href="#">Security & Login</a> </span>  </p>
+  </div>
+';
+$termsPolicy = '<!-- Terms and Policy -->
+<div class="settings options">
+  <p>
+    <img class="opt_icons" src="assets/pics/svgs/policy.svg" alt="">
+     <span> <a href="#">Terms & Policy</a>   </span>  </p>
+</div>';
+$helpFeedback ='  <!-- Help and Feedback -->
+  <div class="settings options">
+    <p>
+      <img class="opt_icons" src="assets/pics/svgs/help.svg" alt="">
+    <span> <a href="#">Help & Feedback</a> </span>  </p>
+  </div>';
+$aboutUs = '  <!-- About Us -->
+  <div class="settings options">
+    <p>
+      <img class="opt_icons" src="assets/pics/svgs/info.svg" alt="">
+       <span> <a href="#">About Us</a>  </span> </p>
+  </div>';
+$logout = '<!-- Log Out -->
+<div class="settings options">
+  <p>
+    <img class="opt_icons" src="assets/pics/svgs/power.svg" alt="">
+    <span> <a href="#">Log Out</a> </span>  </p>
+</div>
+';
+$nonLoggedProfile = '
+        <!-- Non logged Profile -->
+          <div class="settings newUser">
+            <a href="login">Log In</a>
+            <a href="register">Create Account</a>
+          </div>';
+
 include 'components/randVersion.php';
+if (isset($_SESSION['loggedIn'])){
+  if ((boolean)$_SESSION['loggedIn']) {
+    $getUserData  = getUserDat($_SESSION['logID']);
+    $loggedProfile = '
+    <!-- Logged Profile -->
+        <div class="settings gotoprofile">
+          <div >
+            <img style="border-radius: 60px;height: 60px; width:60px; overflow: hidden; object-fit:contain;" src="'.$getUserData['userProfilePic'].'" alt="">
+          </div>
+          <span>
+            <p id="name">'.$getUserData['userFullName'].'</p>
+            <a id="profilelink" href="profile">View your profile</a>
+          </span>
+        </div>';
+    $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.$Interests.$Languages.$privacy.$termsPolicy.$securityLogin.$helpFeedback.$aboutUs.$logout;
+  }else {
+    $GLOBALS['Menu'] = $nonLoggedProfile.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+  }
+}else {
+  $GLOBALS['Menu'] = $nonLoggedProfile.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+}
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -12,92 +108,40 @@ include 'components/randVersion.php';
       <script src="assets/js/fun.js?v=<?php echo $randVersion; ?>" charset="utf-8"></script>
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
+      .newUser{
+        padding: 1em;
+        /* border-bottom: 1px solid; */
+      }
+      .newUser a{
+        text-decoration: none;
+        padding: .3em .5em;
+        background-color: blue;
+        color: white;
+        font-weight: 500;
+        border-radius: 4px;
+        margin-left: .3em;
+      }
       .options p img{
         width: 26px;
         height: 26px;
       }
       </style>
+
   </head>
   <body>
-    <div id="top" class="top">
 
+    <div id="top" class="top">
 
       <div style=" flex-direction:row-reverse; padding: .45em 0em;" class="navigation">
         <b><span class="menu"onclick="renderHome()"style=" margin-right: 2.5em;"> <img style="height: 34px; width:34px;"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
       </div>
-
       <div class="top2">
         <div class="top3">
-          <div class="settings gotoprofile">
-            <div >
-              <img style="border-radius: 60px;height: 60px; width:60px; overflow: hidden; object-fit:contain;" src="uploads/users/default/female/open_head.jpg" alt="">
-            </div>
-            <span>
-              <p id="name">Jhon Doe</p>
-              <a id="profilelink" href="#">View your profile</a>
-            </span>
-          </div>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/articles.svg" alt="">
-
-            <span>Write an article</span>   </p>
-          </div>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/manage_accounts.svg" alt="">
-              <span>Update profile</span>   </p>
-          </div>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/channel.svg" alt="">
-
-          <span>Your channels</span>   </p>
-          </div>
-          <hr>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/interests.svg" alt="">
-
-              <span>Your interests</span>   </p>
-          </div>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/language.svg" alt="">
-               <span>Languages</span>   </p>
-          </div>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/security.svg" alt="">
-               <span>Privacy</span>   </p>
-          </div>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/lock.svg" alt="">
-               <span>Security & Login</span>  </p>
-          </div>
-          <hr>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/policy.svg" alt="">
-               <span> Terms & Policy </span>  </p>
-          </div>
-
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/help.svg" alt="">
-            <span>Help & Feedback</span>  </p>
-          </div>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/info.svg" alt="">
-               <span> About Us</span> </p>
-          </div>
-          <div class="settings options">
-            <p>
-              <img class="opt_icons" src="assets/pics/svgs/power.svg" alt="">
-              <span>Log Out</span>  </p>
-          </div>
+          <?php
+          if (isset($GLOBALS['Menu'])) {
+            echo $GLOBALS['Menu'];
+          }
+           ?>
         </div>
       </div>
     </div>
@@ -152,3 +196,31 @@ include 'components/randVersion.php';
      }
   </script>
 </html>
+
+<?php
+function getUserDat($lID){
+  include '_.config/_s_db_.php';
+  $userID = getUserID($lID);
+  $usrID = $userID['userID'];
+  $sql = "SELECT * FROM user_cred WHERE userID = '$usrID'";
+  $result = mysqli_query($db, $sql);
+  if ($result) {
+    $data = $result->fetch_assoc();
+  }else {
+    $data = false;
+  }
+return $data;
+}
+
+function getUserID($logID){
+  include '_.config/_s_db_.php';
+  $sql = "SELECT * FROM fast_logged_users WHERE loginID = '$logID'";
+  $result = mysqli_query($db, $sql);
+  if ($result) {
+    $data = $result->fetch_assoc();
+  }else {
+    $data = false;
+  }
+  return $data;
+}
+ ?>

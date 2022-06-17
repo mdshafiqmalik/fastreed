@@ -83,7 +83,10 @@
   .options span{
     margin-left: 1em;
     font-size: 1em;
-
+  }
+  .options span a{
+    color: black;
+    text-decoration:none;
   }
 
 

@@ -62,6 +62,7 @@ if (isset($_GET['_secRandID'])) {
 
               if ($logID = createLogin($userID)) {
                 $_SESSION['logID'] = $logID;
+                $_SESSION['loggedIn'] = 'true';
                 $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
                 <center><span id="successMessage">Redirecting....</span></center>
                 <script type="text/javascript">
@@ -230,7 +231,11 @@ function createUser($userID){
     $userHashPassword = $data['userHashPassword'];
     $ePassword = $data['ePassword'];
     $userJoiningDate = date('y-m-d H:i:s');
-    $profilePic = '0';
+    if ($data['gender'] == 'male') {
+      $profilePic = 'uploads/users/default/male/blue_eyed.jpg';
+    }else {
+      $profilePic = 'uploads/users/default/femla/open_head.jpg';
+    }
     // add to fast_users
     $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userEmail', '$userName','', '$userHashPassword')";
 
