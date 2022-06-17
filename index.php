@@ -98,7 +98,7 @@ if (isset($_SESSION['loggedIn'])){
 }
  ?>
 <!DOCTYPE html>
-<html lang="hi" dir="ltr">
+<html dir="ltr">
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="robots" content="noindex">
