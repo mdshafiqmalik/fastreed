@@ -12,7 +12,8 @@
   /* width: 100%; */
   padding: 1em;
   border-radius: 15px;
-  box-shadow: 0 0 4px 1px #d2b2d5;
+  /* box-shadow: 0 0 4px 1px #d2b2d5; */
+  box-shadow: 0 0 4px 1px var(--insCol);
 }
 .content{
   margin: 1em;
