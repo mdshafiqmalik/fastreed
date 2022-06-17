@@ -31,15 +31,13 @@
 }
 .authorPic{
   height: 100%;
-  width: 38%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .authorPic img{
   background-color: #eee;
-  width: 6.8em;
-  border-radius: 100px;
+  border-radius: 130px;
   border: 1px solid #ccc;
 }
 #userType{
