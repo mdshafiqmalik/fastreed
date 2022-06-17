@@ -83,7 +83,7 @@ body{
   justify-content:flex-start;
   flex-direction: row;
 }
-.header .logoDiv{
+.header .logos{
   display: flex;
   justify-content:flex-end;
   flex-direction: row;
