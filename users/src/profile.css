@@ -73,7 +73,7 @@
   margin-top: .5em;
   padding: .4em .3em;
   border-radius: 1em;
-  background-color: #eee;
+  background-color: var(--insCol);
   height: 50%;
   display: flex;
 }
