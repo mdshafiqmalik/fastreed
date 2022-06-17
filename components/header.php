@@ -8,11 +8,12 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["logId"])) {
 }
 
 $header = '<div class="header">
-<div class="">
-  <h1 class="logo">project</h1>
-</div>
+
   <div class="menuTop">
     <div onclick="renderMenu()" class="menu"> <img stye="font-weight:bold;" src="/'.$svgFolder.'/menu.svg" alt="">  </div>
+  </div>
+  <div class="">
+    <h1 class="logo">project</h1>
   </div>
 </div>';
 $subheader = '<div class="subheader">
