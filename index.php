@@ -133,7 +133,7 @@ if (isset($_SESSION['logID'])) {
         font-family: var(--fontFam);
         font-weight: 500;
         text-transform: capitalize;
-        padding: .2em .4em;
+        padding: .25em .7em;
         max-width: 300px;
         font-size: .8em;
         width: 100%;
