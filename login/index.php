@@ -41,8 +41,8 @@ if (isset($_SESSION["logID"]) || isset($_COOKIE["logID"])) {
           <div class="loginFields">
             <input id="password" type="password" name="password" value="" placeholder="Password">
             <span class="status" id="passwordEYE">
-              <img onclick="change()" id="eyeClosed"src="../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
-              <img onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
+              <img width="25px" height="25px" onclick="change()" id="eyeClosed"src="../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
+              <img width="25px" height="25px" onclick="change()" id="eyeOpened"src="../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
             </span>
           </div>
           <?php

@@ -10,8 +10,8 @@ $createPass = '
    <div class="loginFields">
      <input id="confirmPassword" onkeyup="checkFeild()" type="password" name="confirmPassword" value="" placeholder="Confirm New Password">
      <span class="status" id="passwordEYE">
-       <img onclick="change()" id="eyeClosed"src="../../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
-       <img onclick="change()" id="eyeOpened"src="../../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
+       <img width="25px" height="25px onclick="change()" id="eyeClosed"src="../../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
+       <img width="25px" height="25px onclick="change()" id="eyeOpened"src="../../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
      </span>
    </div>
    <div class="loginSubmit">
