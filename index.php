@@ -124,7 +124,7 @@ if (isset($_SESSION['logID'])) {
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
       .newUser{
-        padding: 1em;
+        padding: .3em 1em 1.4em 1em;
       }
       #or{
         margin: 0 .3em;
