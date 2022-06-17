@@ -138,10 +138,6 @@ if (isset($_SESSION['logID'])) {
         font-size: .8em;
         width: 100%;
         border-radius: 16px 16px 0px 16px;
-        color: white;
-        background-color: #296889;
-        /* border: 1px solid; */
-
       }
       .newUser div{
         margin-top: 1.4em;
