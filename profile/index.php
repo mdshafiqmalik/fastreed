@@ -114,7 +114,7 @@ function renderProfile($UID){
     <div id="" class="container">
       <div class="authorProfile">
         <div class="topDiv">
-          <div class="authorPic"> <img src="'.$profileImage.'" alt=""> </div>
+          <div class="authorPic"> <img src="../'.$profileImage.'" alt=""> </div>
           <div class="authorDetails">
             <div class="userNameWork">
               <span id="userFullName">'.$userFullName.'</span>
