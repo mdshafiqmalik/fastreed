@@ -12,7 +12,7 @@ $header = '<div class="header">
   <div class="menuTop">
     <div onclick="renderMenu()" class="menu"> <img stye="font-weight:bold;" src="/'.$svgFolder.'/menu.svg" alt="">  </div>
   </div>
-  <div class="">
+  <div class="logo">
     <h1 class="logo">project</h1>
   </div>
 </div>';
