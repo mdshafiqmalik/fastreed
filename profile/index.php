@@ -90,7 +90,7 @@ function renderProfile($UID){
     $postsCount = mysqli_num_rows($postData);
 
     $fastUser = "SELECT * FROM fast_users WHERE userID ='$UID'";
-    $getUserData = mysqli_query($db, $getuName);
+    $getUserData = mysqli_query($link, $getuName);
     $userData = $getUserID->fetch_assoc();
     $uName = $userData['userName'];
 
