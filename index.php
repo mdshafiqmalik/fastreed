@@ -79,21 +79,25 @@ $nonLoggedProfile = '
           </div>';
 
 include 'components/randVersion.php';
-if (isset($_SESSION['loggedIn'])){
-  if ((boolean)$_SESSION['loggedIn']) {
-    $getUserData  = getUserDat($_SESSION['logID']);
-    $loggedProfile = '
-    <!-- Logged Profile -->
-        <div class="settings gotoprofile">
-          <div >
-            <img style="border-radius: 60px;height: 60px; width:60px; overflow: hidden; object-fit:cover;" src="'.$getUserData['userProfilePic'].'" alt="">
-          </div>
-          <span>
-            <p id="name">'.$getUserData['userFullName'].'</p>
-            <a id="profilelink" href="profile">View your profile</a>
-          </span>
-        </div>';
-    $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.'<hr>'.$Interests.$Languages.$privacy.$securityLogin.'<hr>'.$termsPolicy.$helpFeedback.$aboutUs.$logout;
+if (isset($_SESSION['logID'])) {
+  if (isset($_SESSION['loggedIn'])){
+    if ((boolean)$_SESSION['loggedIn']) {
+      $getUserData  = getUserDat($_SESSION['logID']);
+      $loggedProfile = '
+      <!-- Logged Profile -->
+          <div class="settings gotoprofile">
+            <div >
+              <img style="border-radius: 60px;height: 60px; width:60px; overflow: hidden; object-fit:cover;" src="'.$getUserData['userProfilePic'].'" alt="">
+            </div>
+            <span>
+              <p id="name">'.$getUserData['userFullName'].'</p>
+              <a id="profilelink" href="profile">View your profile</a>
+            </span>
+          </div>';
+      $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.'<hr>'.$Interests.$Languages.$privacy.$securityLogin.'<hr>'.$termsPolicy.$helpFeedback.$aboutUs.$logout;
+    }else {
+      $GLOBALS['Menu'] = $nonLoggedProfile.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+    }
   }else {
     $GLOBALS['Menu'] = $nonLoggedProfile.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
   }
