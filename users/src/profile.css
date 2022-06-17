@@ -34,11 +34,17 @@
   width: 38%;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 .authorPic img{
   background-color: #eee;
   width: 6.8em;
   border-radius: 100px;
+}
+#userType{
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: var(--fontFam);
 }
 .authorDetails{
   width: 100%;
@@ -58,10 +64,10 @@
   /* justify-content: center; */
   /* align-items: center; */
 }
-#userType, #userFullName, .designation{
+#userName, #userFullName, .designation{
   margin: .4em 0 0 .3em;
 }
-#userType, .designation{
+#userName, .designation{
   font-variant: inherit;
   font-size: .9em;
   color: #777;
