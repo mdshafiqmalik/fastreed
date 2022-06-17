@@ -115,7 +115,7 @@ if (isset($_SESSION['loggedIn'])){
       .newUser a{
         text-decoration: none;
         padding: .3em .5em;
-        background-color: blue;
+        background-color: #0165E1;
         color: white;
         font-weight: 500;
         border-radius: 4px;
