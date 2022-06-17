@@ -232,7 +232,7 @@ function createUser($userID){
     $ePassword = $data['ePassword'];
     $userJoiningDate = date('y-m-d H:i:s');
     if ($data['gender'] == 'male') {
-      $profilePic = 'uploads/users/default/male/man.jpg';
+      $profilePic = 'uploads/users/default/male/man.png';
     }else {
       $profilePic = 'uploads/users/default/female/btful.jpg';
     }
