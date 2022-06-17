@@ -140,8 +140,8 @@ if (isset($_SESSION['logID'])) {
 
     <div id="top" class="top">
 
-      <div style=" flex-direction:row-reverse; padding: .45em 0em;" class="navigation">
-        <b><span class="menu"onclick="renderHome()"style=" margin-right: 2.5em;"> <img style="height: 34px; width:34px;"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
+      <div class="navigation">
+        <b><span class="menu"onclick="renderHome()"style=" margin-left: 2.5em;"> <img style="height: 34px; width:34px;"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
       </div>
       <div class="top2">
         <div class="top3">
