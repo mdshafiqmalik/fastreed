@@ -74,6 +74,7 @@
   font-size: .9em;
   color: #777;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 #userFullName{
