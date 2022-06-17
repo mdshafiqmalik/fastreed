@@ -100,7 +100,7 @@
     font-family: var(--fontfam);
   }
   #language:hover{
-    outline: blue;
+    outline: 0;
   }
 
 
