@@ -141,7 +141,7 @@ if (isset($_SESSION['logID'])) {
     <div id="top" class="top">
 
       <div class="navigation">
-        <b><span class="menu"onclick="renderHome()"style=" margin-left: 2.5em; padding: .2em;"> <img style="height: 34px; width:34px;"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
+        <b><span class="menu"onclick="renderHome()"style=" margin-left: 2.5em; padding: .15em;"> <img style="height: 34px; width:34px;"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
       </div>
       <div class="top2">
         <div class="top3">
