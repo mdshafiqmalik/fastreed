@@ -181,15 +181,11 @@ if (isset($_SESSION['loggedIn'])){
   <script type="text/javascript">
 
     function renderHome(){
-      document.location = "";
       var x= document.getElementById('top');
       x.style.display ="none";
       document.getElementsByTagName('body')[0].style.overflow = 'scroll';
     }
      function renderMenu(){
-
-       // document.location = "#menu";
-       console.log(document.location.href);
        var x= document.getElementById('top');
        x.style.display ="flex";
        document.getElementsByTagName('body')[0].style.overflow = 'hidden';
