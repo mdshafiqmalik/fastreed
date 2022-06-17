@@ -95,9 +95,12 @@
   #language{
     margin-left: 2em;
     /* border: 0; */
-    padding: 0.2em 0.3em;
+    padding: 0.3em 0.5em;
     font-weight: 500;
     font-family: var(--fontfam);
+  }
+  #language:hover{
+    outline: blue;
   }
 
 
