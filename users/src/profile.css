@@ -42,7 +42,7 @@
   border-radius: 100px;
 }
 #userType{
-  text-transform: uppercase;
+
   font-weight: bold;
   font-family: var(--fontFam);
   margin-top: .4em;
@@ -73,6 +73,7 @@
   font-variant: inherit;
   font-size: .9em;
   color: #777;
+  text-transform: uppercase;
 }
 
 #userFullName{

@@ -64,7 +64,6 @@ function renderProfile($UID){
     $userFullName = $row['userFullName'];
     $userJoinDate = $row['userJoiningDate'];
     $upp = $row['userProfilePic'];
-    $uName = $row['userName'];
 
     include_once '../components/time.php';
     $pTime = strtotime($userJoinDate);
@@ -89,6 +88,11 @@ function renderProfile($UID){
     $getPost = "SELECT * FROM fast_posts WHERE userID ='$UID'";
     $postData = mysqli_query($link, $getPost);
     $postsCount = mysqli_num_rows($postData);
+
+    $fastUser = "SELECT * FROM fast_user WHERE userID ='$UID'";
+    $getUserData = mysqli_query($db, $getuName);
+    $userData = $getUserID->fetch_assoc();
+    $uName = $userData['userName'];
 
     $getFollow = "SELECT * FROM fast_follows WHERE toUserID ='$UID'";
     $followData = mysqli_query($link, $getFollow);
