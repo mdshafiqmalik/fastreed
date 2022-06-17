@@ -234,7 +234,7 @@ function createUser($userID){
     if ($data['gender'] == 'male') {
       $profilePic = 'uploads/users/default/male/blue_eyed.jpg';
     }else {
-      $profilePic = 'uploads/users/default/femla/open_head.jpg';
+      $profilePic = 'uploads/users/default/female/open_head.jpg';
     }
     // add to fast_users
     $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userEmail', '$userName','', '$userHashPassword')";
