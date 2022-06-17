@@ -64,7 +64,7 @@ function renderProfile($UID){
     $userFullName = $row['userFullName'];
     $userJoinDate = $row['userJoiningDate'];
     $upp = $row['userProfilePic'];
-    $userName = $row['userName'];
+    $uName = $row['userName'];
 
     include_once '../components/time.php';
     $pTime = strtotime($userJoinDate);
@@ -120,7 +120,7 @@ function renderProfile($UID){
           <div class="authorDetails">
             <div class="userNameWork">
               <span id="userFullName">'.$userFullName.'</span>
-              <span id="userName">#'.$userName.'</span>
+              <span id="userName">#'.$uName.'</span>
               <span class="designation">'.$userCountry.'</span>
               <span class="designation">Joined '.$joinDate.' ago</span>
             </div>
