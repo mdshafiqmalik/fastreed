@@ -135,6 +135,7 @@ if (isset($_SESSION['logID'])) {
         text-transform: capitalize;
         padding: .2em .4em;
         max-width: 300px;
+        font-size: .6em;
         width: 100%;
         border-radius: 16px 16px 0px 16px;
         color: white;
