@@ -73,10 +73,17 @@ $logout = '<!-- Log Out -->
 ';
 $nonLoggedProfile = '
         <!-- Non logged Profile -->
-          <div class="settings newUser">
+        <div class="settings newUser">
+        <span class="startJourney">
+        Start your journey
+        </span>
+
+          <div>
             <a href="login">Log In</a>
-            <a href="register">Create Account</a>
-          </div>';
+             <span id="or">Or</span>
+            <a href="register"> Create Account</a>
+          </div>
+        </div>';
 
 include 'components/randVersion.php';
 if (isset($_SESSION['logID'])) {
@@ -96,13 +103,13 @@ if (isset($_SESSION['logID'])) {
           </div>';
       $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.'<hr>'.$Interests.$Languages.$privacy.$securityLogin.'<hr>'.$termsPolicy.$helpFeedback.$aboutUs.$logout;
     }else {
-      $GLOBALS['Menu'] = $nonLoggedProfile.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+      $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
     }
   }else {
-    $GLOBALS['Menu'] = $nonLoggedProfile.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+    $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
   }
 }else {
-  $GLOBALS['Menu'] = $nonLoggedProfile.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+  $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
 }
  ?>
 <!DOCTYPE html>
@@ -118,7 +125,26 @@ if (isset($_SESSION['logID'])) {
       <style media="screen">
       .newUser{
         padding: 1em;
-        /* border-bottom: 1px solid; */
+      }
+      #or{
+        margin: 0 .3em;
+      }
+      .startJourney{
+        font-family: var(--fontFam);
+        font-weight: 500;
+        text-transform: capitalize;
+        padding: .3em .6em;
+        max-width: 300px;
+        width: 100%;
+        border-radius: 16px 16px 0px 16px;
+        color: white;
+        background-color: #296889;
+        /* border: 1px solid; */
+
+      }
+      .newUser div{
+        margin-top: 1.4em;
+        margin-left: 1.6em;
       }
       .newUser a{
         text-decoration: none;
@@ -127,7 +153,8 @@ if (isset($_SESSION['logID'])) {
         color: white;
         font-weight: 500;
         border-radius: 4px;
-        margin-left: .3em;
+        /* margin-left: 1.3em; */
+        margin-top: 1em;
       }
       .options p img{
         width: 26px;
@@ -141,7 +168,8 @@ if (isset($_SESSION['logID'])) {
     <div id="top" class="top">
 
       <div class="navigation">
-        <b><span class="menu"onclick="renderHome()"style=" margin-left: 2em; padding: .15em;"> <img style="height: 34px; width:34px;"src="assets/pics/svgs/cancel.svg" alt=""> </span></b>
+        <b><span class="menu"onclick="renderHome()"style=" margin-left: 2em; padding: .15em;"> <img style="height: 34px; width:34px;"src="assets/pics/svgs/cancel.svg" alt="">
+         </span></b>
       </div>
       <div class="top2">
         <div class="top3">
