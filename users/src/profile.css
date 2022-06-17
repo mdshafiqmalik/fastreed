@@ -36,7 +36,7 @@
   flex-direction: column;
 }
 .authorPic img{
-  background-color: #eee;
+  background-color: green;
   border-radius: 130px;
   border: 1px solid #ccc;
 }
