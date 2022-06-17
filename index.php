@@ -87,7 +87,7 @@ if (isset($_SESSION['logID'])) {
       <!-- Logged Profile -->
           <div class="settings gotoprofile">
             <div >
-              <img style="height: 60px; width:60px; overflow: hidden; object-fit:contain; background-color: purple;" src="'.$getUserData['userProfilePic'].'" alt="">
+              <img style="border-radius:65px;height: 60px; width:60px; overflow: hidden; object-fit:contain; background-color: purple;" src="'.$getUserData['userProfilePic'].'" alt="">
             </div>
             <span>
               <p id="name">'.$getUserData['userFullName'].'</p>
