@@ -64,6 +64,7 @@ function renderProfile($UID){
     $userFullName = $row['userFullName'];
     $userJoinDate = $row['userJoiningDate'];
     $upp = $row['userProfilePic'];
+    $gender = $row['gender'];
 
     include_once '../components/time.php';
     $pTime = strtotime($userJoinDate);
@@ -107,12 +108,7 @@ function renderProfile($UID){
       $rateInDecimal = $totalRating/$rateCount;
       $rate = number_format((float)$rateInDecimal, 1, '.','');
     }
-
-    if ($upp == 0) {
-      $profileImage = "users/default.jpg";
-    }else {
-      $profileImage =$row['userProfilePic']);
-    }
+    $profileImage =$row['userProfilePic'];
     $GLOBALS['profile'] ='
     <!-- Self Profile Opened -->
     <div id="" class="container">
