@@ -64,7 +64,7 @@ $logout = '<!-- Log Out -->
 <div class="settings options">
   <p>
     <img class="opt_icons" src="assets/pics/svgs/power.svg" alt="">
-    <span> <a href="logout.php">Log Out</a> </span>  </p>
+    <span> <a href="logout">Log Out</a> </span>  </p>
 </div>
 ';
 $nonLoggedProfile = '
