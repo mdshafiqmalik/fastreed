@@ -56,7 +56,6 @@ function checkLogDetails($logID){
 
 function renderProfile($UID){
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
   $getUserData = "SELECT * FROM user_cred Where userID = '$UID'";
   $result = mysqli_query($db,$getUserData);
   if (mysqli_num_rows($result)) {
@@ -86,20 +85,20 @@ function renderProfile($UID){
     }
 
     $getPost = "SELECT * FROM fast_posts WHERE userID ='$UID'";
-    $postData = mysqli_query($link, $getPost);
+    $postData = mysqli_query($db, $getPost);
     $postsCount = mysqli_num_rows($postData);
 
     $fastUser = "SELECT * FROM fast_users WHERE userID ='$UID'";
     $getUserData = mysqli_query($db, $fastUser);
-    $userData = $getUserID->fetch_assoc();
+    $userData = $getUserData->fetch_assoc();
     $uName = $userData['userName'];
 
     $getFollow = "SELECT * FROM fast_follows WHERE toUserID ='$UID'";
-    $followData = mysqli_query($link, $getFollow);
+    $followData = mysqli_query($db, $getFollow);
     $followCount = mysqli_num_rows($followData);
 
     $getRating = "SELECT * FROM fast_rating WHERE toUserID ='$UID'";
-    $rateData = mysqli_query($link, $getRating);
+    $rateData = mysqli_query($db, $getRating);
     $rateCount = mysqli_num_rows($rateData);
     if ($rateCount == 0) {
       $rate = 0;
