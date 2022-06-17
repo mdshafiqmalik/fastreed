@@ -124,8 +124,8 @@ function renderProfile($UID){
             <div class="userNameWork">
               <span id="userFullName">'.$userFullName.'</span>
               <span id="userName">#'.$uName.'</span>
-              <span class="designation">'.$userCountry.'</span>
-              <span class="designation">Joined '.$joinDate.' ago</span>
+              <span id="userCountry">'.$userCountry.'</span>
+              <span id="joinedDate">Joined '.$joinDate.' ago</span>
             </div>
             <div class="userParam">
               <div class="userArticles">
