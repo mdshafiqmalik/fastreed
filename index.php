@@ -89,7 +89,7 @@ if (isset($_SESSION['loggedIn'])){
             <a id="profilelink" href="profile">View your profile</a>
           </span>
         </div>';
-    $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.$Interests.$Languages.$privacy.$termsPolicy.$securityLogin.$helpFeedback.$aboutUs.$logout;
+    $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.'<hr>'.$Interests.$Languages.$privacy.'<hr>'.$termsPolicy.$securityLogin.$helpFeedback.$aboutUs.$logout;
   }else {
     $GLOBALS['Menu'] = $nonLoggedProfile.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
   }
