@@ -83,6 +83,11 @@ body{
   justify-content:flex-start;
   flex-direction: row;
 }
+.header .logo{
+  display: flex;
+  justify-content:flex-end;
+  flex-direction: row;
+}
 .menu{
   display: flex;
   align-items: center;
