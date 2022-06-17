@@ -27,7 +27,11 @@ $Languages = '<!-- Languages -->
 <div class="settings options">
   <p>
     <img class="opt_icons" src="assets/pics/svgs/language.svg" alt="">
-     <span>Languages</span>   </p>
+     <span>Languages</span>
+     <select class="language" name="language" id="language">
+       <option value="English">English</option>
+       <option value="Hindi">Hindi</option>
+     </select> </p>
 </div>';
 $privacy = '<!-- Privacy -->
 <div class="settings options">
@@ -98,7 +102,7 @@ if (isset($_SESSION['loggedIn'])){
 }
  ?>
 <!DOCTYPE html>
-<html dir="ltr">
+<html lang="en" dir="ltr">
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="robots" content="noindex">
