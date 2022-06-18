@@ -186,7 +186,7 @@ function renderProfile($UID){
         z-index: 999999;
         bottom: 0;
         border-radius: 45px 45px 0 0 ;
-        padding: 1em 0 4em 0;
+        padding: 1em 0 6em 0;
         display: flex;
         flex-direction: column;
       }
