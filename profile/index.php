@@ -192,7 +192,7 @@ function renderProfile($UID){
       }
     </style>
   </head>
-  <body>
+  <body style="overflow:hidden">
     <div class="mCont">
       <div class="getData">
 
