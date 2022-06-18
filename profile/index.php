@@ -182,7 +182,6 @@ function renderProfile($UID){
         width: 100%;
         min-height: 200px;
         background-color: white;
-        opacity: 1;
         position: absolute;
         z-index: 999999;
         bottom: 0;
@@ -192,7 +191,7 @@ function renderProfile($UID){
         flex-direction: column;
       }
       .mCont .getData div{
-        font-size: .9em;
+        font-size: 1.4em;
         font-family: var(--fontFam);
         color: black;
         margin-bottom: .7em;
