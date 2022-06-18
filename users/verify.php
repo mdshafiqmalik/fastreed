@@ -359,12 +359,17 @@ function checkUserID($userID){
   include '../_.config/_s_db_.php';
   $checkSUID = "SELECT userID FROM user_noverify WHERE userID = '$userID'";
   $result = mysqli_query($db, $checkSUID);
-  $isUserID = mysqli_num_rows($result);
-  if ($isUserID) {
-    $userIDPresent = true;
+  if ($result) {
+    $isUserID = mysqli_num_rows($result);
+    if ($isUserID) {
+      $userIDPresent = true;
+    }else {
+      $userIDPresent = false;
+    }
   }else {
     $userIDPresent = false;
   }
+
   return $userIDPresent;
 }
 ?>
