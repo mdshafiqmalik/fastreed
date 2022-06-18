@@ -79,18 +79,15 @@ $login = '<!-- Log Out -->
 </div>
 ';
 $nonLoggedProfile = '
-        <!-- Non logged Profile -->
-        <div class="settings newUser">
-        <span class="startJourney">
-        Start your journey
-        </span>
-
-          <div>
-            <a href="login">Log In</a>
-             <span id="or">Or</span>
-            <a href="register"> Create Account</a>
-          </div>
-        </div>';
+<!-- Non logged Profile -->
+<div class="settings newUser">
+<p class="startJourney">
+Start your journey by <span class="imp">creating account </span> with us to  <span class="imp">write and promote </span >your Articles
+</p>
+  <div id="register">
+    <a href="register"> Create an account</a>
+  </div>
+</div>';
 
 include 'components/randVersion.php';
 if (isset($_SESSION['logID'])) {
@@ -110,13 +107,13 @@ if (isset($_SESSION['logID'])) {
           </div>';
       $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.'<hr>'.$Interests.$Languages.$privacy.$securityLogin.'<hr>'.$termsPolicy.$helpFeedback.$aboutUs.$logout;
     }else {
-      $GLOBALS['Menu'] = '<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+      $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
     }
   }else {
-    $GLOBALS['Menu'] = '<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+    $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
   }
 }else {
-  $GLOBALS['Menu'] = '<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+  $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
 }
  ?>
 <!DOCTYPE html>
@@ -135,7 +132,7 @@ if (isset($_SESSION['logID'])) {
         border: 0;
         margin: 1em 1.5em;
         border-radius: 10px;
-        background-color: #731b73;
+        background-color: #680c86;
         max-width: 350px;
       }
       .startJourney{
@@ -178,15 +175,7 @@ if (isset($_SESSION['logID'])) {
       </div>
       <div class="top2">
         <div class="top3">
-          <!-- Non logged Profile -->
-          <div class="settings newUser">
-          <p class="startJourney">
-          Start your journey by <span class="imp">creating account </span> with us to  <span class="imp">write and promote </span >your Articles
-        </p>
-            <div id="register">
-              <a href="register"> Create an account</a>
-            </div>
-          </div>
+
 
           <?php
           if (isset($GLOBALS['Menu'])) {
