@@ -94,11 +94,20 @@ if (isset($_SESSION['logID'])) {
   if (isset($_SESSION['loggedIn'])){
     if ((boolean)$_SESSION['loggedIn']) {
       $getUserData  = getUserDat($_SESSION['logID']);
+
+      $profileImage =$getUserData['userProfilePic'];
+      if ($profileImage == '0M') {
+        $pImg = 'uploads/users/default/male.png';
+      }elseif ($profileImage == '0F') {
+        $pImg = 'uploads/users/default/female.png';
+      }else {
+        $pImg = $getUserData['userProfilePic'];
+      }
       $loggedProfile = '
       <!-- Logged Profile -->
           <div class="settings gotoprofile">
             <div >
-              <img style="border-radius:65px;height: 60px; width:60px; overflow: hidden; object-fit:contain;" src="'.$getUserData['userProfilePic'].'" alt="">
+              <img style="border-radius:65px;height: 60px; width:60px; overflow: hidden; object-fit:contain;" src="'.$pImg.'" alt="">
             </div>
             <span>
               <p id="name">'.$getUserData['userFullName'].'</p>

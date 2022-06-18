@@ -232,9 +232,9 @@ function createUser($userID){
     $ePassword = $data['ePassword'];
     $userJoiningDate = date('y-m-d H:i:s');
     if ($data['gender'] == 'male') {
-      $profilePic = 'uploads/users/default/male.png';
+      $profilePic = '0M';
     }else {
-      $profilePic = 'uploads/users/default/female.png';
+      $profilePic = '0F';
     }
     // add to fast_users
     $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userEmail', '$userName','', '$userHashPassword')";

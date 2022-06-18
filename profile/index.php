@@ -112,12 +112,19 @@ function renderProfile($UID){
       $rate = number_format((float)$rateInDecimal, 1, '.','');
     }
     $profileImage =$row['userProfilePic'];
+    if ($profileImage == '0M') {
+      $pImg = 'uploads/users/default/male.png';
+    }elseif ($profileImage == '0F') {
+      $pImg = 'uploads/users/default/female.png';
+    }else {
+      $pImg = $row['userProfilePic'];
+    }
     $GLOBALS['profile'] ='
     <!-- Self Profile Opened -->
     <div id="" class="container">
       <div class="authorProfile">
         <div class="topDiv">
-          <div class="authorPic"> <img width="105" height="105"src="../'.$profileImage.'" alt="">
+          <div class="authorPic"> <img width="105" height="105"src="../'.$pImg.'" alt="">
           <span id="userType">'.$userType.'</span>
           </div>
           <div class="authorDetails">
