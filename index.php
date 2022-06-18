@@ -71,6 +71,13 @@ $logout = '<!-- Log Out -->
     <span> <a href="logout">Log Out</a> </span>  </p>
 </div>
 ';
+$login = '<!-- Log Out -->
+<div class="settings options">
+  <p>
+    <img class="opt_icons" src="assets/pics/svgs/power.svg" alt="">
+    <span> <a href="login">Log In</a> </span>  </p>
+</div>
+';
 $nonLoggedProfile = '
         <!-- Non logged Profile -->
         <div class="settings newUser">
@@ -103,13 +110,13 @@ if (isset($_SESSION['logID'])) {
           </div>';
       $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.'<hr>'.$Interests.$Languages.$privacy.$securityLogin.'<hr>'.$termsPolicy.$helpFeedback.$aboutUs.$logout;
     }else {
-      $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+      $GLOBALS['Menu'] = '<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
     }
   }else {
-    $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+    $GLOBALS['Menu'] = '<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
   }
 }else {
-  $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$Interests.$Languages.$privacy.$termsPolicy.$helpFeedback.$aboutUs;
+  $GLOBALS['Menu'] = '<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
 }
  ?>
 <!DOCTYPE html>
@@ -124,38 +131,39 @@ if (isset($_SESSION['logID'])) {
       <title>Fastreed : Read, Write and Learn</title>
       <style media="screen">
       .newUser{
-        padding: .3em 1em 1.4em 1em;
-      }
-      #or{
-        margin: 0 .3em;
+        padding: 1em 1.4em;
+        border: 1px solid;
+        margin: 1em 1.5em;
+        border-radius: 10px;
+        background-color: #b161b1;
+        max-width: 350px;
       }
       .startJourney{
         font-family: var(--fontFam);
         font-weight: 500;
-        text-transform: capitalize;
-        padding: .25em .7em;
-        max-width: 300px;
-        font-size: .8em;
         width: 100%;
-        border-radius: 16px 16px 0px 16px;
-      }
-      .newUser div{
-        margin-top: 1.4em;
-        margin-left: 1.6em;
-      }
-      .newUser a{
-        text-decoration: none;
-        padding: .4em .6em;
-        background-color: #0165E1;
         color: white;
         font-weight: 500;
-        border-radius: 4px;
-        /* margin-left: 1.3em; */
-        margin-top: 1em;
+        line-height: 1.4;
+      }
+      .newUser #register{
+        margin-top: 1.6em;
+        margin-bottom: .6em;
+      }
+      .newUser #register a{
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+        border: 2px solid;
+        padding: .4em .8em;
+        border-radius: 40px;
       }
       .options p img{
         width: 26px;
         height: 26px;
+      }
+      .imp{
+        color: #fba942;
       }
       </style>
 
@@ -170,6 +178,16 @@ if (isset($_SESSION['logID'])) {
       </div>
       <div class="top2">
         <div class="top3">
+          <!-- Non logged Profile -->
+          <div class="settings newUser">
+          <p class="startJourney">
+          Start your journey by <span class="imp">creating account </span> with us to  <span class="imp">write and promote </span >your Articles
+        </p>
+            <div id="register">
+              <a href="register"> Create an account</a>
+            </div>
+          </div>
+
           <?php
           if (isset($GLOBALS['Menu'])) {
             echo $GLOBALS['Menu'];
