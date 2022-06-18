@@ -135,7 +135,7 @@ if (isset($_SESSION['logID'])) {
         border: 0;
         margin: 1em 1.5em;
         border-radius: 10px;
-        background-color: #66156;
+        background-color: #731b73;
         max-width: 350px;
       }
       .startJourney{
