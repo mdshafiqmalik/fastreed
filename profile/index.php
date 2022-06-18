@@ -79,9 +79,6 @@ function renderProfile($UID){
       case '2':
         $userType = "Administator";
         break;
-      default:
-        $userType = "Reader";
-        break;
     }
 
     $getPost = "SELECT * FROM fast_posts WHERE userID ='$UID'";
@@ -158,6 +155,8 @@ function renderProfile($UID){
       </div>
     <!-- Self Profile Closed -->';
   }
+
+
   }
  ?>
 <!DOCTYPE html>
@@ -171,8 +170,33 @@ function renderProfile($UID){
       <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo $randVersion; ?>">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style media="screen">
+      .mCont{
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        max-width: 500px;
+        position: absolute;
+        opacity: .6;
+      }
+      .mCont .getData{
+        width: 100%;
+        min-height: 400px;
+        background-color: white;
+        opacity: 1;
+        position: absolute;
+        z-index: 999999;
+        bottom: 0;
+        border-radius: 40px 40px 0 0 ;
+      }
+    </style>
   </head>
   <body>
+    <div class="mCont">
+      <div class="getData">
+
+      </div>
+    </div>
     <div class="navigation">
       <span> <a id="backArrow" href="../">&#171;  <span>Home</span></a> </span>
     </div>
@@ -181,5 +205,6 @@ function renderProfile($UID){
       echo $GLOBALS['profile'];
     }
      ?>
+
   </body>
 </html>
