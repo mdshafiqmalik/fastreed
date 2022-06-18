@@ -132,10 +132,10 @@ if (isset($_SESSION['logID'])) {
       <style media="screen">
       .newUser{
         padding: 1em 1.4em;
-        border: 1px solid;
+        border: 0;
         margin: 1em 1.5em;
         border-radius: 10px;
-        background-color: #b161b1;
+        background-color: #b04ab0;
         max-width: 350px;
       }
       .startJourney{
