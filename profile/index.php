@@ -173,7 +173,7 @@ function renderProfile($UID){
     <style media="screen">
       .mCont{
         width: 100vw;
-        height: 100vh;
+        height: 88vh;
         background-color: black;
         max-width: 500px;
         position: absolute;
@@ -181,7 +181,7 @@ function renderProfile($UID){
       }
       .mCont .getData{
         width: 100%;
-        min-height: 400px;
+        min-height: 300px;
         background-color: white;
         opacity: 1;
         position: absolute;
