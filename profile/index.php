@@ -186,27 +186,40 @@ function renderProfile($UID){
         position: absolute;
         z-index: 999999;
         bottom: 0;
-        border-radius: 40px 40px 0 0 ;
-        background-color: #eee;
+        border-radius: 45px 45px 0 0 ;
         padding: 1em 0;
         display: flex;
-        align-items: center;
         flex-direction: column;
       }
-      .mCont .getData span{
-        font-size: 1.4em;
+      .mCont .getData div{
+        font-size: .9em;
         font-family: var(--fontFam);
         color: black;
+        margin-bottom: .7em;
+        margin: 0 0 .7em 1em;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: .2em 3em;
+        font-weight: 500;
+        flex-direction: column;
+      }
+      .mCont .getData form{
+        font-weight: 500;
       }
     </style>
   </head>
   <body style="overflow:hidden">
     <div class="mCont">
       <div class="getData">
-        <span>Welcome Jhon Doe</span>
-        <form class="" action="index.html" method="post">
-          <input type="date" name="" value="">
-        </form>
+        <div class="">
+          <span>Welcome <b>Jhon Doe</b>  to complete your profile we need some more information about you</span><br>
+          <form class="" action="index.html" method="post">
+            <label for=""> Date Of Birth</label><br><br>
+            <input type="date" name="DOB" value="" placeholder="Date Of Birth">
+          </form>
+        </div>
+
       </div>
     </div>
     <div class="navigation">
