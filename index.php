@@ -107,13 +107,13 @@ if (isset($_SESSION['logID'])) {
           </div>';
       $GLOBALS['Menu'] = $loggedProfile.$writeArticles.$updateProfile.$channels.'<hr>'.$Interests.$Languages.$privacy.$securityLogin.'<hr>'.$termsPolicy.$helpFeedback.$aboutUs.$logout;
     }else {
-      $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+      $GLOBALS['Menu'] = $nonLoggedProfile.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
     }
   }else {
-    $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+    $GLOBALS['Menu'] = $nonLoggedProfile.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
   }
 }else {
-  $GLOBALS['Menu'] = $nonLoggedProfile.'<hr>'.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+  $GLOBALS['Menu'] = $nonLoggedProfile.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
 }
  ?>
 <!DOCTYPE html>
