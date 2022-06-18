@@ -174,10 +174,9 @@ function renderProfile($UID){
       .mCont{
         width: 100vw;
         height:100vh;
-        background-color: black;
+        background-color: rgba(20, 20, 20, 0.5);
         max-width: 500px;
         position: absolute;
-        opacity: .6;
       }
       .mCont .getData{
         width: 100%;
@@ -189,13 +188,25 @@ function renderProfile($UID){
         bottom: 0;
         border-radius: 40px 40px 0 0 ;
         background-color: #eee;
+        padding: 1em 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .mCont .getData span{
+        font-size: 1.4em;
+        font-family: var(--fontFam);
+        color: black;
       }
     </style>
   </head>
   <body style="overflow:hidden">
     <div class="mCont">
       <div class="getData">
-
+        <span>Welcome Jhon Doe</span>
+        <form class="" action="index.html" method="post">
+          <input type="date" name="" value="">
+        </form>
       </div>
     </div>
     <div class="navigation">
