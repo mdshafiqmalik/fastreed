@@ -3,7 +3,10 @@
   height:100vh;
   background-color: rgba(20, 20, 20, 0.5);
   max-width: 500px;
+  display: flex;
   position: absolute;
+  align-items:center;
+  justify-content:center;
 }
 .mCont .getData{
   width: 100%;
@@ -11,14 +14,13 @@
   background-color: white;
   position: absolute;
   z-index: 999999;
-  bottom: 0;
+  bottom: 10px;
   border-radius: 45px 45px 0 0 ;
   padding: 1em 0 .3em 0;
   display: flex;
   flex-direction: column;
 }
 .mCont .getData .justDiv{
-  overflow: scroll;
   font-size: 1em;
   font-family: var(--fontFam);
   color: black;

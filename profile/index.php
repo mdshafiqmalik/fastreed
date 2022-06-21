@@ -185,7 +185,7 @@ function renderProfile($UID){
               <div class="dateInput">
                 <input type="number" min="1" max="31" name="day" value="" placeholder="DD">
                 <input type="number" min="1" max="12" name="month" value="" placeholder="MM">
-                <input type="number" min="1950" max="2022" name="year" value="" placeholder="YYY">
+                <input type="number" min="1950" max="2022" name="year" value="" placeholder="YYYY">
               </div>
             </div>
 
