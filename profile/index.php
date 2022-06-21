@@ -182,7 +182,7 @@ function renderProfile($UID){
           <form class="" action="index.html" method="post">
             <div class="getDOB">
               <span id=""> Date of birth</span><br>
-              <span id="dobMessage">Date is Invalid</span>
+              <span id="dobMessage"></span>
               <div class="dateInput">
                 <input type="number" min="1" max="31" name="day" value="" placeholder="DD" required>
                 <input type="number" min="1" max="12" name="month" value="" placeholder="MM" required>
