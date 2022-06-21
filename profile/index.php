@@ -180,7 +180,7 @@ function renderProfile($UID){
           <form class="" action="index.html" method="post">
 
             <div class="getDOB">
-              <span id=""> Your Date Of Birth</span><br>
+              <span id=""> Date of birth</span><br>
               <span id="message">Date is Invalid</span>
               <div class="dateInput">
                 <input type="number" min="1" max="31" name="day" value="" placeholder="Day">
