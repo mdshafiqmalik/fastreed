@@ -36,51 +36,59 @@ if (isset($_GET['_secRandID'])) {
   $encryption_key, $options, $encryption_iv);
   // Check suid present or not
   $userID = $decUID;
-  $isUserPresent = checkUserID($userID);
+  $table = "user_noverify";
+  $isUserPresent = checkUserID($userID, $table);
   if ($isUserPresent) {
     if (isset($_GET['centpo'])) {
       $OTP = $_GET['centpo'];
       if (authenticateOTP($userID , $OTP)) {
         if (!checkOTPEXP($userID)) {
           if (delOTP($userID)) {
-            if (createUser($userID)) {
-              include '../_.config/_s_db_.php';
-              $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$userID'";
-              $userDetail = mysqli_query($db, $getUserDetail);
-              $userDetailArray = $userDetail->fetch_assoc();
-              $userName = $userDetailArray['userName'];
-              $userEmail = $userDetailArray['userEmail'];
-
-              $getFullName = "SELECT * FROM user_cred WHERE userID = '$userID'";
-              $userFullN = mysqli_query($db, $getFullName);
-              $userFullName = $userFullN->fetch_assoc();
-              $UFN = $userFullName['userFullName'];
-              $gender = $userFullName['gender'];
-
-              include 'mail/greetingMail.php';
-              greetingMail($UFN, $userName, $userEmail, $gender);
-
-              if ($logID = createLogin($userID)) {
-                $_SESSION['logID'] = $logID;
-                $_SESSION['loggedIn'] = 'true';
-                $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
-                <center><span id="successMessage">Redirecting....</span></center>
-                <script type="text/javascript">
-                  document.location = "../profile/";
-                </script>';
-              }else {
-                $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
-                <center><span id="successMessage">Redirecting to Login page</span></center>
-
-                <script type="text/javascript">
-                setTimeout(function(){
-                  document.location = "../login";
-                },5000);
-                </script>
-                ';
-              }
+            if (checkUsername($userID)) {
+              $GLOBALS['body'] = '<center><span id="errorMessage">Try with different Username</span></center>
+              <center><span id="errorMessage">Someone just taken your username before you verify</span></center>';
             }else {
-              $GLOBALS['body']  = '<center><span id="errorMessage">There is some problem at our end (000X2)</span></center>';
+
+              if (createUser($userID)) {
+                include '../_.config/_s_db_.php';
+                $getUserDetail = "SELECT * FROM fast_users WHERE userID = '$userID'";
+                $userDetail = mysqli_query($db, $getUserDetail);
+                $userDetailArray = $userDetail->fetch_assoc();
+                $userName = $userDetailArray['userName'];
+                $userEmail = $userDetailArray['userEmail'];
+
+                $getFullName = "SELECT * FROM user_cred WHERE userID = '$userID'";
+                $userFullN = mysqli_query($db, $getFullName);
+                $userFullName = $userFullN->fetch_assoc();
+                $UFN = $userFullName['userFullName'];
+                $gender = $userFullName['gender'];
+
+                include 'mail/greetingMail.php';
+                greetingMail($UFN, $userName, $userEmail, $gender);
+
+                if ($logID = createLogin($userID)) {
+                  $_SESSION['logID'] = $logID;
+                  $_SESSION['loggedIn'] = 'true';
+                  $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
+                  <center><span id="successMessage">Redirecting....</span></center>
+                  <script type="text/javascript">
+                    document.location = "../profile/";
+                  </script>';
+                }else {
+                  $GLOBALS['body']  = '<center><span id="successMessage">Registered Sucesssfully</span></center><br>
+                  <center><span id="successMessage">Redirecting to Login page</span></center>
+
+                  <script type="text/javascript">
+                  setTimeout(function(){
+                    document.location = "../login";
+                  },5000);
+                  </script>
+                  ';
+                }
+              }else {
+                $GLOBALS['body']  = '<center><span id="errorMessage">There is some problem at our end (000X2)</span></center>';
+              }
+
             }
           }else {
             $GLOBALS['body']  = '<center><span id="errorMessage">There is some problem at our end (000X1)</span></center>';
@@ -108,7 +116,7 @@ if (isset($_GET['_secRandID'])) {
       $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$encID.$formBottom.$historyReplace;
     }
   }else {
-    $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">User verified already</span></center><br>
+    $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">User verified already or may not exist</span></center><br>
     <center><span id="successMessage">Redirecting...</span></center>
     <script type="text/javascript">
     setTimeout(function(){
@@ -236,6 +244,10 @@ function createUser($userID){
     }else {
       $profilePic = '0F';
     }
+
+    // Recreate UserID if someone taken already
+    $checkUid = "SELECT * FROM fast_users WHERE userID = '$userID'";
+
     // add to fast_users
     $insertData =  "INSERT INTO `fast_users` (`userID`, `userEmail`, `userName`, `userPhone`, `userHashPassword`) VALUES ('$userID', '$userEmail', '$userName','', '$userHashPassword')";
 
@@ -267,6 +279,25 @@ function createUser($userID){
     $userAdded = false;
   }
   return $userAdded;
+}
+
+function checkUsername($userID){
+  include '../_.config/_s_db_.php';
+  // Get Username
+  $sql = "SELECT * FROM user_noverify WHERE userID = '$userID'";
+  $result = mysqli_query($db, $sql);
+  $data = $result->fetch_assoc();
+  $userName = $data['userName'];
+
+  // Check userName
+  $sql2 = "SELECT * FROM fast_users WHERE BINARY userName = '$userName'";
+  $result = mysqli_query($db, $sql2);
+  if (mysqli_num_rows($result)) {
+    $userNameTaken = true;
+  }else {
+    $userNameTaken = false;
+  }
+  return $userNameTaken;
 }
 
 // Update OTP
@@ -355,9 +386,9 @@ function authenticateOTP($userID, $OTP){
   return $OAuth;
 }
 
-function checkUserID($userID){
+function checkUserID($userID, $table){
   include '../_.config/_s_db_.php';
-  $checkSUID = "SELECT userID FROM user_noverify WHERE userID = '$userID'";
+  $checkSUID = "SELECT userID FROM '$table' WHERE userID = '$userID'";
   $result = mysqli_query($db, $checkSUID);
   if ($result) {
     $isUserID = mysqli_num_rows($result);
