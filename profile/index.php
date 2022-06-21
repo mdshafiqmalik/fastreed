@@ -155,9 +155,10 @@ function renderProfile($UID){
       </div>
     <!-- Self Profile Closed -->';
   }
-
-
   }
+
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -173,40 +174,91 @@ function renderProfile($UID){
     <title></title>
   </head>
   <body style="overflow:hidden;">
+
     <div class="mCont">
       <div class="getData">
         <div class="justDiv">
           <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
           <form class="" action="index.html" method="post">
-
             <div class="getDOB">
               <span id=""> Date of birth</span><br>
-              <span id="message">Date is Invalid</span>
+              <span id="dobMessage">Date is Invalid</span>
               <div class="dateInput">
-                <input type="number" min="1" max="31" name="day" value="" placeholder="DD">
-                <input type="number" min="1" max="12" name="month" value="" placeholder="MM">
-                <input type="number" min="1950" max="2022" name="year" value="" placeholder="YYYY">
+                <input type="number" min="1" max="31" name="day" value="" placeholder="DD" required>
+                <input type="number" min="1" max="12" name="month" value="" placeholder="MM" required>
+                <input type="number" min="1950" max="2022" name="year" value="" placeholder="YYYY" required>
               </div>
             </div>
-
-
             <!-- For Description -->
-
             <div class="Descibe">
-              <span> Write some words about yourself</span>
-              <span id="message"></span>
+              <span>Your bio</span>
+              <span id="bioMessage"></span>
               <div class="desInput">
-                <textarea name="name" rows="7" placeholder="Write soomething about yourself"></textarea>
+                <textarea name="name" rows="7" placeholder="Write something about yourself" required></textarea>
+                <div class="interestsDiv">
+                  <span>Select your interests</span>
+                  <div class="interests">
+
+                    <label for="computer">computer</label>
+                    <input id="computer" type="checkbox" name="" value="">
+
+                    <label for="science">science</label>
+                    <input id="science" type="checkbox" name="" value="">
+
+                    <label for="artsCulture">arts and culture</label>
+                    <input id="artsCulture" type="checkbox" name="" value="">
+
+                    <label for="books">books</label>
+                    <input id="books" type="checkbox" name="" value="">
+
+                    <label for="howto">how to?</label>
+                    <input id="howto" type="checkbox" name="" value="">
+
+                    <label for="facts">facts</label>
+                    <input id="facts" type="checkbox" name="" value="">
+
+                    <label for="politics">politics</label>
+                    <input id="politics" type="checkbox" name="" value="">
+
+                    <label for="celebrity">celebrity</label>
+                    <input id="celebrity" type="checkbox" name="" value="">
+
+                    <label for="bollywood">bollywood</label>
+                    <input id="bollywood" type="checkbox" name="" value="">
+
+                    <label for="stcokmarket">stcok market</label>
+                    <input id="stcokmarket" type="checkbox" name="" value="">
+
+                    <label for="explaination">explaination</label>
+                    <input id="explaination" type="checkbox" name="" value="">
+
+                    <label for="DIY">DIY</label>
+                    <input id="DIY" type="checkbox" name="" value="">
+
+                    <label for="writing">writing</label>
+                    <input id="writing" type="checkbox" name="" value="">
+
+                    <label for="lifestyle">lifestyle</label>
+                    <input id="lifestyle" type="checkbox" name="" value="">
+
+                    <label for="youtube">youtube</label>
+                    <input id="youtube" type="checkbox" name="" value="">
+
+                    <label for="instagram">instagram</label>
+                    <input id="instagram" type="checkbox" name="" value="">
+                  </div>
+                </div>
                 <div class="button">
-                  <button type="button" name="button">Next</button>
+                  <input type="submit" name="" value="Next">
                 </div>
               </div>
             </div>
           </form>
         </div>
-
       </div>
     </div>
+
+
     <div class="navigation">
       <span> <a id="backArrow" href="../">&#171;  <span>Home</span></a> </span>
     </div>
