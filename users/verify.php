@@ -36,8 +36,8 @@ if (isset($_GET['_secRandID'])) {
   $encryption_key, $options, $encryption_iv);
   // Check suid present or not
   $userID = $decUID;
-  $table = "user_noverify";
-  $isUserPresent = checkUserID($userID, $table);
+  var_dump($userID);
+  $isUserPresent = checkUserID($userID);
   if ($isUserPresent) {
     if (isset($_GET['centpo'])) {
       $OTP = $_GET['centpo'];
