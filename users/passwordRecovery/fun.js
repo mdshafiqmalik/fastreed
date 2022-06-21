@@ -56,4 +56,3 @@ function checkFeild(){
 }
    var submit = document.getElementById('submitPass');
    submit.style.background = "#aaa";
- </script>
