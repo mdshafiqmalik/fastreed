@@ -126,10 +126,9 @@ if (isset($_GET['_secRandID'])) {
 }elseif(isset($_POST)) {
   $paramSet = isset($_POST['_secRandID']) && isset($_POST['resendOTP']);
   if ($paramSet) {
-    $encUID = $_POST['_secRandID'];
-    include '../_.config/sjdhfjsadkeys.php';
-    $userID = openssl_decrypt($_POST['_secRandID'], $ciphering,
-    $encryption_key, $options, $encryption_iv);
+    $refUserID = $_POST['_secRandID'];
+    $pin = 2536;
+    $userID = $refUserID/$pin;
 
     if (checkUserID($userID)) {
       if(updateOTP($userID)){
