@@ -32,7 +32,8 @@ $historyReplace = '<script>
 if (isset($_GET['_secRandID'])) {
   $refUserID = $_GET['_secRandID'];
   // Check secRandID present or not
-  $userID = $refUserID/2536;
+  $pin = 2536;
+  $userID = $refUserID/$pin;
   var_dump($userID);
   $isUserPresent = checkUserID($userID);
   if ($isUserPresent) {
