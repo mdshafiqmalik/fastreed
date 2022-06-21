@@ -97,7 +97,7 @@ if (isset($_GET['_secRandID'])) {
           <span id="errorMessage">Entered link or OTP Expired and Now Deleted</span>
           <form class="loginForm" action="'.$self.'" method="post">
           <br>
-            <input type="hidden" name="suid" value="'.$encID.'" placeholder="Enter OTP">
+            <input type="hidden" name="suid" value="'.$refUserID.'" placeholder="Enter OTP">
             <input type="hidden" name="resendOTP" value="true" placeholder="Enter OTP">
           <div class="loginSubmit">
             <input id="resendOTP" type="submit" name="" value="Resend OTP">
@@ -107,11 +107,11 @@ if (isset($_GET['_secRandID'])) {
         }
       }else {
         $message = '<span id="errorMessage">Wrong OTP entered</span>';
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$encID.$formBottom;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$refUserID.$formBottom;
       }
     }else {
       $message = '<span id="successMessage">We have sent a 6 digit OTP to your email</span>';
-      $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$encID.$formBottom.$historyReplace;
+      $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$refUserID.$formBottom.$historyReplace;
     }
   }else {
     $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">OTP/Link verified already or may not exist</span></center><br>
@@ -134,10 +134,10 @@ if (isset($_GET['_secRandID'])) {
       if(updateOTP($userID)){
         $message = '<span id="successMessage">We have <i>Resent a 6 digit OTP</i> to your email</span>';
 
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$encUID.$formTop.$encUID.$formBottom .$historyReplace;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$encUID.$formTop.$refUserID.$formBottom .$historyReplace;
       }else {
         $message = '<span style="color:orange;" id="errorMessage">Failed to resend OTP again</span>';
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$encUID.$formTop.$encUID.$formBottom;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$encUID.$formTop.$refUserID.$formBottom;
       }
     }else {
       $GLOBALS['body']  =  '<script type="text/javascript">
