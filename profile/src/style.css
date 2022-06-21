@@ -98,10 +98,11 @@
 .interests label{
   text-transform: capitalize;
   border: 1px solid #aaa;
-  padding: .2em .8em;
+  padding: .3em 1em;
   border-radius: 20px;
   display:inline-block;
   margin: .2em;
+  font-size: 1.04em;
 }
 .interests label img{
   height: 14px;
