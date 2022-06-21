@@ -186,22 +186,34 @@ function renderProfile($UID){
         z-index: 999999;
         bottom: 0;
         border-radius: 45px 45px 0 0 ;
-        padding: 1em 0 6em 0;
+        padding: 1em 0 7em 0;
         display: flex;
         flex-direction: column;
       }
-      .mCont .getData div{
+      .mCont .getData .justDiv{
         font-size: 1em;
         font-family: var(--fontFam);
         color: black;
         margin: .7em;
+        margin-top: 0;
         padding: .2em 3em;
         font-weight: 500;
-        flex-direction: column;
       }
       .mCont .getData form{
         font-weight: 500;
         margin-top: 1em;
+      }
+      .dateInput{
+        display: flex;
+      }
+      .dateInput input{
+        width: 50px;
+        margin: 0 .3em;
+        font-size: 1.1em;
+        border: 1px solid #aaa;
+        padding: .2em .2em;
+        text-align: center;
+        border-radius: 5px;
       }
       .actionLabel{
         display: flex;
@@ -220,11 +232,16 @@ function renderProfile($UID){
   <body style="overflow:hidden">
     <div class="mCont">
       <div class="getData">
-        <div class="">
+        <div class="justDiv">
           <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
           <form class="" action="index.html" method="post">
             <label for=""> Date Of Birth</label><br><br>
-            <input type="date" name="DOB" value="" placeholder="Date Of Birth">
+            <div class="dateInput">
+              <input type="number" min="1" max="31" name="day" value="" placeholder="Day">
+              <input type="number" min="1" max="12" name="month" value="" placeholder="Month">
+              <input type="number" min="1950" max="2022" name="year" value="" placeholder="Year">
+            </div>
+
           </form>
         </div>
 
