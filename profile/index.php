@@ -183,9 +183,9 @@ function renderProfile($UID){
               <span id=""> Date of birth</span><br>
               <span id="message">Date is Invalid</span>
               <div class="dateInput">
-                <input type="number" min="1" max="31" name="day" value="" placeholder="Day">
-                <input type="number" min="1" max="12" name="month" value="" placeholder="Month">
-                <input type="number" min="1950" max="2022" name="year" value="" placeholder="Year">
+                <input type="number" min="1" max="31" name="day" value="" placeholder="DD">
+                <input type="number" min="1" max="12" name="month" value="" placeholder="MM">
+                <input type="number" min="1950" max="2022" name="year" value="" placeholder="YYY">
               </div>
             </div>
 
