@@ -134,10 +134,10 @@ if (isset($_GET['_secRandID'])) {
       if(updateOTP($userID)){
         $message = '<span id="successMessage">We have <i>Resent a 6 digit OTP</i> to your email</span>';
 
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$encUID.$formTop.$refUserID.$formBottom .$historyReplace;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$refUserID.$formTop.$refUserID.$formBottom .$historyReplace;
       }else {
         $message = '<span style="color:orange;" id="errorMessage">Failed to resend OTP again</span>';
-        $GLOBALS['body']  =  $VYO.$message.$formHead.$encUID.$formTop.$refUserID.$formBottom;
+        $GLOBALS['body']  =  $VYO.$message.$formHead.$refUserID.$formTop.$refUserID.$formBottom;
       }
     }else {
       $GLOBALS['body']  =  '<script type="text/javascript">
