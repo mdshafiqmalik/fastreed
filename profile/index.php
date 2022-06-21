@@ -4,7 +4,7 @@ if(isset($_COOKIE['logID'])) {
   if (!empty($_COOKIE['logID'])) {
     include '../_.config/sjdhfjsadkeys.php';
     $dUserID = openssl_decrypt ($_COOKIE['logID'], $ciphering,
-    $decryption_key, $options, $decryption_iv);
+    $encryption_key, $options, $encryption_iv);
     $_SESSION["logID"] = $dUserID;
     if ($userID = checkLogDetails($_SESSION['logID'])) {
       renderProfile($userID);

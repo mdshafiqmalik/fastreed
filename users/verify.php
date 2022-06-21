@@ -33,7 +33,7 @@ if (isset($_GET['_secRandID'])) {
   $encID = $_GET['_secRandID'];
   include '../_.config/sjdhfjsadkeys.php';
   $decUID = openssl_decrypt($_GET['_secRandID'], $ciphering,
-  $decryption_key, $options, $decryption_iv);
+  $encryption_key, $options, $encryption_iv);
   // Check suid present or not
   $userID = $decUID;
   $isUserPresent = checkUserID($userID);
