@@ -10,8 +10,8 @@ $createPass = '
    <div class="loginFields">
      <input id="confirmPassword" onkeyup="checkFeild()" type="password" name="confirmPassword" value="" placeholder="Confirm New Password">
      <span class="status" id="passwordEYE">
-       <img width="25px" height="25px onclick="change()" id="eyeClosed"src="../../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
-       <img width="25px" height="25px onclick="change()" id="eyeOpened"src="../../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
+       <img width="25px" height="25px onclick="change()" id="eyeClosed" src="../../assets/pics/svgs/eye_closed.svg" style="display:block;"alt="">
+       <img width="25px" height="25px onclick="change()" id="eyeOpened" src="../../assets/pics/svgs/eye_show.svg" style="display:none;"alt="">
      </span>
    </div>
    <div class="loginSubmit">
@@ -103,7 +103,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }else {
   header('Location: index.php?error=GTNF');
 }
+
+function checkUser($param){
+  include '../../_.config/_s_db_.php';
+  $UnameEmail = mysqli_real_escape_string($db,$param);
+  $sql = "SELECT * FROM fast_otp WHERE userID = '$param' AND otpIntent='PR'";
+  $result = mysqli_query($db,$sql);
+  if (mysqli_num_rows($result)) {
+    $row = $result->fetch_assoc();
+    $userExist = $row;
+  }else {
+    $userExist = false;
+  }
+  return $userExist;
+}
+
+// Delete OTP Data
+function delOTP($userID){
+  include '../../_.config/_s_db_.php';
+  $sql = "DELETE FROM fast_otp WHERE userID = '$userID' AND otpIntent ='PR'";
+  if(mysqli_query($db, $sql)){
+    $otpDeleted = true;
+  }else {
+    $otpDeleted = false;;
+  }
+  return $otpDeleted;
+}
+function sanitizeData($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
  ?>
+
+
+
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
  <head>
@@ -127,26 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo $GLOBALS['content'];
         }
          ?>
-
-
      <script type="text/javascript">
-
-     function change(){
-       var closed = document.getElementById('eyeClosed').style.display;
-       var opened = document.getElementById('eyeOpened').style.display;
-       if (closed == 'block') {
-         document.getElementById('eyeClosed').style.display = "none";
-         document.getElementById('eyeOpened').style.display = "block";
-         document.getElementById('confirmPassword').type = "text";
-         document.getElementById('newPassword').type = "text";
-       }else {
-         document.getElementById('eyeOpened').style.display = "none";
-         document.getElementById('eyeClosed').style.display = "block";
-         document.getElementById('confirmPassword').type = "password";
-         document.getElementById('newPassword').type = "password";
-       }
-     }
-
     function checkFeild(){
        var confPass =  document.getElementById('confirmPassword').value;
         var newPass =  document.getElementById('newPassword').value;
@@ -195,36 +211,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <script src="../../users/src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
    </body>
  </html>
-<?php
-function checkUser($param){
-  include '../../_.config/_s_db_.php';
-  $UnameEmail = mysqli_real_escape_string($db,$param);
-  $sql = "SELECT * FROM fast_otp WHERE userID = '$param' AND otpIntent='PR'";
-  $result = mysqli_query($db,$sql);
-  if (mysqli_num_rows($result)) {
-    $row = $result->fetch_assoc();
-    $userExist = $row;
-  }else {
-    $userExist = false;
-  }
-  return $userExist;
-}
-
-// Delete OTP Data
-function delOTP($userID){
-  include '../../_.config/_s_db_.php';
-  $sql = "DELETE FROM fast_otp WHERE userID = '$userID' AND otpIntent ='PR'";
-  if(mysqli_query($db, $sql)){
-    $otpDeleted = true;
-  }else {
-    $otpDeleted = false;;
-  }
-  return $otpDeleted;
-}
-function sanitizeData($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
- ?>

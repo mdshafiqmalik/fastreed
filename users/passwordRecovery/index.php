@@ -142,39 +142,8 @@ elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
 }else {
   $GLOBALS['content'] =  $top.$intent.$template.$template2;
 }
- ?>
-
- <!DOCTYPE html>
- <html lang="en" dir="ltr">
- <head>
-   <meta charset="utf-8">
-   <?php include '../../components/randVersion.php' ?>
-   <link rel="stylesheet" href="../src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
-   <link rel="stylesheet" href="../../assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
-   <link rel="stylesheet" href="../src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title></title>
- </head>
-   <body>
-     <div class="navigation">
-       <span> <a id="backArrow" href="../../login">&#171;  <span>Back</span></a> </span>
-     </div>
-     <div id="userDiv" class="cont">
-     <div class="content">
-        <?php
-        if (isset($GLOBALS['content'])) {
-          echo $GLOBALS['content'];
-        }
-         ?>
-
-     </div>
-     </div>
-     <script src="../src/fun.js?v=<?php echo $_SESSION['randVersion']; ?>" charset="utf-8"></script>
-   </body>
- </html>
 
 
-<?php
 function updateOTP($suid){
   $expTime = time()+600;
   $randOTP = "";
@@ -305,3 +274,31 @@ function authenticateOTP($userID, $OTP){
   return $OAuth;
 }
  ?>
+
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <?php include '../../components/randVersion.php' ?>
+   <link rel="stylesheet" href="../src/style.css?v=<?php echo $randVersion; ?>">
+   <link rel="stylesheet" href="../../assets/css/root.css?v=<?php echo $randVersion; ?>">
+   <link rel="stylesheet" href="../src/profile.css?v=<?php echo $randVersion; ?>">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title></title>
+ </head>
+   <body>
+     <div class="navigation">
+       <span> <a id="backArrow" href="../../login">&#171;  <span>Back</span></a> </span>
+     </div>
+     <div id="userDiv" class="cont">
+     <div class="content">
+        <?php
+        if (isset($GLOBALS['content'])) {
+          echo $GLOBALS['content'];
+        }
+         ?>
+
+     </div>
+     </div>
+   </body>
+ </html>
