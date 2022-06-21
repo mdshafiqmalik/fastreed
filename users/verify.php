@@ -31,7 +31,7 @@ $historyReplace = '<script>
 </script>';
 if (isset($_GET['_secRandID'])) {
   $refUserID = $_GET['_secRandID'];
-  // Check suid present or not
+  // Check secRandID present or not
   $userID = $refUserID/2536;
   var_dump($userID);
   $isUserPresent = checkUserID($userID);
