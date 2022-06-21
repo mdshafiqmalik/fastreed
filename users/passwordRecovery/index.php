@@ -39,6 +39,8 @@ $historyReplace = '<script>
    }
 </script>';
 
+
+//When user entered username or email
 $message = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST" ){
   if (isset($_POST['usernameOrEMail'])) {
@@ -49,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
       $userExist = findUser($UsernameOrEMail);
       if ((boolean)$userExist) {
         $userID = $userExist['userID'];
+        $refUserID = $userID*2536;
         $userEmail = $userExist['userEmail'];
         $userNam = $userExist['userName'];
         $userFullName = $userExist['userFullName'];
@@ -60,12 +63,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
         $sentTime  = time()+600;
         if (addOTP($userID, $randOTP,$userEmail,$sentTime)) {
           include 'prOTP.php';
-          if (resetMail($userID, $randOTP, $userEmail, $userNam)) { // passRecMail($userID, $randOTP, $userEmail, $userName)
+          if (resetMail($refUserID, $randOTP, $userEmail, $userNam)) { // passRecMail($userID, $randOTP, $userEmail, $userName)
             $message = '<span id="successMessage" >Enter OTP sent to email linked with your account</span>';
-            $GLOBALS['content'] = $top.$message.$verifyOTP1.$userID.$verifyOTP2.$resendOTP1.$userID.$resendOTP2.$historyReplace;
+            $GLOBALS['content'] = $top.$message.$verifyOTP1.$refUserID.$verifyOTP2.$resendOTP1.$refUserID.$resendOTP2.$historyReplace;
           }else {
             $message = '<span id="errorMessage" >Unable to send OTP to the email linked with your account</span>';
-            $GLOBALS['content'] = '<br>'.$message.$resendOTP1.$userID.$resendOTP2.$historyReplace;
+            $GLOBALS['content'] = '<br>'.$message.$resendOTP1.$refUserID.$resendOTP2.$historyReplace;
           }
         }else {
           $message = '
@@ -79,24 +82,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
         $GLOBALS['content'] = $top.$template.$message.$template2;
       }
     }
+    // when user resends otp
   }elseif (isset($_POST['resendID'])) {
     $resendID = $_POST['resendID'];
+    $refID = $resendID*2536;
     if (!empty($resendID)) { //
       if (updateOTP($resendID)) {
         $message = '<span id="successMessage" >Another OTP sent to email linked with your account</span>';
-        $GLOBALS['content'] = $top.$message.$verifyOTP1.$resendID.$verifyOTP2.$resendOTP1.$resendID.$resendOTP2.$historyReplace;
+        $GLOBALS['content'] = $top.$message.$verifyOTP1.$refID.$verifyOTP2.$resendOTP1.$refID.$resendOTP2.$historyReplace;
       }else {
         $message = '<span id="errorMessage" >Cannot Send New OTP</span>';
-        $GLOBALS['content'] = $top.$message.$verifyOTP1.$resendID.$verifyOTP2.$resendOTP1.$resendID.$resendOTP2.$historyReplace;
+        $GLOBALS['content'] = $top.$message.$verifyOTP1.$refID.$verifyOTP2.$resendOTP1.$refID.$resendOTP2.$historyReplace;
       }
     }else {
       $message = '<span id="errorMessage" >Cannot Send New OTP</span>';
-      $GLOBALS['content'] = $message.$verifyOTP1.$resendID.$verifyOTP2.$resendOTP1.$resendID.$resendOTP2.$historyReplace;
+      $GLOBALS['content'] = $message.$verifyOTP1.$refID.$verifyOTP2.$resendOTP1.$refID.$resendOTP2.$historyReplace;
     }
   }else {
     $GLOBALS['content'] = $top.$intent.$template.$template2;
   }
-}elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+}
+// When user verify OTP
+elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
   if (isset($_GET['type'])) {
     if ($_GET['type'] == 'Link') {
       $type = 'Link';
@@ -106,28 +113,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
   }else {
     $type = 'OTP';
   }
+
   if (isset($_GET['recID']) && isset($_GET['centpo'])) {
-    $uid = $_GET['recID'];
+    $refUID=  $_GET['recID'];
+    $uid = $_GET['recID']/2536;
     $otp = $_GET['centpo'];
     if (checkUser($uid)) {
       if (authenticateOTP($uid, $otp)) {
         if (!isExpired($uid)) {
-          include '../../_.config/sjdhfjsadkeys.php';
-          $newID = openssl_encrypt($uid, $ciphering,
-          $encryption_key, $options, $encryption_iv);
           session_start();
           $_SESSION['newID'] = $uid;
           header('Location: newPass.php?recID='.$newID);
         }else {
           $message =  '<span id="errorMessage" >Entered '.$type.' Expired Resend Another</span></center>';
-          $GLOBALS['content'] = $top.$message.$resendOTP1.$uid.$resendOTP2.$historyReplace;
+          $GLOBALS['content'] = $top.$message.$resendOTP1.$refUID.$resendOTP2.$historyReplace;
         }
       }else {
         $message =  '<span id="errorMessage" >Invalid '.$type.' Entered</span></center>';
-        $GLOBALS['content'] = $top.$message.$verifyOTP1.$uid.$verifyOTP2.$resendOTP1.$uid.$resendOTP2.$historyReplace;
+        $GLOBALS['content'] = $top.$message.$verifyOTP1.$refUID.$verifyOTP2.$resendOTP1.$refUID.$resendOTP2.$historyReplace;
       }
     }else {
-      $message = '<span id="errorMessage" >'.$type.' already Used</span>';
+      $message = '<span id="errorMessage" >'.$type.' already Used<br>Or May Not Exist</span>';
       $GLOBALS['content'] =  $top.$message.$template.$template2;
     }
   }else {
