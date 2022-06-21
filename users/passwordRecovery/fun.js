@@ -4,11 +4,13 @@ function change(){
   if (closed == 'block') {
     document.getElementById('eyeClosed').style.display = "none";
     document.getElementById('eyeOpened').style.display = "block";
-    document.getElementById('password').type = "text";
+    document.getElementById('newPassword').type = "text";
+    document.getElementById('confirmPassword').type = "text";
   }else {
     document.getElementById('eyeOpened').style.display = "none";
     document.getElementById('eyeClosed').style.display = "block";
-    document.getElementById('password').type = "password";
+    document.getElementById('newPassword').type = "password";
+    document.getElementById('confirmPassword').type = "password";
   }
 }
 
