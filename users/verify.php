@@ -30,13 +30,9 @@ $historyReplace = '<script>
    }
 </script>';
 if (isset($_GET['_secRandID'])) {
-  $encID = $_GET['_secRandID'];
-  var_dump($encID);
-  include '../_.config/sjdhfjsadkeys.php';
-  $decID = openssl_decrypt($encID, $ciphering,
-  $encryption_key, $options, $encryption_iv);
+  $refUserID = $_GET['_secRandID'];
   // Check suid present or not
-  $userID = $decID;
+  $userID = $refUserID/2536;
   var_dump($userID);
   $isUserPresent = checkUserID($userID);
   if ($isUserPresent) {

@@ -15,17 +15,15 @@ if (count($_SESSION) > 0)  {
   $username = $_SESSION['userName'];
   $encPassword = $_SESSION['encPassword'];
   $gender = $_SESSION['gender'];
+  $refUserID = $newUserID * 2536;
 
   if (addOTP($db, $newUserID, $randOTP,$email,$expTime)) {
-   if (addUser($db, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword, $gender)) {
+   if (addUser($expTime, $db, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword, $gender)) {
      include 'mail/avOTP.php';
-     include '../_.config/sjdhfjsadkeys.php';
-     $encUID = openssl_encrypt($newUserID, $ciphering,
-     $encryption_key, $options, $encryption_iv);
 
-     if (sendOTP($email, $encUID, $randOTP, $fullName, $gender)) { //sendOTP($email, $newUserID, $randOTP, $fullName)
+     if (sendOTP($email, $refUserID, $randOTP, $fullName, $gender)) { //sendOTP($email, $newUserID, $randOTP, $fullName)
 
-       header("Location: verify.php?_secRandID=$encUID");
+       header("Location: verify.php?_secRandID=$refUserID");
      }else {
        header("Location: ../register?errorMessage= OTP Not Send&id=FNS");
      }
@@ -61,7 +59,7 @@ function addOTP($db,$newUserID, $randOTP,$email,$expTime){
 
 
 // Add user to Database
-function addUser($db, $newUserID, $username, $fullName, $email, $password, $encPass, $gender){
+function addUser($secKey, $db, $newUserID, $username, $fullName, $email, $password, $encPass, $gender){
   $checkEmail = "SELECT userEmail FROM user_noverify Where userEmail = '$email'";
   $res = mysqli_query($db, $checkEmail);
   if ($res) {
@@ -69,7 +67,7 @@ function addUser($db, $newUserID, $username, $fullName, $email, $password, $encP
     mysqli_query($db, $delRecord);
   }
 
-  $addUser = "INSERT INTO `user_noverify` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`,`ePassword`, `gender`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password', '$encPass', '$gender')";
+  $addUser = "INSERT INTO `user_noverify` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`,`ePassword`, `gender`,`vKey`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password', '$encPass', '$gender', '$secKey')";
   $result = mysqli_query($db, $addUser);
   if ($result) {
     $userAdded = true;

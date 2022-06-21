@@ -8,12 +8,11 @@
   </head>
   <body>
     <?php
-    $st = "wCHA8T2ns573rvi3eS+M";
-
-    include '_.config/sjdhfjsadkeys.php';
-    $userID = openssl_decrypt($st, $ciphering,
-    $encryption_key, $options, $encryption_iv);
-    var_dump($userID);
+    $newUserID = 999999990999999;
+  $refUserID = $newUserID*2536;
+    var_dump($refUserID);
+    $nUID = $refUserID/2536;
+    echo $nUID;
     ?>
   </body>
 </html>
