@@ -1,7 +1,7 @@
 
 <?php
 include '../components/randVersion.php';
-if (isset($_SESSION["uisnnue"]) || isset($_COOKIE["uisnnue"])) {
+if (isset($_SESSION["logID"]) || isset($_COOKIE["logID"])) {
       header("Location: ../profile/");
 }
 include '../components/uniSession.php';

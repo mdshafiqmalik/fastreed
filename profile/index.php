@@ -191,20 +191,29 @@ function renderProfile($UID){
         flex-direction: column;
       }
       .mCont .getData div{
-        font-size: 1.4em;
+        font-size: 1em;
         font-family: var(--fontFam);
         color: black;
-        margin-bottom: .7em;
-        margin: 0 0 .7em 1em;
-        display: flex;
-        justify-content: center;
-        text-align: center;
+        margin: .7em;
         padding: .2em 3em;
         font-weight: 500;
         flex-direction: column;
       }
       .mCont .getData form{
         font-weight: 500;
+        margin-top: 1em;
+      }
+      .actionLabel{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        text-align: center;
+      }
+      .splitter{
+        width: 80px;
+        border: 2px solid #ddd;
+        background-color: #ddd;
+        margin: 1em;
       }
     </style>
   </head>
@@ -212,7 +221,7 @@ function renderProfile($UID){
     <div class="mCont">
       <div class="getData">
         <div class="">
-          <span>Welcome <b>Jhon Doe</b>  to complete your profile we need some more information about you</span><br>
+          <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
           <form class="" action="index.html" method="post">
             <label for=""> Date Of Birth</label><br><br>
             <input type="date" name="DOB" value="" placeholder="Date Of Birth">
