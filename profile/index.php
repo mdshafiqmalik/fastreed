@@ -247,7 +247,55 @@ function renderProfile($UID){
                     <label for="instagram">instagram</label>
                     <input id="instagram" type="checkbox" name="" value="">
 
-                    
+
+
+                    <label for="computer">computer</label>
+                    <input id="computer" type="checkbox" name="" value="">
+
+                    <label for="science">science</label>
+                    <input id="science" type="checkbox" name="" value="">
+
+                    <label for="artsCulture">arts and culture</label>
+                    <input id="artsCulture" type="checkbox" name="" value="">
+
+                    <label for="books">books</label>
+                    <input id="books" type="checkbox" name="" value="">
+
+                    <label for="howto">how to?</label>
+                    <input id="howto" type="checkbox" name="" value="">
+
+                    <label for="facts">facts</label>
+                    <input id="facts" type="checkbox" name="" value="">
+
+                    <label for="politics">politics</label>
+                    <input id="politics" type="checkbox" name="" value="">
+
+                    <label for="celebrity">celebrity</label>
+                    <input id="celebrity" type="checkbox" name="" value="">
+
+                    <label for="bollywood">bollywood</label>
+                    <input id="bollywood" type="checkbox" name="" value="">
+
+                    <label for="stcokmarket">stcok market</label>
+                    <input id="stcokmarket" type="checkbox" name="" value="">
+
+                    <label for="explaination">explaination</label>
+                    <input id="explaination" type="checkbox" name="" value="">
+
+                    <label for="DIY">DIY</label>
+                    <input id="DIY" type="checkbox" name="" value="">
+
+                    <label for="writing">writing</label>
+                    <input id="writing" type="checkbox" name="" value="">
+
+                    <label for="lifestyle">lifestyle</label>
+                    <input id="lifestyle" type="checkbox" name="" value="">
+
+                    <label for="youtube">youtube</label>
+                    <input id="youtube" type="checkbox" name="" value="">
+
+                    <label for="instagram">instagram</label>
+                    <input id="instagram" type="checkbox" name="" value="">
                   </div>
                 </div>
                 <div class="button">
