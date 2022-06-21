@@ -43,7 +43,7 @@ if (isset($_GET['_secRandID'])) {
         if (!checkOTPEXP($userID)) {
           if (delOTP($userID)) {
             if (checkUsername($userID)) {
-              $GLOBALS['body'] = '<center><span id="errorMessage">Try with different Username</span></center>
+              $GLOBALS['body'] = '<center><span id="errorMessage">Try with different Username</span></center> <br>
               <center><span id="errorMessage">Someone just taken your username before you verify</span></center>';
             }else {
 
