@@ -18,6 +18,7 @@
   flex-direction: column;
 }
 .mCont .getData .justDiv{
+  overflow: scroll;
   font-size: 1em;
   font-family: var(--fontFam);
   color: black;
