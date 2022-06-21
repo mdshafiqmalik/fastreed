@@ -109,9 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  <head>
    <meta charset="utf-8">
     <?php include '../../components/randVersion.php' ?>
-   <link rel="stylesheet" href="../src/style.css?v=<?php echo $_SESSION['randVersion']; ?>">
-   <link rel="stylesheet" href="../../assets/css/root.css?v=<?php echo $_SESSION['randVersion']; ?>">
-   <link rel="stylesheet" href="../src/profile.css?v=<?php echo $_SESSION['randVersion']; ?>">
+   <link rel="stylesheet" href="../src/style.css?v=<?php echo $randVersion; ?>">
+   <link rel="stylesheet" href="../../assets/css/root.css?v=<?php echo $randVersion; ?>">
+   <link rel="stylesheet" href="../src/profile.css?v=<?php echo $randVersion; ?>">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title></title>
  </head>
@@ -130,6 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
      <script type="text/javascript">
+
      function change(){
        var closed = document.getElementById('eyeClosed').style.display;
        var opened = document.getElementById('eyeOpened').style.display;
@@ -145,6 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          document.getElementById('newPassword').type = "password";
        }
      }
+
     function checkFeild(){
        var confPass =  document.getElementById('confirmPassword').value;
         var newPass =  document.getElementById('newPassword').value;
@@ -189,6 +191,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        var submit = document.getElementById('submitPass');
        submit.style.background = "#aaa";
      </script>
+
+     <script src="../users/src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
    </body>
  </html>
 <?php
