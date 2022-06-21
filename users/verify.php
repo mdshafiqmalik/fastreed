@@ -386,9 +386,9 @@ function authenticateOTP($userID, $OTP){
   return $OAuth;
 }
 
-function checkUserID($userID, $table){
+function checkUserID($userID){
   include '../_.config/_s_db_.php';
-  $checkSUID = "SELECT userID FROM '$table' WHERE userID = '$userID'";
+  $checkSUID = "SELECT userID FROM user_noverify WHERE userID = '$userID'";
   $result = mysqli_query($db, $checkSUID);
   if ($result) {
     $isUserID = mysqli_num_rows($result);
