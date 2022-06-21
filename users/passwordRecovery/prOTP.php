@@ -1,10 +1,6 @@
 <?php
 function resetMail($userID, $randOTP, $userEmail, $userFullName){
 
-  include '../../_.config/sjdhfjsadkeys.php';
-  $encID = openssl_encrypt($userID, $ciphering,
-  $encryption_key, $options, $encryption_iv);
-
   $message ="
   <html>
     <head>
