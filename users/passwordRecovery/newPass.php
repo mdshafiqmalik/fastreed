@@ -208,6 +208,6 @@ function sanitizeData($data) {
        submit.style.background = "#aaa";
      </script>
 
-     <script src="../../users/src/fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
+     <script src="fun.js?v=<?php echo $randVersion ?>" charset="utf-8"></script>
    </body>
  </html>
