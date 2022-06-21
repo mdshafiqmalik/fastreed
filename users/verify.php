@@ -34,7 +34,6 @@ if (isset($_GET['_secRandID'])) {
   // Check secRandID present or not
   $pin = 2536;
   $userID = $refUserID/$pin;
-  var_dump($userID);
   $isUserPresent = checkUserID($userID);
   if ($isUserPresent) {
     if (isset($_GET['centpo'])) {
