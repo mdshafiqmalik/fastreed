@@ -300,5 +300,6 @@ function authenticateOTP($userID, $OTP){
 
      </div>
      </div>
+     <script src="../src/fun.js?v=<?php echo $randVersion; ?>" charset="utf-8"></script>
    </body>
  </html>
