@@ -111,10 +111,9 @@ if (isset($_GET['_secRandID'])) {
     $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">User verified already</span></center><br>
     <center><span id="successMessage">Redirecting...</span></center>
     <script type="text/javascript">
-    /*
     setTimeout(function(){
       document.location = "../login?errorMessage=000USER33";
-    },3000);*/
+    },3000);
     </script>';
   }
   // for resending OTP
@@ -357,7 +356,6 @@ function authenticateOTP($userID, $OTP){
 }
 
 function checkUserID($userID){
-  var_dump($userID);
   include '../_.config/_s_db_.php';
   $checkSUID = "SELECT userID FROM user_noverify WHERE userID = '$userID'";
   $result = mysqli_query($db, $checkSUID);
