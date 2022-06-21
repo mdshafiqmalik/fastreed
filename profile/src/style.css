@@ -21,9 +21,8 @@
   font-size: 1em;
   font-family: var(--fontFam);
   color: black;
-  margin: .7em;
   margin-top: 0;
-  padding: .2em 3em;
+  padding: .2em 2em;
   font-weight: 500;
 }
 .mCont .getData form{
@@ -79,4 +78,5 @@
   max-width: 300px;
   border-radius: 5px;
   margin-top: .6em;
+  width: 100%;
 }

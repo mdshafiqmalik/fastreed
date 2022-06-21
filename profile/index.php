@@ -196,7 +196,7 @@ function renderProfile($UID){
               <span> Write some words about yourself</span>
               <span id="message"></span>
               <div class="desInput">
-                <textarea name="name" rows="7" cols="48" placeholder="Write soomething about yourself"></textarea>
+                <textarea name="name" rows="7" placeholder="Write soomething about yourself"></textarea>
                 <div class="button">
                   <button type="button" name="button">Next</button>
                 </div>
