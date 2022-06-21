@@ -4,8 +4,8 @@
   background-color: rgba(20, 20, 20, 0.5);
   max-width: 500px;
   display: flex;
-  /* position: absolute; */
-  /* align-items:center; */
+  position: absolute;
+  align-items:center;
   /* justify-content:center; */
   overflow: scroll;
 }
@@ -16,7 +16,6 @@
   background-color: white;
   z-index: 999999;
   bottom: 10px;
-  border-radius: 7px;
   padding: 1em 0 .3em 0;
   display: flex;
   flex-direction: column;
@@ -95,6 +94,8 @@
   /* border: 1px solid #aaa; */
   padding: .3em;
   border-radius: 3px;
+  height: 300px;
+  overflow: scroll;
 }
 .interests label{
   border: 1px solid #aaa;
