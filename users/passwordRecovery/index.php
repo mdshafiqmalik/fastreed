@@ -123,7 +123,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
         if (!isExpired($uid)) {
           session_start();
           $_SESSION['newID'] = $uid;
-          header('Location: newPass.php?recID='.$newID);
+          header('Location: newPass.php?recID='.$refUID);
         }else {
           $message =  '<span id="errorMessage" >Entered '.$type.' Expired Resend Another</span></center>';
           $GLOBALS['content'] = $top.$message.$resendOTP1.$refUID.$resendOTP2.$historyReplace;

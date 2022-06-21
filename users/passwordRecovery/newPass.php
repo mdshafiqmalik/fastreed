@@ -85,9 +85,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_GET['recID'])) {
     if (!empty($_GET['recID'])) {
       $encID = $_GET['recID'];
-      include '../../_.config/sjdhfjsadkeys.php';
-      $decID = openssl_decrypt($encID, $ciphering,
-      $decryption_key, $options, $decryption_iv);
+      $decID = $encID/2536;
+
       if (checkUser($decID)) {
         $GLOBALS['content'] = $createPass.'
         </div>
