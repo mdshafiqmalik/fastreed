@@ -31,6 +31,7 @@ $historyReplace = '<script>
 </script>';
 if (isset($_GET['_secRandID'])) {
   $encID = $_GET['_secRandID'];
+  var_dump($encID);
   include '../_.config/sjdhfjsadkeys.php';
   $decID = openssl_decrypt($encID, $ciphering,
   $encryption_key, $options, $encryption_iv);
