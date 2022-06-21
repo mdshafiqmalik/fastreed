@@ -43,6 +43,7 @@
   padding: .2em .2em;
   text-align: center;
   border-radius: 5px;
+  outline: 0;
 }
 .actionLabel{
   display: flex;
@@ -66,6 +67,7 @@
   margin: .8em .2em;
 }
 .button button{
+  outline: 0;
   font-size: 1em;
   padding: .4em .7em;
   font-family: var(--fontFam);
@@ -77,6 +79,7 @@
   min-width: 100px;
 }
 .desInput textarea{
+  outline: 0;
   padding: .3em;
   max-width: 300px;
   border-radius: 5px;
