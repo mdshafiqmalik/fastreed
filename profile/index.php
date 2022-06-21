@@ -172,7 +172,7 @@ function renderProfile($UID){
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
-  <body style="overflow">
+  <body style="overflow:hidden;">
     <div class="mCont">
       <div class="getData">
         <div class="justDiv">
