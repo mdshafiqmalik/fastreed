@@ -168,66 +168,9 @@ function renderProfile($UID){
       <link rel="stylesheet" href="../users/src/style.css?v=<?php echo $randVersion; ?>">
       <link rel="stylesheet" href="../assets/css/root.css?v=<?php echo $randVersion; ?>">
       <link rel="stylesheet" href="../users/src/profile.css?v=<?php echo $randVersion; ?>">
+      <link rel="stylesheet" href="src/style.css?v=<?php echo $randVersion; ?>">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <style media="screen">
-      .mCont{
-        width: 100vw;
-        height:100vh;
-        background-color: rgba(20, 20, 20, 0.5);
-        max-width: 500px;
-        position: absolute;
-      }
-      .mCont .getData{
-        width: 100%;
-        min-height: 200px;
-        background-color: white;
-        position: absolute;
-        z-index: 999999;
-        bottom: 0;
-        border-radius: 45px 45px 0 0 ;
-        padding: 1em 0 7em 0;
-        display: flex;
-        flex-direction: column;
-      }
-      .mCont .getData .justDiv{
-        font-size: 1em;
-        font-family: var(--fontFam);
-        color: black;
-        margin: .7em;
-        margin-top: 0;
-        padding: .2em 3em;
-        font-weight: 500;
-      }
-      .mCont .getData form{
-        font-weight: 500;
-        margin-top: 1em;
-      }
-      .dateInput{
-        display: flex;
-      }
-      .dateInput input{
-        width: 50px;
-        margin: 0 .3em;
-        font-size: 1.1em;
-        border: 1px solid #aaa;
-        padding: .2em .2em;
-        text-align: center;
-        border-radius: 5px;
-      }
-      .actionLabel{
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        text-align: center;
-      }
-      .splitter{
-        width: 80px;
-        border: 2px solid #ddd;
-        background-color: #ddd;
-        margin: 1em;
-      }
-    </style>
   </head>
   <body style="overflow:hidden">
     <div class="mCont">
@@ -235,13 +178,30 @@ function renderProfile($UID){
         <div class="justDiv">
           <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
           <form class="" action="index.html" method="post">
-            <label for=""> Date Of Birth</label><br><br>
-            <div class="dateInput">
-              <input type="number" min="1" max="31" name="day" value="" placeholder="Day">
-              <input type="number" min="1" max="12" name="month" value="" placeholder="Month">
-              <input type="number" min="1950" max="2022" name="year" value="" placeholder="Year">
+
+            <div class="getDOB">
+              <span id=""> Your Date Of Birth</span><br>
+              <span id="message">Date is Invalid</span>
+              <div class="dateInput">
+                <input type="number" min="1" max="31" name="day" value="" placeholder="Day">
+                <input type="number" min="1" max="12" name="month" value="" placeholder="Month">
+                <input type="number" min="1950" max="2022" name="year" value="" placeholder="Year">
+              </div>
             </div>
 
+
+            <!-- For Description -->
+
+            <div class="Descibe">
+              <span> Write some words about yourself</span>
+              <span id="message"></span>
+              <div class="desInput">
+                <textarea name="name" rows="7" cols="48" placeholder="Write soomething about yourself"></textarea>
+                <div class="button">
+                  <button type="button" name="button">Next</button>
+                </div>
+              </div>
+            </div>
           </form>
         </div>
 
@@ -255,6 +215,6 @@ function renderProfile($UID){
       echo $GLOBALS['profile'];
     }
      ?>
-
+     <script src="src/fun.js" charset="utf-8"></script>
   </body>
 </html>
