@@ -2,8 +2,7 @@
 session_start();
 if (count($_SESSION) > 0)  {
   include '../_.config/_s_db_.php';
-  $link = new mysqli("$hostName","$userName","$passWord","$dbName");
-  $newUserID = randDigit($link);
+  $newUserID = randDigit($db);
   $randOTP = "";
   for ($x = 1; $x <= 6; $x++) {
       // Set each digit
@@ -17,8 +16,8 @@ if (count($_SESSION) > 0)  {
   $encPassword = $_SESSION['encPassword'];
   $gender = $_SESSION['gender'];
 
-  if (addOTP($link, $newUserID, $randOTP,$email,$expTime)) {
-   if (addUser($link, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword, $gender)) {
+  if (addOTP($db, $newUserID, $randOTP,$email,$expTime)) {
+   if (addUser($db, $newUserID, $username,$fullName, $email, $hashPassword, $encPassword, $gender)) {
      include 'mail/avOTP.php';
      include '../_.config/sjdhfjsadkeys.php';
      $encUID = openssl_encrypt($newUserID, $ciphering,
@@ -42,16 +41,16 @@ if (count($_SESSION) > 0)  {
 
 
 // add OTP to Database
-function addOTP($link,$newUserID, $randOTP,$email,$expTime){
+function addOTP($db,$newUserID, $randOTP,$email,$expTime){
   $checkOTP = "SELECT userID FROM fast_otp Where emailAddress = '$email'";
-  $res = mysqli_query($link, $checkOTP);
+  $res = mysqli_query($db, $checkOTP);
   if ($res) {
     $delRecord = "DELETE FROM fast_otp Where emailAddress= '$email' AND optIntent ='AV'";
-    mysqli_query($link, $delRecord);
+    mysqli_query($db, $delRecord);
   }
   $sentDateTime = date('y-m-d H:i:s');
   $addOTP = "INSERT INTO `fast_otp` (`userID`, `sentOTP`, `emailAddress`,`expTime`,`totalOTP`, `sentDateTime`, `otpIntent`) VALUES ('$newUserID', '$randOTP','$email','$expTime', '1', '$sentDateTime', 'AV')";
-  $result = mysqli_query($link, $addOTP);
+  $result = mysqli_query($db, $addOTP);
   if ($result) {
     $OTPadded = true;
   }else {
@@ -62,16 +61,16 @@ function addOTP($link,$newUserID, $randOTP,$email,$expTime){
 
 
 // Add user to Database
-function addUser($link, $newUserID, $username, $fullName, $email, $password, $encPass, $gender){
+function addUser($db, $newUserID, $username, $fullName, $email, $password, $encPass, $gender){
   $checkEmail = "SELECT userEmail FROM user_noverify Where userEmail = '$email'";
-  $res = mysqli_query($link, $checkEmail);
+  $res = mysqli_query($db, $checkEmail);
   if ($res) {
     $delRecord = "DELETE FROM user_noverify WHERE userEmail= '$email'";
-    mysqli_query($link, $delRecord);
+    mysqli_query($db, $delRecord);
   }
 
   $addUser = "INSERT INTO `user_noverify` (`userID`, `userName`, `userFullName`, `userEmail`,`userHashPassword`,`ePassword`, `gender`) VALUES ('$newUserID', '$username',' $fullName', '$email','$password', '$encPass', '$gender')";
-  $result = mysqli_query($link, $addUser);
+  $result = mysqli_query($db, $addUser);
   if ($result) {
     $userAdded = true;
   }else {
@@ -82,11 +81,11 @@ function addUser($link, $newUserID, $username, $fullName, $email, $password, $en
 
 
 // Create Random ID
-function checkRandomID($link, $randID){
+function checkRandomID($db, $randID){
   $sqlV = "SELECT userID FROM fast_users WHERE userID ='$randID'";
   $sqlN = "SELECT userID FROM user_noverify WHERE userID ='$randID'";
-  $resultV = mysqli_query($link, $sqlV);
-  $resultN = mysqli_query($link, $sqlN);
+  $resultV = mysqli_query($db, $sqlV);
+  $resultN = mysqli_query($db, $sqlN);
   if (mysqli_num_rows($resultV)) {
     $idExist = true;
   }elseif (mysqli_num_rows($resultN)) {
@@ -96,12 +95,12 @@ function checkRandomID($link, $randID){
   }
   return $idExist;
 }
-function randDigit($link){
+function randDigit($db){
   $randID = RID();
-  $checkID = checkRandomID($link, $randID);
+  $checkID = checkRandomID($db, $randID);
   while ($checkID == true) {
     $randID = RID();
-    $checkID = checkRandomID($link, $randID);
+    $checkID = checkRandomID($db, $randID);
   }
   return $randID;
 }
