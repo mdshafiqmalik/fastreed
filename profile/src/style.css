@@ -1,7 +1,6 @@
 .mCont{
   width: 100vw;
   height: 100%;
-  background-color: rgba(20, 20, 20, 0.5);
   max-width: 500px;
   display: flex;
   position: absolute;
@@ -93,15 +92,21 @@
   margin: .4em 0;
   padding: .3em;
   border-radius: 3px;
-  height: 330px;
+  max-height: 330px;
   overflow: scroll;
 }
 .interests label{
+  text-transform: capitalize;
   border: 1px solid #aaa;
   padding: .2em .8em;
   border-radius: 20px;
   display:inline-block;
   margin: .2em;
+}
+.interests label img{
+  height: 14px;
+  width: 14px;
+  margin-left: .3em;
 }
 .interests input{
   display: none;

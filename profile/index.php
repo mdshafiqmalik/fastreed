@@ -199,102 +199,56 @@ function renderProfile($UID){
                   <span>Select your interests</span>
                   <div class="interests">
 
-                    <label for="computer">computer</label>
-                    <input id="computer" type="checkbox" name="" value="">
+                    <label for="computer">computer <img src="../assets/pics/svgs/plus.svg" alt=""> </label>
+                    <input id="computer"  type="checkbox" name="" value="">
 
-                    <label for="science">science</label>
+                    <label id="" for="science">science</label>
                     <input id="science" type="checkbox" name="" value="">
 
-                    <label for="artsCulture">arts and culture</label>
+                    <label id="" for="artsCulture">arts and culture</label>
                     <input id="artsCulture" type="checkbox" name="" value="">
 
-                    <label for="books">books</label>
+                    <label id="" for="books">books</label>
                     <input id="books" type="checkbox" name="" value="">
 
-                    <label for="howto">how to?</label>
+                    <label id="" for="howto">how to?</label>
                     <input id="howto" type="checkbox" name="" value="">
 
-                    <label for="facts">facts</label>
+                    <label id="" for="facts">facts</label>
                     <input id="facts" type="checkbox" name="" value="">
 
-                    <label for="politics">politics</label>
+                    <label id="" for="politics">politics</label>
                     <input id="politics" type="checkbox" name="" value="">
 
-                    <label for="celebrity">celebrity</label>
+                    <label id="" for="celebrity">celebrity</label>
                     <input id="celebrity" type="checkbox" name="" value="">
 
-                    <label for="bollywood">bollywood</label>
+                    <label id="" for="bollywood">bollywood</label>
                     <input id="bollywood" type="checkbox" name="" value="">
 
-                    <label for="stcokmarket">stcok market</label>
+                    <label id="" for="stcokmarket">stock market</label>
                     <input id="stcokmarket" type="checkbox" name="" value="">
 
-                    <label for="explaination">explaination</label>
+                    <label id="" for="explaination">explaination</label>
                     <input id="explaination" type="checkbox" name="" value="">
 
-                    <label for="DIY">DIY</label>
+                    <label id="" for="DIY">DIY</label>
                     <input id="DIY" type="checkbox" name="" value="">
 
-                    <label for="writing">writing</label>
+                    <label id="" for="writing">writing</label>
                     <input id="writing" type="checkbox" name="" value="">
 
-                    <label for="lifestyle">lifestyle</label>
+                    <label id="" for="lifestyle">lifestyle</label>
                     <input id="lifestyle" type="checkbox" name="" value="">
 
-                    <label for="youtube">youtube</label>
+                    <label id="" for="youtube">youtube</label>
                     <input id="youtube" type="checkbox" name="" value="">
 
-                    <label for="instagram">instagram</label>
+                    <label id="" for="instagram">instagram</label>
                     <input id="instagram" type="checkbox" name="" value="">
 
-
-                                        <label for="computer">computer</label>
-                                        <input id="computer" type="checkbox" name="" value="">
-
-                                        <label for="science">science</label>
-                                        <input id="science" type="checkbox" name="" value="">
-
-                                        <label for="artsCulture">arts and culture</label>
-                                        <input id="artsCulture" type="checkbox" name="" value="">
-
-                                        <label for="books">books</label>
-                                        <input id="books" type="checkbox" name="" value="">
-
-                                        <label for="howto">how to?</label>
-                                        <input id="howto" type="checkbox" name="" value="">
-
-                                        <label for="facts">facts</label>
-                                        <input id="facts" type="checkbox" name="" value="">
-
-                                        <label for="politics">politics</label>
-                                        <input id="politics" type="checkbox" name="" value="">
-
-                                        <label for="celebrity">celebrity</label>
-                                        <input id="celebrity" type="checkbox" name="" value="">
-
-                                        <label for="bollywood">bollywood</label>
-                                        <input id="bollywood" type="checkbox" name="" value="">
-
-                                        <label for="stcokmarket">stcok market</label>
-                                        <input id="stcokmarket" type="checkbox" name="" value="">
-
-                                        <label for="explaination">explaination</label>
-                                        <input id="explaination" type="checkbox" name="" value="">
-
-                                        <label for="DIY">DIY</label>
-                                        <input id="DIY" type="checkbox" name="" value="">
-
-                                        <label for="writing">writing</label>
-                                        <input id="writing" type="checkbox" name="" value="">
-
-                                        <label for="lifestyle">lifestyle</label>
-                                        <input id="lifestyle" type="checkbox" name="" value="">
-
-                                        <label for="youtube">youtube</label>
-                                        <input id="youtube" type="checkbox" name="" value="">
-
-                                        <label for="instagram">instagram</label>
-                                        <input id="instagram" type="checkbox" name="" value="">
+                    <label id="" for="hollywood">hollywood</label>
+                    <input id="hollywood" type="checkbox" name="" value="">
                   </div>
                 </div>
                 <div class="button">
@@ -316,6 +270,6 @@ function renderProfile($UID){
       echo $GLOBALS['profile'];
     }
      ?>
-     <script src="src/fun.js" charset="utf-8"></script>
+     <script src="src/fun.js?v=<?php echo $randVersion; ?>" charset="utf-8"></script>
   </body>
 </html>
