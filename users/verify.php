@@ -116,12 +116,12 @@ if (isset($_GET['_secRandID'])) {
       $GLOBALS['body']  =  $VYO.$message.$formHead.$encID.$formTop.$encID.$formBottom.$historyReplace;
     }
   }else {
-    $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">User verified already or may not exist</span></center><br>
+    $GLOBALS['body']  =  '<center><span style="color:orange;" id="errorMessage">OTP/Link verified already or may not exist</span></center><br>
     <center><span id="successMessage">Redirecting...</span></center>
     <script type="text/javascript">
-    setTimeout(function(){
+    /*setTimeout(function(){
       document.location = "../login?errorMessage=000USER33";
-    },3000);
+    },3000);*/
     </script>';
   }
   // for resending OTP

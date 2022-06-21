@@ -8,8 +8,12 @@
   </head>
   <body>
     <?php
-    $browser = get_browser(NULL, true);
-    var_dump($browser);
+    $st = "wi3B8Tqssp76r/C/eSWL";
+
+    include '_.config/sjdhfjsadkeys.php';
+    $userID = openssl_decrypt($st, $ciphering,
+    $encryption_key, $options, $encryption_iv);
+    var_dump($userID);
     ?>
   </body>
 </html>
