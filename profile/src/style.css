@@ -102,10 +102,9 @@
   border: 1px solid #aaa;
   padding: .3em 1em;
   border-radius: 20px;
-  display:block;
-  margin: .5em;
+  display:inline-block;
+  margin: .3em;
   font-size: 1.04em;
-  max-width: 300px;
 }
 .interests input[type="checkbox"]{
   margin-right: .4em;
