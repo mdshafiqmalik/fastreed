@@ -35,7 +35,6 @@
   display: flex;
 }
 .dateInput input{
-  width: 50px;
   margin: .9em .3em;
   font-size: 1.1em;
   border: 1px solid #aaa;

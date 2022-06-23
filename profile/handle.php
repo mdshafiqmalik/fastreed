@@ -1,3 +1,5 @@
 <?php
-  var_dump($_POST['check_list']);
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+  }
  ?>
