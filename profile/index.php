@@ -184,7 +184,7 @@ function renderProfile($UID){
               <span id=""> Date of birth</span><br>
               <span id="dobMessage"></span>
               <div class="dateInput">
-                <input type="date" onkeyup="checkDate()" id="day" min="1" max="31" name="day" value="" placeholder="DD" required>
+                <input type="date" id="date" name="DOB" onkeydown="checkDate()" value="" placeholder="DD" required>
               </div>
             </div>
             <!-- For Description -->
@@ -192,7 +192,7 @@ function renderProfile($UID){
               <span>Your bio</span>
               <span id="bioMessage"></span>
               <div class="desInput">
-                <textarea name="name" rows="7" placeholder="Write something about yourself" required></textarea>
+                <textarea name="bio" rows="7" placeholder="Write something about yourself" required></textarea>
                 <div class="interestsDiv">
                   <span>Select your interests</span>
 
