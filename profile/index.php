@@ -179,7 +179,7 @@ function renderProfile($UID){
       <div class="getData">
         <div class="justDiv">
           <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
-          <form class="" action="index.html" method="post">
+          <form class="" action="handle.php" method="post">
             <div class="getDOB">
               <span id=""> Date of birth</span><br>
               <span id="dobMessage"></span>
@@ -197,58 +197,77 @@ function renderProfile($UID){
                 <textarea name="name" rows="7" placeholder="Write something about yourself" required></textarea>
                 <div class="interestsDiv">
                   <span>Select your interests</span>
+
                   <div class="interests">
 
-                    <label for="computer">computer <img src="../assets/pics/svgs/plus.svg" alt=""> </label>
-                    <input id="computer"  type="checkbox" name="" value="">
-
-                    <label id="" for="science">science</label>
-                    <input id="science" type="checkbox" name="" value="">
-
-                    <label id="" for="artsCulture">arts and culture</label>
-                    <input id="artsCulture" type="checkbox" name="" value="">
-
-                    <label id="" for="books">books</label>
-                    <input id="books" type="checkbox" name="" value="">
-
-                    <label id="" for="howto">how to?</label>
-                    <input id="howto" type="checkbox" name="" value="">
-
-                    <label id="" for="facts">facts</label>
-                    <input id="facts" type="checkbox" name="" value="">
-
-                    <label id="" for="politics">politics</label>
-                    <input id="politics" type="checkbox" name="" value="">
-
-                    <label id="" for="celebrity">celebrity</label>
-                    <input id="celebrity" type="checkbox" name="" value="">
-
-                    <label id="" for="bollywood">bollywood</label>
-                    <input id="bollywood" type="checkbox" name="" value="">
-
-                    <label id="" for="stcokmarket">stock market</label>
-                    <input id="stcokmarket" type="checkbox" name="" value="">
-
-                    <label id="" for="explaination">explaination</label>
-                    <input id="explaination" type="checkbox" name="" value="">
-
-                    <label id="" for="DIY">DIY</label>
-                    <input id="DIY" type="checkbox" name="" value="">
-
-                    <label id="" for="writing">writing</label>
-                    <input id="writing" type="checkbox" name="" value="">
-
-                    <label id="" for="lifestyle">lifestyle</label>
-                    <input id="lifestyle" type="checkbox" name="" value="">
-
-                    <label id="" for="youtube">youtube</label>
-                    <input id="youtube" type="checkbox" name="" value="">
-
-                    <label id="" for="instagram">instagram</label>
-                    <input id="instagram" type="checkbox" name="" value="">
-
-                    <label id="" for="hollywood">hollywood</label>
-                    <input id="hollywood" type="checkbox" name="" value="">
+                    <div class="tags">
+                      <input class="chk" id="computer"  type="checkbox" name="check_list[]" value="computer">
+                      <label for="computer">computer </label>
+                    </div>
+                    <div class="tags">
+                      <input id="science" type="checkbox" name="check_list[]" value="science">
+                      <label id="" for="science">science</label>
+                    </div>
+                    <div class="tags">
+                      <input id="artsCulture" type="checkbox" name="check_list[]" value="artsCulture">
+                      <label id="" for="artsCulture">arts and culture</label>
+                    </div>
+                    <div class="tags">
+                      <input id="books" type="checkbox" name="check_list[]" value="books">
+                      <label id="" for="books">books</label>
+                    </div>
+                    <div class="tags">
+                      <input id="howto" type="checkbox" name="check_list[]" value="howto">
+                      <label id="" for="howto">how to?</label>
+                    </div>
+                    <div class="tags">
+                      <input id="facts" type="checkbox" name="check_list[]" value="facts">
+                      <label id="" for="facts">facts</label>
+                    </div>
+                    <div class="tags">
+                      <input id="politics" type="checkbox" name="check_list[]" value="politics">
+                      <label id="" for="politics">politics</label>
+                    </div>
+                    <div class="tags">
+                      <input id="celebrity" type="checkbox" name="check_list[]" value="celebrity">
+                      <label id="" for="celebrity">celebrity</label>
+                    </div>
+                    <div class="tags">
+                      <input id="bollywood" type="checkbox" name="check_list[]" value="bollywood">
+                      <label id="" for="bollywood">bollywood</label>
+                    </div>
+                    <div class="tags">
+                      <input id="stcokmarket" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="stcokmarket">stock market</label>
+                    </div>
+                    <div class="tags">
+                      <input id="explaination" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="explaination">explaination</label>
+                    </div>
+                    <div class="tags">
+                      <input id="DIY" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="DIY">DIY</label>
+                    </div>
+                    <div class="tags">
+                      <input id="writing" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="writing">writing</label>
+                    </div>
+                    <div class="tags">
+                      <input id="lifestyle" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="lifestyle">lifestyle</label>
+                    </div>
+                    <div class="tags">
+                      <input id="youtube" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="youtube">youtube</label>
+                    </div>
+                    <div class="tags">
+                      <input id="instagram" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="instagram">instagram</label>
+                    </div>
+                    <div class="tags">
+                      <input id="hollywood" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="hollywood">hollywood</label>
+                    </div>
                   </div>
                 </div>
                 <div class="button">
@@ -260,7 +279,7 @@ function renderProfile($UID){
         </div>
       </div>
     </div>
-
+  </div>
 
     <div class="navigation">
       <span> <a id="backArrow" href="../">&#171;  <span>Home</span></a> </span>
