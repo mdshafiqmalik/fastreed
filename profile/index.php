@@ -184,7 +184,7 @@ function renderProfile($UID){
               <span id=""> Date of birth</span><br>
               <span id="dobMessage"></span>
               <div class="dateInput">
-                <input type="date" id="date" name="DOB" onkeydown="checkDate()" value="" placeholder="DD" required>
+                <input type="date" id="date" name="DOB" onkeydown="checkDate()" value="" placeholder="" required>
               </div>
             </div>
             <!-- For Description -->
