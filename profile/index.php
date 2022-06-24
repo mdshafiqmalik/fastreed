@@ -209,7 +209,7 @@ function renderProfile($UID){
                     <div class="tags">
                       <label for="Lifestyle">Lifestyle
                           <span>+</span>
-                          <input class="chk"  id="science"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="Lifestyle">
+                          <input class="chk"  id="Lifestyle"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="Lifestyle">
                       </label>
                     </div>
 
