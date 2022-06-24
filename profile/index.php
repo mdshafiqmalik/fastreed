@@ -211,6 +211,10 @@ function renderProfile($UID){
                       <label id="" for="artsCulture">arts and culture</label>
                     </div>
                     <div class="tags">
+                      <input id="DIY" type="checkbox" name="check_list[]" value="">
+                      <label id="" for="DIY">DIY</label>
+                    </div>
+                    <div class="tags">
                       <input id="books" type="checkbox" name="check_list[]" value="books">
                       <label id="" for="books">books</label>
                     </div>
@@ -241,10 +245,6 @@ function renderProfile($UID){
                     <div class="tags">
                       <input id="explaination" type="checkbox" name="check_list[]" value="">
                       <label id="" for="explaination">explaination</label>
-                    </div>
-                    <div class="tags">
-                      <input id="DIY" type="checkbox" name="check_list[]" value="">
-                      <label id="" for="DIY">DIY</label>
                     </div>
                     <div class="tags">
                       <input id="writing" type="checkbox" name="check_list[]" value="">

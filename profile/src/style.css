@@ -108,4 +108,7 @@
 }
 .interests input[type="checkbox"]{
   margin-right: .4em;
+  background-color: white;
+  box-sizing: content-box;
+  border: 0;
 }
