@@ -195,6 +195,7 @@ function renderProfile($UID){
                 <textarea name="bio" rows="7" placeholder="Write something about yourself" required></textarea>
                 <div class="interestsDiv">
                   <span class="heading">Select your interests</span>
+                  <span id="cCount">(Min. 5)</span>
                   <div class="interests">
 
                     <div class="tags">

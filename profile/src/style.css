@@ -124,6 +124,9 @@ display: none;
 justify-content: center;
 align-items: center;
 }
+#cCount{
+  color: red;
+}
 .interests .chk:checked ~ .tags {
   background-color: green;
   color: white;

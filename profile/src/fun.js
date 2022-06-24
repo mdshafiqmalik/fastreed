@@ -4,7 +4,17 @@ function checkDate(){
 }
 function checkedItems(checkbox){
   var parent = checkbox.parentElement.parentElement;
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  var cCount = document.getElementById('cCount');
+  let remain = 5-checkboxes.length;
   if (checkbox.checked == true) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    let remain = 5-checkboxes.length;
+    if (remain <= 0) {
+      cCount.innerHTML = '';
+    }else {
+      cCount.innerHTML = `(Select ${remain} More)`;
+    }
     parent.style.background = "#0165E1";
     parent.style.color = "White";
     parent.style.border = "1px solid #0165E1";
@@ -12,6 +22,7 @@ function checkedItems(checkbox){
     parent.firstElementChild.firstElementChild.innerHTML = "&minus;";
 
   }else {
+    cCount.innerHTML = `(Select ${remain} More)`;
     parent.style.background = "white";
     parent.style.color = "#555";
     parent.style.border = " 1px solid #aaa";
