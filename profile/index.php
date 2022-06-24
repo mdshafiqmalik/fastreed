@@ -184,9 +184,8 @@ function renderProfile($UID){
               <span class="heading"> Date of birth</span><br>
               <span id="dobMessage"></span>
               <div class="dateInput">
-                <input type="text" id="date" name="DOB" onkeydown="checkDate()" value=""
-       min="2018-01-01" max="<?php echo date('Y-m-d') ?>"  placeholder="MM/DD/YYYY"
-                    onfocus="(this.type='date')"required>
+                <input type="date" id="date" name="DOB" onkeydown="checkDate()" value="<?php echo date('Y-m-d') ?>"
+       min="<?php echo date('Y-m-d', strtotime('200 years ago')) ?>" max="<?php echo date('Y-m-d', strtotime('10 years ago')) ?>" placeholder="" required>
               </div>
             </div>
             <!-- For Description -->
