@@ -104,14 +104,15 @@
   border-radius: 20px;
   display:inline-block;
   margin: .3em;
-  font-size: 1.04em;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 .interests .chk{
 display: none;
 }
 
 .tags::after{
-  
+
 }
 .interests .chk:checked ~ .tags {
   background-color: green;
