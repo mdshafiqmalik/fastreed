@@ -106,9 +106,12 @@
   margin: .3em;
   font-size: 1.04em;
 }
-.interests input[type="checkbox"]{
-  margin-right: .4em;
+.tags label{
+  margin-left: 1em;
+}
+
+.interests .chk{
+  position: absolute;
+  margin-top: .3em;
   background-color: white;
-  box-sizing: content-box;
-  border: 0;
 }

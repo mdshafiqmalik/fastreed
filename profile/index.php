@@ -203,67 +203,67 @@ function renderProfile($UID){
                       <label for="computer">computer </label>
                     </div>
                     <div class="tags">
-                      <input id="science" type="checkbox" name="check_list[]" value="science">
+                      <input class="chk"  id="science" type="checkbox" name="check_list[]" value="science">
                       <label id="" for="science">science</label>
                     </div>
                     <div class="tags">
-                      <input id="artsCulture" type="checkbox" name="check_list[]" value="artsCulture">
+                      <input class="chk"  id="artsCulture" type="checkbox" name="check_list[]" value="artsCulture">
                       <label id="" for="artsCulture">arts and culture</label>
                     </div>
                     <div class="tags">
-                      <input id="DIY" type="checkbox" name="check_list[]" value="">
+                      <input  class="chk" id="DIY" type="checkbox" name="check_list[]" value="">
                       <label id="" for="DIY">DIY</label>
                     </div>
                     <div class="tags">
-                      <input id="books" type="checkbox" name="check_list[]" value="books">
+                      <input class="chk"  id="books" type="checkbox" name="check_list[]" value="books">
                       <label id="" for="books">books</label>
                     </div>
                     <div class="tags">
-                      <input id="howto" type="checkbox" name="check_list[]" value="howto">
+                      <input class="chk"  id="howto" type="checkbox" name="check_list[]" value="howto">
                       <label id="" for="howto">how to?</label>
                     </div>
                     <div class="tags">
-                      <input id="facts" type="checkbox" name="check_list[]" value="facts">
+                      <input class="chk"  id="facts" type="checkbox" name="check_list[]" value="facts">
                       <label id="" for="facts">facts</label>
                     </div>
                     <div class="tags">
-                      <input id="politics" type="checkbox" name="check_list[]" value="politics">
+                      <input class="chk"  id="politics" type="checkbox" name="check_list[]" value="politics">
                       <label id="" for="politics">politics</label>
                     </div>
                     <div class="tags">
-                      <input id="celebrity" type="checkbox" name="check_list[]" value="celebrity">
+                      <input class="chk"  id="celebrity" type="checkbox" name="check_list[]" value="celebrity">
                       <label id="" for="celebrity">celebrity</label>
                     </div>
                     <div class="tags">
-                      <input id="bollywood" type="checkbox" name="check_list[]" value="bollywood">
+                      <input class="chk"  id="bollywood" type="checkbox" name="check_list[]" value="bollywood">
                       <label id="" for="bollywood">bollywood</label>
                     </div>
                     <div class="tags">
-                      <input id="stcokmarket" type="checkbox" name="check_list[]" value="">
+                      <input class="chk"  id="stcokmarket" type="checkbox" name="check_list[]" value="">
                       <label id="" for="stcokmarket">stock market</label>
                     </div>
                     <div class="tags">
-                      <input id="explaination" type="checkbox" name="check_list[]" value="">
+                      <input class="chk"  id="explaination" type="checkbox" name="check_list[]" value="">
                       <label id="" for="explaination">explaination</label>
                     </div>
                     <div class="tags">
-                      <input id="writing" type="checkbox" name="check_list[]" value="">
+                      <input class="chk"  id="writing" type="checkbox" name="check_list[]" value="">
                       <label id="" for="writing">writing</label>
                     </div>
                     <div class="tags">
-                      <input id="lifestyle" type="checkbox" name="check_list[]" value="">
+                      <input class="chk"  id="lifestyle" type="checkbox" name="check_list[]" value="">
                       <label id="" for="lifestyle">lifestyle</label>
                     </div>
                     <div class="tags">
-                      <input id="youtube" type="checkbox" name="check_list[]" value="">
+                      <input class="chk"  id="youtube" type="checkbox" name="check_list[]" value="">
                       <label id="" for="youtube">youtube</label>
                     </div>
                     <div class="tags">
-                      <input id="instagram" type="checkbox" name="check_list[]" value="">
+                      <input class="chk"  id="instagram" type="checkbox" name="check_list[]" value="">
                       <label id="" for="instagram">instagram</label>
                     </div>
                     <div class="tags">
-                      <input id="hollywood" type="checkbox" name="check_list[]" value="">
+                      <input class="chk"  id="hollywood" type="checkbox" name="check_list[]" value="">
                       <label id="" for="hollywood">hollywood</label>
                     </div>
                   </div>
