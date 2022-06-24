@@ -99,8 +99,7 @@
 .interests .tags{
   text-transform: capitalize;
   border: 1px solid #aaa;
-  padding: .3em 1em;
-  border-radius: 20px;
+  padding: .5em 1em;
   display:inline-block;
   margin: .3em;
   font-weight: bold;
