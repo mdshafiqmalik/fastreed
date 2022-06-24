@@ -106,12 +106,14 @@
   margin: .3em;
   font-size: 1.04em;
 }
-.tags label{
-  margin-left: 1em;
+.interests .chk{
+display: none;
 }
 
-.interests .chk{
-  position: absolute;
-  margin-top: .3em;
-  background-color: white;
+.tags::after{
+  
+}
+.interests .chk:checked ~ .tags {
+  background-color: green;
+  color: white;
 }
