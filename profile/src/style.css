@@ -23,7 +23,7 @@
   font-family: var(--fontFam);
   color: black;
   margin: .3em;
-  padding: .2em 2em;
+  padding: .2em 1.5em;
   font-weight: 500;
 }
 .mCont .getData form{
