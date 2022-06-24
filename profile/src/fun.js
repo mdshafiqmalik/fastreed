@@ -2,6 +2,7 @@ function checkDate(){
   var date = document.getElementById('date');
   console.log(date);
 }
+
 function checkedItems(checkbox){
   var parent = checkbox.parentElement.parentElement;
   var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -11,7 +12,8 @@ function checkedItems(checkbox){
     var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     let remain = 5-checkboxes.length;
     if (remain <= 0) {
-      cCount.innerHTML = '';
+      cCount.style.visibility= 'hidden';
+      cCount.innerHTML = true;
     }else {
       cCount.innerHTML = `(Select ${remain} More)`;
     }
