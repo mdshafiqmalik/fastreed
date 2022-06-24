@@ -8,11 +8,14 @@ function checkedItems(checkbox){
     parent.style.background = "#0165E1";
     parent.style.color = "White";
     parent.style.border = "1px solid #0165E1";
-    parent.firstElementChild.firstElementChild.style.transform = "rotate(225deg)";
+    parent.firstElementChild.firstElementChild.style.transform = "rotate(360deg)";
+    parent.firstElementChild.firstElementChild.innerHTML = "&minus;";
+
   }else {
     parent.style.background = "white";
     parent.style.color = "#555";
     parent.style.border = " 1px solid #aaa";
     parent.firstElementChild.firstElementChild.style.transform = "rotate(0deg)";
+    parent.firstElementChild.firstElementChild.innerHTML = "+";
   }
 }
