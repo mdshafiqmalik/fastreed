@@ -181,7 +181,7 @@ function renderProfile($UID){
           <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
           <form class="" action="handle.php" method="post">
             <div class="getDOB">
-              <span id=""> Date of birth</span><br>
+              <span class="heading"> Date of birth</span><br>
               <span id="dobMessage"></span>
               <div class="dateInput">
                 <input type="date" id="date" name="DOB" onkeydown="checkDate()" value="" placeholder="" required>
@@ -189,13 +189,12 @@ function renderProfile($UID){
             </div>
             <!-- For Description -->
             <div class="Descibe">
-              <span>Your bio</span>
+              <span class="heading">Your bio</span>
               <span id="bioMessage"></span>
               <div class="desInput">
                 <textarea name="bio" rows="7" placeholder="Write something about yourself" required></textarea>
                 <div class="interestsDiv">
-                  <span>Select your interests</span>
-
+                  <span class="heading">Select your interests</span>
                   <div class="interests">
 
                     <div class="tags">

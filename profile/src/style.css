@@ -66,6 +66,9 @@
   justify-content: center;
   margin: 1.5em .2em;
 }
+.heading{
+  font-size: 1.2em;
+}
 .button input{
   outline: 0;
   font-size: 1.1em;
@@ -102,15 +105,11 @@
   padding: .5em 1em;
   display:inline-block;
   margin: .3em;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.1em;
 }
 .interests .chk{
 display: none;
-}
-
-.tags::after{
-
 }
 .interests .chk:checked ~ .tags {
   background-color: green;
