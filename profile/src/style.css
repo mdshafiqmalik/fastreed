@@ -9,7 +9,6 @@
   overflow: scroll;
 }
 .mCont .getData{
-  height: 100%;
   width: 100%;
   min-height: 200px;
   background-color: white;
@@ -65,11 +64,11 @@
 .button{
   display: flex;
   justify-content: center;
-  margin: 1em .2em;
+  margin: 1.5em .2em;
 }
 .button input{
   outline: 0;
-  font-size: 1em;
+  font-size: 1.1em;
   padding: .4em .7em;
   font-family: var(--fontFam);
   border-radius: 4px;

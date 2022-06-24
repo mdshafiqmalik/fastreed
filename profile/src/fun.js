@@ -7,6 +7,7 @@ function checkedItems(checkbox){
   if (checkbox.checked == true) {
     parent.style.background = "#0165E1";
     parent.style.color = "White";
+    parent.style.border = "0";
 
   }else {
     parent.style.background = "white";
