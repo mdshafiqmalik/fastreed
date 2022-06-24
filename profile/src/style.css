@@ -4,8 +4,7 @@
   max-width: 500px;
   display: flex;
   position: absolute;
-  align-items:center;
-  /* justify-content:center; */
+  background-color: white;
   overflow: scroll;
 }
 .mCont .getData{
