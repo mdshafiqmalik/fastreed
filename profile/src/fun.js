@@ -8,7 +8,7 @@ function checkedItems(checkbox){
     parent.style.background = "#0165E1";
     parent.style.color = "White";
     parent.style.border = "1px solid #0165E1";
-    parent.firstElementChild.firstElementChild.style.transform = "rotate(45deg)";
+    parent.firstElementChild.firstElementChild.style.transform = "rotate(225deg)";
   }else {
     parent.style.background = "white";
     parent.style.color = "#555";
