@@ -198,72 +198,122 @@ function renderProfile($UID){
                   <div class="interests">
 
                     <div class="tags">
-                      <input class="chk" id="computer"  onchange='checkedItems(this)'  type="checkbox" name="check_list[]" value="computer">
-                      <label for="computer">computer </label>
+                      <label for="computer">computer
+                        <span>+</span>
+                          <input class="chk" id="computer"  onchange='checkedItems(this)'  type="checkbox" name="check_list[]" value="computer">
+                       </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="science"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="science">
-                      <label id="" for="science">science</label>
+                      <label for="science">science
+                          <span>+</span>
+                          <input class="chk"  id="science"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="science">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="artsCulture"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="artsCulture">
-                      <label id="" for="artsCulture">arts and culture</label>
+                      <label id="" for="artsCulture">arts and culture
+                          <span>+</span>
+                          <input class="chk"  id="artsCulture"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="artsCulture">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input  class="chk" id="DIY"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      <label id="" for="DIY">DIY</label>
+                      <label id="" for="DIY">DIY
+                          <span>+</span>
+                          <input  class="chk" id="DIY"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="DIY">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="books"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="books">
-                      <label id="" for="books">books</label>
+                      <label id="" for="books">books
+                          <span>+</span>
+                          <input class="chk"  id="books"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="books">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="howto"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="howto">
-                      <label id="" for="howto">how to?</label>
+                      <label id="" for="howto">how to?
+                          <span>+</span>
+                          <input class="chk"  id="howto"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="howto">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="facts"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="facts">
-                      <label id="" for="facts">facts</label>
+                      <label id="" for="facts">facts
+                          <span>+</span>
+                          <input class="chk"  id="facts"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="facts">
+                      </label>
                     </div>
+
                     <div class="tags">
+                      <label id="" for="politics">politics
+                       <span>+</span>
                       <input class="chk"  id="politics"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="politics">
-                      <label id="" for="politics">politics</label>
+                      </label>
                     </div>
+
                     <div class="tags">
+                      <label id="" for="celebrity">celebrity
+                       <span>+</span>
                       <input class="chk"  id="celebrity"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="celebrity">
-                      <label id="" for="celebrity">celebrity</label>
+                      </label>
                     </div>
+
                     <div class="tags">
+                      <label id="" for="bollywood">bollywood
+                       <span>+</span>
                       <input class="chk"  id="bollywood"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="bollywood">
-                      <label id="" for="bollywood">bollywood</label>
+                      </label>
                     </div>
+
                     <div class="tags">
+                      <label id="" for="stcokmarket">stock market
+                       <span>+</span>
                       <input class="chk"  id="stcokmarket"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      <label id="" for="stcokmarket">stock market</label>
+                      </label>
                     </div>
+
                     <div class="tags">
+                      <label id="" for="explaination">explaination
+                        <span>+</span>
                       <input class="chk"  id="explaination"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      <label id="" for="explaination">explaination</label>
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="writing"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      <label id="" for="writing">writing</label>
+                      <label id="" for="writing">writing
+                        <span>+</span>
+                        <input class="chk"  id="writing"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="lifestyle"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      <label id="" for="lifestyle">lifestyle</label>
+                      <label id="" for="lifestyle">lifestyle
+                        <span>+</span>
+                        <input class="chk"  id="lifestyle"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="youtube"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      <label id="" for="youtube">youtube</label>
+                      <label id="" for="youtube">youtube
+                        <span>+</span>
+                        <input class="chk"  id="youtube"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="instagram"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      <label id="" for="instagram">instagram</label>
+                      <label id="" for="instagram">instagram
+                        <span>+</span>
+                        <input class="chk"  id="instagram"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
+                      </label>
                     </div>
+
                     <div class="tags">
-                      <input class="chk"  id="hollywood"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      <label id="" for="hollywood">hollywood</label>
+                      <label id="" for="hollywood">hollywood
+                        <span>+</span>
+                        <input class="chk"  id="hollywood"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
+                      </label>
                     </div>
                   </div>
                 </div>
