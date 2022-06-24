@@ -11,7 +11,7 @@ function checkedItems(checkbox){
 
   }else {
     parent.style.background = "white";
-    parent.style.color = "black";
+    parent.style.color = "#555";
     parent.style.border = " 1px solid #aaa";
   }
 }
