@@ -12,7 +12,7 @@ function checkedItems(checkbox){
     var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     let remain = 5-checkboxes.length;
     if (remain <= 0) {
-      cCount.innerHTML = `(${checkboxes.length} items selected)`;
+      cCount.innerHTML = `(${checkboxes.length} selected)`;
       cCount.style.color = "green";
 
     }else {
@@ -27,7 +27,7 @@ function checkedItems(checkbox){
   }else {
     if (remain <= 0) {
       cCount.style.color = "green";
-      cCount.innerHTML = `(${checkboxes.length} items selected)`;
+      cCount.innerHTML = `(${checkboxes.length} selected)`;
     }else {
       cCount.style.color = "red";
       cCount.innerHTML = `(Select ${remain} More)`;
