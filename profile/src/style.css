@@ -87,6 +87,8 @@
   border-radius: 5px;
   margin-top: .6em;
   width: 100%;
+  font-family: var(--fontFam);
+  padding: .4em;
 }
 .interestsDiv{
   margin-top: .7em;
