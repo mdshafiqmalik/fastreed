@@ -1,5 +1,10 @@
 <?php
 include '../components/randVersion.php';
+
+
+
+
+
 if(isset($_COOKIE['logID'])) {
   if (!empty($_COOKIE['logID'])) {
     include '../_.config/sjdhfjsadkeys.php';
@@ -203,15 +208,15 @@ function renderProfile($UID){
 
     <?php
 
-    function completeProfile($userID)
-    {
-      echo '
+    function completeProfile($userID){
+      $self = htmlspecialchars($_SERVER["PHP_SELF"]);
+      $mn =  '
 
       <div class="mCont">
         <div class="getData">
           <div class="justDiv">
             <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
-            <form class="" action="handle.php" method="post">
+            <form class="" action="'.$self.'" method="post">
               <div class="getDOB">
                 <span class="heading"> Date of birth</span><br>
                 <span id="dobMessage"></span>
@@ -231,7 +236,6 @@ function renderProfile($UID){
                     <span id="cCount">(min. 5)</span>
                     <div class="interests">
                     ';
-
                     include '../_.config/_s_db_.php';
                     $sql = "SELECT * FROM fast_cat";
                     $result = mysqli_query($db, $sql);
@@ -239,7 +243,7 @@ function renderProfile($UID){
                       while ($data = $result->fetch_assoc()) {
                         $catName = $data['catName'];
                         $catLink = $data['catLink'];
-                        echo '
+                        $mn .=  '
                         <div class="tags">
                             <label for="'.$catLink.'">'.$catName.'
                               <span>+</span>
@@ -249,23 +253,53 @@ function renderProfile($UID){
                         ';
                       }
                     }
-
-
-
-                  echo '  </div>
+                  $bt =  '  </div>
                   </div><b>Note: </b>
                   <span style="font-size: .85em; color: #555;"> your information is collected to deliver you personlized content, we don\'t share your personal info. to any third party.</span>
                   <div class="button">
                     <input id="nxtButton" type="submit" name="" value="Next" disabled>
                   </div>
                 </div>
-
               </div>
             </form>
           </div>
         </div>
       </div>
       ';
+
+    $mTag ='<script type="text/javascript">
+    var cCount = document.getElementById("cCount");
+    cCOunt.innerHTML = "Select Atleast 5 ";
+    </script>';
+
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       $tags = $_POST['check_list'];
+       if (count($tags) > 5) {
+         $interests = serialize($tags);
+
+         $DOB = $_POST['DOB'];
+         $bio = $_POST['bio'];
+         include '../_.config/_s_db_.php';
+
+         $updateB = "UPDATE user_cred SET userDOB = '$DOB', userInterests = '$interests', userBio = '$bio' WHERE userID = '$userID'";
+         $UpdateResult = mysqli_query($db, $updateB);
+         if ($UpdateResult) {
+           $updateProfile = "UPDATE fast_users SET profileStatus = '1'WHERE userID = '$userID'";
+           $profileRes = mysqli_query($db, $updateProfile);
+           if ($profileRes) {
+             header('Location: /profile');
+           }else {
+             $GLOBALS['profile'] = "problem 1";
+           }
+         }else {
+           $GLOBALS['profile'] ="problem 2";
+         }
+       }else {
+         $GLOBALS['profile'] = $mn.$bt.$mTag;
+       }
+     }else {
+        $GLOBALS['profile'] = $mn.$bt;
+     }
     }
      ?>
 
@@ -279,6 +313,11 @@ function renderProfile($UID){
       echo $GLOBALS['profile'];
     }
      ?>
+     <script>
+      if ( window.history.replaceState ) {
+         window.history.replaceState( null, null, window.location.href );
+        }
+     </script>
      <script src="src/fun.js?v=<?php echo $randVersion; ?>" charset="utf-8"></script>
   </body>
 </html>

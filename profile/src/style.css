@@ -146,3 +146,7 @@ input[type="date"]:focus::before,
 input[type="date"]:valid::before {
 	content: "" !important;
 }
+#dobMessage{
+  font-size: .8em;
+  color: red;
+}
