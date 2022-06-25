@@ -116,13 +116,13 @@ if (isset($_SESSION['logID'])) {
           </div>';
       $GLOBALS['Menu'] = $loggedProfile."<div class='user'>".$writeArticles.$updateProfile.$channels.'</div> <div style="background-color:cadetblue;" class="user">'.$Interests.$Languages.$privacy.$securityLogin.'</div><div style="background-color:teal;"class="user">'.$termsPolicy.$helpFeedback.$aboutUs.$logout."</div>";
     }else {
-      $GLOBALS['Menu'] = $nonLoggedProfile.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+      $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$Interests.$privacy.$termsPolicy.$helpFeedback.'</div>';
     }
   }else {
-    $GLOBALS['Menu'] = $nonLoggedProfile.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+    $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$Interests.$privacy.$termsPolicy.$helpFeedback.'</div>';
   }
 }else {
-  $GLOBALS['Menu'] = $nonLoggedProfile.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
+  $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$Interests.$privacy.$termsPolicy.$helpFeedback.'</div>';
 }
  ?>
 <!DOCTYPE html>
@@ -139,8 +139,8 @@ if (isset($_SESSION['logID'])) {
       .newUser{
         padding: 1em 1.4em;
         border: 0;
-        margin: 1em 1.5em;
-        border-radius: 10px;
+        margin: 1em;
+        border-radius: 15px;
         background-color: #680c86;
         max-width: 350px;
       }

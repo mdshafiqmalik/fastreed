@@ -75,11 +75,10 @@
   }
   .top3 .user{
     border: 0;
-    margin: .9em;
+    margin: 1em;
     padding: 0.5em;
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: darkturquoise;
-    box-shadow: inset 0px 0px 7px 5px rgb(161 171 185);
   }
   .options p{
     border-radius: 16px;
