@@ -9,7 +9,7 @@ $updateProfile = '<!-- Update Profile -->
 <div class="settings options">
   <p>
     <img class="opt_icons" src="assets/pics/svgs/manage_accounts.svg" alt="">
-    <span> <a href="#">Update profile</a> </span>   </p>
+    <span> <a href="profile/setting">Profile Settings</a> </span>   </p>
 </div>';
 $channels = '<!-- Channels -->
 <div class="settings options">
