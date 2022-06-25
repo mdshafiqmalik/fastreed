@@ -7,6 +7,7 @@ function checkedItems(checkbox){
   var parent = checkbox.parentElement.parentElement;
   var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
   var cCount = document.getElementById('cCount');
+  var nxtButton = document.getElementById('nxtButton');
   let remain = 5-checkboxes.length;
   if (checkbox.checked == true) {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -14,9 +15,13 @@ function checkedItems(checkbox){
     if (remain <= 0) {
       cCount.innerHTML = `(${checkboxes.length} selected)`;
       cCount.style.color = "green";
-
+      nxtButton.removeAttribute("disabled");
+      nxtButton.style.background ="purple";
     }else {
-      cCount.innerHTML = `(Select ${remain} More)`;
+      cCount.innerHTML = `(Select ${remain} more)`;
+      const att = document.createAttribute("disabled");
+      nxtButton.setAttributeNode(att);
+      nxtButton.style.background ="#4f054f75";
     }
     parent.style.background = "#0165E1";
     parent.style.color = "White";
@@ -28,9 +33,14 @@ function checkedItems(checkbox){
     if (remain <= 0) {
       cCount.style.color = "green";
       cCount.innerHTML = `(${checkboxes.length} selected)`;
+      nxtButton.removeAttribute("disabled");
+      nxtButton.style.background ="purple";
     }else {
       cCount.style.color = "red";
-      cCount.innerHTML = `(Select ${remain} More)`;
+      cCount.innerHTML = `(Select ${remain} more)`;
+      const att = document.createAttribute("disabled");
+      nxtButton.setAttributeNode(att);
+      nxtButton.style.background ="#4f054f75";
     }
 
     parent.style.background = "white";

@@ -185,7 +185,7 @@ function renderProfile($UID){
               <span id="dobMessage"></span>
               <div class="dateInput">
                 <input type="date" id="date" name="DOB" onkeydown="checkDate()" value=""
-       min="<?php echo date('Y-m-d', strtotime('200 years ago')) ?>" max="<?php echo date('Y-m-d', strtotime('10 years ago')) ?>" placeholder="" required>
+       min="<?php echo date('Y-m-d', strtotime('200 years ago')) ?>" max="<?php echo date('Y-m-d', strtotime('10 years ago')) ?>" placeholder="DD/MM/YYYY" required>
               </div>
             </div>
             <!-- For Description -->
@@ -196,7 +196,7 @@ function renderProfile($UID){
                 <textarea name="bio" rows="7" placeholder="Write something about yourself" required></textarea>
                 <div class="interestsDiv">
                   <span class="heading">Select your interests</span>
-                  <span id="cCount">(Min. 5)</span>
+                  <span id="cCount">(min. 5)</span>
                   <div class="interests">
 
                     <div class="tags">
@@ -300,10 +300,10 @@ function renderProfile($UID){
 
                   </div>
 
-                </div><b>Remember: </b>
-                <span style="font-size: .85em; color: #555;"> Your information is collected to deliver you personlized content, we don't share your personal info. to any third party.</span>
+                </div><b>Note: </b>
+                <span style="font-size: .85em; color: #555;"> your information is collected to deliver you personlized content, we don't share your personal info. to any third party.</span>
                 <div class="button">
-                  <input type="submit" name="" value="Next">
+                  <input id="nxtButton" type="submit" name="" value="Next" disabled>
                 </div>
               </div>
 
