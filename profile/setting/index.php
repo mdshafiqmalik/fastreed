@@ -1,3 +1,34 @@
+<?php
+session_start();
+
+
+function checkLogDetails($logID){
+  include '../../_.config/_s_db_.php';
+  $checkLoginID = "SELECT userID FROM fast_logged_users Where loginID = '$logID' AND status = '1'";
+  $userDat = mysqli_query($db, $checkLoginID);
+  if (mysqli_num_rows($userDat)) {
+      $row = $userDat->fetch_assoc();
+      $exist = $row['userID'];
+  }else {
+    setcookie('logID', '', time() -3600, "/");
+    unset($_SESSION['logID']);
+    $exist = false;
+  }
+  return $exist;
+}
+
+
+if (isset($_SESSION['logID'])) {
+  $checkLogin = checkLogDetails($_SESSION['logID']);
+  if ($checkLogin) {
+    // code...
+  }else {
+  header('Location: ../../login');
+  }
+}else {
+  header('Location:  ../../login');
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

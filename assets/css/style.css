@@ -74,12 +74,15 @@
     margin-top: .3em;
   }
   .options p{
+    border-radius: 7px;
     font-weight: 400;
     padding: 1em 2em;
     background: white;
     display: flex;
     align-items: center;
     font-family: Roboto, Arial, sans-serif;
+    margin: 0.8em 1em;
+    box-shadow: 0 0 4px 1px rgb(211 218 227);
   }
   .options span{
     margin-left: 1em;
