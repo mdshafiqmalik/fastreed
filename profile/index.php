@@ -263,18 +263,25 @@ function renderProfile($UID){
                     </div>
 
                     <div class="tags">
-                      <label id="" for="explaination">explaination
-                        <span>+</span>
-                      <input class="chk"  id="explaination"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      </label>
-                    </div>
-
-                    <div class="tags">
                       <label id="" for="reviews">Reviews
                         <span>+</span>
                         <input class="chk"  id="reviews"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="reviews">
                       </label>
                     </div>
+
+                    <div class="tags">
+                      <label id="" for="explaination">explaination
+                        <span>+</span>
+                      <input class="chk"  id="explaination"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
+                      </label>
+                    </div>
+                    <div class="tags">
+                      <label id="" for="movies">movies
+                       <span>+</span>
+                      <input class="chk"  id="movies"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="movies">
+                      </label>
+                    </div>
+
                     <div class="tags">
                       <label id="" for="celebrities">celebrities
                        <span>+</span>
@@ -290,12 +297,7 @@ function renderProfile($UID){
                       </label>
                     </div>
 
-                    <div class="tags">
-                      <label id="" for="movies">movies
-                       <span>+</span>
-                      <input class="chk"  id="movies"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="movies">
-                      </label>
-                    </div>
+
                   </div>
                 </div>
                 <div class="button">
