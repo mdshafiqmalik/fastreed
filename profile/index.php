@@ -7,7 +7,12 @@ if(isset($_COOKIE['logID'])) {
     $encryption_key, $options, $encryption_iv);
     $_SESSION["logID"] = $dUserID;
     if ($userID = checkLogDetails($_SESSION['logID'])) {
-      renderProfile($userID);
+      $isDOB = profComp($userID);
+      if ($isDOB) {  // DOB present
+        renderProfile($userID);
+      }else {
+        completeProfile($userID);
+      }
     }else {
       echo '<script type="text/javascript">
         document.location = "../login/?code=001LIDNF";
@@ -21,7 +26,12 @@ if(isset($_COOKIE['logID'])) {
 
 }elseif ($_SESSION["logID"]) {
   if ($userID =checkLogDetails($_SESSION["logID"])) {
-    renderProfile($userID);
+    $isDOB = profComp($userID);
+    if ($isDOB) {    // DOB present
+      renderProfile($userID);
+    }else {
+      completeProfile($userID);
+    }
   }else {
     echo '<script type="text/javascript">
       document.location = "../login/?code=005LIDNF";
@@ -33,7 +43,19 @@ if(isset($_COOKIE['logID'])) {
   </script>';
 }
 
-
+function profComp($userID){
+  include '../_.config/_s_db_.php';
+  $sql = "SELECT * FROM user_cred WHERE userID = '$userID'";
+  $userCredData = mysqli_query($db, $sql);
+  $row = $userCredData->fetch_assoc();
+  $DOB = $row['userDOB'];
+  if ($DOB == "00-00-0000") {
+    $isDOB = true;
+  }else {
+    $isDOB = false;
+  }
+  return $isDOB;
+}
 
 $GLOBALS['containerStart'] = '<div id="" class="container">';
 $GLOBALS['divStop'] = '</div>';
@@ -55,6 +77,7 @@ function checkLogDetails($logID){
 }
 
 function renderProfile($UID){
+
   include '../_.config/_s_db_.php';
   $getUserData = "SELECT * FROM user_cred Where userID = '$UID'";
   $result = mysqli_query($db,$getUserData);
@@ -116,6 +139,7 @@ function renderProfile($UID){
     }else {
       $pImg = $row['userProfilePic'];
     }
+
     $GLOBALS['profile'] ='
     <!-- Self Profile Opened -->
     <div id="" class="container">
@@ -125,6 +149,7 @@ function renderProfile($UID){
           <span id="userType">'.$userType.'</span>
           </div>
           <div class="authorDetails">
+
             <div class="userNameWork">
               <span id="userFullName">'.$userFullName.'</span>
               <span id="userName">#'.$uName.'</span>
@@ -173,145 +198,76 @@ function renderProfile($UID){
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
+
   <body style="overflow:hidden;">
 
-    <div class="mCont">
-      <div class="getData">
-        <div class="justDiv">
-          <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
-          <form class="" action="handle.php" method="post">
-            <div class="getDOB">
-              <span class="heading"> Date of birth</span><br>
-              <span id="dobMessage"></span>
-              <div class="dateInput">
-                <input type="date" id="date" name="DOB" onkeydown="checkDate()" value=""
-       min="<?php echo date('Y-m-d', strtotime('200 years ago')) ?>" max="<?php echo date('Y-m-d', strtotime('10 years ago')) ?>" placeholder="DD/MM/YYYY" required>
-              </div>
-            </div>
-            <!-- For Description -->
-            <div class="Descibe">
-              <span class="heading">Your bio</span>
-              <span id="bioMessage"></span>
-              <div class="desInput">
-                <textarea name="bio" rows="4" placeholder=" Write something about yourself" required></textarea>
-                <div class="interestsDiv">
-                  <span class="heading">Select your interests</span>
-                  <span id="cCount">(min. 5)</span>
-                  <div class="interests">
+    <?php
 
-                    <div class="tags">
-                      <label for="Fashion">Fashion
-                        <span>+</span>
-                          <input class="chk" id="Fashion"  onchange='checkedItems(this)'  type="checkbox" name="check_list[]" value="Fashion">
-                       </label>
-                    </div>
-
-                    <div class="tags">
-                      <label for="Lifestyle">Lifestyle
-                          <span>+</span>
-                          <input class="chk"  id="Lifestyle"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="Lifestyle">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="artsCulture">arts & culture
-                          <span>+</span>
-                          <input class="chk"  id="artsCulture"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="artsCulture">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="DIY">DIY
-                          <span>+</span>
-                          <input  class="chk" id="DIY"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="DIY">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="books">books
-                          <span>+</span>
-                          <input class="chk"  id="books"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="books">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="howto">how to?
-                          <span>+</span>
-                          <input class="chk"  id="howto"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="howto">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="facts">facts
-                          <span>+</span>
-                          <input class="chk"  id="facts"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="facts">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="Research">Research
-                       <span>+</span>
-                      <input class="chk"  id="Research"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="Research">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="caseStudies">Case Studies
-                       <span>+</span>
-                      <input class="chk"  id="caseStudies"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="caseStudies">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="reviews">Reviews
-                        <span>+</span>
-                        <input class="chk"  id="reviews"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="reviews">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="explaination">explaination
-                        <span>+</span>
-                      <input class="chk"  id="explaination"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="">
-                      </label>
-                    </div>
-                    <div class="tags">
-                      <label id="" for="movies">movies
-                       <span>+</span>
-                      <input class="chk"  id="movies"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="movies">
-                      </label>
-                    </div>
-
-                    <div class="tags">
-                      <label id="" for="celebrities">celebrities
-                       <span>+</span>
-                      <input class="chk"  id="celebrities"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="celebrities">
-                      </label>
-                    </div>
-
-
-                    <div class="tags">
-                      <label id="" for="youtube">Youtube
-                        <span>+</span>
-                        <input class="chk"  id="youtube"  onchange='checkedItems(this)' type="checkbox" name="check_list[]" value="Youtube">
-                      </label>
-                    </div>
-
-
-                  </div>
-
-                </div><b>Note: </b>
-                <span style="font-size: .85em; color: #555;"> your information is collected to deliver you personlized content, we don't share your personal info. to any third party.</span>
-                <div class="button">
-                  <input id="nxtButton" type="submit" name="" value="Next" disabled>
+    function completeProfile($userID)
+    {
+      echo '
+      <div class="mCont">
+        <div class="getData">
+          <div class="justDiv">
+            <span class="actionLabel">Complete Your Profile <hr class="splitter"> </span>
+            <form class="" action="handle.php" method="post">
+              <div class="getDOB">
+                <span class="heading"> Date of birth</span><br>
+                <span id="dobMessage"></span>
+                <div class="dateInput">
+                  <input type="date" id="date" name="DOB" onkeydown="checkDate()" value=""
+         min="'.date('Y-m-d', strtotime('200 years ago')).'" max="'.date('Y-m-d', strtotime('10 years ago')).'" placeholder="DD/MM/YYYY" required>
                 </div>
               </div>
+              <!-- For Description -->
+              <div class="Descibe">
+                <span class="heading">Your bio</span>
+                <span id="bioMessage"></span>
+                <div class="desInput">
+                  <textarea name="bio" rows="4" placeholder=" Write something about yourself" required></textarea>
+                  <div class="interestsDiv">
+                    <span class="heading">Select your interests</span>
+                    <span id="cCount">(min. 5)</span>
+                    <div class="interests">
+                    ';
 
-            </div>
-          </form>
+                    include '../_.config/_s_db_.php';
+                    $sql = "SELECT * FROM fast_cat";
+                    $result = mysqli_query($db, $sql);
+                    if ($row = mysqli_num_rows($result)) {
+                      while ($data = $result->fetch_assoc()) {
+                        $catName = $data['catName'];
+                        $catLink = $data['catLink'];
+                        echo '
+                        <div class="tags">
+                            <label for="'.$catLink.'">'.$catName.'
+                              <span>+</span>
+                                <input class="chk" id="'.$catLink.'"  onchange="checkedItems(this)"  type="checkbox" name="check_list[]" value="'.$catLink.'">
+                             </label>
+                          </div>
+                        ';
+                      }
+                    }
+
+
+
+                  echo '  </div>
+                  </div><b>Note: </b>
+                  <span style="font-size: .85em; color: #555;"> your information is collected to deliver you personlized content, we don\'t share your personal info. to any third party.</span>
+                  <div class="button">
+                    <input id="nxtButton" type="submit" name="" value="Next" disabled>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      ';
+    }
+     ?>
+
   </div>
 
     <div class="navigation">
