@@ -299,11 +299,14 @@ function renderProfile($UID){
 
 
                   </div>
+
                 </div>
+                <span>Your information is collected to deliver you personlized content, we don't share your information to any third party</span>
                 <div class="button">
                   <input type="submit" name="" value="Next">
                 </div>
               </div>
+
             </div>
           </form>
         </div>
