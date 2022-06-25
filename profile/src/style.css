@@ -89,6 +89,7 @@
   width: 100%;
   font-family: var(--fontFam);
   padding: .4em;
+  font-weight: 500;
 }
 .interestsDiv{
   margin-top: .7em;
