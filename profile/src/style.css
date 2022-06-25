@@ -79,11 +79,11 @@
   color: white;
   font-weight: 500;
   min-width: 100px;
+  background:#4f054f75;
 }
 .desInput textarea{
   outline: 0;
   padding: .3em;
-  max-width: 300px;
   border-radius: 5px;
   margin-top: .6em;
   width: 100%;
