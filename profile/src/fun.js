@@ -25,8 +25,14 @@ function checkedItems(checkbox){
     parent.firstElementChild.firstElementChild.innerHTML = "&minus;";
 
   }else {
-    cCount.style.color = "red";
-    cCount.innerHTML = `(Select ${remain} More)`;
+    if (remain <= 0) {
+      cCount.style.color = "green";
+      cCount.innerHTML = `(${checkboxes.length} items selected)`;
+    }else {
+      cCount.style.color = "red";
+      cCount.innerHTML = `(Select ${remain} More)`;
+    }
+
     parent.style.background = "white";
     parent.style.color = "#555";
     parent.style.border = " 1px solid #aaa";
