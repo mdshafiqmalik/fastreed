@@ -45,11 +45,11 @@ if(isset($_COOKIE['logID'])) {
 
 function profComp($userID){
   include '../_.config/_s_db_.php';
-  $sql = "SELECT * FROM user_cred WHERE userID = '$userID'";
-  $userCredData = mysqli_query($db, $sql);
-  $row = $userCredData->fetch_assoc();
-  $DOB = $row['userDOB'];
-  if ($DOB == "00-00-0000") {
+  $sql = "SELECT * FROM fast_users WHERE userID = '$userID'";
+  $userData = mysqli_query($db, $sql);
+  $row = $userData->fetch_assoc();
+  $profileStatus = $row['profileStatus'];
+  if ($profileStatus) {
     $isDOB = true;
   }else {
     $isDOB = false;
@@ -199,13 +199,14 @@ function renderProfile($UID){
     <title></title>
   </head>
 
-  <body style="overflow:hidden;">
+  <body>
 
     <?php
 
     function completeProfile($userID)
     {
       echo '
+
       <div class="mCont">
         <div class="getData">
           <div class="justDiv">
