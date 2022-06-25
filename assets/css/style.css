@@ -73,13 +73,13 @@
     font-size: 1.1em;
     margin-top: .3em;
   }
-  .top3 #user{
+  .top3 .user{
     border: 0;
     margin: .9em;
     padding: 0.5em;
     border-radius: 20px;
     background-color: darkturquoise;
-    box-shadow: inset 0px 0px 7px 5px rgb(161 171 185);
+    box-shadow: inset 0px 0px 7px 5px rgb(129 165 217);
   }
   .options p{
     border-radius: 16px;

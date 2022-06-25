@@ -114,7 +114,7 @@ if (isset($_SESSION['logID'])) {
               <a id="profilelink" href="profile">View your profile</a>
             </span>
           </div>';
-      $GLOBALS['Menu'] = $loggedProfile."<div id='user'>".$writeArticles.$updateProfile.$channels.'</div> <div style="background-color:cadetblue;" id="user">'.$Interests.$Languages.$privacy.$securityLogin.'</div><div style="background-color:teal;"id="user">'.$termsPolicy.$helpFeedback.$aboutUs.$logout."</div>";
+      $GLOBALS['Menu'] = $loggedProfile."<div class='user'>".$writeArticles.$updateProfile.$channels.'</div> <div style="background-color:cadetblue;" class="user">'.$Interests.$Languages.$privacy.$securityLogin.'</div><div style="background-color:teal;"class="user">'.$termsPolicy.$helpFeedback.$aboutUs.$logout."</div>";
     }else {
       $GLOBALS['Menu'] = $nonLoggedProfile.$login.$aboutUs.$Languages.$Interests.$privacy.$termsPolicy.$helpFeedback;
     }
