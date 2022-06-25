@@ -116,13 +116,13 @@ if (isset($_SESSION['logID'])) {
           </div>';
       $GLOBALS['Menu'] = $loggedProfile."<div class='user'>".$writeArticles.$updateProfile.$channels.'</div> <div style="background-color:cadetblue;" class="user">'.$Interests.$Languages.$privacy.$securityLogin.'</div><div style="background-color:teal;"class="user">'.$termsPolicy.$helpFeedback.$aboutUs.$logout."</div>";
     }else {
-      $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$Interests.$privacy.$termsPolicy.$helpFeedback.'</div>';
+      $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$termsPolicy.$helpFeedback.'</div>';
     }
   }else {
-    $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$Interests.$privacy.$termsPolicy.$helpFeedback.'</div>';
+    $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$termsPolicy.$helpFeedback.'</div>';
   }
 }else {
-  $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$Interests.$privacy.$termsPolicy.$helpFeedback.'</div>';
+  $GLOBALS['Menu'] = $nonLoggedProfile."<div class='user'>".$login.$aboutUs.$Languages.'</div><div style="background-color:cadetblue;" class="user">'.$termsPolicy.$helpFeedback.'</div>';
 }
  ?>
 <!DOCTYPE html>
