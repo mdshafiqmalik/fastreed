@@ -301,7 +301,7 @@ function renderProfile($UID){
                   </div>
 
                 </div><b>Remember: </b>
-                <span style="font-size: .85em; color: #555;"> Your information is collected to deliver you personlized content, we don't share your information to any third party.</span>
+                <span style="font-size: .85em; color: #555;"> Your information is collected to deliver you personlized content, we don't share your personal info. to any third party.</span>
                 <div class="button">
                   <input type="submit" name="" value="Next">
                 </div>
