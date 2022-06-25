@@ -79,7 +79,7 @@
     padding: 0.5em;
     border-radius: 20px;
     background-color: darkturquoise;
-    /* box-shadow: 0 0 4px 1px rgb(211 218 227); */
+    inset 0px 0px 7px 5px rgb(161 171 185);
   }
   .options p{
     border-radius: 16px;
